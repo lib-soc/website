@@ -1,0 +1,18 @@
+
+:root {
+    --light-blue:hsl(195, 67%, 95%);
+    --pink:hsl(344, 73%, 57%);
+    --dark-green:hsl(176, 63%, 25%);
+    --green:hsl(147, 33%, 60%);
+    --orange:hsl(30, 97%, 72%);
+    --light-orange: hsl(19, 76%, 72%);
+    --dark-brown:hsl(23, 47%, 20%);
+    --brown:hsl(23, 47%, 30%);
+    --light-brown: hsl(23, 47%, 50%);
+    --dark-pink:hsl(343, 39%, 16%);
+    --red:hsl(359, 72%, 61%);
+    --dark-blue:hsl(217, 25%, 16%);
+    --grey-blue:hsl(223, 13%, 22%);
+    --cream:hsl(34, 43%, 90%);
+    --dark-cream:hsl(33, 26%, 84%);
+}
