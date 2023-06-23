@@ -35,8 +35,8 @@
 <header bind:this={navbar} id="navbar">
     <!-- Logo -->
     <a id=logo-container href="/">
-        <img src="" id="navbar-logo" alt="iql logo">
-        <span id="navbar-logo-text">LibSoc</span>
+        <img src="img/common/flag.png" id="navbar-logo" alt="logo">
+        <span id="navbar-logo-text">Libertarian socialists</span>
     </a>
     <!-- Hamburger icon -->
     <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
@@ -44,7 +44,11 @@
     <!-- Menu -->
     <nav id="nav">
         <ul id="menu">
-            <li><a href="/test">test</a></li>
+            <li><a href="/manifesto">Manifesto</a></li>
+            <li><a href="/join-us">Join us</a></li>
+            <li><a href="/groups">Groups</a></li>
+            <li><a href="/communities">Communities</a></li>
+            <li><a href="/cooperatives">Cooperatives</a></li>
         </ul>
     </nav>
 </header>

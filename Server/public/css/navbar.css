@@ -27,8 +27,10 @@
 }
 
 #navbar-logo {
-    width: 3.16rem;
+    height: 3.5rem;
+    width: 3.5rem;
     object-fit: contain;
+    border-radius: 10rem;
 }
 
 #navbar-logo-text {

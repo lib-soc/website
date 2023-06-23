@@ -5,7 +5,8 @@ footer {
     bottom: 0;
     width: 100%;
     height: auto;
-    background: var(--dark-green);
+    background: #5B6970;/*var(--dark-green);*/
+    border-top: #DD1C1A solid 0.5rem;
 }
 
 footer p, footer a {
@@ -51,6 +52,15 @@ footer h2 {
     height: 3rem;
     top: 0rem;
     margin-bottom: 0;
+}
+
+
+#tag-line {
+    position: relative;
+    margin: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 footer a {
@@ -105,7 +115,7 @@ footer p, footer label {
 }
 
 #contact-us-container {
-    width: 14rem;
+    width: 16rem;
 }
 
 #contact-us-container h3 {
