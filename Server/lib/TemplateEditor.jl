@@ -8,6 +8,8 @@ export generate_layout_html
 dict_libraries = Dict(
     "ECharts" => "<script src='https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.js'></script>",
     "GSAP" => "<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js'></script>",
+    "Leaflet" => "<link rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' integrity='sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=' crossorigin='' />
+    <script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js' integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=' crossorigin=''></script>"
 )
 
 function register_components()

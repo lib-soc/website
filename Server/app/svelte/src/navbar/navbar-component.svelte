@@ -12,7 +12,7 @@
     function changeNavbar() {
         if (hambInput.checked) {
             navbar.style.background = "white"
-            navbar.style.boxShadow = "0 0 0.314rem rgb(187, 187, 187)"
+            //navbar.style.boxShadow = "0 0 0.314rem rgb(187, 187, 187)"
         }
         else {
             setTimeout(()=> {

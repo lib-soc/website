@@ -7,12 +7,12 @@ using Server.DatabaseSupport, Server.TemplateEditor
 
 controller = "basic"
 dict_layouts = Dict(
-    :landing => generate_layout_html("main",controller,"landing",css=["landing"]),
+    :landing => generate_layout_html("main",controller,"landing",css=["landing"],libraries=["Leaflet"]),
     :manifesto => generate_layout_html("main",controller,"manifesto"),
-    :join_us => generate_layout_html("main",controller,"join_us"),
-    :groups => generate_layout_html("main",controller,"groups"),
-    :cooperatives => generate_layout_html("main",controller,"cooperatives"),
-    :communities => generate_layout_html("main",controller,"communities"),
+    :join_us => generate_layout_html("main",controller,"join_us",libraries=["Leaflet"]),
+    :groups => generate_layout_html("main",controller,"groups",libraries=["Leaflet"]),
+    :cooperatives => generate_layout_html("main",controller,"cooperatives",libraries=["Leaflet"]),
+    :communities => generate_layout_html("main",controller,"communities",libraries=["Leaflet"]),
 )
 
 #---General-----------------------------------------------------
