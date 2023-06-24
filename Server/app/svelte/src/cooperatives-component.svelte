@@ -33,7 +33,7 @@
                 <div>
                     <div>
                         <p><b>Name: </b>{coop.name}</p>
-                        <p><b>Location: </b>{coop.location}</p>
+                        <p><b>Location: </b>{coop.location[0]}</p>
                         <p><b>Market: </b>{coop.market}</p>
                         <p><b>Workers: </b>{coop.workers}</p>
                         <p><b>Status: </b>{coop.status}</p>
