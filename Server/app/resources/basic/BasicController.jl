@@ -20,7 +20,7 @@ dict_layouts = Dict(
 
 function landing()
     html(:basic,:landing, layout = dict_layouts[:landing], context = @__MODULE__,
-        title = "LibSoc",
+        title = "LibSoc - A Global Network of Libertarian Socialists",
         description = ""
     )
 end
@@ -34,7 +34,7 @@ end
 
 function join_us()
     html(:basic,:join_us, layout = dict_layouts[:join_us], context = @__MODULE__,
-        title = "LibSoc - Join us",
+        title = "LibSoc - Join Us",
         description = ""
     )
 end
