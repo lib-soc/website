@@ -23,8 +23,8 @@
     <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
     <div id="text-container">
         <h1>Cooperatives</h1>
-        <p>We create worker cooperatives that embody a transformative business model in which the workers themselves own and democratically control the enterprise. In these cooperatives, each employee has a say in decision-making, and profits are shared based on individual contributions. This participatory structure fosters a sense of ownership, motivation, and job satisfaction among workers, resulting in a more fulfilling and empowering work experience. Moreover, worker cooperatives promote economic equity by distributing profits more equitably among all workers, challenging the concentration of wealth seen in traditional capitalist enterprises.</p>
-        <p>Worker cooperatives prioritize the well-being of their workers, striving for fair wages, safe working conditions, and a healthy work-life balance. By placing the needs of workers at the forefront, these cooperatives create supportive and sustainable work environments that promote social cohesion and job security. Furthermore, worker cooperatives adopt long-term perspectives and prioritize the interests of their local communities. With decision-making power vested in the workers themselves, cooperatives are less inclined to pursue short-term profit-maximization strategies that harm workers and communities. Instead, they reinvest their profits locally, contributing to the development and resilience of their communities.</p>
+        <p>We establish worker cooperatives that embody a transformative business model where employees own and control the enterprise. Each worker has a voice in decision-making, and profits are distributed based on individual contributions. This participatory structure fosters ownership, motivation, and job satisfaction, creating a more fulfilling work experience as well as challenging the wealth concentration in traditional capitalist businesses.</p>
+        <p>By focusing on employees' needs, our cooperatives create supportive and sustainable work environments that foster social cohesion and job security. We also prioritize the interests of local communities, taking a long-term perspective. With workers making decisions, we avoid harmful short-term profit-driven strategies and instead reinvest our profits, contributing to community development and resilience.</p>
         <h3>Our cooperatives</h3>
         <map-component id="map" callback={mapCallbackCoops}></map-component>
         <h4>Europe</h4>
@@ -33,7 +33,7 @@
                 <div>
                     <div>
                         <p><b>Name: </b>{coop.name}</p>
-                        <p><b>Location: </b>{coop.lcoation}</p>
+                        <p><b>Location: </b>{coop.location}</p>
                         <p><b>Market: </b>{coop.market}</p>
                         <p><b>Workers: </b>{coop.workers}</p>
                         <p><b>Status: </b>{coop.status}</p>
