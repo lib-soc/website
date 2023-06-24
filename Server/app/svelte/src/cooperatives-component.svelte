@@ -23,6 +23,7 @@
     <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
     <div id="text-container">
         <h1>Cooperatives</h1>
+        <img id="coops-img" src="/img/common/coops.svg" alt="coops">
         <p>We establish worker cooperatives that embody a transformative business model where employees own and control the enterprise. Each worker has a voice in decision-making, and profits are distributed based on individual contributions. This participatory structure fosters ownership, motivation, and job satisfaction, creating a more fulfilling work experience as well as challenging the wealth concentration in traditional capitalist businesses.</p>
         <p>By focusing on employees' needs, our cooperatives create supportive and sustainable work environments that foster social cohesion and job security. We also prioritize the interests of local communities, taking a long-term perspective. With workers making decisions, we avoid harmful short-term profit-driven strategies and instead reinvest our profits, contributing to community development and resilience.</p>
         <h3>Our cooperatives</h3>
@@ -54,6 +55,19 @@
 
 <style>
     @import '/css/common.css';
+
+    #coops-img {
+        position: absolute;
+        width: 10.5rem;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 0;
+        opacity: 0.2;
+    }
+
+    #text-container>:nth-child(3) {
+        margin-top: 8rem;
+    }
 
     .location-info>:first-child {
         display: flex;
