@@ -107,7 +107,7 @@
 
     #container-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1.3fr;
+        grid-template-columns: 1.1fr 1fr 1.33fr;
         grid-gap: 3rem;
     }
 
