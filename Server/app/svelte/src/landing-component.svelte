@@ -24,22 +24,22 @@
     </picture>
     
     <div id="text-container">
-        <p>We are people united around a single cause of bringing down authoritarian exploitative systems represented by different forms of capitalism and replacing them with libertarian socialist systems to create a more equitable and democratic world.</p>
+        <p>We are people united around a singular cause: bringing down authoritarian exploitative systems represented by various forms of capitalism and replacing them with libertarian socialist systems, with the goal of creating a more equitable and democratic world.</p>
         <div id="container-grid">
             <div>
                 <h2>GROUPS</h2>
                 <img id="groups-img" src="/img/common/groups.svg" alt="groups">
-                <p>We organize into groups for education, advocacy and mutual aid. We aim to show people how the current politico-economic systems negatively affect our wellbeing, show them the alternatives, and engage in mutual aid to make our life under capitalism easier.</p>
+                <p>We organize groups for the purposes of education, advocacy, and mutual aid. Our objective is to demonstrate to people how the current politico-economic systems detrimentally impact our well-being, present them with alternative approaches, and engage in mutual aid to alleviate the challenges of living under capitalism.</p>
             </div>
             <div>
                 <h2>COMMUNITIES</h2>
                 <img id="communities-img" src="/img/common/communities.svg" alt="communities">
-                <p>We build communities according to libertarian socialist principles where people own their land, their houses, the means of production and use direct democracy to make decisions. We are growing our socialist world one community at a time.</p>
+                <p>We establish communities based on libertarian socialist principles, where individuals have ownership of their land, houses, and the means of production as well as make decisions using direct democracy. We are gradually expanding our socialist world, one community at a time.</p>
             </div>
             <div>
                 <h2>COOPERATIVES</h2>
                 <img id="coops-img" src="/img/common/coops.svg" alt="coops">
-                <p>We create worker cooperatives in order to finance the functioning of our groups and communities. Economic power determines political power, therefore, establishing cooperatives is one of the first steps towards achieving socialism by providing democratic workplaces for workers instead of authoritarian capitalist businesses.</p>
+                <p>We form worker cooperatives to finance the operations of our groups and communities. Recognizing that economic power influences political power, we consider the establishment of cooperatives to be one of the initial steps towards achieving socialism.</p>
             </div>
         </div>
     </div>
@@ -107,8 +107,8 @@
 
     #container-grid {
         display: grid;
-        grid-template-columns: 1.1fr 1fr 1.33fr;
-        grid-gap: 3rem;
+        grid-template-columns: 1.2fr 1.05fr 1fr;
+        grid-gap: 4rem;
     }
 
     #container-grid > div {
