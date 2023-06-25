@@ -1,1 +1,425 @@
-import{S as t,i as e,a as o,b as n,s as i,e as r,c as s,n as a,d as c,f as m,g as l,h as p,j as g,k as h,o as d,t as f}from"./index-9e0a68c1.js";import{coops as u,addMarkersCoops as b}from"../../../../../../../../../js/coops.js";import"../../../../../../../../../js/components/map-component.js";function x(t,e,o){const n=t.slice();return n[1]=e[o],n}function w(t){let e,o,i,m,l,h,d,u,b,x,w,v,k,C,y,j,z,W,E,D,L,M,R,S,T,_,A,B,H,N,O,q,F,G,I,J,K,P,Q,U,V,X,Y,Z,$=t[1].name+"",tt=t[1].location[0]+"",et=t[1].market+"",ot=t[1].workers+"",nt=t[1].status+"",it=t[1].website+"",rt=t[1].contact[1]+"",st=t[1].description+"";return{c(){e=r("div"),o=r("div"),i=r("div"),m=r("p"),l=r("b"),l.textContent="Name: ",h=f($),d=s(),u=r("p"),b=r("b"),b.textContent="Location: ",x=f(tt),w=s(),v=r("p"),k=r("b"),k.textContent="Market: ",C=f(et),y=s(),j=r("p"),z=r("b"),z.textContent="Workers: ",W=f(ot),E=s(),D=r("p"),L=r("b"),L.textContent="Status: ",M=f(nt),R=s(),S=r("p"),T=r("b"),T.textContent="Website: ",_=r("a"),A=f(it),B=s(),H=r("p"),N=r("b"),N.textContent="Contact: ",O=r("a"),q=f(rt),F=s(),G=r("picture"),I=r("source"),J=s(),K=r("source"),P=s(),Q=r("img"),U=s(),V=r("p"),X=r("b"),X.textContent="Description: ",Y=f(st),Z=s(),c(_,"href","https://www."+t[1].website),c(_,"target","_blank"),c(_,"rel","noreferrer"),c(O,"href",t[1].contact[0]),c(O,"target",";_blank;"),c(O,"rel","noreferrer"),c(I,"srcset","/img/coops/"+t[1].logo+".webp"),c(K,"srcset","/img/coops/"+t[1].logo+".png"),c(Q,"class","coop-logo"),c(Q,"alt","logo"),c(e,"class","location-info")},m(t,r){n(t,e,r),p(e,o),p(o,i),p(i,m),p(m,l),p(m,h),p(i,d),p(i,u),p(u,b),p(u,x),p(i,w),p(i,v),p(v,k),p(v,C),p(i,y),p(i,j),p(j,z),p(j,W),p(i,E),p(i,D),p(D,L),p(D,M),p(i,R),p(i,S),p(S,T),p(S,_),p(_,A),p(i,B),p(i,H),p(H,N),p(H,O),p(O,q),p(o,F),p(o,G),p(G,I),p(G,J),p(G,K),p(G,P),p(G,Q),p(e,U),p(e,V),p(V,X),p(V,Y),p(e,Z)},p:a,d(t){t&&g(e)}}}function v(t){let e,o,i,d,f,b,v,k,C,y,j,z,W,E,D,L,M,R=u,S=[];for(let e=0;e<R.length;e+=1)S[e]=w(x(t,R,e));return{c(){e=r("div"),o=r("div"),i=r("h1"),i.textContent="Cooperatives",d=s(),f=r("img"),v=s(),k=r("p"),k.textContent="We establish worker cooperatives that embody a transformative business model where employees own and control the enterprise. Each worker has a voice in decision-making, and profits are distributed based on individual contributions. This participatory structure fosters ownership, motivation, and job satisfaction, creating a more fulfilling work experience as well as challenging the wealth concentration in traditional capitalist businesses.",C=s(),y=r("p"),y.textContent="By focusing on employees' needs, our cooperatives create supportive and sustainable work environments that foster social cohesion and job security. We also prioritize the interests of local communities, taking a long-term perspective. With workers making decisions, we avoid harmful short-term profit-driven strategies and instead reinvest our profits, contributing to community development and resilience.",j=s(),z=r("h3"),z.textContent="Our cooperatives",W=s(),E=r("map-component"),D=s(),L=r("h4"),L.textContent="Europe",M=s();for(let t=0;t<S.length;t+=1)S[t].c();this.c=a,c(f,"id","coops-img"),m(f.src,b="/img/common/coops.svg")||c(f,"src","/img/common/coops.svg"),c(f,"alt","coops"),l(E,"id","map"),l(E,"callback",t[0]),c(o,"id","text-container"),c(e,"id","container")},m(t,r){n(t,e,r),p(e,o),p(o,i),p(o,d),p(o,f),p(o,v),p(o,k),p(o,C),p(o,y),p(o,j),p(o,z),p(o,W),p(o,E),p(o,D),p(o,L),p(o,M);for(let t=0;t<S.length;t+=1)S[t].m(o,null)},p(t,[e]){if(0&e){let n;for(R=u,n=0;n<R.length;n+=1){const i=x(t,R,n);S[n]?S[n].p(i,e):(S[n]=w(i),S[n].c(),S[n].m(o,null))}for(;n<S.length;n+=1)S[n].d(1);S.length=R.length}},i:a,o:a,d(t){t&&g(e),h(S,t)}}}function k(t){return d((()=>{})),[function(t){let e=t([51.505,-.09],3);b(e)}]}class C extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#coops-img{position:absolute;width:10.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}.location-info>:first-child{display:flex;align-content:center;width:100%;justify-content:space-between;gap:3rem;align-items:center}.location-info>:first-child>:first-child{flex:none}.coop-logo{position:relative;right:0;max-height:8rem;max-width:100%}h4{margin-bottom:2rem}.location-info{position:relative;margin-bottom:2rem}.location-info p{margin-bottom:0}a{font-size:1.2rem;color:#DD1C1A}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.5rem;text-align:center}h3{margin-bottom:1rem}#container{margin:auto;max-width:1200px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{font-size:1.2rem;text-align:justify}</style>",e(this,{target:this.shadowRoot,props:o(this.attributes),customElement:!0},k,v,i,{},null),t&&t.target&&n(t.target,this,t.anchor)}}customElements.define("cooperatives-component",C);export{C as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, v as validate_each_argument, d as dispatch_dev, c as validate_slots, o as onMount, e as element, f as space, n as noop, g as add_location, h as attr_dev, j as src_url_equal, k as set_custom_element_data, l as append_dev, m as detach_dev, p as destroy_each, t as text } from './index-9ff7cb25.js';
+import { coops, addMarkersCoops } from '../../../../../../../../../js/coops.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\cooperatives-component.svelte generated by Svelte v3.52.0 */
+
+const file = "src\\cooperatives-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[1] = list[i];
+	return child_ctx;
+}
+
+// (32:8) {#each coops as coop}
+function create_each_block(ctx) {
+	let div2;
+	let div1;
+	let div0;
+	let p0;
+	let b0;
+	let t1_value = /*coop*/ ctx[1].name + "";
+	let t1;
+	let t2;
+	let p1;
+	let b1;
+	let t4_value = /*coop*/ ctx[1].location[0] + "";
+	let t4;
+	let t5;
+	let p2;
+	let b2;
+	let t7_value = /*coop*/ ctx[1].market + "";
+	let t7;
+	let t8;
+	let p3;
+	let b3;
+	let t10_value = /*coop*/ ctx[1].workers + "";
+	let t10;
+	let t11;
+	let p4;
+	let b4;
+	let t13_value = /*coop*/ ctx[1].status + "";
+	let t13;
+	let t14;
+	let p5;
+	let b5;
+	let a0;
+	let t16_value = /*coop*/ ctx[1].website + "";
+	let t16;
+	let t17;
+	let p6;
+	let b6;
+	let a1;
+	let t19_value = /*coop*/ ctx[1].contact[1] + "";
+	let t19;
+	let t20;
+	let picture;
+	let source0;
+	let t21;
+	let source1;
+	let t22;
+	let img;
+	let t23;
+	let p7;
+	let b7;
+	let t25_value = /*coop*/ ctx[1].description + "";
+	let t25;
+	let t26;
+
+	const block = {
+		c: function create() {
+			div2 = element("div");
+			div1 = element("div");
+			div0 = element("div");
+			p0 = element("p");
+			b0 = element("b");
+			b0.textContent = "Name: ";
+			t1 = text(t1_value);
+			t2 = space();
+			p1 = element("p");
+			b1 = element("b");
+			b1.textContent = "Location: ";
+			t4 = text(t4_value);
+			t5 = space();
+			p2 = element("p");
+			b2 = element("b");
+			b2.textContent = "Market: ";
+			t7 = text(t7_value);
+			t8 = space();
+			p3 = element("p");
+			b3 = element("b");
+			b3.textContent = "Workers: ";
+			t10 = text(t10_value);
+			t11 = space();
+			p4 = element("p");
+			b4 = element("b");
+			b4.textContent = "Status: ";
+			t13 = text(t13_value);
+			t14 = space();
+			p5 = element("p");
+			b5 = element("b");
+			b5.textContent = "Website: ";
+			a0 = element("a");
+			t16 = text(t16_value);
+			t17 = space();
+			p6 = element("p");
+			b6 = element("b");
+			b6.textContent = "Contact: ";
+			a1 = element("a");
+			t19 = text(t19_value);
+			t20 = space();
+			picture = element("picture");
+			source0 = element("source");
+			t21 = space();
+			source1 = element("source");
+			t22 = space();
+			img = element("img");
+			t23 = space();
+			p7 = element("p");
+			b7 = element("b");
+			b7.textContent = "Description: ";
+			t25 = text(t25_value);
+			t26 = space();
+			add_location(b0, file, 35, 27, 1847);
+			add_location(p0, file, 35, 24, 1844);
+			add_location(b1, file, 36, 27, 1904);
+			add_location(p1, file, 36, 24, 1901);
+			add_location(b2, file, 37, 27, 1972);
+			add_location(p2, file, 37, 24, 1969);
+			add_location(b3, file, 38, 27, 2033);
+			add_location(p3, file, 38, 24, 2030);
+			add_location(b4, file, 39, 27, 2096);
+			add_location(p4, file, 39, 24, 2093);
+			add_location(b5, file, 40, 27, 2157);
+			attr_dev(a0, "href", "https://www." + /*coop*/ ctx[1].website);
+			attr_dev(a0, "target", "_blank");
+			attr_dev(a0, "rel", "noreferrer");
+			add_location(a0, file, 40, 43, 2173);
+			add_location(p5, file, 40, 24, 2154);
+			add_location(b6, file, 41, 27, 2293);
+			attr_dev(a1, "href", /*coop*/ ctx[1].contact[0]);
+			attr_dev(a1, "target", ";_blank;");
+			attr_dev(a1, "rel", "noreferrer");
+			add_location(a1, file, 41, 43, 2309);
+			add_location(p6, file, 41, 24, 2290);
+			add_location(div0, file, 34, 20, 1813);
+			attr_dev(source0, "srcset", "/img/coops/" + /*coop*/ ctx[1].logo + ".webp");
+			add_location(source0, file, 44, 24, 2476);
+			attr_dev(source1, "srcset", "/img/coops/" + /*coop*/ ctx[1].logo + ".png");
+			add_location(source1, file, 45, 24, 2551);
+			attr_dev(img, "class", "coop-logo");
+			attr_dev(img, "alt", "logo");
+			add_location(img, file, 46, 24, 2625);
+			add_location(picture, file, 43, 20, 2441);
+			add_location(div1, file, 33, 16, 1786);
+			add_location(b7, file, 49, 19, 2736);
+			add_location(p7, file, 49, 16, 2733);
+			attr_dev(div2, "class", "location-info");
+			add_location(div2, file, 32, 12, 1741);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div2, anchor);
+			append_dev(div2, div1);
+			append_dev(div1, div0);
+			append_dev(div0, p0);
+			append_dev(p0, b0);
+			append_dev(p0, t1);
+			append_dev(div0, t2);
+			append_dev(div0, p1);
+			append_dev(p1, b1);
+			append_dev(p1, t4);
+			append_dev(div0, t5);
+			append_dev(div0, p2);
+			append_dev(p2, b2);
+			append_dev(p2, t7);
+			append_dev(div0, t8);
+			append_dev(div0, p3);
+			append_dev(p3, b3);
+			append_dev(p3, t10);
+			append_dev(div0, t11);
+			append_dev(div0, p4);
+			append_dev(p4, b4);
+			append_dev(p4, t13);
+			append_dev(div0, t14);
+			append_dev(div0, p5);
+			append_dev(p5, b5);
+			append_dev(p5, a0);
+			append_dev(a0, t16);
+			append_dev(div0, t17);
+			append_dev(div0, p6);
+			append_dev(p6, b6);
+			append_dev(p6, a1);
+			append_dev(a1, t19);
+			append_dev(div1, t20);
+			append_dev(div1, picture);
+			append_dev(picture, source0);
+			append_dev(picture, t21);
+			append_dev(picture, source1);
+			append_dev(picture, t22);
+			append_dev(picture, img);
+			append_dev(div2, t23);
+			append_dev(div2, p7);
+			append_dev(p7, b7);
+			append_dev(p7, t25);
+			append_dev(div2, t26);
+		},
+		p: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div2);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(32:8) {#each coops as coop}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let div1;
+	let div0;
+	let h1;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let p0;
+	let t4;
+	let p1;
+	let t6;
+	let h3;
+	let t8;
+	let map_component;
+	let t9;
+	let h4;
+	let t11;
+	let each_value = coops;
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			h1.textContent = "Cooperatives";
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			p0 = element("p");
+			p0.textContent = "We establish worker cooperatives that embody a transformative business model where employees own and control the enterprise. Each worker has a voice in decision-making, and profits are distributed based on individual contributions. This participatory structure fosters ownership, motivation, and job satisfaction, creating a more fulfilling work experience as well as challenging the wealth concentration in traditional capitalist businesses.";
+			t4 = space();
+			p1 = element("p");
+			p1.textContent = "By focusing on employees' needs, our cooperatives create supportive and sustainable work environments that foster social cohesion and job security. We also prioritize the interests of local communities, taking a long-term perspective. With workers making decisions, we avoid harmful short-term profit-driven strategies and instead reinvest our profits, contributing to community development and resilience.";
+			t6 = space();
+			h3 = element("h3");
+			h3.textContent = "Our cooperatives";
+			t8 = space();
+			map_component = element("map-component");
+			t9 = space();
+			h4 = element("h4");
+			h4.textContent = "Europe";
+			t11 = space();
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			this.c = noop;
+			add_location(h1, file, 24, 8, 585);
+			attr_dev(img, "id", "coops-img");
+			if (!src_url_equal(img.src, img_src_value = "/img/common/coops.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "coops");
+			add_location(img, file, 25, 8, 616);
+			add_location(p0, file, 26, 8, 686);
+			add_location(p1, file, 27, 8, 1145);
+			add_location(h3, file, 28, 8, 1568);
+			set_custom_element_data(map_component, "id", "map");
+			set_custom_element_data(map_component, "callback", /*mapCallbackCoops*/ ctx[0]);
+			add_location(map_component, file, 29, 8, 1603);
+			add_location(h4, file, 30, 8, 1681);
+			attr_dev(div0, "id", "text-container");
+			add_location(div0, file, 23, 4, 550);
+			attr_dev(div1, "id", "container");
+			add_location(div1, file, 21, 0, 463);
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, div0);
+			append_dev(div0, h1);
+			append_dev(div0, t1);
+			append_dev(div0, img);
+			append_dev(div0, t2);
+			append_dev(div0, p0);
+			append_dev(div0, t4);
+			append_dev(div0, p1);
+			append_dev(div0, t6);
+			append_dev(div0, h3);
+			append_dev(div0, t8);
+			append_dev(div0, map_component);
+			append_dev(div0, t9);
+			append_dev(div0, h4);
+			append_dev(div0, t11);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div0, null);
+			}
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*coops*/ 0) {
+				each_value = coops;
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('cooperatives-component', slots, []);
+
+	function mapCallbackCoops(createMap) {
+		let map = createMap([51.505, -0.09], 3);
+		addMarkersCoops(map);
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<cooperatives-component> was created with unknown prop '${key}'`);
+	});
+
+	$$self.$capture_state = () => ({
+		onMount,
+		coops,
+		addMarkersCoops,
+		mapCallbackCoops
+	});
+
+	return [mapCallbackCoops];
+}
+
+class Cooperatives_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#coops-img{position:absolute;width:10.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}.location-info>:first-child{display:flex;align-content:center;width:100%;justify-content:space-between;gap:3rem;align-items:center}.location-info>:first-child>:first-child{flex:none}.coop-logo{position:relative;right:0;max-height:8rem;max-width:100%}h4{margin-bottom:2rem}.location-info{position:relative;margin-bottom:2rem}.location-info p{margin-bottom:0}a{font-size:1.2rem;color:#DD1C1A}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.5rem;text-align:center}h3{margin-bottom:1rem}#container{margin:auto;max-width:1200px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{font-size:1.2rem;text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("cooperatives-component", Cooperatives_component);
+
+export { Cooperatives_component as default };

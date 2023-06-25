@@ -102,7 +102,7 @@ footer p, footer label {
     position: absolute;
     width: 6.8rem;
     height: 2.5rem;
-    background: var(--pink);
+    background: #F29E9D;
     color: #ffffff;
     font-family: var(--sans-serif,sans-serif);
     font-size: 1.4rem;
@@ -111,7 +111,7 @@ footer p, footer label {
 }
 
 #newsletterEmailButton:active {
-    background: var(--darker-pink);
+    background: #E44644;
 }
 
 #contact-us-container {

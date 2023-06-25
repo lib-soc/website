@@ -1,1 +1,1280 @@
-import{S as t,i as e,a as n,b as r,s as l,e as o,n as i,d as c,h as s,j as m,o as a,w as u,k as f,c as h,t as g,H as d}from"./index-9e0a68c1.js";import{getData as p}from"../../../../../../../../../js/libraries/serverTools.js";function x(t,e,n){const r=t.slice();return r[3]=e[n],r}function b(t,e,n){const r=t.slice();return r[6]=e[n],r}function j(t,e,n){const r=t.slice();return r[6]=e[n],r}function w(t){let e,n,l,a=t[3]+"";return{c(){e=o("p"),n=new d(!1),l=h(),n.a=l,c(e,"class","margin-end")},m(t,o){r(t,e,o),n.m(a,e),s(e,l)},p:i,d(t){t&&m(e)}}}function H(t){let e,n=t[3].slice(2,t[3].length)+"";return{c(){e=o("h1")},m(t,l){r(t,e,l),e.innerHTML=n},p:i,d(t){t&&m(e)}}}function T(t){let e,n=t[3].slice(3,t[3].length)+"";return{c(){e=o("h2")},m(t,l){r(t,e,l),e.innerHTML=n},p:i,d(t){t&&m(e)}}}function v(t){let e,n=t[3].slice(4,t[3].length)+"";return{c(){e=o("h3")},m(t,l){r(t,e,l),e.innerHTML=n},p:i,d(t){t&&m(e)}}}function y(t){let e,n,l=t[3].ol,i=[];for(let e=0;e<l.length;e+=1)i[e]=M(b(t,l,e));return{c(){e=o("ol");for(let t=0;t<i.length;t+=1)i[t].c();n=h()},m(t,l){r(t,e,l);for(let t=0;t<i.length;t+=1)i[t].m(e,null);s(e,n)},p(t,r){if(2&r){let o;for(l=t[3].ol,o=0;o<l.length;o+=1){const c=b(t,l,o);i[o]?i[o].p(c,r):(i[o]=M(c),i[o].c(),i[o].m(e,n))}for(;o<i.length;o+=1)i[o].d(1);i.length=l.length}},d(t){t&&m(e),f(i,t)}}}function L(t){let e,n,l=t[3].ul,i=[];for(let e=0;e<l.length;e+=1)i[e]=k(j(t,l,e));return{c(){e=o("ul");for(let t=0;t<i.length;t+=1)i[t].c();n=h()},m(t,l){r(t,e,l);for(let t=0;t<i.length;t+=1)i[t].m(e,null);s(e,n)},p(t,r){if(2&r){let o;for(l=t[3].ul,o=0;o<l.length;o+=1){const c=j(t,l,o);i[o]?i[o].p(c,r):(i[o]=k(c),i[o].c(),i[o].m(e,n))}for(;o<i.length;o+=1)i[o].d(1);i.length=l.length}},d(t){t&&m(e),f(i,t)}}}function M(t){let e,n=t[6]+"";return{c(){e=o("li")},m(t,l){r(t,e,l),e.innerHTML=n},p:i,d(t){t&&m(e)}}}function k(t){let e,n,l=t[6]+"";return{c(){e=o("li"),n=g(l)},m(t,l){r(t,e,l),s(e,n)},p:i,d(t){t&&m(e)}}}function z(t){let e,n=""!==t[3]&&function(t){let e,n=function(t,e){return t[3],"ul"==Object.keys(t[3])[0]?L:(t[3],"ol"==Object.keys(t[3])[0]?y:"###"==t[3].slice(0,3)?v:"##"==t[3].slice(0,2)?T:"#"==t[3][0]?H:w)}(t),l=n(t);return{c(){l.c(),e=u()},m(t,n){l.m(t,n),r(t,e,n)},p(t,e){l.p(t,e)},d(t){l.d(t),t&&m(e)}}}(t);return{c(){n&&n.c(),e=u()},m(t,l){n&&n.m(t,l),r(t,e,l)},p(t,e){""!==t[3]&&n.p(t,e)},d(t){n&&n.d(t),t&&m(e)}}}function E(t){let e,n=t[1],l=[];for(let e=0;e<n.length;e+=1)l[e]=z(x(t,n,e));return{c(){for(let t=0;t<l.length;t+=1)l[t].c();e=u()},m(t,n){for(let e=0;e<l.length;e+=1)l[e].m(t,n);r(t,e,n)},p(t,r){if(2&r){let o;for(n=t[1],o=0;o<n.length;o+=1){const i=x(t,n,o);l[o]?l[o].p(i,r):(l[o]=z(i),l[o].c(),l[o].m(e.parentNode,e))}for(;o<l.length;o+=1)l[o].d(1);l.length=n.length}},d(t){f(l,t),t&&m(e)}}}function O(t){let e,n,a=t[0],u=E(t);return{c(){e=o("div"),n=o("div"),u.c(),this.c=i,c(n,"id","text-container"),c(e,"id","container")},m(t,l){r(t,e,l),s(e,n),u.m(n,null)},p(t,[e]){1&e&&l(a,a=t[0])?(u.d(1),u=E(t),u.c(),u.m(n,null)):u.p(t,e)},i:i,o:i,d(t){t&&m(e),u.d(t)}}}function R(t,e,n){let r,l=[];const o=["ul","ol"];return p("/assets/manifesto.txt",(function(t){let e=t.split(/\r?\n/);for(let t=0;t<e.length;t++){let n=e[t],r=o.map((t=>n.includes("<"+t+">"))).findIndex((t=>t));if(-1!=r){let i=o[r],c={};c[i]=[];let s="</"+i+">";for(;;){if(t+=1,n=e[t],n.includes(s)){l.push(c);break}c[i].push(n)}}else l.push(n)}n(0,r+=1)})),a((()=>{})),[r,l]}class I extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';h1{margin-bottom:1rem;font-size:2.5rem;text-align:center}h2{margin-bottom:1rem;text-align:center}h3{margin-bottom:1rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}#container{margin:auto;max-width:1200px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{font-size:1.2rem;text-align:justify}</style>",e(this,{target:this.shadowRoot,props:n(this.attributes),customElement:!0},R,O,l,{},null),t&&t.target&&r(t.target,this,t.anchor)}}customElements.define("manifesto-component",I);export{I as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, c as validate_slots, o as onMount, r as globals, v as validate_each_argument, e as element, n as noop, h as attr_dev, g as add_location, l as append_dev, m as detach_dev, u as binding_callbacks, t as text, f as space, D as empty, j as src_url_equal, w as set_style, x as listen_dev, p as destroy_each, E as is_function, H as HtmlTag } from './index-9ff7cb25.js';
+import { getData } from '../../../../../../../../../js/libraries/serverTools.js';
+
+/* src\manifesto-component.svelte generated by Svelte v3.52.0 */
+
+const { Object: Object_1 } = globals;
+const file = "src\\manifesto-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[22] = list[i];
+	child_ctx[23] = list;
+	child_ctx[24] = i;
+	return child_ctx;
+}
+
+function get_each_context_2(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[25] = list[i];
+	return child_ctx;
+}
+
+function get_each_context_1(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[25] = list[i];
+	return child_ctx;
+}
+
+function get_each_context_3(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[30] = list[i];
+	child_ctx[31] = list;
+	child_ctx[32] = i;
+	return child_ctx;
+}
+
+function get_each_context_4(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[33] = list[i];
+	child_ctx[34] = list;
+	child_ctx[35] = i;
+	return child_ctx;
+}
+
+// (125:24) {:else}
+function create_else_block_1(ctx) {
+	let div;
+	let button;
+	let t0_value = /*obj*/ ctx[30].name + "";
+	let t0;
+	let obj = /*obj*/ ctx[30];
+	let t1;
+	let mounted;
+	let dispose;
+	const assign_button = () => /*button_binding_2*/ ctx[15](button, obj);
+	const unassign_button = () => /*button_binding_2*/ ctx[15](null, obj);
+
+	function click_handler_2() {
+		return /*click_handler_2*/ ctx[16](/*obj*/ ctx[30]);
+	}
+
+	const block = {
+		c: function create() {
+			div = element("div");
+			button = element("button");
+			t0 = text(t0_value);
+			t1 = space();
+			attr_dev(button, "class", "level0 heading-button");
+			add_location(button, file, 126, 32, 4781);
+			attr_dev(div, "class", "heading-button-wrapper");
+			add_location(div, file, 125, 28, 4711);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div, anchor);
+			append_dev(div, button);
+			append_dev(button, t0);
+			assign_button();
+			append_dev(div, t1);
+
+			if (!mounted) {
+				dispose = listen_dev(button, "click", click_handler_2, false, false, false);
+				mounted = true;
+			}
+		},
+		p: function update(new_ctx, dirty) {
+			ctx = new_ctx;
+
+			if (obj !== /*obj*/ ctx[30]) {
+				unassign_button();
+				obj = /*obj*/ ctx[30];
+				assign_button();
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div);
+			unassign_button();
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_else_block_1.name,
+		type: "else",
+		source: "(125:24) {:else}",
+		ctx
+	});
+
+	return block;
+}
+
+// (117:24) {#if Array.isArray(obj)}
+function create_if_block_6(ctx) {
+	let each_1_anchor;
+	let each_value_4 = /*obj*/ ctx[30];
+	validate_each_argument(each_value_4);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value_4.length; i += 1) {
+		each_blocks[i] = create_each_block_4(get_each_context_4(ctx, each_value_4, i));
+	}
+
+	const block = {
+		c: function create() {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			each_1_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(target, anchor);
+			}
+
+			insert_dev(target, each_1_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty[0] & /*buttons, contentHeadings, goToChapter*/ 784) {
+				each_value_4 = /*obj*/ ctx[30];
+				validate_each_argument(each_value_4);
+				let i;
+
+				for (i = 0; i < each_value_4.length; i += 1) {
+					const child_ctx = get_each_context_4(ctx, each_value_4, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block_4(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value_4.length;
+			}
+		},
+		d: function destroy(detaching) {
+			destroy_each(each_blocks, detaching);
+			if (detaching) detach_dev(each_1_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_6.name,
+		type: "if",
+		source: "(117:24) {#if Array.isArray(obj)}",
+		ctx
+	});
+
+	return block;
+}
+
+// (118:28) {#each obj as obj2}
+function create_each_block_4(ctx) {
+	let div;
+	let button;
+	let t0_value = /*obj2*/ ctx[33].name + "";
+	let t0;
+	let obj2 = /*obj2*/ ctx[33];
+	let t1;
+	let mounted;
+	let dispose;
+	const assign_button = () => /*button_binding_1*/ ctx[13](button, obj2);
+	const unassign_button = () => /*button_binding_1*/ ctx[13](null, obj2);
+
+	function click_handler_1() {
+		return /*click_handler_1*/ ctx[14](/*obj2*/ ctx[33]);
+	}
+
+	const block = {
+		c: function create() {
+			div = element("div");
+			button = element("button");
+			t0 = text(t0_value);
+			t1 = space();
+			attr_dev(button, "class", "level1 heading-button");
+			add_location(button, file, 119, 32, 4375);
+			attr_dev(div, "class", "heading-button-wrapper");
+			add_location(div, file, 118, 28, 4305);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div, anchor);
+			append_dev(div, button);
+			append_dev(button, t0);
+			assign_button();
+			append_dev(div, t1);
+
+			if (!mounted) {
+				dispose = listen_dev(button, "click", click_handler_1, false, false, false);
+				mounted = true;
+			}
+		},
+		p: function update(new_ctx, dirty) {
+			ctx = new_ctx;
+
+			if (obj2 !== /*obj2*/ ctx[33]) {
+				unassign_button();
+				obj2 = /*obj2*/ ctx[33];
+				assign_button();
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div);
+			unassign_button();
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block_4.name,
+		type: "each",
+		source: "(118:28) {#each obj as obj2}",
+		ctx
+	});
+
+	return block;
+}
+
+// (116:20) {#each contentHeadings as obj}
+function create_each_block_3(ctx) {
+	let if_block_anchor;
+
+	function select_block_type(ctx, dirty) {
+		if (Array.isArray(/*obj*/ ctx[30])) return create_if_block_6;
+		return create_else_block_1;
+	}
+
+	let current_block_type = select_block_type(ctx);
+	let if_block = current_block_type(ctx);
+
+	const block = {
+		c: function create() {
+			if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if_block.p(ctx, dirty);
+		},
+		d: function destroy(detaching) {
+			if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block_3.name,
+		type: "each",
+		source: "(116:20) {#each contentHeadings as obj}",
+		ctx
+	});
+
+	return block;
+}
+
+// (136:16) {#if line!==""}
+function create_if_block(ctx) {
+	let if_block_anchor;
+
+	function select_block_type_1(ctx, dirty) {
+		if (typeof (/*line*/ ctx[22] === 'object') && Object.keys(/*line*/ ctx[22])[0] == "ul") return create_if_block_1;
+		if (typeof (/*line*/ ctx[22] === 'object') && Object.keys(/*line*/ ctx[22])[0] == "ol") return create_if_block_2;
+		if (typeof (/*line*/ ctx[22] === 'object') && /*line*/ ctx[22].type == "h3") return create_if_block_3;
+		if (typeof (/*line*/ ctx[22] === 'object') && /*line*/ ctx[22].type == "h2") return create_if_block_4;
+		if (/*line*/ ctx[22][0] == "#") return create_if_block_5;
+		return create_else_block;
+	}
+
+	let current_block_type = select_block_type_1(ctx);
+	let if_block = current_block_type(ctx);
+
+	const block = {
+		c: function create() {
+			if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if_block.p(ctx, dirty);
+		},
+		d: function destroy(detaching) {
+			if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(136:16) {#if line!==\\\"\\\"}",
+		ctx
+	});
+
+	return block;
+}
+
+// (161:20) {:else}
+function create_else_block(ctx) {
+	let p;
+	let html_tag;
+	let raw_value = /*line*/ ctx[22] + "";
+	let t;
+
+	const block = {
+		c: function create() {
+			p = element("p");
+			html_tag = new HtmlTag(false);
+			t = space();
+			html_tag.a = t;
+			attr_dev(p, "class", "margin-end");
+			add_location(p, file, 161, 24, 6718);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, p, anchor);
+			html_tag.m(raw_value, p);
+			append_dev(p, t);
+		},
+		p: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(p);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_else_block.name,
+		type: "else",
+		source: "(161:20) {:else}",
+		ctx
+	});
+
+	return block;
+}
+
+// (159:43) 
+function create_if_block_5(ctx) {
+	let h1;
+	let raw_value = /*line*/ ctx[22].slice(2, /*line*/ ctx[22].length) + "";
+
+	const block = {
+		c: function create() {
+			h1 = element("h1");
+			add_location(h1, file, 159, 24, 6621);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, h1, anchor);
+			h1.innerHTML = raw_value;
+		},
+		p: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(h1);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_5.name,
+		type: "if",
+		source: "(159:43) ",
+		ctx
+	});
+
+	return block;
+}
+
+// (155:78) 
+function create_if_block_4(ctx) {
+	let button;
+	let h2;
+	let raw_value = /*line*/ ctx[22].line + "";
+	let line = /*line*/ ctx[22];
+	let t;
+	let mounted;
+	let dispose;
+	const assign_h2 = () => /*h2_binding*/ ctx[20](h2, line);
+	const unassign_h2 = () => /*h2_binding*/ ctx[20](null, line);
+
+	const block = {
+		c: function create() {
+			button = element("button");
+			h2 = element("h2");
+			t = space();
+			attr_dev(h2, "id", /*line*/ ctx[22].id);
+			add_location(h2, file, 156, 28, 6439);
+			set_style(button, "display", "block");
+			set_style(button, "width", "100%");
+			add_location(button, file, 155, 24, 6298);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, button, anchor);
+			append_dev(button, h2);
+			h2.innerHTML = raw_value;
+			assign_h2();
+			append_dev(button, t);
+
+			if (!mounted) {
+				dispose = listen_dev(
+					button,
+					"click",
+					function () {
+						if (is_function(/*contentTable*/ ctx[6].scrollIntoView({ block: 'start' }, true))) /*contentTable*/ ctx[6].scrollIntoView({ block: 'start' }, true).apply(this, arguments);
+					},
+					false,
+					false,
+					false
+				);
+
+				mounted = true;
+			}
+		},
+		p: function update(new_ctx, dirty) {
+			ctx = new_ctx;
+
+			if (line !== /*line*/ ctx[22]) {
+				unassign_h2();
+				line = /*line*/ ctx[22];
+				assign_h2();
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(button);
+			unassign_h2();
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_4.name,
+		type: "if",
+		source: "(155:78) ",
+		ctx
+	});
+
+	return block;
+}
+
+// (151:78) 
+function create_if_block_3(ctx) {
+	let button;
+	let h3;
+	let raw_value = /*line*/ ctx[22].line + "";
+	let line = /*line*/ ctx[22];
+	let t;
+	let mounted;
+	let dispose;
+	const assign_h3 = () => /*h3_binding*/ ctx[19](h3, line);
+	const unassign_h3 = () => /*h3_binding*/ ctx[19](null, line);
+
+	const block = {
+		c: function create() {
+			button = element("button");
+			h3 = element("h3");
+			t = space();
+			attr_dev(h3, "id", /*line*/ ctx[22].id);
+			add_location(h3, file, 152, 28, 6081);
+			set_style(button, "display", "block");
+			add_location(button, file, 151, 24, 5955);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, button, anchor);
+			append_dev(button, h3);
+			h3.innerHTML = raw_value;
+			assign_h3();
+			append_dev(button, t);
+
+			if (!mounted) {
+				dispose = listen_dev(
+					button,
+					"click",
+					function () {
+						if (is_function(/*contentTable*/ ctx[6].scrollIntoView({ block: 'start' }, true))) /*contentTable*/ ctx[6].scrollIntoView({ block: 'start' }, true).apply(this, arguments);
+					},
+					false,
+					false,
+					false
+				);
+
+				mounted = true;
+			}
+		},
+		p: function update(new_ctx, dirty) {
+			ctx = new_ctx;
+
+			if (line !== /*line*/ ctx[22]) {
+				unassign_h3();
+				line = /*line*/ ctx[22];
+				assign_h3();
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(button);
+			unassign_h3();
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_3.name,
+		type: "if",
+		source: "(151:78) ",
+		ctx
+	});
+
+	return block;
+}
+
+// (143:89) 
+function create_if_block_2(ctx) {
+	let ol;
+	let t;
+	let each_value_2 = /*line*/ ctx[22].ol;
+	validate_each_argument(each_value_2);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value_2.length; i += 1) {
+		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+	}
+
+	const block = {
+		c: function create() {
+			ol = element("ol");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			t = space();
+			add_location(ol, file, 143, 24, 5595);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, ol, anchor);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(ol, null);
+			}
+
+			append_dev(ol, t);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty[0] & /*manifesto*/ 128) {
+				each_value_2 = /*line*/ ctx[22].ol;
+				validate_each_argument(each_value_2);
+				let i;
+
+				for (i = 0; i < each_value_2.length; i += 1) {
+					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block_2(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(ol, t);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value_2.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(ol);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_2.name,
+		type: "if",
+		source: "(143:89) ",
+		ctx
+	});
+
+	return block;
+}
+
+// (137:20) {#if typeof (line === 'object') && (Object.keys(line)[0]=="ul")}
+function create_if_block_1(ctx) {
+	let ul;
+	let t;
+	let each_value_1 = /*line*/ ctx[22].ul;
+	validate_each_argument(each_value_1);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value_1.length; i += 1) {
+		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+	}
+
+	const block = {
+		c: function create() {
+			ul = element("ul");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			t = space();
+			add_location(ul, file, 137, 24, 5302);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, ul, anchor);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(ul, null);
+			}
+
+			append_dev(ul, t);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty[0] & /*manifesto*/ 128) {
+				each_value_1 = /*line*/ ctx[22].ul;
+				validate_each_argument(each_value_1);
+				let i;
+
+				for (i = 0; i < each_value_1.length; i += 1) {
+					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block_1(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(ul, t);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value_1.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(ul);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_1.name,
+		type: "if",
+		source: "(137:20) {#if typeof (line === 'object') && (Object.keys(line)[0]==\\\"ul\\\")}",
+		ctx
+	});
+
+	return block;
+}
+
+// (145:28) {#each line.ol as line2}
+function create_each_block_2(ctx) {
+	let li;
+	let raw_value = /*line2*/ ctx[25] + "";
+
+	const block = {
+		c: function create() {
+			li = element("li");
+			add_location(li, file, 145, 32, 5687);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, li, anchor);
+			li.innerHTML = raw_value;
+		},
+		p: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(li);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block_2.name,
+		type: "each",
+		source: "(145:28) {#each line.ol as line2}",
+		ctx
+	});
+
+	return block;
+}
+
+// (139:28) {#each line.ul as line2}
+function create_each_block_1(ctx) {
+	let li;
+	let t_value = /*line2*/ ctx[25] + "";
+	let t;
+
+	const block = {
+		c: function create() {
+			li = element("li");
+			t = text(t_value);
+			add_location(li, file, 139, 32, 5394);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, li, anchor);
+			append_dev(li, t);
+		},
+		p: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(li);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block_1.name,
+		type: "each",
+		source: "(139:28) {#each line.ul as line2}",
+		ctx
+	});
+
+	return block;
+}
+
+// (135:12) {#each manifesto as line}
+function create_each_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*line*/ ctx[22] !== "" && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (/*line*/ ctx[22] !== "") if_block.p(ctx, dirty);
+		},
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(135:12) {#each manifesto as line}",
+		ctx
+	});
+
+	return block;
+}
+
+// (109:8) {#key key}
+function create_key_block(ctx) {
+	let div1;
+	let button;
+	let t0;
+	let img;
+	let img_src_value;
+	let t1;
+	let div0;
+	let t2;
+	let each1_anchor;
+	let mounted;
+	let dispose;
+	let each_value_3 = /*contentHeadings*/ ctx[8];
+	validate_each_argument(each_value_3);
+	let each_blocks_1 = [];
+
+	for (let i = 0; i < each_value_3.length; i += 1) {
+		each_blocks_1[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
+	}
+
+	let each_value = /*manifesto*/ ctx[7];
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			button = element("button");
+			t0 = text("TABLE OF CONTENTS\r\n                    ");
+			img = element("img");
+			t1 = space();
+			div0 = element("div");
+
+			for (let i = 0; i < each_blocks_1.length; i += 1) {
+				each_blocks_1[i].c();
+			}
+
+			t2 = space();
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			each1_anchor = empty();
+			if (!src_url_equal(img.src, img_src_value = "../assets/arrow_down.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "arrow down");
+			set_style(img, "transform", "scaleY(-1)");
+			add_location(img, file, 112, 20, 3900);
+			attr_dev(button, "id", "toggle-content");
+			add_location(button, file, 110, 16, 3731);
+			attr_dev(div0, "class", "module");
+			set_style(div0, "display", "initial");
+			add_location(div0, file, 114, 16, 4053);
+			attr_dev(div1, "id", "table-content");
+			add_location(div1, file, 109, 12, 3664);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, button);
+			append_dev(button, t0);
+			append_dev(button, img);
+			/*img_binding*/ ctx[10](img);
+			/*button_binding*/ ctx[11](button);
+			append_dev(div1, t1);
+			append_dev(div1, div0);
+
+			for (let i = 0; i < each_blocks_1.length; i += 1) {
+				each_blocks_1[i].m(div0, null);
+			}
+
+			/*div0_binding*/ ctx[17](div0);
+			/*div1_binding*/ ctx[18](div1);
+			insert_dev(target, t2, anchor);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(target, anchor);
+			}
+
+			insert_dev(target, each1_anchor, anchor);
+
+			if (!mounted) {
+				dispose = listen_dev(button, "click", /*click_handler*/ ctx[12], false, false, false);
+				mounted = true;
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty[0] & /*contentHeadings, buttons, goToChapter*/ 784) {
+				each_value_3 = /*contentHeadings*/ ctx[8];
+				validate_each_argument(each_value_3);
+				let i;
+
+				for (i = 0; i < each_value_3.length; i += 1) {
+					const child_ctx = get_each_context_3(ctx, each_value_3, i);
+
+					if (each_blocks_1[i]) {
+						each_blocks_1[i].p(child_ctx, dirty);
+					} else {
+						each_blocks_1[i] = create_each_block_3(child_ctx);
+						each_blocks_1[i].c();
+						each_blocks_1[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks_1.length; i += 1) {
+					each_blocks_1[i].d(1);
+				}
+
+				each_blocks_1.length = each_value_3.length;
+			}
+
+			if (dirty[0] & /*manifesto, contentTable, headingsObjects*/ 224) {
+				each_value = /*manifesto*/ ctx[7];
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(each1_anchor.parentNode, each1_anchor);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			/*img_binding*/ ctx[10](null);
+			/*button_binding*/ ctx[11](null);
+			destroy_each(each_blocks_1, detaching);
+			/*div0_binding*/ ctx[17](null);
+			/*div1_binding*/ ctx[18](null);
+			if (detaching) detach_dev(t2);
+			destroy_each(each_blocks, detaching);
+			if (detaching) detach_dev(each1_anchor);
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block.name,
+		type: "key",
+		source: "(109:8) {#key key}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let div1;
+	let div0;
+	let previous_key = /*key*/ ctx[0];
+	let key_block = create_key_block(ctx);
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			div0 = element("div");
+			key_block.c();
+			this.c = noop;
+			attr_dev(div0, "id", "text-container");
+			add_location(div0, file, 107, 4, 3605);
+			attr_dev(div1, "id", "container");
+			add_location(div1, file, 106, 0, 3579);
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, div0);
+			key_block.m(div0, null);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty[0] & /*key*/ 1 && safe_not_equal(previous_key, previous_key = /*key*/ ctx[0])) {
+				key_block.d(1);
+				key_block = create_key_block(ctx);
+				key_block.c();
+				key_block.m(div0, null);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function hideBlock(arrow, block) {
+	if (block.style.display == "none" || block.style.display == "") {
+		block.style.display = "initial";
+		arrow.style.transform = "scaleY(-1)";
+		localStorage.setItem("manifesto-hide-content", "false");
+	} else {
+		block.style.display = "none";
+		arrow.style.transform = "";
+		localStorage.setItem("manifesto-hide-content", "true");
+	}
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('manifesto-component', slots, []);
+	let manifesto = [];
+	let key;
+	let contentButton;
+	let contentArrow;
+	let contentBlock;
+	let buttons = [];
+	let headingsObjects = {};
+	let contentHeadings = [];
+	let contentTable;
+	const htmlDelims = ["ul", "ol"];
+
+	getData("/assets/manifesto.txt", function (response) {
+		let splitText = response.split(/\r?\n/);
+		let currentChapter;
+		let cnt = 0;
+
+		for (let j = 0; j < splitText.length; j++) {
+			let line = splitText[j];
+			let delimInd = htmlDelims.map(x => line.includes("<" + x + ">")).findIndex(x => x);
+
+			if (delimInd != -1) {
+				let delim = htmlDelims[delimInd];
+				let obj = {};
+				obj[delim] = [];
+				let delimEndTag = "</" + delim + ">";
+
+				while (true) {
+					j += 1;
+					line = splitText[j];
+
+					if (line.includes(delimEndTag)) {
+						manifesto.push(obj);
+						break;
+					} else {
+						obj[delim].push(line);
+					}
+				}
+			} else {
+				if (line.slice(0, 3) == "###") {
+					let heading = line.slice(4, line.length);
+					let id = heading.toLowerCase().trim().replaceAll(" ", "-");
+					currentChapter.push({ id, name: heading, index: cnt });
+					cnt += 1;
+
+					manifesto.push({
+						type: "h3",
+						id,
+						line: heading,
+						index: cnt
+					});
+				} else if (line.slice(0, 2) == "##") {
+					let heading = line.slice(3, line.length);
+					let id = heading.toLowerCase().trim().replaceAll(" ", "-");
+
+					contentHeadings.push({
+						id: heading.toLowerCase().trim().replaceAll(" ", "-"),
+						name: heading,
+						index: cnt
+					});
+
+					cnt += 1;
+					currentChapter = [];
+					contentHeadings.push(currentChapter);
+
+					manifesto.push({
+						type: "h2",
+						id,
+						line: heading,
+						index: cnt
+					});
+				} else {
+					manifesto.push(line);
+				}
+			}
+		}
+
+		$$invalidate(0, key += 1);
+	});
+
+	function goToChapter(id) {
+		headingsObjects[id].scrollIntoView({ block: 'start' }, true);
+	}
+
+	onMount(() => {
+		let hideBool = localStorage.getItem("manifesto-hide-content");
+
+		if (hideBool != undefined && hideBool != null) {
+			if (hideBool == "true") {
+				hideBlock(contentArrow, contentBlock);
+			}
+		}
+	});
+
+	const writable_props = [];
+
+	Object_1.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<manifesto-component> was created with unknown prop '${key}'`);
+	});
+
+	function img_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			contentArrow = $$value;
+			$$invalidate(2, contentArrow);
+		});
+	}
+
+	function button_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			contentButton = $$value;
+			$$invalidate(1, contentButton);
+		});
+	}
+
+	const click_handler = () => hideBlock(contentArrow, contentBlock);
+
+	function button_binding_1($$value, obj2) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			buttons[obj2.index] = $$value;
+			$$invalidate(4, buttons);
+		});
+	}
+
+	const click_handler_1 = obj2 => goToChapter(obj2.id);
+
+	function button_binding_2($$value, obj) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			buttons[obj.index] = $$value;
+			$$invalidate(4, buttons);
+		});
+	}
+
+	const click_handler_2 = obj => goToChapter(obj.id);
+
+	function div0_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			contentBlock = $$value;
+			$$invalidate(3, contentBlock);
+		});
+	}
+
+	function div1_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			contentTable = $$value;
+			$$invalidate(6, contentTable);
+		});
+	}
+
+	function h3_binding($$value, line) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			headingsObjects[line.id] = $$value;
+			$$invalidate(5, headingsObjects);
+		});
+	}
+
+	function h2_binding($$value, line) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			headingsObjects[line.id] = $$value;
+			$$invalidate(5, headingsObjects);
+		});
+	}
+
+	$$self.$capture_state = () => ({
+		onMount,
+		getData,
+		manifesto,
+		key,
+		contentButton,
+		contentArrow,
+		contentBlock,
+		buttons,
+		headingsObjects,
+		contentHeadings,
+		contentTable,
+		htmlDelims,
+		hideBlock,
+		goToChapter
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('manifesto' in $$props) $$invalidate(7, manifesto = $$props.manifesto);
+		if ('key' in $$props) $$invalidate(0, key = $$props.key);
+		if ('contentButton' in $$props) $$invalidate(1, contentButton = $$props.contentButton);
+		if ('contentArrow' in $$props) $$invalidate(2, contentArrow = $$props.contentArrow);
+		if ('contentBlock' in $$props) $$invalidate(3, contentBlock = $$props.contentBlock);
+		if ('buttons' in $$props) $$invalidate(4, buttons = $$props.buttons);
+		if ('headingsObjects' in $$props) $$invalidate(5, headingsObjects = $$props.headingsObjects);
+		if ('contentHeadings' in $$props) $$invalidate(8, contentHeadings = $$props.contentHeadings);
+		if ('contentTable' in $$props) $$invalidate(6, contentTable = $$props.contentTable);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [
+		key,
+		contentButton,
+		contentArrow,
+		contentBlock,
+		buttons,
+		headingsObjects,
+		contentTable,
+		manifesto,
+		contentHeadings,
+		goToChapter,
+		img_binding,
+		button_binding,
+		click_handler,
+		button_binding_1,
+		click_handler_1,
+		button_binding_2,
+		click_handler_2,
+		div0_binding,
+		div1_binding,
+		h3_binding,
+		h2_binding
+	];
+}
+
+class Manifesto_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#table-content{border:#a9a9a9 0.1rem solid;border-radius:1rem;padding:2rem;padding-bottom:1.5rem;margin-bottom:2rem}#toggle-content{position:relative;width:100%;font-size:1.3rem;font-family:var(--sans-serif,sans-serif);text-align:left;margin-bottom:1rem;font-weight:bold}#toggle-content img{position:absolute;top:0rem;right:0rem;width:1.5rem}.module{display:flex;flex-direction:column;width:100%}.heading-button-wrapper{position:relative}.heading-button{color:black;height:auto;width:100%;padding-top:0.5rem;padding-bottom:0.5rem;text-align:left;font-family:var(--sans-serif,sans-serif);font-size:1.3rem}.level0{position:relative;padding-left:0.5rem;z-index:1}.level1{position:relative;padding-left:1.5rem;z-index:1}.heading-button:hover{background-color:hsla(344, 73%, 57%, 0.12)}.heading-button:active{background-color:hsla(344, 73%, 57%, 0.5)}h1{margin-bottom:1rem;font-size:2.5rem;text-align:center}h2{margin-bottom:1rem;text-align:center}h3{margin-bottom:1rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}#container{margin:auto;max-width:1200px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{font-size:1.2rem;text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null,
+			[-1, -1]
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("manifesto-component", Manifesto_component);
+
+export { Manifesto_component as default };
