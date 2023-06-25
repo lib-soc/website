@@ -58,8 +58,12 @@
         margin-bottom: 2rem;
     }
 
+    .location-info {
+        margin-bottom: 2rem;
+    }
+
     .location-info p {
-        margin-bottom: 2;
+        margin-bottom: 0;
     }
 
     a {
