@@ -10,7 +10,6 @@ import watch from "rollup-plugin-watch";
 
 const production = !process.env.ROLLUP_WATCH;
 
-
 function serve() {
 	let server;
 

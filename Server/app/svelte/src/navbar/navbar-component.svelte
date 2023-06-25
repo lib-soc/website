@@ -49,6 +49,7 @@
             <li><a href="/groups">Groups</a></li>
             <li><a href="/communities">Communities</a></li>
             <li><a href="/cooperatives">Cooperatives</a></li>
+            <li><a href="/affiliates">Affiliates</a></li>
         </ul>
     </nav>
 </header>

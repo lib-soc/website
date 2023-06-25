@@ -49,9 +49,9 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
         <div id="call-to-action-list">
             <p>Find our</p>
             <ol>
-                <li><a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh">group</a>,</li> 
-                <li><a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh">community</a> or</li> 
-                <li><a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh">cooperative</a></li>
+                <li><a href="/groups">group</a>,</li> 
+                <li><a href="/communities">community</a> or</li> 
+                <li><a href="/cooperatives">cooperative</a></li>
             </ol>
             <p>near you and join to help make a world we both envision a reality.</p>
         </div>
