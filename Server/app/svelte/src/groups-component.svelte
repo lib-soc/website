@@ -59,7 +59,7 @@
     }
 
     .location-info p {
-        margin-bottom: 0;
+        margin-bottom: 2;
     }
 
     a {
