@@ -3,6 +3,16 @@ export let groups = [
         location: ["Estonia, Kohtla-Järve",[59.40629447076191, 27.280605339416322]],
         members: 3,
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
+    },
+    {
+        location: ["Greece, Athens",[37.94877252621736, 23.677622972996158]],
+        members: 1,
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
+    },
+    {
+        location: ["Latvia, RIga",[56.94748425529816, 24.003027136431925]],
+        members: 2,
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
     }
 ]
 
