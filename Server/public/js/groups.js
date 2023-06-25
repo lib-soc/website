@@ -10,7 +10,7 @@ export let groups = [
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
     },
     {
-        location: ["Latvia, RIga",[56.94748425529816, 24.003027136431925]],
+        location: ["Latvia, Riga",[56.94748425529816, 24.003027136431925]],
         members: 2,
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
     }
