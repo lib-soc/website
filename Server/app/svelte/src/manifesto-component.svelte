@@ -312,7 +312,7 @@
 
     h1 {
         margin-bottom: 1rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
     }
 

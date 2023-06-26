@@ -509,10 +509,10 @@ html {
 
 @media only screen and (max-width: 570px) {
     html {
-        font-size: 12px;
+        font-size: 13px;
     }
 }
-
+/*
 @media only screen and (max-width: 470px) {
     html {
         font-size: 11px;
@@ -529,4 +529,4 @@ html {
     html {
         font-size: 9px;
     }
-}
+}*/
