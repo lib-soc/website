@@ -15,10 +15,14 @@
     function createMap(center,zoom) {
         let map = L.map(mapContainer, {
             center: center,
-            zoom: zoom
+            zoom: zoom,
         });
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            minNativeZoom: 2,
+            minZoom: 2,
+            maxNativeZoom: 16,
+            maxZoom: 16,
         }).addTo(map);
         return map
     }
