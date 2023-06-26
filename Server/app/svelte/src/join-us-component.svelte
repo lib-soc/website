@@ -55,7 +55,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
             </ol>
             <p>near you and join to help make a world we both envision a reality.</p>
         </div>
-        <p>None of them near you? Not a problem! Join our <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>WhatsApp group</a> and we will help you start your own.</p>
+        <p>None of them near you? Not a problem! Join our <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>WhatsApp group</a> or <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer>Discord server</a> and we will help you start your own.</p>
         <map-component id="map" callback={mapCallback}></map-component>
     </div>
 </div>
