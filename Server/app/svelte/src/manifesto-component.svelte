@@ -19,6 +19,8 @@
     let headingsObjects = {}
     let contentHeadings = []
     let contentTable
+    let lastTop = 0
+    let margin = 0
     
     const htmlDelims = ["ul","ol"]
     getData("/assets/manifesto.txt",function(response) {
@@ -94,10 +96,31 @@
     function goToChapter(id) {
         headingsObjects[id].scrollIntoView({block: 'start'}, true);
     }
-
     
     addEventListener("scroll", (event) => {
-        contentTable.style.marginTop = -Math.min(px2rem(window.pageYOffset),5) + "rem"
+            let top = px2rem(window.scrollY)
+            if (top>lastTop || top<5) {
+                if (contentTable.offsetHeight < window.innerHeight) {
+                    margin = -Math.min(px2rem(window.scrollY),5)
+                }
+                else {
+                    let dif = px2rem(contentTable.offsetHeight - window.innerHeight)
+                    margin = -Math.min(px2rem(window.scrollY),5 + dif + 2.5)
+                }
+                contentTable.style.marginTop = margin + "rem"
+            }
+            else {
+                if (contentTable.offsetHeight> window.innerHeight) {
+                    if (margin<-5) {
+                        margin = margin + (lastTop-top)
+                        contentTable.style.marginTop = margin + "rem"
+                    }
+                    else {
+                        contentTable.style.marginTop = "-5rem"
+                    }
+                }
+            }
+            lastTop = px2rem(window.scrollY)
     })
 
     onMount(() => { 
@@ -193,7 +216,6 @@
         margin-bottom: 2rem;
         width: 20rem;
         height: max-content;
-        max-height: calc(100vh - 2.5rem);
     }
 
     #toggle-content {
@@ -217,10 +239,7 @@
         position: relative;
         display: inline-block;
         width: 100%;
-        overflow-y: scroll;
-        overflow-x: visible;
         height: max-content;
-        max-height: 100%;
         padding-right: 1.2rem;
     }
 
