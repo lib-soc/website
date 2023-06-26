@@ -21,6 +21,8 @@
     let contentTable
     let lastTop = 0
     let margin = 0
+    let root
+    let main
     
     const htmlDelims = ["ul","ol"]
     getData("/assets/manifesto.txt",function(response) {
@@ -98,29 +100,50 @@
     }
     
     addEventListener("scroll", (event) => {
+        if (window.innerWidth>1080) {
             let top = px2rem(window.scrollY)
-            if (top>lastTop || top<5) {
-                if (contentTable.offsetHeight < window.innerHeight) {
-                    margin = -Math.min(px2rem(window.scrollY),5)
+            let textBottom = px2rem(root.getBoundingClientRect().bottom + window.scrollY)
+            let tableBottom = px2rem(contentTable.getBoundingClientRect().bottom + window.scrollY)
+            if ((top>lastTop && top<5) || (top<lastTop && top<5)) {
+                margin = -Math.min(px2rem(window.scrollY),5)
+            }
+            else if (tableBottom >= (textBottom - 1.5)) {
+                margin = margin - (tableBottom - (textBottom - 1.5))
+            }
+            else {
+                if (margin>-5) {
+                    margin = -5
                 }
-                else {
+                if (top<5 && top!=0) {
                     let dif = px2rem(contentTable.offsetHeight - window.innerHeight)
                     margin = -Math.min(px2rem(window.scrollY),5 + dif + 2.5)
                 }
-                contentTable.style.marginTop = margin + "rem"
-            }
-            else {
-                if (contentTable.offsetHeight> window.innerHeight) {
-                    if (margin<-5) {
+                else if (top<lastTop || margin==0) {
+                    if (margin <-5) {
                         margin = margin + (lastTop-top)
-                        contentTable.style.marginTop = margin + "rem"
                     }
                     else {
-                        contentTable.style.marginTop = "-5rem"
+                        margin = -5
+                    }
+                }
+                else {         
+                    if (contentTable.offsetHeight > window.innerHeight) {
+                        let dif = px2rem(contentTable.offsetHeight) - px2rem(window.innerHeight)
+                        if (margin > -(dif+8)) {
+                            margin = margin + (lastTop-top)
+                        }
+                        else {
+                            margin = -(dif+8)
+                        }
                     }
                 }
             }
+            contentTable.style.marginTop = margin + "rem"
             lastTop = px2rem(window.scrollY)
+        }
+        else {
+            contentTable.style.marginTop = "0rem"
+        }
     })
 
     onMount(() => { 
@@ -133,7 +156,7 @@
     })
 </script>
 
-<div id="container">
+<div id="container" bind:this={root}>
     <div id="text-container">
         {#key key}
             <div bind:this={contentTable} id="table-content">
@@ -161,7 +184,7 @@
                     {/each}
                 </div>
             </div>
-            <div id="main">
+            <div id="main" bind:this={main}>
                 {#each manifesto as line}
                     {#if line!==""}
                         {#if typeof (line === 'object') && (Object.keys(line)[0]=="ul")}
@@ -193,6 +216,8 @@
                                 {@html line}
                             </p>
                         {/if}
+                    {:else if false}
+                        <b></b>
                     {/if}
                 {/each}
             </div>
@@ -203,6 +228,10 @@
 
 <style>
     @import '/css/common.css';
+
+    #main b {
+        color: #d50400;
+    }
 
     #table-content {
         position: fixed;
