@@ -101,7 +101,7 @@
     }
 
     #container p {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         text-align: justify;
     }
 

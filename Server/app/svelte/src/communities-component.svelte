@@ -71,7 +71,7 @@
     }
 
     a {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         color: #DD1C1A;
     }
 
@@ -108,7 +108,7 @@
     }
 
     #container p {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         text-align: justify;
     }
 

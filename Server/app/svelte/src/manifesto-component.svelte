@@ -4,6 +4,7 @@
     // Import statements
     import { onMount } from 'svelte'
     import { getData } from "/js/libraries/serverTools.js"
+    import { px2rem } from "/js/libraries/miscTools.js"
 
     // Import components
     
@@ -94,6 +95,11 @@
         headingsObjects[id].scrollIntoView({block: 'start'}, true);
     }
 
+    
+    addEventListener("scroll", (event) => {
+        contentTable.style.marginTop = -Math.min(px2rem(window.pageYOffset),5) + "rem"
+    })
+
     onMount(() => { 
         let hideBool = localStorage.getItem("manifesto-hide-content")
         if (hideBool!=undefined && hideBool!=null) {
@@ -112,7 +118,7 @@
                     TABLE OF CONTENTS
                     <img bind:this={contentArrow} src="../assets/arrow_down.svg" alt="arrow down" style="transform: scaleY(-1)">
                 </button>
-                <div bind:this={contentBlock} class="module" style="display: initial;">
+                <div bind:this={contentBlock} class="module">
                     {#each contentHeadings as obj}
                         {#if Array.isArray(obj)}
                             {#each obj as obj2}
@@ -132,39 +138,41 @@
                     {/each}
                 </div>
             </div>
-            {#each manifesto as line}
-                {#if line!==""}
-                    {#if typeof (line === 'object') && (Object.keys(line)[0]=="ul")}
-                        <ul>
-                            {#each line.ul as line2}
-                                <li>{line2}</li>
-                            {/each}
-                        </ul>
-                    {:else if typeof (line === 'object') && (Object.keys(line)[0]=="ol")}
-                        <ol>
-                            {#each line.ol as line2}
-                                <li>
-                                    {@html line2}
-                                </li>
-                            {/each}
-                        </ol>
-                    {:else if typeof (line === 'object') && (line.type=="h3")}
-                        <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)} style="display: block;">
-                            <h3 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h3>
-                        </button>
-                    {:else if typeof (line === 'object') && (line.type=="h2")}
-                        <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
-                            <h2 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h2>
-                        </button>
-                    {:else if line[0]=="#"}
-                        <h1>{@html line.slice(2,line.length)}</h1>
-                    {:else}
-                        <p class="margin-end">
-                            {@html line}
-                        </p>
+            <div id="main">
+                {#each manifesto as line}
+                    {#if line!==""}
+                        {#if typeof (line === 'object') && (Object.keys(line)[0]=="ul")}
+                            <ul>
+                                {#each line.ul as line2}
+                                    <li>{line2}</li>
+                                {/each}
+                            </ul>
+                        {:else if typeof (line === 'object') && (Object.keys(line)[0]=="ol")}
+                            <ol>
+                                {#each line.ol as line2}
+                                    <li>
+                                        {@html line2}
+                                    </li>
+                                {/each}
+                            </ol>
+                        {:else if typeof (line === 'object') && (line.type=="h3")}
+                            <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
+                                <h3 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h3>
+                            </button>
+                        {:else if typeof (line === 'object') && (line.type=="h2")}
+                            <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
+                                <h2 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h2>
+                            </button>
+                        {:else if line[0]=="#"}
+                            <h1>{@html line.slice(2,line.length)}</h1>
+                        {:else}
+                            <p class="margin-end">
+                                {@html line}
+                            </p>
+                        {/if}
                     {/if}
-                {/if}
-            {/each}
+                {/each}
+            </div>
         {/key}
     </div>
 </div>
@@ -174,11 +182,18 @@
     @import '/css/common.css';
 
     #table-content {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
         border: #a9a9a9 0.1rem solid;
         border-radius: 1rem;
         padding: 2rem;
+        padding-right: 0.8rem;
         padding-bottom: 1.5rem;
         margin-bottom: 2rem;
+        width: 20rem;
+        height: max-content;
+        max-height: calc(100vh - 2.5rem);
     }
 
     #toggle-content {
@@ -194,14 +209,19 @@
     #toggle-content img {
         position: absolute;
         top: 0rem;
-        right: 0rem;
+        right: 0.8rem;
         width: 1.5rem;
     }
 
     .module {
-        display: flex;
-        flex-direction: column;
+        position: relative;
+        display: inline-block;
         width: 100%;
+        overflow-y: scroll;
+        overflow-x: visible;
+        height: max-content;
+        max-height: 100%;
+        padding-right: 1.2rem;
     }
 
     .heading-button-wrapper {
@@ -229,6 +249,8 @@
         position: relative;
         padding-left: 1.5rem;
         z-index: 1;
+        margin-left: 1rem;
+        border-left: #a9a9a9 0.1rem solid;
     }
 
     .heading-button:hover {
@@ -255,24 +277,61 @@
     }
 
     #text-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 20rem 800px 20rem;
+        grid-gap: 2rem;
         max-width: calc(100vw - 4rem);
         margin: auto;
     }
 
     #container {
+        display: flex;
+        align-content: center;
         margin: auto;
-        max-width: 1200px;
+        max-width: min(1800px,100vw);
         margin-top: 1rem;
         margin-bottom: 4rem;
     }
 
-    #container>div>p {
+    #main {
+        grid-column: 2;
+    }
+
+    #main>p {
         margin-bottom: 1rem;
     }
 
     #container p {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         text-align: justify;
+    }
+
+    @media only screen and (max-width: 1220px) {
+
+        #text-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 2rem;
+            max-width: calc(100vw - 4rem);
+            margin: auto;
+        }
+
+        #table-content {
+            position: relative;
+            border: #a9a9a9 0.1rem solid;
+            border-radius: 1rem;
+            padding: 2rem;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            height: max-content;
+            width: 100%;
+        }
+
+        #main {
+            grid-column: 1;
+        }
     }
 
 </style>

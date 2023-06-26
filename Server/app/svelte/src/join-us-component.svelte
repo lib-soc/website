@@ -71,7 +71,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     ol>li {
         position: relative;
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         font-family: var(--serif,serif);
         left: 3rem;
     }
@@ -119,12 +119,12 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
     }
 
     #text-container a {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         color: #DD1C1A
     }
 
     #container p {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         text-align: justify;
     }
 
