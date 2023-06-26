@@ -45,7 +45,7 @@
     <nav id="nav">
         <ul id="menu">
             <li><a href="/manifesto">Manifesto</a></li>
-            <li><a href="/join-us">Join us</a></li>
+            <li><a href="/join-us">Join Us</a></li>
             <li><a href="/groups">Groups</a></li>
             <li><a href="/communities">Communities</a></li>
             <li><a href="/cooperatives">Cooperatives</a></li>

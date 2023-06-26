@@ -37,9 +37,9 @@ FInd our group, community or cooperative near you and join in order to make a wo
 
 None of them near you? Not a problem! Join our WhatsApp group and we will help you get started.
 <div id="container">
-    <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
     <div id="text-container">
         <h1>Join us</h1>
+        <img src="/img/common/join-group.svg" id="join-group" alt="join group">
         <div id="condition-list">
             <p>1. Are you against dictatorship and in favor of democracy?</p>
             <p>2. Are you against exploitation of one human being by another?</p>
@@ -63,6 +63,16 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 <style>
     @import '/css/common.css';
 
+    #join-group {
+        position: absolute;
+        width: 10.5rem;
+        height: auto;
+        left: calc(50% + 1.2rem);
+        transform: translate(-50%);
+        z-index: 0;
+        opacity: 0.2;
+    }
+
     #map {
         --height: 30rem;
         --width: 100%;
@@ -78,6 +88,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     #condition-list {
         margin-bottom: 2rem;
+        margin-top: 7rem;
     }
 
     #condition-list>p {

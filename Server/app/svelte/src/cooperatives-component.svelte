@@ -20,7 +20,6 @@
 </script>
 
 <div id="container">
-    <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
     <div id="text-container">
         <h1>Cooperatives</h1>
         <img id="coops-img" src="/img/common/coops.svg" alt="coops">
