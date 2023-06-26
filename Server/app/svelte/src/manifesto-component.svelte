@@ -298,6 +298,7 @@
         padding-left: 1.5rem;
         z-index: 1;
         margin-left: 1rem;
+        width: calc(100% - 1rem);
         border-left: #a9a9a9 0.1rem solid;
     }
 
@@ -355,7 +356,7 @@
         text-align: justify;
     }
 
-    @media only screen and (max-width: 1080px) {
+    @media only screen and (max-width: 1210px) {
 
         #text-container {
             position: relative;
@@ -364,6 +365,10 @@
             grid-gap: 2rem;
             max-width: calc(100vw - 4rem);
             margin: auto;
+        }
+
+        #toggle-content img {
+            right: 0;
         }
 
         #table-content {
@@ -375,6 +380,10 @@
             margin-bottom: 2rem;
             height: max-content;
             width: 100%;
+        }
+
+        .module {
+            padding-right: 0;
         }
 
         #main {
