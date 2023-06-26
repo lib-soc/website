@@ -326,7 +326,7 @@
         text-align: justify;
     }
 
-    @media only screen and (max-width: 1220px) {
+    @media only screen and (max-width: 1080px) {
 
         #text-container {
             position: relative;
