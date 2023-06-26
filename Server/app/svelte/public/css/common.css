@@ -503,30 +503,30 @@ html {
 
 @media only screen and (max-width: 660px) {
     html {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
 @media only screen and (max-width: 570px) {
     html {
-        font-size: 13px;
+        font-size: 14.5px;
     }
 }
-/*
+
 @media only screen and (max-width: 470px) {
     html {
-        font-size: 11px;
+        font-size: 14px;
     }
 }
 
 @media only screen and (max-width: 400px) {
     html {
-        font-size: 10px;
+        font-size: 13.5px;
     }
 }
 
 @media only screen and (max-width: 360px) {
     html {
-        font-size: 9px;
+        font-size: 13px;
     }
-}*/
+}

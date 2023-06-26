@@ -35,17 +35,17 @@
         <h4>Online</h4>
         {#each affiliates as affiliate}
             <div class="location-info">
-                <div>
-                    <div>
-                        <p><b>Name: </b>{affiliate.name}</p>
-                        <p><b>Type: </b>{affiliate.type}</p>
-                        <p><b>Link: </b><a href={affiliate.link} target=;_blank; rel=noreferrer>{affiliate.link}</a></p>
-                    </div>
+                <div class="img-general-info">
                     <picture>
                         <source srcset={"/img/affiliates/"+affiliate.logo+".webp"}>
                         <source srcset={"/img/affiliates/"+affiliate.logo+".png"}>
                         <img class="affiliate-logo" alt="logo">
                     </picture>
+                    <div>
+                        <p><b>Name: </b>{affiliate.name}</p>
+                        <p><b>Type: </b>{affiliate.type}</p>
+                        <p><b>Link: </b><a href={affiliate.link} target=;_blank; rel=noreferrer>{affiliate.link}</a></p>
+                    </div>
                 </div>
                 <p><b>Description: </b>{affiliate.description}</p>
             </div>
@@ -70,16 +70,16 @@
         margin-top: 8rem;
     }
 
-    .location-info>:first-child {
+    .img-general-info {
         display: flex;
         align-content: center;
         width: 100%;
-        justify-content: space-between;
-        gap: 3rem;
+        gap: 1.5rem;
         align-items: center;
+        margin-bottom: 1rem;
     }
 
-    .location-info>:first-child>:first-child {
+    .img-general-info>:nth-child(2) {
         flex:none;
     }
 
@@ -144,6 +144,26 @@
     #container p {
         font-size: 1.15rem;
         text-align: justify;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .img-general-info {
+            display: flex;
+            flex-direction: column;
+            align-content: left;
+            width: 100%;
+            gap: 1.5rem;
+            align-items: left;
+            margin-bottom: 0rem;
+        }
+
+        .img-general-info>:nth-child(1) {
+            width: max-content;
+        }
+
+        .img-general-info>:nth-child(2) {
+            width: 100%;
+        }
     }
 
 </style>

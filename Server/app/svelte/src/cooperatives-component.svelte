@@ -31,7 +31,7 @@
         <h4>Europe</h4>
         {#each coops as coop}
             <div class="location-info">
-                <div>
+                <div class="img-general-info">
                     <div>
                         <p><b>Name: </b>{coop.name}</p>
                         <p><b>Location: </b>{coop.location[0]}</p>
@@ -69,7 +69,7 @@
         margin-top: 8rem;
     }
 
-    .location-info>:first-child {
+    .img-general-info {
         display: flex;
         align-content: center;
         width: 100%;
@@ -78,7 +78,7 @@
         align-items: center;
     }
 
-    .location-info>:first-child>:first-child {
+    .img-general-info>:first-child {
         flex:none;
     }
 
@@ -142,6 +142,26 @@
     #container p {
         font-size: 1.15rem;
         text-align: justify;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .img-general-info {
+            display: flex;
+            flex-direction: column-reverse;
+            align-content: left;
+            width: 100%;
+            gap: 1rem;
+            align-items: left;
+            margin-bottom: 0rem;
+        }
+
+        .img-general-info>:nth-child(2) {
+            width: max-content;
+        }
+
+        .img-general-info>:nth-child(1) {
+            width: 100%;
+        }
     }
 
 </style>
