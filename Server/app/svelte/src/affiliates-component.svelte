@@ -86,7 +86,7 @@
     .affiliate-logo {
         position: relative;
         right: 0;
-        max-height: 6rem;
+        max-height: 8rem;
         max-width: 100%;
         border-radius: 1rem;
     }
@@ -152,7 +152,7 @@
             flex-direction: column;
             align-content: left;
             width: 100%;
-            gap: 1.5rem;
+            gap: 1rem;
             align-items: left;
             margin-bottom: 0rem;
         }

@@ -28,7 +28,7 @@
                 </g>
             </svg>                              
         </button>
-        <p id="footer-copyright">© 2023 A global network of Libertarian Socialists</p>  
+        <p id="footer-copyright">© 2023 Libertarian Socialists</p>  
     </div>
 </footer>
 
