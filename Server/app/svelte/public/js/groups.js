@@ -13,7 +13,14 @@ export let groups = [
         location: ["Latvia, Riga",[56.94748425529816, 24.003027136431925]],
         members: 2,
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
+    },
+    {
+        location: ["Denmark, Copenhagen",[55.6840661150132, 12.557133959514688]],
+        members: 1,
+        contact: ["https://discord.gg/xAPZmyr8B6","Discord invite link"]
     }
+
+    
 ]
 
 export function addMarkersGroups(map) {
