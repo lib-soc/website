@@ -38,7 +38,7 @@
                 <div class="img-general-info">
                     <picture>
                         <source srcset={"/img/affiliates/"+affiliate.logo+".webp"}>
-                        <source srcset={"/img/affiliates/"+affiliate.logo+".png"}>
+                        <source srcset={"/img/affiliates/"+affiliate.logo+".jpg"}>
                         <img class="affiliate-logo" alt="logo">
                     </picture>
                     <div>

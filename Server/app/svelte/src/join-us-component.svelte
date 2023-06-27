@@ -38,14 +38,23 @@ FInd our group, community or cooperative near you and join in order to make a wo
 None of them near you? Not a problem! Join our WhatsApp group and we will help you get started.
 <div id="container">
     <div id="text-container">
-        <h1>Join us</h1>
+        <h1>Join Us</h1>
         <img src="/img/common/join-group.svg" id="join-group" alt="join group">
-        <div id="condition-list">
-            <p>1. Are you against dictatorship and in favor of democracy?</p>
-            <p>2. Are you against exploitation of one human being by another?</p>
-            <p>3. Do you agree that we should cooperate and not compete with each other?</p>
+        <ol id="condition-list">
+            <li>Are you against dictatorship and in favor of democracy?</li>
+            <li>Are you against exploitation of one human being by another?</li>
+            <li>Do you agree that we should cooperate and not compete with each other?</li>
             <p>If the answer is <b>YES</b>, then you are already a libertarian socialist. <b>JOIN US!</b></p>
-        </div>
+        </ol>
+        <h2>What You Will Get</h2>
+        <ol id="value-proposition-list">
+            <li>A community that is always ready to help with all your troubles;</li>
+            <li>Access to the means of production of our cooperatives;</li>
+            <li>Products and services at the cost of production or even for free;</li>
+            <li>Monetary and non-monetary help with opening your own cooperative;</li>
+            <p>and much more!</p>
+        </ol>
+        <h2>Find Us</h2>
         <div id="call-to-action-list">
             <p>Find our</p>
             <ol>
@@ -63,6 +72,27 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 <style>
     @import '/css/common.css';
 
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    #value-proposition-list {
+        margin-bottom: 2rem;
+    }
+
+    #value-proposition-list > li {
+        margin-bottom: 1rem;
+    }
+
+    ol li {
+        position: relative;
+        font-size: 1.15rem;
+        font-family: var(--serif,serif);
+        left: 1.5rem;
+        margin-left: 0;
+        list-style-position: outside
+    }
+
     #join-group {
         position: absolute;
         width: 10.5rem;
@@ -79,7 +109,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
         --margin-bottom: 3rem;
     }
 
-    ol>li {
+    #call-to-action-list > ol>li {
         position: relative;
         font-size: 1.15rem;
         font-family: var(--serif,serif);
@@ -91,7 +121,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
         margin-top: 7rem;
     }
 
-    #condition-list>p {
+    #condition-list>li {
         margin-bottom: 1rem;
     }
 
