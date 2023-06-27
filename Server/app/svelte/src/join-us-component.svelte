@@ -88,8 +88,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
         position: relative;
         font-size: 1.15rem;
         font-family: var(--serif,serif);
-        left: 1.5rem;
-        margin-left: 0;
+        margin-left: 1.5rem;
         list-style-position: outside
     }
 
@@ -113,7 +112,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
         position: relative;
         font-size: 1.15rem;
         font-family: var(--serif,serif);
-        left: 3rem;
+        margin-left: 3rem;
     }
 
     #condition-list {
