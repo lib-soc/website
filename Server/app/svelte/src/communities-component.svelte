@@ -71,7 +71,6 @@
     }
 
     a {
-        font-size: 1.15rem;
         color: #DD1C1A;
     }
 
@@ -88,7 +87,7 @@
 
     h1 {
         margin-bottom: 1rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
     }
 
@@ -108,7 +107,6 @@
     }
 
     #container p {
-        font-size: 1.15rem;
         text-align: justify;
     }
 

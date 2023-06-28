@@ -352,7 +352,6 @@
     }
 
     #container p {
-        font-size: 1.15rem;
         text-align: justify;
     }
 

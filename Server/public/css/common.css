@@ -77,7 +77,8 @@ body {
     font-display: swap;
     src: /*local('DejaVuLGCSerif'),    
         local('DejaVu LGC Serif'),   */ 
-        url('/fonts/DejaVu/DejaVuLGCSerif.woff2') format('woff2'),        
+        /*url('/fonts/DejaVu/DejaVuLGCSerif.woff2') format('woff2'),  */
+        url('/fonts/DejaVu/solitasserifnormregular.woff2') format('woff2'),
         url('/fonts/DejaVu/DejaVuLGCSerif.woff') format('woff');
 }
 
@@ -99,65 +100,82 @@ b {
 
 h1 {
     font-family: var(--sans-serif, sans-serif);
+    color: #222222;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: var(--sans-serif, sans-serif);
     font-weight: bold;
+    color: #222222;
 }
 
 h3 {
     font-family: var(--sans-serif, sans-serif);
-    font-size: 1.6rem
+    font-size: 1.5rem;
+    color: #222222;
 }
 
 h4 {
     font-family: var(--sans-serif, sans-serif);
-    font-size: 1.4rem
+    font-size: 1.3rem;
+    color: #222222;
 }
 
 span {
     font-family: var(--serif, serif);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     height: auto;
     width: auto;
+    color: #222222;
 }
 
 p {
     font-family: var(--serif, serif);
-    font-size: 1.1rem;
-    line-height: 170%;
+    font-size: 1.25rem;
+    line-height: 150%;
+    color: #222222;
+}
+
+a {
+    font-family: var(--serif, serif);
+    font-size: 1.25rem;
+    color: #222222;
+}
+
+li {
+    font-family: var(--serif, serif);
+    font-size: 1.25rem;
+    color: #222222;
 }
 
 b,i,s {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    color: #222222;
 }
 
 label {
     font-family: var(--serif, serif);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: #222222;
 }
 
 sup {
+    font-size: inherit;
     vertical-align: top;
     position: relative;
     top: -0.682rem;
+    color: #222222;
 }
 
 sub {
+    font-size: inherit;
     vertical-align: top;
     position: relative;
     top: 0.34rem;
-}
-
-
-a {
-    font-family: var(--serif, serif);
-    font-size: 1.638rem;
-    color: black;
+    color: #222222;
 }
 
 a:link { text-decoration: none; }

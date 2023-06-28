@@ -86,7 +86,6 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     ol li {
         position: relative;
-        font-size: 1.15rem;
         font-family: var(--serif,serif);
         margin-left: 1.5rem;
         list-style-position: outside
@@ -110,7 +109,6 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     #call-to-action-list > ol>li {
         position: relative;
-        font-size: 1.15rem;
         font-family: var(--serif,serif);
         margin-left: 3rem;
     }
@@ -131,7 +129,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     h1 {
         margin-bottom: 1rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
     }
 
@@ -159,12 +157,10 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
     }
 
     #text-container a {
-        font-size: 1.15rem;
         color: #DD1C1A
     }
 
     #container p {
-        font-size: 1.15rem;
         text-align: justify;
     }
 

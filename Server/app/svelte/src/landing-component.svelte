@@ -101,7 +101,6 @@
     }
 
     #container p {
-        font-size: 1.15rem;
         text-align: justify;
     }
 
@@ -109,6 +108,7 @@
         display: grid;
         grid-template-columns: 1.2fr 1.05fr 1fr;
         grid-gap: 4rem;
+        margin-top: 2rem;
     }
 
     #container-grid > div {

@@ -70,6 +70,10 @@
     background-color: #f7aec0;
 }
 
+#menu li {
+    list-style-type: none;
+}
+
 #nav{
     max-height: 0;
     /*transition: max-height .5s ease-out;*/

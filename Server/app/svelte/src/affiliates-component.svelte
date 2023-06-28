@@ -64,10 +64,11 @@
         transform: translate(-50%);
         z-index: 0;
         opacity: 0.2;
+        margin-top: -2rem;
     }
 
     #text-container>:nth-child(3) {
-        margin-top: 8rem;
+        margin-top: 6rem;
     }
 
     .img-general-info {
@@ -105,7 +106,6 @@
     }
 
     a {
-        font-size: 1.15rem;
         color: #DD1C1A;
     }
 
@@ -122,7 +122,7 @@
 
     h1 {
         margin-bottom: 1rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
     }
 
@@ -142,7 +142,6 @@
     }
 
     #container p {
-        font-size: 1.15rem;
         text-align: justify;
     }
 
