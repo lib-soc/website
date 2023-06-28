@@ -94,7 +94,7 @@
 
     #container {
         margin: auto;
-        max-width: 1200px;
+        max-width: 1000px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }

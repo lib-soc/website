@@ -33,14 +33,14 @@
 
 <!-- Navigation bar -->
 <header bind:this={navbar} id="navbar">
+    <!-- Hamburger icon -->
+    <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
+    <label id="hamb" for="side-menu"><span id="hamb-line"></span></label>
     <!-- Logo -->
     <a id=logo-container href="/">
         <img src="img/common/flag.png" id="navbar-logo" alt="logo">
         <span id="navbar-logo-text">Libertarian socialists</span>
     </a>
-    <!-- Hamburger icon -->
-    <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
-    <label id="hamb" for="side-menu"><span id="hamb-line"></span></label>
     <!-- Menu -->
     <nav id="nav">
         <ul id="menu">

@@ -59,6 +59,8 @@
 #menu a{
     display: block;
     padding: 1.9rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     color: black;
     font-size: 1.4rem;
 }
@@ -133,6 +135,10 @@
     position: fixed;
 }
 
+#side-menu:checked ~ #logo-container {
+    position: fixed;
+}
+
 #side-menu:checked ~ #hamb #hamb-line {
     background: transparent;
 }
@@ -178,13 +184,13 @@
 /* Responsiveness */
 @media only screen and (min-width: 1500px) {
 
-    #navbar{
+    #navbar {
         left: 50%;
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     }
 
-    #nav{
+    #nav {
         max-height: none;
         top: 0;
         position: relative;
@@ -192,15 +198,22 @@
         width: fit-content;
         background-color: transparent;
     }
-    #menu li{
+    #menu li {
         float: left;
     }
-    #menu a:hover{
+
+    #menu a:hover {
         background-color: transparent;
         color: rgb(127, 127, 127);
     }
 
-    #hamb{
+    #menu a {
+        padding: 1.9rem;
+    }
+
+
+
+    #hamb {
         display: none;
     }
 }

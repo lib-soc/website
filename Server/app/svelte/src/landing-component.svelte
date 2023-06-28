@@ -51,32 +51,14 @@
     #container-grid > div > h2 {
         text-align: center;
     }
-
-    #groups-img {
+    
+    #groups-img, #communities-img, #coops-img {
         position: absolute;
-        width: 14rem;
         left: 50%;
         transform: translate(-50%);
         z-index: 0;
         opacity: 0.2;
-    }
-
-    #communities-img {
-        position: absolute;
-        width: 11rem;
-        left: 50%;
-        transform: translate(-50%);
-        z-index: 0;
-        opacity: 0.2;
-    }
-
-    #coops-img {
-        position: absolute;
-        width: 10.5rem;
-        left: 50%;
-        transform: translate(-50%);
-        z-index: 0;
-        opacity: 0.2;
+        height: 8rem;
     }
 
     #text-container {
@@ -91,7 +73,7 @@
 
     #container {
         margin: auto;
-        max-width: 1200px;
+        max-width: 1000px;
         margin-top: 2rem;
         margin-bottom: 5rem;
     }
@@ -106,7 +88,7 @@
 
     #container-grid {
         display: grid;
-        grid-template-columns: 1.2fr 1.05fr 1fr;
+        grid-template-columns: 1.2fr 1.1fr 1fr;
         grid-gap: 4rem;
         margin-top: 2rem;
     }
@@ -117,7 +99,7 @@
 
     #container-grid > div > p {
         position: relative;
-        margin-top: 7rem;
+        margin-top: 5rem;
         z-index: 2;
     }
 

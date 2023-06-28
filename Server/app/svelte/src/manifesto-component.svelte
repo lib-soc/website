@@ -237,7 +237,7 @@
         position: fixed;
         display: flex;
         flex-direction: column;
-        border: #a9a9a9 0.1rem solid;
+        border: #cdcdcd 0.1rem solid;
         border-radius: 1rem;
         padding: 2rem;
         padding-right: 0.8rem;
@@ -250,7 +250,7 @@
     #toggle-content {
         position: relative;
         width: 100%;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-family: var(--sans-serif,sans-serif);
         text-align: left;
         margin-bottom: 1rem;
@@ -280,11 +280,11 @@
         color: black;
         height: auto;
         width: 100%;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.35rem;
         text-align: left;
         font-family: var(--sans-serif,sans-serif);
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .level0 {
@@ -299,7 +299,7 @@
         z-index: 1;
         margin-left: 1rem;
         width: calc(100% - 1rem);
-        border-left: #a9a9a9 0.1rem solid;
+        border-left: #cdcdcd 0.1rem solid;
     }
 
     .heading-button:hover {
@@ -312,7 +312,7 @@
 
     h1 {
         margin-bottom: 1rem;
-        font-size: 2.2rem;
+        font-size: 2rem;
         text-align: center;
     }
 
@@ -328,7 +328,7 @@
     #text-container {
         position: relative;
         display: grid;
-        grid-template-columns: 20rem 800px 20rem;
+        grid-template-columns: 20rem 700px 20rem;
         grid-gap: 2rem;
         max-width: calc(100vw - 4rem);
         margin: auto;

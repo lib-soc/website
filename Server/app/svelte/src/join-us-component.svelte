@@ -135,7 +135,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     #container {
         margin: auto;
-        max-width: 1200px;
+        max-width: 1000px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }

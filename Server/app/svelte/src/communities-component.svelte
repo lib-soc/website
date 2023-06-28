@@ -46,7 +46,7 @@
 
     #communities-img {
         position: absolute;
-        width: 11rem;
+        width: 11.5rem;
         left: 50%;
         transform: translate(-50%);
         z-index: 0;
@@ -97,7 +97,7 @@
 
     #container {
         margin: auto;
-        max-width: 1200px;
+        max-width: 1000px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }

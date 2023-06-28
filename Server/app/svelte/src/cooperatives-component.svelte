@@ -84,7 +84,7 @@
     .coop-logo {
         position: relative;
         right: 0;
-        max-height: 8rem;
+        max-height: 6rem;
         max-width: 100%;
     }
 
@@ -128,7 +128,7 @@
 
     #container {
         margin: auto;
-        max-width: 1200px;
+        max-width: 1000px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }
