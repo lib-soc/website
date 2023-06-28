@@ -88,7 +88,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
         position: relative;
         font-family: var(--serif,serif);
         margin-left: 1.5rem;
-        list-style-position: outside
+        list-style-position: outside;
     }
 
     #join-group {

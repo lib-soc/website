@@ -164,7 +164,7 @@
                     TABLE OF CONTENTS
                     <img bind:this={contentArrow} src="../assets/arrow_down.svg" alt="arrow down" style="transform: scaleY(-1)">
                 </button>
-                <div bind:this={contentBlock} class="module">
+                <div bind:this={contentBlock} class="module" style="display: initial;">
                     {#each contentHeadings as obj}
                         {#if Array.isArray(obj)}
                             {#each obj as obj2}
@@ -240,6 +240,7 @@
         border: #cdcdcd 0.1rem solid;
         border-radius: 1rem;
         padding: 2rem;
+        padding-top: 1rem;
         padding-right: 0.8rem;
         padding-bottom: 1.5rem;
         margin-bottom: 2rem;
@@ -253,13 +254,14 @@
         font-size: 1.2rem;
         font-family: var(--sans-serif,sans-serif);
         text-align: left;
-        margin-bottom: 1rem;
+        padding-bottom: 1rem;
         font-weight: bold;
+        padding-top: 1rem;
     }
 
     #toggle-content img {
         position: absolute;
-        top: 0rem;
+        top: 1rem;
         right: 0.8rem;
         width: 1.5rem;
     }

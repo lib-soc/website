@@ -147,6 +147,7 @@ li {
     font-family: var(--serif, serif);
     font-size: 1.25rem;
     color: #222222;
+    text-align: justify;
 }
 
 b,i,s {
