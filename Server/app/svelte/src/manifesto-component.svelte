@@ -256,12 +256,12 @@
         text-align: left;
         padding-bottom: 1rem;
         font-weight: bold;
-        padding-top: 1rem;
+        padding-top: 0.3rem;
     }
 
     #toggle-content img {
         position: absolute;
-        top: 1rem;
+        top: 0.3rem;
         right: 0.8rem;
         width: 1.5rem;
     }
