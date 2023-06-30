@@ -364,7 +364,7 @@
             display: grid;
             grid-template-columns: auto;
             grid-gap: 2rem;
-            max-width: calc(100vw - 4rem);
+            max-width: calc(1800px,100vw - 4rem);
             margin: auto;
         }
 
@@ -389,6 +389,10 @@
 
         #main {
             grid-column: 1;
+        }
+
+        #container {
+            max-width: min(700px,100vw);
         }
     }
 
