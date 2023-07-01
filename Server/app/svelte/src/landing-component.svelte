@@ -34,7 +34,7 @@
             <div>
                 <h2>COMMUNITIES</h2>
                 <img id="communities-img" src="/img/common/communities.svg" alt="communities">
-                <p>We establish communities based on libertarian socialist principles, where individuals have ownership of their land, houses, and the means of production as well as make decisions using direct democracy. We are gradually expanding our socialist world, one community at a time.</p>
+                <p>We establish communities based on libertarian socialist principles, where communities have ownership of their land, houses, and the means of production as well as make decisions using direct democracy. We are gradually expanding our socialist world, one community at a time.</p>
             </div>
             <div>
                 <h2>COOPERATIVES</h2>
