@@ -3,26 +3,27 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
+    import { writable } from 'svelte/store';
     import { addMarkersGroups } from '/js/groups.js'
     import { addMarkersCoops } from '/js/coops.js'
     import { addMarkersCommunities } from '/js/communities.js'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
-    import { writable } from 'svelte/store';
+    import { loadLocaleContent, getLocale } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
 
     // Main code
     let loaded
+    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"join-us-component",loaded)
+    loadLocaleContent(content,"join-us-component",loaded,(lang) => getLocale(locale,lang))
 
-    function mapCallback(createMap) {
+    function mapCallback(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersGroups(map)
-        addMarkersCoops(map)
-        addMarkersCommunities(map)
+        addMarkersGroups(map,content,locale)
+        addMarkersCoops(map,content,locale)
+        addMarkersCommunities(map,content,locale)
     }
 
     onMount(() => { 
@@ -61,7 +62,7 @@
                     <p>{$content.nearYou}</p>
                 </div>
                 <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
-                <map-component id="map" callback={mapCallback}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
             </div>
         </div>
     {/if}
