@@ -77,8 +77,8 @@ body {
     font-display: swap;
     src: 
         url('/fonts/LoraSerif/Lora-Regular.ttf') format('ttf'),
-        url('/fonts/LoraSerif/lora/Lora-Regular.woff') format('woff'),
-        url('/fonts/LoraSerif/lora/Lora-Regular.woff2') format('woff');
+        url('/fonts/LoraSerif/Lora-Regular.woff') format('woff'),
+        url('/fonts/LoraSerif/Lora-Regular.woff2') format('woff');
 }
 
 .serif {
