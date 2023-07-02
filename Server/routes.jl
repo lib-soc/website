@@ -17,5 +17,5 @@ route("/cooperatives", BasicController.cooperatives, named = :cooperatives)
 
 route("/communities", BasicController.communities, named = :communities)
 
-route("/affiliates", BasicController.affiliates, named = :affiliates)
+route("/partners", BasicController.partners, named = :partners)
 

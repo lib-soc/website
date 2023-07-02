@@ -3,15 +3,23 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
+    import { writable } from 'svelte/store';
     import { coops, addMarkersCoops } from '/js/coops.js'
+    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
-    function mapCallbackCoops(createMap) {
+    let loaded
+    let locale = []
+    let content = writable({})
+
+    loadLocaleContent(content,"cooperatives-component",loaded,(lang) => getLocale(locale,lang))
+
+    function mapCallbackCoops(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersCoops(map)
+        addMarkersCoops(map,content,locale)
     }
 
     onMount(() => { 
@@ -19,38 +27,42 @@
     })
 </script>
 
-<div id="container">
-    <div id="text-container">
-        <h1>Cooperatives</h1>
-        <img id="coops-img" src="/img/common/coops.svg" alt="coops">
-        <p>We establish worker cooperatives that embody a transformative business model where employees own and control the enterprise. Each worker has a voice in decision-making, and profits are distributed based on individual contributions. This participatory structure fosters ownership, motivation, and job satisfaction, creating a more fulfilling work experience as well as challenging the wealth concentration in traditional capitalist businesses.</p>
-        <p>By focusing on employees' needs, our cooperatives create supportive and sustainable work environments that foster social cohesion and job security. We also prioritize the interests of local communities, taking a long-term perspective. With workers making decisions, we avoid harmful short-term profit-driven strategies and instead reinvest our profits, contributing to community development and resilience.</p>
-        <h3>Our cooperatives</h3>
-        <map-component id="map" callback={mapCallbackCoops}></map-component>
-        <h4>Europe</h4>
-        {#each coops as coop}
-            <div class="location-info">
-                <div class="img-general-info">
-                    <div>
-                        <p><b>Name: </b>{coop.name}</p>
-                        <p><b>Location: </b>{coop.location[0]}</p>
-                        <p><b>Market: </b>{coop.market}</p>
-                        <p><b>Workers: </b>{coop.workers}</p>
-                        <p><b>Status: </b>{coop.status}</p>
-                        <p><b>Website: </b><a href={"https://www."+coop.website} target="_blank" rel=noreferrer>{coop.website}</a></p>
-                        <p><b>Contact: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{coop.contact[1]}</a></p>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <div id="container">
+            <div id="text-container">
+                <h1>{$content.heading}</h1>
+                <img id="coops-img" src="/img/common/coops.svg" alt="coops">
+                <p>{$content.p1}</p>
+                <p>{$content.p2}</p>
+                <h3>{$content.subheading1}</h3>
+                <map-component id="map" callback={(createMap) => mapCallbackCoops(createMap,$content,locale)}></map-component>
+                <h4>{$content.subheading2}</h4>
+                {#each coops as coop}
+                    <div class="location-info">
+                        <div class="img-general-info">
+                            <div>
+                                <p><b>{$content.name}: </b>{coop.name}</p>
+                                <p><b>{$content.location}: </b>{coop.location[0][locale[0]]}</p>
+                                <p><b>{$content.market}: </b>{coop.market[locale[0]]}</p>
+                                <p><b>{$content.workers}: </b>{coop.workers}</p>
+                                <p><b>{$content.status}: </b>{coop.status[locale[0]]}</p>
+                                <p><b>{$content.website}: </b><a href={"https://www."+coop.website} target="_blank" rel=noreferrer>{coop.website}</a></p>
+                                <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{coop.contact[1][locale[0]]}</a></p>
+                            </div>
+                            <picture>
+                                <source srcset={"/img/coops/"+coop.logo+".webp"}>
+                                <source srcset={"/img/coops/"+coop.logo+".png"}>
+                                <img class="coop-logo" alt="logo">
+                            </picture>
+                        </div>
+                        <p><b>{$content.description}: </b>{coop.description[locale[0]]}</p>
                     </div>
-                    <picture>
-                        <source srcset={"/img/coops/"+coop.logo+".webp"}>
-                        <source srcset={"/img/coops/"+coop.logo+".png"}>
-                        <img class="coop-logo" alt="logo">
-                    </picture>
-                </div>
-                <p><b>Description: </b>{coop.description}</p>
+                {/each}
             </div>
-        {/each}
-    </div>
-</div>
+        </div>
+    {/if}
+{/key}
 
 <style>
     @import '/css/common.css';
@@ -128,7 +140,7 @@
 
     #container {
         margin: auto;
-        max-width: 1000px;
+        max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }

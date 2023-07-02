@@ -6,17 +6,19 @@
     import { addMarkersGroups } from '/js/groups.js'
     import { addMarkersCoops } from '/js/coops.js'
     import { addMarkersCommunities } from '/js/communities.js'
-    // Import components
-    
-    // Main code
-    
-    
-    
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
+    import { writable } from 'svelte/store';
+
     // Import components
     import "/js/components/map-component.js" 
-    
+
     // Main code
-    export function mapCallback(createMap) {
+    let loaded
+    let content = writable({})
+
+    loadLocaleContent(content,"join-us-component",loaded)
+
+    function mapCallback(createMap) {
         let map = createMap([51.505, -0.09],3)
         addMarkersGroups(map)
         addMarkersCoops(map)
@@ -28,46 +30,43 @@
     })
 </script>
 
-
-Are you against exploitation of one human being by another?
-Do you agree that we should cooperate and not compete with each other?
-In that case, you are already a libertarian socialist. Join us 
-
-FInd our group, community or cooperative near you and join in order to make a world we both envision a reality. 
-
-None of them near you? Not a problem! Join our WhatsApp group and we will help you get started.
-<div id="container">
-    <div id="text-container">
-        <h1>Join Us</h1>
-        <img src="/img/common/join-group.svg" id="join-group" alt="join group">
-        <ol id="condition-list">
-            <li>Are you against dictatorship and in favor of democracy?</li>
-            <li>Are you against exploitation of one human being by another?</li>
-            <li>Do you agree that we should cooperate and not compete with each other?</li>
-            <p>If the answer is <b>YES</b>, then you are already a libertarian socialist. <b>JOIN US!</b></p>
-        </ol>
-        <h2>What You Will Get</h2>
-        <ol id="value-proposition-list">
-            <li>A community that is always ready to help with all your troubles;</li>
-            <li>Access to the means of production of our cooperatives;</li>
-            <li>Products and services at the cost of production or even for free;</li>
-            <li>Monetary and non-monetary help with opening your own cooperative;</li>
-            <p>and much more!</p>
-        </ol>
-        <h2>Find Us</h2>
-        <div id="call-to-action-list">
-            <p>Find our</p>
-            <ol>
-                <li><a href="/groups">group</a>,</li> 
-                <li><a href="/communities">community</a> or</li> 
-                <li><a href="/cooperatives">cooperative</a></li>
-            </ol>
-            <p>near you and join to help make a world we both envision a reality.</p>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <div id="container">
+            <div id="text-container">
+                <h1>{$content.heading}</h1>
+                <img src="/img/common/join-group.svg" id="join-group" alt="join group">
+                <ol id="condition-list">
+                    <li>{$content.condition1}</li>
+                    <li>{$content.condition2}</li>
+                    <li>{$content.condition3}</li>
+                    <p>{@html $content.conditionsOutcome}</p>
+                </ol>
+                <h2>{$content.subheading1}</h2>
+                <ol id="value-proposition-list">
+                    <li>{$content.valueProposition1}</li>
+                    <li>{$content.valueProposition2}</li>
+                    <li>{$content.valueProposition3}</li>
+                    <li>{$content.valueProposition4}</li>
+                    <p>{$content.valueProposition5}</p>
+                </ol>
+                <h2>{$content.subheading2}</h2>
+                <div id="call-to-action-list">
+                    <p>{$content.findOur}</p>
+                    <ol>
+                        <li><a href="/groups">{$content.group}</a>,</li> 
+                        <li><a href="/communities">{$content.community}</a> {$content.or}</li> 
+                        <li><a href="/cooperatives">{$content.cooperative}</a></li>
+                    </ol>
+                    <p>{$content.nearYou}</p>
+                </div>
+                <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
+                <map-component id="map" callback={mapCallback}></map-component>
+            </div>
         </div>
-        <p>None of them near you? Not a problem! Join our <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>WhatsApp group</a> or <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer>Discord server</a> and we will help you start your own.</p>
-        <map-component id="map" callback={mapCallback}></map-component>
-    </div>
-</div>
+    {/if}
+{/key}
+
 
 <style>
     @import '/css/common.css';
@@ -135,7 +134,7 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     #container {
         margin: auto;
-        max-width: 1000px;
+        max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }
@@ -146,6 +145,10 @@ None of them near you? Not a problem! Join our WhatsApp group and we will help y
 
     #call-to-action-list>p {
         margin-bottom: 1rem;
+    }
+
+    #call-to-action-list>:nth-child(1) {
+        margin-bottom: 0.5rem;
     }
 
     #call-to-action-list>:nth-child(2) {

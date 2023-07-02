@@ -1,25 +1,39 @@
 
 export let communities = [
     {
-        location: ["Estonia, Kohtla-Järve",[59.409521829709504, 27.288415912535914]],
-        status: "forming",
+        location: [{
+            en: "Estonia, Kohtla-Järve",
+            ru: "Эстония, Кохтла-Ярве"
+        },
+        [59.409521829709504, 27.288415912535914]],
+        status: {
+            en: "forming",
+            ru: "формируется"
+        },
         members: 2,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsApp invite link"]
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh",
+            {
+                en: "WhatsApp invite link",
+                ru: "WhatsApp ссылка"
+            }]
     }
 ]
 
-export function addMarkersCommunities(map) {
+export function addMarkersCommunities(map,content,locale) {
     for (let g of communities) {
         let coordinates
         let text = ""
         for (let field in g) {
-            let fieldText = field[0].toUpperCase() + field.slice(1) + ": "
+            let fieldText = content[field] + ": "
             if (field=="contact") {
-                text += fieldText + "<a href='" + g.contact[0] + "' target='_blank' rel=noreferrer>" + g.contact[1] + "</a>"
+                text += fieldText + "<a href='" + g.contact[0] + "' target='_blank' rel=noreferrer>" + g.contact[1][locale[0]] + "</a>"
             }
             else if (field=="location") {
-                text += fieldText + g[field][0] + "<br>"
+                text += fieldText + g[field][0][locale[0]] + "<br>"
                 coordinates = g[field][1]
+            }
+            else if (field=="status") {
+                text += fieldText + g[field][locale[0]] + "<br>"
             }
             else {
                 text += fieldText + g[field] + "<br>"

@@ -62,3 +62,47 @@ export function sendText(route,data,callback) {
     xhr.send(data)
 }
 
+function onlyUnique(value, index, array) {
+    return array.indexOf(value) === index;
+}
+
+export function loadLocaleContent(content,componentName,loaded,callback) {
+    let langs
+    let localesAvailable
+    let locale = localStorage.getItem("locale")
+    if (locale==null) {
+        langs = navigator.languages.map(x => x.split("-")[0]).filter(onlyUnique)
+    }
+    getData("/locales/available.json",function(response) {
+        if (locale!=null) {
+            getData("/locales/" + locale + "/" + componentName + ".json" ,function(response) {
+                let parsed = JSON.parse(response)
+                content.set(parsed)
+                if (callback!=undefined) {
+                    callback(locale)
+                }
+                loaded = 1
+            })
+        }
+        else {
+            localesAvailable = JSON.parse(response)
+            for (let lang of langs) {
+                if (localesAvailable.includes(lang))  {
+                    getData("/locales/" + lang + "/" + componentName + ".json" ,function(response) {
+                        let parsed = JSON.parse(response)
+                        content.set(parsed)
+                        if (callback!=undefined) {
+                            callback(locale)
+                        }
+                        loaded = 1
+                    })
+                }
+                break
+            }
+        }
+    })
+}
+
+export function getLocale(locale,lang) {
+    locale[0] = lang
+}

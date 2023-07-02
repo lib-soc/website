@@ -3,16 +3,23 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
+    import { writable } from 'svelte/store';
     import { communities, addMarkersCommunities } from '/js/communities.js'
+    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
+    let loaded
+    let locale = []
+    let content = writable({})
 
-    function mapCallbackCommunities(createMap) {
+    loadLocaleContent(content,"communities-component",loaded,(lang) => getLocale(locale,lang))
+
+    function mapCallbackCommunities(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersCommunities(map)
+        addMarkersCommunities(map,content,locale)
     }
 
     onMount(() => { 
@@ -20,26 +27,30 @@
     })
 </script>
 
-<div id="container">
-    <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
-    <div id="text-container">
-        <h1>Communities</h1>
-        <img id="communities-img" src="/img/common/communities.svg" alt="communities">
-        <p>We establish libertarian socialist communities by buying land, housing and the means of production which are then owned by the members of these communities. There is no private property within the communities and, therefore, exploitation and suffering that comes with it. Decisions are made using direct democracy with a focus on consensus, ensuring that each community member has power over decisions that affect their life. Communities try to establish their own cooperatives in order to finance their development becoming financially independent and sustainable, which allows for their survival and growth. Within communities the gift economy is utilized whenever possible. Each community is a small beacon of socialism within the dark capitalist world showing us how good life can be if only we achieve our goal.</p>
-        <h3>Our communities</h3>
-        <map-component id="map" callback={mapCallbackCommunities}></map-component>
-        <h4>Europe</h4>
-        {#each communities as community}
-            <div class="location-info">
-                <p><b>Location: </b>{community.location[0]}</p>
-                <p><b>Status: </b>{community.status}</p>
-                <p><b>Members: </b>{community.members}</p>
-                <p><b>Contact: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{community.contact[1]}</a></p>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <div id="container">
+            <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
+            <div id="text-container">
+                <h1>{$content.heading}</h1>
+                <img id="communities-img" src="/img/common/communities.svg" alt="communities">
+                <p>{$content.p1}</p>
+                <h3>{$content.subheading1}</h3>
+                <map-component id="map" callback={(createMap) => mapCallbackCommunities(createMap,$content,locale)}></map-component>
+                <h4>{$content.subheading2}</h4>
+                {#each communities as community}
+                    <div class="location-info">
+                        <p><b>{$content.location}: </b>{community.location[0][locale[0]]}</p>
+                        <p><b>{$content.status}: </b>{community.status[locale[0]]}</p>
+                        <p><b>{$content.members}: </b>{community.members}</p>
+                        <p><b>{$content.contact}: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{community.contact[1][locale[0]]}</a></p>
+                    </div>
+                {/each}
+                
             </div>
-        {/each}
-        
-    </div>
-</div>
+        </div>
+    {/if}
+{/key}
 
 <style>
     @import '/css/common.css';
@@ -97,7 +108,7 @@
 
     #container {
         margin: auto;
-        max-width: 1000px;
+        max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }

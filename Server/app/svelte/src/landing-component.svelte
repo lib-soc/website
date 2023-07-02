@@ -3,47 +3,66 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
+    import { writable } from 'svelte/store';
 
     // Import components
     
 
     // Main code
-    
+    let grid
+    let gridWidth
+    let loaded
+    let content = writable({})
 
+    function changeWidth(locale) {
+        if (locale=="ru") {
+            gridWidth = "1.2fr 1.05fr 1fr"
+        }
+        else {
+            gridWidth = "1.2fr 1.1fr 1fr"
+        }
+    }
+
+    loadLocaleContent(content,"landing-component",loaded,changeWidth)
 
     onMount(() => { 
 
     })
 </script>
 
-<div id="container">
-    <picture>
-        <source srcset="/img/crowd.webp">
-        <source srcset="/img/crowd.png">
-        <img id="crowd" alt="crowd">
-    </picture>
-    
-    <div id="text-container">
-        <p>We are people united around a singular cause: bringing down authoritarian exploitative systems represented by various forms of capitalism and replacing them with libertarian socialist systems, with the goal of creating a more equitable and democratic world.</p>
-        <div id="container-grid">
-            <div>
-                <h2>GROUPS</h2>
-                <img id="groups-img" src="/img/common/groups.svg" alt="groups">
-                <p>We organize groups for the purposes of education, advocacy, and mutual aid. Our objective is to demonstrate to people how the current politico-economic systems detrimentally impact our well-being, present them with alternative approaches, and engage in mutual aid to alleviate the challenges of living under capitalism.</p>
-            </div>
-            <div>
-                <h2>COMMUNITIES</h2>
-                <img id="communities-img" src="/img/common/communities.svg" alt="communities">
-                <p>We establish communities based on libertarian socialist principles, where communities have ownership of their land, houses, and the means of production as well as make decisions using direct democracy. We are gradually expanding our socialist world, one community at a time.</p>
-            </div>
-            <div>
-                <h2>COOPERATIVES</h2>
-                <img id="coops-img" src="/img/common/coops.svg" alt="coops">
-                <p>We form worker cooperatives to finance the operations of our groups and communities. Recognizing that economic power influences political power, we consider the establishment of cooperatives to be one of the initial steps towards achieving socialism.</p>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <div id="container">
+            <picture>
+                <source srcset="/img/crowd.webp">
+                <source srcset="/img/crowd.png">
+                <img id="crowd" alt="crowd">
+            </picture>
+            
+            <div id="text-container">
+                <p>{$content.top}</p>
+                <div bind:this={grid} id="container-grid" style="--grid-width: {gridWidth}">
+                    <div>
+                        <h2>{$content.groupsTitle}</h2>
+                        <img id="groups-img" src="/img/common/groups.svg" alt="groups">
+                        <p>{$content.groupsText}</p>
+                    </div>
+                    <div>
+                        <h2>{$content.communitiesTitle}</h2>
+                        <img id="communities-img" src="/img/common/communities.svg" alt="communities">
+                        <p>{$content.communitiesText}</p>
+                    </div>
+                    <div>
+                        <h2>{$content.cooperativesTitle}</h2>
+                        <img id="coops-img" src="/img/common/coops.svg" alt="coops">
+                        <p>{$content.cooperativesText}</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    {/if}
+{/key}
 
 <style>
     @import '/css/common.css';
@@ -88,7 +107,7 @@
 
     #container-grid {
         display: grid;
-        grid-template-columns: 1.2fr 1.1fr 1fr;
+        grid-template-columns: var(--grid-width);
         grid-gap: 4rem;
         margin-top: 2rem;
     }
@@ -103,7 +122,7 @@
         z-index: 2;
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1060px) {
         #container-grid {
             display: grid;
             grid-template-columns: 1fr;

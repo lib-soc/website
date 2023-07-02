@@ -16,8 +16,8 @@
     --grey-blue:hsl(223, 13%, 22%);
     --cream:hsl(34, 43%, 90%);
     --dark-cream:hsl(33, 26%, 84%);
-    --sans-serif: "Space Grotesk";
-    --serif: "DejaVu";
+    --sans-serif: "OpenSans";
+    --serif: "Lora";
 }
 
 svg {
@@ -59,27 +59,25 @@ body {
 /*---Fonts---------------------------------------------------------*/
 
 @font-face {  
-    font-family: 'Space Grotesk';  
+    font-family: 'OpenSans';  
     font-weight: 400;  
     font-style: normal;  
     font-display: swap;
     src: /*local('Space Grotesk Light'),       
         local('SpaceGroteskLight-Regular'), 
         local('Space Grotesk Light Regular'), */
-        url('/fonts/SpaceGrotesk/SpaceGrotesk.woff2') format('woff2'),        
-        url('/fonts/SpaceGrotesk/SpaceGrotesk.woff') format('woff');
+        url('/fonts/OpenSans/opensans.woff2') format('woff2'),        
+        url('/fonts/OpenSans/opensans.woff') format('woff');
 }
 
 @font-face {  
-    font-family: 'DejaVu';  
+    font-family: 'Lora';  
     font-weight: 400;  
     font-style: normal;  
     font-display: swap;
-    src: /*local('DejaVuLGCSerif'),    
-        local('DejaVu LGC Serif'),   */ 
-        /*url('/fonts/DejaVu/DejaVuLGCSerif.woff2') format('woff2'),  */
-        url('/fonts/DejaVu/solitasserifnormregular.woff2') format('woff2'),
-        url('/fonts/DejaVu/DejaVuLGCSerif.woff') format('woff');
+    src: 
+        url('/fonts/Lora/Lora-Regular.ttf') format('ttf'),
+        url('/fonts/lora/Lora-Regular.woff') format('woff');
 }
 
 .serif {
@@ -124,7 +122,7 @@ h4 {
 
 span {
     font-family: var(--serif, serif);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     height: auto;
     width: auto;
     color: #222222;
@@ -132,20 +130,20 @@ span {
 
 p {
     font-family: var(--serif, serif);
-    font-size: 1.25rem;
-    line-height: 150%;
+    font-size: 1.15rem;
+    line-height: 160%;
     color: #222222;
 }
 
 a {
     font-family: var(--serif, serif);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: #222222;
 }
 
 li {
     font-family: var(--serif, serif);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: #222222;
     text-align: justify;
 }

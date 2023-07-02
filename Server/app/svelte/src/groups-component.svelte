@@ -3,40 +3,53 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
+    import { writable } from 'svelte/store';
     import { groups, addMarkersGroups } from '/js/groups.js'
+    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
-    export function mapCallbackGroups(createMap) {
+    let loaded
+    let locale = []
+    let content = writable({})
+
+    loadLocaleContent(content,"groups-component",loaded,(lang) => getLocale(locale,lang))
+
+    function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersGroups(map)
+        addMarkersGroups(map,content,locale)
     }
+    
     onMount(() => { 
 
     })
 </script>
 
-<div id="container">
-    <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
-    <div id="text-container">
-        <h1>Groups</h1>
-        <img id="groups-img" src="/img/common/groups.svg" alt="groups">
-        <p>We aim to raise awareness about the negative impact of current politico-economic systems on our well-being. Through education, community engagement, and analysis, we reveal the flaws and inequalities in capitalist societies. By highlighting these issues, we empower people to question the status quo and imagine fairer and more sustainable alternatives.</p>
-        <p>But our mission goes beyond theory. We engage in mutual aid and collective action to address immediate challenges within capitalism. Through mutual aid, we support each other by sharing resources, knowledge, and skills, fostering solidarity and resilience. Whether it's community gardens, food cooperatives, or support networks, our goal is to make life under capitalism more bearable and create pockets of resistance and alternatives within the system.</p>
-        <h3>Our groups</h3>
-        <map-component id="map" callback={mapCallbackGroups}></map-component>
-        <h4>Europe</h4>
-        {#each groups as group}
-            <div class="location-info">
-                <p><b>Location: </b>{group.location[0]}</p>
-                <p><b>Members: </b>{group.members}</p>
-                <p><b>Contact: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{group.contact[1]}</a></p>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <div id="container">
+            <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
+            <div id="text-container">
+                <h1>{$content.heading}</h1>
+                <img id="groups-img" src="/img/common/groups.svg" alt="groups">
+                <p>{$content.p1}</p>
+                <p>{$content.p2}</p>
+                <h3>{$content.subheading1}</h3>
+                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
+                <h4>{$content.subheading2}</h4>
+                {#each groups as group}
+                    <div class="location-info">
+                        <p><b>{$content.location}: </b>{group.location[0][locale[0]]}</p>
+                        <p><b>{$content.members}: </b>{group.members}</p>
+                        <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{group.contact[1][locale[0]]}</a></p>
+                    </div>
+                {/each}
             </div>
-        {/each}
-    </div>
-</div>
+        </div>
+    {/if}
+{/key}
 
 <style>
     @import '/css/common.css';
@@ -94,7 +107,7 @@
 
     #container {
         margin: auto;
-        max-width: 1000px;
+        max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
     }

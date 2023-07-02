@@ -1,1 +1,345 @@
-import{S as t,i as e,a as i,b as n,s as a,e as o,c as r,n as s,d as l,f as m,g as c,h as g,j as d,o as h,t as f}from"./index-95aedb1a.js";import"../../../../../../../../../js/components/map-component.js";function p(t,e,i){const n=t.slice();return n[1]=e[i],n}function u(t){let e,i,a,m,d,h,p,u,x,b,w,v,y,k,C,j,z,D,T,A,E,F,G,L,O,R,S,W=t[1].name+"",_=t[1].type+"",q=t[1].link+"",H=t[1].description+"";return{c(){e=o("div"),i=o("div"),a=o("picture"),m=o("source"),d=r(),h=o("source"),p=r(),u=o("img"),x=r(),b=o("div"),w=o("p"),v=o("b"),v.textContent="Name: ",y=f(W),k=r(),C=o("p"),j=o("b"),j.textContent="Type: ",z=f(_),D=r(),T=o("p"),A=o("b"),A.textContent="Link: ",E=o("a"),F=f(q),G=r(),L=o("p"),O=o("b"),O.textContent="Description: ",R=f(H),S=r(),l(m,"srcset","/img/affiliates/"+t[1].logo+".webp"),l(h,"srcset","/img/affiliates/"+t[1].logo+".jpg"),l(u,"class","affiliate-logo"),l(u,"alt","logo"),l(E,"href",t[1].link),l(E,"target",";_blank;"),l(E,"rel","noreferrer"),l(i,"class","img-general-info"),l(e,"class","location-info")},m(t,o){n(t,e,o),c(e,i),c(i,a),c(a,m),c(a,d),c(a,h),c(a,p),c(a,u),c(i,x),c(i,b),c(b,w),c(w,v),c(w,y),c(b,k),c(b,C),c(C,j),c(C,z),c(b,D),c(b,T),c(T,A),c(T,E),c(E,F),c(e,G),c(e,L),c(L,O),c(L,R),c(e,S)},p:s,d(t){t&&g(e)}}}function x(t){let e,i,a,h,f,x,b,w,v,y,k,C,j,z=t[0],D=[];for(let e=0;e<z.length;e+=1)D[e]=u(p(t,z,e));return{c(){e=o("div"),i=o("div"),a=o("h1"),a.textContent="Affiliates",h=r(),f=o("img"),b=r(),w=o("p"),w.textContent="We affiliate with organizations and initiatives that align with our mission. Together, we are a united force driven by a shared worldview where there is no place for authoritarian exploitative systems, but where systems promoting equity and democracy thrive.",v=r(),y=o("h3"),y.textContent="Our affiliates",k=r(),C=o("h4"),C.textContent="Online",j=r();for(let t=0;t<D.length;t+=1)D[t].c();this.c=s,l(f,"id","hands-img"),m(f.src,x="/img/common/handshake.svg")||l(f,"src","/img/common/handshake.svg"),l(f,"alt","hands"),l(i,"id","text-container"),l(e,"id","container")},m(t,o){n(t,e,o),c(e,i),c(i,a),c(i,h),c(i,f),c(i,b),c(i,w),c(i,v),c(i,y),c(i,k),c(i,C),c(i,j);for(let t=0;t<D.length;t+=1)D[t].m(i,null)},p(t,[e]){if(1&e){let n;for(z=t[0],n=0;n<z.length;n+=1){const a=p(t,z,n);D[n]?D[n].p(a,e):(D[n]=u(a),D[n].c(),D[n].m(i,null))}for(;n<D.length;n+=1)D[n].d(1);D.length=z.length}},i:s,o:s,d(t){t&&g(e),d(D,t)}}}function b(t){return h((()=>{})),[[{name:"Gaia's Fall",type:"a place to discuss and organize",link:"https://discord.libsoc.org",description:"Gaia's Fall is a server that promotes Solarpunk ideals, environmentalism, anarchism, and anti-capitalism. We encourage civil debates, discussions of theories and possibilities, and the creation of communities focused on shaping a better world. It is our official Discord server where we organize and work together.",logo:"gaias_fall"}]]}class w extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#hands-img{position:absolute;width:10.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2;margin-top:-2rem}#text-container>:nth-child(3){margin-top:6rem}.img-general-info{display:flex;align-content:center;width:100%;gap:1.5rem;align-items:center;margin-bottom:1rem}.img-general-info>:nth-child(2){flex:none}.affiliate-logo{position:relative;right:0;max-height:6rem;max-width:100%;border-radius:1rem}h4{margin-bottom:2rem}.location-info{position:relative;margin-bottom:2rem}.location-info p{margin-bottom:0}a{color:#DD1C1A}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}h3{margin-bottom:2rem}#container{margin:auto;max-width:1000px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}@media only screen and (max-width: 500px){.img-general-info{display:flex;flex-direction:column;align-content:left;width:100%;gap:1rem;align-items:left;margin-bottom:0rem}.img-general-info>:nth-child(1){width:max-content}.img-general-info>:nth-child(2){width:100%}}</style>",e(this,{target:this.shadowRoot,props:i(this.attributes),customElement:!0},b,x,a,{},null),t&&t.target&&n(t.target,this,t.anchor)}}customElements.define("affiliates-component",w);export{w as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, v as validate_each_argument, d as dispatch_dev, c as validate_slots, o as onMount, e as element, f as space, n as noop, g as add_location, h as attr_dev, j as src_url_equal, k as append_dev, l as detach_dev, m as destroy_each, t as text } from './index-ab5c14c8.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\affiliates-component.svelte generated by Svelte v3.52.0 */
+
+const file = "src\\affiliates-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[1] = list[i];
+	return child_ctx;
+}
+
+// (36:8) {#each affiliates as affiliate}
+function create_each_block(ctx) {
+	let div2;
+	let div1;
+	let picture;
+	let source0;
+	let t0;
+	let source1;
+	let t1;
+	let img;
+	let t2;
+	let div0;
+	let p0;
+	let b0;
+	let t4_value = /*affiliate*/ ctx[1].name + "";
+	let t4;
+	let t5;
+	let p1;
+	let b1;
+	let t7_value = /*affiliate*/ ctx[1].type + "";
+	let t7;
+	let t8;
+	let p2;
+	let b2;
+	let a;
+	let t10_value = /*affiliate*/ ctx[1].link + "";
+	let t10;
+	let t11;
+	let p3;
+	let b3;
+	let t13_value = /*affiliate*/ ctx[1].description + "";
+	let t13;
+	let t14;
+
+	const block = {
+		c: function create() {
+			div2 = element("div");
+			div1 = element("div");
+			picture = element("picture");
+			source0 = element("source");
+			t0 = space();
+			source1 = element("source");
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			div0 = element("div");
+			p0 = element("p");
+			b0 = element("b");
+			b0.textContent = "Name: ";
+			t4 = text(t4_value);
+			t5 = space();
+			p1 = element("p");
+			b1 = element("b");
+			b1.textContent = "Type: ";
+			t7 = text(t7_value);
+			t8 = space();
+			p2 = element("p");
+			b2 = element("b");
+			b2.textContent = "Link: ";
+			a = element("a");
+			t10 = text(t10_value);
+			t11 = space();
+			p3 = element("p");
+			b3 = element("b");
+			b3.textContent = "Description: ";
+			t13 = text(t13_value);
+			t14 = space();
+			attr_dev(source0, "srcset", "/img/affiliates/" + /*affiliate*/ ctx[1].logo + ".webp");
+			add_location(source0, file, 39, 24, 1619);
+			attr_dev(source1, "srcset", "/img/affiliates/" + /*affiliate*/ ctx[1].logo + ".jpg");
+			add_location(source1, file, 40, 24, 1704);
+			attr_dev(img, "class", "affiliate-logo");
+			attr_dev(img, "alt", "logo");
+			add_location(img, file, 41, 24, 1788);
+			add_location(picture, file, 38, 20, 1584);
+			add_location(b0, file, 44, 27, 1915);
+			add_location(p0, file, 44, 24, 1912);
+			add_location(b1, file, 45, 27, 1977);
+			add_location(p1, file, 45, 24, 1974);
+			add_location(b2, file, 46, 27, 2039);
+			attr_dev(a, "href", /*affiliate*/ ctx[1].link);
+			attr_dev(a, "target", ";_blank;");
+			attr_dev(a, "rel", "noreferrer");
+			add_location(a, file, 46, 40, 2052);
+			add_location(p2, file, 46, 24, 2036);
+			add_location(div0, file, 43, 20, 1881);
+			attr_dev(div1, "class", "img-general-info");
+			add_location(div1, file, 37, 16, 1532);
+			add_location(b3, file, 49, 19, 2205);
+			add_location(p3, file, 49, 16, 2202);
+			attr_dev(div2, "class", "location-info");
+			add_location(div2, file, 36, 12, 1487);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div2, anchor);
+			append_dev(div2, div1);
+			append_dev(div1, picture);
+			append_dev(picture, source0);
+			append_dev(picture, t0);
+			append_dev(picture, source1);
+			append_dev(picture, t1);
+			append_dev(picture, img);
+			append_dev(div1, t2);
+			append_dev(div1, div0);
+			append_dev(div0, p0);
+			append_dev(p0, b0);
+			append_dev(p0, t4);
+			append_dev(div0, t5);
+			append_dev(div0, p1);
+			append_dev(p1, b1);
+			append_dev(p1, t7);
+			append_dev(div0, t8);
+			append_dev(div0, p2);
+			append_dev(p2, b2);
+			append_dev(p2, a);
+			append_dev(a, t10);
+			append_dev(div2, t11);
+			append_dev(div2, p3);
+			append_dev(p3, b3);
+			append_dev(p3, t13);
+			append_dev(div2, t14);
+		},
+		p: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div2);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(36:8) {#each affiliates as affiliate}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let div1;
+	let div0;
+	let h1;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let p;
+	let t4;
+	let h3;
+	let t6;
+	let h4;
+	let t8;
+	let each_value = /*affiliates*/ ctx[0];
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			h1.textContent = "Affiliates";
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			p = element("p");
+			p.textContent = "We affiliate with organizations and initiatives that align with our mission. Together, we are a united force driven by a shared worldview where there is no place for authoritarian exploitative systems, but where systems promoting equity and democracy thrive.";
+			t4 = space();
+			h3 = element("h3");
+			h3.textContent = "Our affiliates";
+			t6 = space();
+			h4 = element("h4");
+			h4.textContent = "Online";
+			t8 = space();
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			this.c = noop;
+			add_location(h1, file, 30, 8, 1006);
+			attr_dev(img, "id", "hands-img");
+			if (!src_url_equal(img.src, img_src_value = "/img/common/handshake.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "hands");
+			add_location(img, file, 31, 8, 1035);
+			add_location(p, file, 32, 8, 1109);
+			add_location(h3, file, 33, 8, 1384);
+			add_location(h4, file, 34, 8, 1417);
+			attr_dev(div0, "id", "text-container");
+			add_location(div0, file, 29, 4, 971);
+			attr_dev(div1, "id", "container");
+			add_location(div1, file, 27, 0, 884);
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, div0);
+			append_dev(div0, h1);
+			append_dev(div0, t1);
+			append_dev(div0, img);
+			append_dev(div0, t2);
+			append_dev(div0, p);
+			append_dev(div0, t4);
+			append_dev(div0, h3);
+			append_dev(div0, t6);
+			append_dev(div0, h4);
+			append_dev(div0, t8);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div0, null);
+			}
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*affiliates*/ 1) {
+				each_value = /*affiliates*/ ctx[0];
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('affiliates-component', slots, []);
+
+	let affiliates = [
+		{
+			name: "Gaia's Fall",
+			type: "a place to discuss and organize",
+			link: "https://discord.libsoc.org",
+			description: "Gaia's Fall is a server that promotes Solarpunk ideals, environmentalism, anarchism, and anti-capitalism. We encourage civil debates, discussions of theories and possibilities, and the creation of communities focused on shaping a better world. It is our official Discord server where we organize and work together.",
+			logo: "gaias_fall"
+		}
+	];
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<affiliates-component> was created with unknown prop '${key}'`);
+	});
+
+	$$self.$capture_state = () => ({ onMount, affiliates });
+
+	$$self.$inject_state = $$props => {
+		if ('affiliates' in $$props) $$invalidate(0, affiliates = $$props.affiliates);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [affiliates];
+}
+
+class Affiliates_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#hands-img{position:absolute;width:10.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2;margin-top:-2rem}#text-container>:nth-child(3){margin-top:6rem}.img-general-info{display:flex;align-content:center;width:100%;gap:1.5rem;align-items:center;margin-bottom:1rem}.img-general-info>:nth-child(2){flex:none}.affiliate-logo{position:relative;right:0;max-height:6rem;max-width:100%;border-radius:1rem}h4{margin-bottom:2rem}.location-info{position:relative;margin-bottom:2rem}.location-info p{margin-bottom:0}a{color:#DD1C1A}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}h3{margin-bottom:2rem}#container{margin:auto;max-width:1000px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}@media only screen and (max-width: 500px){.img-general-info{display:flex;flex-direction:column;align-content:left;width:100%;gap:1rem;align-items:left;margin-bottom:0rem}.img-general-info>:nth-child(1){width:max-content}.img-general-info>:nth-child(2){width:100%}}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("affiliates-component", Affiliates_component);
+
+export { Affiliates_component as default };

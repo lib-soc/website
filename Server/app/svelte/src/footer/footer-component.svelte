@@ -2,35 +2,46 @@
 
 <script>
 
-// Import statements
+    // Import statements
+    import { writable } from 'svelte/store';
+    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
 
-// Import components
+    // Import components
 
-// Main code
+    // Main code
+    let loaded
+    let locale = []
+    let content = writable({})
+
+    loadLocaleContent(content,"footer-component",loaded,(lang) => getLocale(locale,lang))
 
 </script>
   
-<footer>
-    <div id="footer-content-container">
-        <div id="footer-grid-content-container" class="logged">
-            <div id="contact-us-container">
-                <h2>CONTACT US</h2>
-                <!--<p>Email: <a href="mailto:info@chiron.com">info@libsoc.org</a></p>-->
-                <p>WhatsApp: <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer style="margin-left: 0.5rem;">invite link</a></p>
-                <p>Discord: <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer style="margin-left: 2rem;">invite link</a></p>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <footer>
+            <div id="footer-content-container">
+                <div id="footer-grid-content-container" class="logged">
+                    <div id="contact-us-container">
+                        <h2>{$content.contactUs}</h2>
+                        <!--<p>Email: <a href="mailto:info@chiron.com">info@libsoc.org</a></p>-->
+                        <p>WhatsApp: <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer style="margin-left: 0.5rem;">{$content.inviteLink}</a></p>
+                        <p>Discord: <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer style="margin-left: 2rem;">{$content.inviteLink}</a></p>
+                    </div>
+                </div>
+                <button on:click={() => {location.href='#'}} id="footer-up" aria-label="go up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42.545" height="72.601" viewBox="0 0 42.545 72.601">
+                        <g id="Group_268" data-name="Group 268" transform="translate(-6.177 -2.399)">
+                        <rect id="Rectangle_146" data-name="Rectangle 146" width="11" height="51" rx="5.5" transform="translate(22 24)" fill="#cb1816"/>
+                        <path id="Path_1145" data-name="Path 1145" d="M23.814,4.021a5,5,0,0,1,7.372,0l16.134,17.6c2.94,3.207,1.046,10.4-3.686,8.379S28.02,14.081,28.391,13.524,16.544,27.976,11.366,30,4.741,24.828,7.68,21.621Z" fill="#DD1C1A"/>
+                        </g>
+                    </svg>                              
+                </button>
+                <p id="footer-copyright">© 2023 {$content.libertarianSocialists}</p>  
             </div>
-        </div>
-        <button on:click={() => {location.href='#'}} id="footer-up" aria-label="go up">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42.545" height="72.601" viewBox="0 0 42.545 72.601">
-                <g id="Group_268" data-name="Group 268" transform="translate(-6.177 -2.399)">
-                  <rect id="Rectangle_146" data-name="Rectangle 146" width="11" height="51" rx="5.5" transform="translate(22 24)" fill="#cb1816"/>
-                  <path id="Path_1145" data-name="Path 1145" d="M23.814,4.021a5,5,0,0,1,7.372,0l16.134,17.6c2.94,3.207,1.046,10.4-3.686,8.379S28.02,14.081,28.391,13.524,16.544,27.976,11.366,30,4.741,24.828,7.68,21.621Z" fill="#DD1C1A"/>
-                </g>
-            </svg>                              
-        </button>
-        <p id="footer-copyright">© 2023 Libertarian Socialists</p>  
-    </div>
-</footer>
+        </footer>
+    {/if}
+{/key}
 
 <style>
 

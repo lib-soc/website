@@ -13,7 +13,7 @@ dict_layouts = Dict(
     :groups => generate_layout_html("main",controller,"groups",libraries=["Leaflet"]),
     :cooperatives => generate_layout_html("main",controller,"cooperatives",libraries=["Leaflet"]),
     :communities => generate_layout_html("main",controller,"communities",libraries=["Leaflet"]),
-    :affiliates => generate_layout_html("main",controller,"affiliates",libraries=["Leaflet"]),
+    :partners => generate_layout_html("main",controller,"partners",libraries=["Leaflet"]),
 )
 
 #---General-----------------------------------------------------
@@ -61,9 +61,9 @@ function communities()
     )
 end
 
-function affiliates()
-    html(:basic,:affiliates, layout = dict_layouts[:affiliates], context = @__MODULE__,
-        title = "LibSoc - Affiliates",
+function partners()
+    html(:basic,:partners, layout = dict_layouts[:partners], context = @__MODULE__,
+        title = "LibSoc - Partners",
         description = ""
     )
 end
