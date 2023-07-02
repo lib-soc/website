@@ -20,5 +20,14 @@
     "noneNear": "None of them near you? Not a problem! Join our",
     "WhatsAppGroup": "WhatsApp group",
     "DiscordServer": "Discord server",
-    "helpStart": " and we will help you start your own."
+    "helpStart": " and we will help you start your own.",
+    "location": "Location",
+    "members": "Members",
+    "contact": "Contact",
+    "status": "Status",
+    "name": "Name",
+    "market": "Market",
+    "workers": "Workers",
+    "description": "Description",
+    "website": "Website"
 }
