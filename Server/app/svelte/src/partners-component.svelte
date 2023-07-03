@@ -24,7 +24,7 @@
                 en: "a place to discuss and organize",
                 ru: "место для общения и организации"
             },
-            link: "https://discord.libsoc.org",
+            link: "https://discord.libsoc.org/invite/",
             description: {
                 en: "Gaia's Fall is a server that promotes Solarpunk ideals, environmentalism, anarchism, and anti-capitalism. We encourage civil debates, discussions of theories and possibilities, and the creation of communities focused on shaping a better world. It is our official Discord server where we organize and work together.",
                 ru: "Gaia's Fall — это сервер, который продвигает идеалы соларпанка, защиту окружающей среды, анархизм и антикапитализм. Мы поощряем гражданские дебаты, обсуждение теорий и возможностей, а также создание сообществ, сосредоточенных на формировании лучшего мира. Это наш официальный сервер Discord, на котором мы организуемся и работаем вместе"
