@@ -34,7 +34,6 @@ function serve() {
 
 const walkSync = require("walk-sync");
 const paths = walkSync("./src", {globs: ["**/*.svelte"]}).map(x => "src/"+x)
- 
 
 export default {
 	
@@ -51,15 +50,7 @@ export default {
 				customElement: true,
 			}
 		}),
-		// we'll extract any component CSS out into
-		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
 
-		// If you have external dependencies installed from
-		// npm, you'll most likely need these plugins. In
-		// some cases you'll need additional configuration -
-		// consult the documentation for details:
-		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
 			dedupe: ['svelte']
