@@ -4,17 +4,18 @@
 
     // Import statements    
     import { onMount, getContext } from 'svelte'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
-    import { writable } from 'svelte/store';
+    import { writable } from 'svelte/store'
+    import { loadLocaleContent, getLocale, locales } from "/js/libraries/serverTools.js"
 
     // Main code
     let hambInput
     let navbar
     let localesDropdown
     let loaded
+    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"navbar-component",loaded)
+    loadLocaleContent(content,"navbar-component",loaded,(lang) => getLocale(locale,lang))
 
     function changeNavbar() {
         if (hambInput.checked) {
@@ -43,7 +44,11 @@
 
     function changeLocale(lang) {
         localStorage.setItem("locale",lang)
-        location.reload()
+        let locSplit = location.href.split("/")
+        let localesSymbols = Object.keys(locales)
+        locSplit = locSplit.filter(x => !localesSymbols.includes(x))
+        let loc = locSplit.slice(0,locSplit.length-1).join("/") + "/" + lang + "/" + locSplit[locSplit.length-1]
+        location.href = loc
     }
 
     onMount(() => {
@@ -60,19 +65,19 @@
             <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
             <label id="hamb" for="side-menu"><span id="hamb-line"></span></label>
             <!-- Logo -->
-            <a id=logo-container href="/">
-                <img src="img/common/flag.png" id="navbar-logo" alt="logo">
+            <a id=logo-container href={"/" + locale[0] + "/"}>
+                <img src="/img/common/flag.png" id="navbar-logo" alt="logo">
                 <span id="navbar-logo-text">{$content.orgName}</span>
             </a>
             <!-- Menu -->
             <nav id="nav">
                 <ul id="menu">
-                    <li><a href="/manifesto">{$content.manifesto}</a></li>
-                    <li><a href="/join-us">{$content.joinUs}</a></li>
-                    <li><a href="/groups">{$content.groups}</a></li>
-                    <li><a href="/communities">{$content.communities}</a></li>
-                    <li><a href="/cooperatives">{$content.cooperatives}</a></li>
-                    <li><a href="/partners">{$content.partners}</a></li>
+                    <li><a href={"/"+locale+"/manifesto"}>{$content.manifesto}</a></li>
+                    <li><a href={"/"+locale+"/join-us"}>{$content.joinUs}</a></li>
+                    <li><a href={"/"+locale+"/groups"}>{$content.groups}</a></li>
+                    <li><a href={"/"+locale+"/communities"}>{$content.communities}</a></li>
+                    <li><a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a></li>
+                    <li><a href={"/"+locale+"/partners"}>{$content.partners}</a></li>
                     <li id="locales">
                         <button on:click={showLocales}>
                             <picture>
@@ -83,8 +88,9 @@
                         </button>
                     </li>
                     <div bind:this={localesDropdown} id="locales-dropdown">
-                        <button on:click={() => changeLocale("en")}>English</button>
-                        <button on:click={() => changeLocale("ru")}>Русский</button>
+                        {#each Object.entries(locales) as [loc,name]}
+                            <button on:click={() => changeLocale(loc)}>{name}</button>
+                        {/each}
                     </div>
                 </ul>
             </nav>

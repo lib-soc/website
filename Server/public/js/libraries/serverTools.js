@@ -66,40 +66,38 @@ function onlyUnique(value, index, array) {
     return array.indexOf(value) === index;
 }
 
+export let locales = {
+    en: "English",
+    ru: "Русский"
+}
+
 export function loadLocaleContent(content,componentName,loaded,callback) {
+    let locale
     let langs
-    let localesAvailable
-    let locale = localStorage.getItem("locale")
-    if (locale==null) {
-        langs = navigator.languages.map(x => x.split("-")[0]).filter(onlyUnique)
+    let localesAvailable = Object.keys(locales)
+    let localeUrl = location.href.split("/").filter(x => localesAvailable.includes(x))
+    if (localeUrl.length>0) {
+        locale = localeUrl
     }
-    getData("/locales/available.json",function(response) {
-        if (locale!=null) {
-            getData("/locales/" + locale + "/" + componentName + ".json" ,function(response) {
-                let parsed = JSON.parse(response)
-                content.set(parsed)
-                if (callback!=undefined) {
-                    callback(locale)
-                }
-                loaded = 1
-            })
-        }
-        else {
-            localesAvailable = JSON.parse(response)
-            for (let lang of langs) {
-                if (localesAvailable.includes(lang))  {
-                    getData("/locales/" + lang + "/" + componentName + ".json" ,function(response) {
-                        let parsed = JSON.parse(response)
-                        content.set(parsed)
-                        if (callback!=undefined) {
-                            callback(locale)
-                        }
-                        loaded = 1
-                    })
-                }
-                break
+    else {
+        langs = navigator.languages.map(x => x.split("-")[0]).filter(onlyUnique)
+        for (let lang of langs) {
+            if (localesAvailable.includes(lang))  {
+                locale = lang
             }
+            break
         }
+        if (locale==undefined) {
+            locale = "en"
+        }
+    }
+    getData("/locales/" + locale + "/" + componentName + ".json" ,function(response) {
+        let parsed = JSON.parse(response)
+        content.set(parsed)
+        if (callback!=undefined) {
+            callback(locale)
+        }
+        loaded = 1
     })
 }
 

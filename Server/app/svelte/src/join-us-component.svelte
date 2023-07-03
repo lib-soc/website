@@ -55,9 +55,9 @@
                 <div id="call-to-action-list">
                     <p>{$content.findOur}</p>
                     <ol>
-                        <li><a href="/groups">{$content.group}</a>,</li> 
-                        <li><a href="/communities">{$content.community}</a> {$content.or}</li> 
-                        <li><a href="/cooperatives">{$content.cooperative}</a></li>
+                        <li><a href={"/" + locale[0] + "/groups"}>{$content.group}</a>,</li> 
+                        <li><a href={"/" + locale[0] + "/communities"}>{$content.community}</a> {$content.or}</li> 
+                        <li><a href={"/" + locale[0] + "/cooperatives"}>{$content.cooperative}</a></li>
                     </ol>
                     <p>{$content.nearYou}</p>
                 </div>

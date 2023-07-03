@@ -5,17 +5,23 @@ using Server.BasicController
 
 #---Basic-----------------------------------------------------------
 
-route("/", BasicController.landing, named = :landing)
+route("/:locale/manifesto", BasicController.manifesto, named = :manifest)
+route("/manifesto", BasicController.manifesto)
 
-route("/manifesto", BasicController.manifesto, named = :manifest)
+route("/:locale/join-us", BasicController.join_us, named = :join_us)
+route("/join-us", BasicController.join_us)
 
-route("/join-us", BasicController.join_us, named = :join_us)
+route("/:locale/groups", BasicController.groups, named = :groups)
+route("/groups", BasicController.groups)
 
-route("/groups", BasicController.groups, named = :groups)
+route("/:locale/cooperatives", BasicController.cooperatives, named = :cooperatives)
+route("/cooperatives", BasicController.cooperatives)
 
-route("/cooperatives", BasicController.cooperatives, named = :cooperatives)
+route("/:locale/communities", BasicController.communities, named = :communities)
+route("/communities", BasicController.communities)
 
-route("/communities", BasicController.communities, named = :communities)
+route("/:locale/partners", BasicController.partners, named = :partners)
+route("/partners", BasicController.partners)
 
-route("/partners", BasicController.partners, named = :partners)
-
+route("/:locale", BasicController.landing, named = :landing)
+route("/", BasicController.landing)

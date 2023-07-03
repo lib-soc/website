@@ -5,7 +5,7 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { communities, addMarkersCommunities } from '/js/communities.js'
-    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getLocale } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
