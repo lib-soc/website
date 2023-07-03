@@ -91,14 +91,15 @@ export function loadLocaleContent(content,componentName,loaded,callback) {
             locale = "en"
         }
     }
+    if (callback!=undefined) {
+        callback(locale)
+    }
     getData("/locales/" + locale + "/" + componentName + ".json" ,function(response) {
         let parsed = JSON.parse(response)
         content.set(parsed)
-        if (callback!=undefined) {
-            callback(locale)
-        }
         loaded = 1
     })
+    return locale
 }
 
 export function getLocale(locale,lang) {

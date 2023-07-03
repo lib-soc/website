@@ -5,17 +5,16 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { communities, addMarkersCommunities } from '/js/communities.js'
-    import { loadLocaleContent, getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"communities-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"communities-component",loaded)
 
     function mapCallbackCommunities(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
@@ -40,10 +39,10 @@
                 <h4>{$content.subheading2}</h4>
                 {#each communities as community}
                     <div class="location-info">
-                        <p><b>{$content.location}: </b>{community.location[0][locale[0]]}</p>
-                        <p><b>{$content.status}: </b>{community.status[locale[0]]}</p>
+                        <p><b>{$content.location}: </b>{community.location[0][locale]}</p>
+                        <p><b>{$content.status}: </b>{community.status[locale]}</p>
                         <p><b>{$content.members}: </b>{community.members}</p>
-                        <p><b>{$content.contact}: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{community.contact[1][locale[0]]}</a></p>
+                        <p><b>{$content.contact}: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{community.contact[1][locale]}</a></p>
                     </div>
                 {/each}
                 

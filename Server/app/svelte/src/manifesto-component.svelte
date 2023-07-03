@@ -3,9 +3,10 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
+    import { writable } from 'svelte/store';
     import { getData } from "/js/libraries/serverTools.js"
     import { px2rem } from "/js/libraries/miscTools.js"
-    import { locales } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
     
@@ -24,15 +25,12 @@
     let margin = 0
     let root
     let main
+
+    let loaded
+    let content = writable({})
+
+    let locale = loadLocaleContent(content,"manifesto-component",loaded)
     
-    let locale
-    let localeUrl = location.href.split("/").filter(x => Object.keys(locales).includes(x))
-    if (localeUrl.length==0) {
-        locale = "en"
-    }
-    else {
-        locale = localeUrl[0]
-    }
 
     const htmlDelims = ["ul","ol"]
     getData("/locales/"+ locale + "/manifesto.txt",function(response) {
@@ -166,74 +164,78 @@
     })
 </script>
 
-<div id="container" bind:this={root}>
-    <div id="text-container">
-        {#key key}
-            <div bind:this={contentTable} id="table-content">
-                <button id="toggle-content" bind:this={contentButton} on:click={() => hideBlock(contentArrow,contentBlock)}>
-                    TABLE OF CONTENTS
-                    <img bind:this={contentArrow} src="../assets/arrow_down.svg" alt="arrow down" style="transform: scaleY(-1)">
-                </button>
-                <div bind:this={contentBlock} class="module" style="display: initial;">
-                    {#each contentHeadings as obj}
-                        {#if Array.isArray(obj)}
-                            {#each obj as obj2}
-                            <div class="heading-button-wrapper">
-                                <button bind:this={buttons[obj2.index]} on:click={() => goToChapter(obj2.id)} class="level1 heading-button">
-                                    {obj2.name}
-                                </button>
-                            </div>
+{#key loaded}
+    {#if Object.keys($content).length!=0}
+        <div id="container" bind:this={root}>
+            <div id="text-container">
+                {#key key}
+                    <div bind:this={contentTable} id="table-content">
+                        <button id="toggle-content" bind:this={contentButton} on:click={() => hideBlock(contentArrow,contentBlock)}>
+                            {$content.tableOfContents}
+                            <img bind:this={contentArrow} src="../assets/arrow_down.svg" alt="arrow down" style="transform: scaleY(-1)">
+                        </button>
+                        <div bind:this={contentBlock} class="module" style="display: initial;">
+                            {#each contentHeadings as obj}
+                                {#if Array.isArray(obj)}
+                                    {#each obj as obj2}
+                                    <div class="heading-button-wrapper">
+                                        <button bind:this={buttons[obj2.index]} on:click={() => goToChapter(obj2.id)} class="level1 heading-button">
+                                            {obj2.name}
+                                        </button>
+                                    </div>
+                                    {/each}
+                                {:else}
+                                    <div class="heading-button-wrapper">
+                                        <button bind:this={buttons[obj.index]} on:click={() => goToChapter(obj.id)} class="level0 heading-button">
+                                            {obj.name}
+                                        </button>
+                                    </div>
+                                {/if}
                             {/each}
-                        {:else}
-                            <div class="heading-button-wrapper">
-                                <button bind:this={buttons[obj.index]} on:click={() => goToChapter(obj.id)} class="level0 heading-button">
-                                    {obj.name}
-                                </button>
-                            </div>
-                        {/if}
-                    {/each}
-                </div>
+                        </div>
+                    </div>
+                    <div id="main" bind:this={main}>
+                        {#each manifesto as line}
+                            {#if line!==""}
+                                {#if typeof (line === 'object') && (Object.keys(line)[0]=="ul")}
+                                    <ul>
+                                        {#each line.ul as line2}
+                                            <li>{line2}</li>
+                                        {/each}
+                                    </ul>
+                                {:else if typeof (line === 'object') && (Object.keys(line)[0]=="ol")}
+                                    <ol>
+                                        {#each line.ol as line2}
+                                            <li>
+                                                {@html line2}
+                                            </li>
+                                        {/each}
+                                    </ol>
+                                {:else if typeof (line === 'object') && (line.type=="h3")}
+                                    <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
+                                        <h3 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h3>
+                                    </button>
+                                {:else if typeof (line === 'object') && (line.type=="h2")}
+                                    <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
+                                        <h2 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h2>
+                                    </button>
+                                {:else if line[0]=="#"}
+                                    <h1>{@html line.slice(2,line.length)}</h1>
+                                {:else}
+                                    <p class="margin-end">
+                                        {@html line}
+                                    </p>
+                                {/if}
+                            {:else if false}
+                                <b></b>
+                            {/if}
+                        {/each}
+                    </div>
+                {/key}
             </div>
-            <div id="main" bind:this={main}>
-                {#each manifesto as line}
-                    {#if line!==""}
-                        {#if typeof (line === 'object') && (Object.keys(line)[0]=="ul")}
-                            <ul>
-                                {#each line.ul as line2}
-                                    <li>{line2}</li>
-                                {/each}
-                            </ul>
-                        {:else if typeof (line === 'object') && (Object.keys(line)[0]=="ol")}
-                            <ol>
-                                {#each line.ol as line2}
-                                    <li>
-                                        {@html line2}
-                                    </li>
-                                {/each}
-                            </ol>
-                        {:else if typeof (line === 'object') && (line.type=="h3")}
-                            <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
-                                <h3 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h3>
-                            </button>
-                        {:else if typeof (line === 'object') && (line.type=="h2")}
-                            <button on:click ={contentTable.scrollIntoView({block: 'start'}, true)}  style="display: block;  width: 100%;">
-                                <h2 bind:this={headingsObjects[line.id]} id={line.id}>{@html line.line}</h2>
-                            </button>
-                        {:else if line[0]=="#"}
-                            <h1>{@html line.slice(2,line.length)}</h1>
-                        {:else}
-                            <p class="margin-end">
-                                {@html line}
-                            </p>
-                        {/if}
-                    {:else if false}
-                        <b></b>
-                    {/if}
-                {/each}
-            </div>
-        {/key}
-    </div>
-</div>
+        </div>
+    {/if}
+{/key}
 
 
 <style>

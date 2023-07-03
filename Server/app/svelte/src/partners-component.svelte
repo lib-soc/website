@@ -4,7 +4,7 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
     //import { communities, addMarkersCommunities } from '/js/communities.js'
 
     // Import components
@@ -12,10 +12,9 @@
     
     // Main code
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"partners-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"partners-component",loaded)
 
     let partners = [
         {
@@ -58,11 +57,11 @@
                             </picture>
                             <div>
                                 <p><b>{$content.name}: </b>{partner.name}</p>
-                                <p><b>{$content.type}: </b>{partner.type[locale[0]]}</p>
+                                <p><b>{$content.type}: </b>{partner.type[locale]}</p>
                                 <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
                             </div>
                         </div>
-                        <p><b>{$content.description}: </b>{partner.description[locale[0]]}</p>
+                        <p><b>{$content.description}: </b>{partner.description[locale]}</p>
                     </div>
                 {/each}
             </div>

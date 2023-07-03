@@ -24,7 +24,8 @@
         }
     }
 
-    loadLocaleContent(content,"landing-component",loaded,changeWidth)
+    let locale = loadLocaleContent(content,"landing-component",loaded,changeWidth)
+    changeWidth(locale)
 
     onMount(() => { 
 

@@ -7,17 +7,16 @@
     import { addMarkersGroups } from '/js/groups.js'
     import { addMarkersCoops } from '/js/coops.js'
     import { addMarkersCommunities } from '/js/communities.js'
-    import { loadLocaleContent, getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
 
     // Main code
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"join-us-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"join-us-component",loaded)
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
@@ -55,9 +54,9 @@
                 <div id="call-to-action-list">
                     <p>{$content.findOur}</p>
                     <ol>
-                        <li><a href={"/" + locale[0] + "/groups"}>{$content.group}</a>,</li> 
-                        <li><a href={"/" + locale[0] + "/communities"}>{$content.community}</a> {$content.or}</li> 
-                        <li><a href={"/" + locale[0] + "/cooperatives"}>{$content.cooperative}</a></li>
+                        <li><a href={"/" + locale + "/groups"}>{$content.group}</a>,</li> 
+                        <li><a href={"/" + locale + "/communities"}>{$content.community}</a> {$content.or}</li> 
+                        <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a></li>
                     </ol>
                     <p>{$content.nearYou}</p>
                 </div>

@@ -4,16 +4,15 @@
 
     // Import statements
     import { writable } from 'svelte/store';
-    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
 
     // Main code
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"footer-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"footer-component",loaded)
 
 </script>
   
@@ -74,7 +73,7 @@ footer p, footer a {
     display: grid;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 .not-logged {

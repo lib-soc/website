@@ -5,17 +5,16 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { coops, addMarkersCoops } from '/js/coops.js'
-    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"cooperatives-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"cooperatives-component",loaded)
 
     function mapCallbackCoops(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
@@ -43,12 +42,12 @@
                         <div class="img-general-info">
                             <div>
                                 <p><b>{$content.name}: </b>{coop.name}</p>
-                                <p><b>{$content.location}: </b>{coop.location[0][locale[0]]}</p>
-                                <p><b>{$content.market}: </b>{coop.market[locale[0]]}</p>
+                                <p><b>{$content.location}: </b>{coop.location[0][locale]}</p>
+                                <p><b>{$content.market}: </b>{coop.market[locale]}</p>
                                 <p><b>{$content.workers}: </b>{coop.workers}</p>
-                                <p><b>{$content.status}: </b>{coop.status[locale[0]]}</p>
+                                <p><b>{$content.status}: </b>{coop.status[locale]}</p>
                                 <p><b>{$content.website}: </b><a href={"https://www."+coop.website} target="_blank" rel=noreferrer>{coop.website}</a></p>
-                                <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{coop.contact[1][locale[0]]}</a></p>
+                                <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{coop.contact[1][locale]}</a></p>
                             </div>
                             <picture>
                                 <source srcset={"/img/coops/"+coop.logo+".webp"}>
@@ -56,7 +55,7 @@
                                 <img class="coop-logo" alt="logo">
                             </picture>
                         </div>
-                        <p><b>{$content.description}: </b>{coop.description[locale[0]]}</p>
+                        <p><b>{$content.description}: </b>{coop.description[locale]}</p>
                     </div>
                 {/each}
             </div>

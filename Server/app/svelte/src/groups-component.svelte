@@ -5,17 +5,16 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { groups, addMarkersGroups } from '/js/groups.js'
-    import { loadLocaleContent,getLocale } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent} from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"groups-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"groups-component",loaded)
 
     function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([51.505, -0.09],3)
@@ -41,9 +40,9 @@
                 <h4>{$content.subheading2}</h4>
                 {#each groups as group}
                     <div class="location-info">
-                        <p><b>{$content.location}: </b>{group.location[0][locale[0]]}</p>
+                        <p><b>{$content.location}: </b>{group.location[0][locale]}</p>
                         <p><b>{$content.members}: </b>{group.members}</p>
-                        <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{group.contact[1][locale[0]]}</a></p>
+                        <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{group.contact[1][locale]}</a></p>
                     </div>
                 {/each}
             </div>

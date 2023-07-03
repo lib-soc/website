@@ -5,17 +5,16 @@
     // Import statements    
     import { onMount, getContext } from 'svelte'
     import { writable } from 'svelte/store'
-    import { loadLocaleContent, getLocale, locales } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, locales } from "/js/libraries/serverTools.js"
 
     // Main code
     let hambInput
     let navbar
     let localesDropdown
     let loaded
-    let locale = []
     let content = writable({})
 
-    loadLocaleContent(content,"navbar-component",loaded,(lang) => getLocale(locale,lang))
+    let locale = loadLocaleContent(content,"navbar-component",loaded)
 
     function changeNavbar() {
         if (hambInput.checked) {
@@ -65,7 +64,7 @@
             <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
             <label id="hamb" for="side-menu"><span id="hamb-line"></span></label>
             <!-- Logo -->
-            <a id=logo-container href={"/" + locale[0] + "/"}>
+            <a id=logo-container href={"/" + locale + "/"}>
                 <img src="/img/common/flag.png" id="navbar-logo" alt="logo">
                 <span id="navbar-logo-text">{$content.orgName}</span>
             </a>
