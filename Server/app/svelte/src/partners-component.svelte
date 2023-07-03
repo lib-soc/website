@@ -59,7 +59,7 @@
                             <div>
                                 <p><b>{$content.name}: </b>{partner.name}</p>
                                 <p><b>{$content.type}: </b>{partner.type[locale[0]]}</p>
-                                <p><b>{$content.link}: </b><a href={partner.link[locale[0]]} target=;_blank; rel=noreferrer>{partner.link}</a></p>
+                                <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
                             </div>
                         </div>
                         <p><b>{$content.description}: </b>{partner.description[locale[0]]}</p>

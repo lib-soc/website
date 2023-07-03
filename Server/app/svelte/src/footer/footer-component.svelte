@@ -37,7 +37,7 @@
                         </g>
                     </svg>                              
                 </button>
-                <p id="footer-copyright">© 2023 {$content.libertarianSocialists}</p>  
+                <p id="footer-copyright">Licensed under a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/legalcode "  target="_blank" rel=noreferrer >CC BY 4.0 license.</a></p>  
             </div>
         </footer>
     {/if}
@@ -46,6 +46,197 @@
 <style>
 
 @import '/css/common.css';
-@import '/css/footer.css';
+
+/*---Footer----------------------------------------------------*/
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background: #5B6970;/*var(--dark-green);*/
+    border-top: #cb1816 solid 0.5rem;
+}
+
+footer p, footer a {
+    font-family: var(--sans-serif);
+}
+
+#footer-content-container {
+    position: relative;
+    margin: auto;
+    padding-top: 2rem;
+    max-width: 116rem;
+    width: 97vw;
+}
+
+#footer-grid-content-container {
+    display: grid;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1.4rem;
+}
+
+.not-logged {
+    grid-template-columns: auto auto auto 2rem;
+}
+
+.logged {
+    grid-template-columns: auto auto 2rem;
+}
+
+footer h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+#footer-copyright {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    bottom: 0rem;
+    height: 3rem;
+    top: 0rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#footer-copyright * {
+    font-size: 1rem;
+}
+
+
+#tag-line {
+    position: relative;
+    margin: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+footer a {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+footer p, footer label {
+    display: block;
+    font-size: 1.2rem;
+    color: #d8d8d8;
+    font-family: var(--sans-serif,sans-serif);
+    margin-bottom: 0.5rem;
+}
+
+#newsletter-container h3 {
+    margin-bottom: 0.99rem;
+}
+
+#newsletter-container p {
+    width: 28.665rem;
+    margin-bottom: 0.48rem;
+}
+
+#newsletterEmailInput {
+    height: 2.5rem;
+    width: 20.5rem;
+    border: 0;
+    border-radius: 0.4rem 0 0 0.4rem;
+    filter: drop-shadow( 0.07rem 0.14rem 0.07rem rgb(0 0 0 / 0.4));
+}
+
+#newsletterEmailInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--c,gray);
+    opacity: 1; /* Firefox */
+}  
+
+#newsletterEmailButton {
+    position: absolute;
+    width: 6.8rem;
+    height: 2.5rem;
+    background: #F29E9D;
+    color: #ffffff;
+    font-family: var(--sans-serif,sans-serif);
+    font-size: 1.4rem;
+    border-radius: 0 0.2rem 0.2rem 0;
+    filter: drop-shadow( 0.07rem 0.14rem 0.07rem rgb(0 0 0 / 0.4));
+}
+
+#newsletterEmailButton:active {
+    background: #E44644;
+}
+
+#contact-us-container {
+    width: 16rem;
+}
+
+#contact-us-container h3 {
+    margin-bottom: 0.99rem;
+}
+
+#legal-info-container {
+    width: 9.6rem;
+}
+
+#legal-info-container h3 {
+    margin-bottom: 0.99rem;
+}
+
+#legal-info-container p {
+    margin-bottom: 0.48rem;
+}
+
+#legal-info-container a {
+    display: block;
+    margin-bottom: 0.48rem;
+}
+
+
+#footer-up {
+    position: absolute;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 3.4rem;
+    top: 4rem;
+    right: 2rem;
+    background: #ffffff;
+}
+
+#footer-up svg {
+    width: 40%;
+    height: auto;
+}
+
+.grass{
+    position: absolute;
+    top: -3.8rem;
+    --height: 3.82rem;
+    filter: drop-shadow( 0.07rem 0.14rem 0.07rem rgb(0 0 0 / 0.4));
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1170px) {
+    .not-logged {
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+        row-gap: 2rem;
+    }
+
+    .logged {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        row-gap: 2rem;
+    }
+
+    #footer-copyright {
+        height: 1rem;
+        top: -2rem;
+    }
+
+    #newsletterEmailInput {
+        width: 18rem;
+    }
+}
 
 </style>
