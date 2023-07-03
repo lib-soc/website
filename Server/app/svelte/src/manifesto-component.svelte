@@ -5,6 +5,7 @@
     import { onMount } from 'svelte'
     import { getData } from "/js/libraries/serverTools.js"
     import { px2rem } from "/js/libraries/miscTools.js"
+    import { locales } from "/js/libraries/serverTools.js"
 
     // Import components
     
@@ -24,8 +25,17 @@
     let root
     let main
     
+    let locale
+    let localeUrl = location.href.split("/").filter(x => Object.keys(locales).includes(x))
+    if (localeUrl.length==0) {
+        locale = "en"
+    }
+    else {
+        locale = localeUrl[0]
+    }
+
     const htmlDelims = ["ul","ol"]
-    getData("/assets/manifesto.txt",function(response) {
+    getData("/locales/"+ locale + "/manifesto.txt",function(response) {
         let splitText = response.split(/\r?\n/)
         let currentChapter
         let cnt = 0
