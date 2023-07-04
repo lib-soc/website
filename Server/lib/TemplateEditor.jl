@@ -21,7 +21,6 @@ function register_components()
             n = filename[1:end-3]
             push!(components_names,n)
             Genie.Renderer.Html.register_normal_element(replace(n,"-" => "__"))
-            @info n
         end
     end
     return 

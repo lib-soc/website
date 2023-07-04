@@ -1,3 +1,4 @@
+#=
 using SearchLight
 using Genie
 
@@ -15,3 +16,4 @@ end
 
 SearchLight.Configuration.load(context = @__MODULE__)
 SearchLight.connect()
+=#
