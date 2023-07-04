@@ -25,7 +25,7 @@
                         <h2>{$content.contactUs}</h2>
                         <!--<p>Email: <a href="mailto:info@chiron.com">info@libsoc.org</a></p>-->
                         <p>WhatsApp: <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer style="margin-left: 0.5rem;">{$content.inviteLink}</a></p>
-                        <p>Discord: <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer style="margin-left: 2rem;">{$content.inviteLink}</a></p>
+                        <p>Discord: <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer style="margin-left: 1.8rem;">{$content.inviteLink}</a></p>
                     </div>
                 </div>
                 <button on:click={() => {location.href='#'}} id="footer-up" aria-label="go up">
@@ -86,7 +86,7 @@ footer p, footer a {
 
 footer h2 {
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
@@ -110,19 +110,19 @@ footer h2 {
 #tag-line {
     position: relative;
     margin: auto;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
     padding-bottom: 1rem;
 }
 
 footer a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #ffffff;
 }
 
 footer p, footer label {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #d8d8d8;
     font-family: var(--sans-serif,sans-serif);
     margin-bottom: 0.5rem;

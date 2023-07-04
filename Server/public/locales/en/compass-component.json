@@ -1,0 +1,120 @@
+{
+    "heading": "Political compass",
+    "qs": [ 
+        {
+            "q": "Production should be driven by ... ",
+            "as": [
+                ["individual entrepreneurial initiative and wealth",["C"]],
+                ["the directives and plans set by the people in charge",["V"]],
+                ["collective decision-making and agreement",["LS"]]
+            ]  
+        },
+        {
+            "q": "Decision-making power at work should belong to ...",
+            "as": [
+                ["those who own the place due to having wealth or political power",["C"]],
+                ["those who work there",["LS"]]
+            ]  
+        },
+        {
+            "q": "Distribution of work should be based on ...",
+            "as": [
+                ["opportunities in the job market and wealth",["C"]],
+                ["the directives and assignments given by the people in charge",["V"]],
+                ["collective planning and equitable allocation according to societal needs",["LS"]]
+            ]  
+        },
+        {
+            "q": "The means of production should be owned and controlled by ...",
+            "as": [
+                ["wealthy individuals",["C"]],
+                ["the people in charge of the state apparatus",["V"]],
+                ["the community as a whole",["LS"]]
+            ]  
+        },
+        {
+            "q": "The production process should prioritize ...",
+            "as": [
+                ["cost-effectiveness",["C"]],
+                ["whatever the people in charge say",["V"]],
+                ["needs and sustainability",["LS"]]
+            ]  
+        },
+        {
+            "q": "Infinite growth of production leads to ...",
+            "as": [
+                ["all the good stuff",["C","V"]],
+                ["destruction of our planet",["LS"]]
+            ]  
+        },
+        {
+            "q": "Distribution should happen based on ...",
+            "as": [
+                ["wealth",["C"]],
+                ["whatever the people in charge say",["V"]],
+                ["collective agreement",["LS"]]
+            ]  
+        },
+        {
+            "q": "Social safety nets should be ...",
+            "as": [
+                ["minimized to encourage individual self-reliance",["C"]],
+                ["controlled and distributed by the people in charge",["V"]],
+                ["comprehensive and provided as a collective responsibility",["LS"]]
+            ]  
+        },
+        {
+            "q": "Access to education should be ...",
+            "as": [
+                ["dependent on financial means",["C"]],
+                ["regulated and controlled by the people in charge to shape societal values",["V"]],
+                ["guaranteed as a universal right",["LS"]]
+            ]  
+        },
+        {
+            "q": "Most people are ...",
+            "as": [
+                ["incapable of making good decisions and have to be led like sheep",["C","V"]],
+                ["capable of making good decision if given an opportunity and independence",["LS"]]
+            ]  
+        },
+        {
+            "q": "Power corrupts ...",
+            "as": [
+                ["sometimes, which is why we have several groups of people in power that give power to each other from time to time based on who had a better PR campaign",["C"]],
+                ["everyone but our supreme benevolent dictators",["V"]],
+                ["everyone",["LS"]]
+            ]  
+        },
+        {
+            "q": "Decisions should happen based on ...",
+            "as": [
+                ["whatever the people in charge say",["C","V"]],
+                ["collective agreement",["LS"]]
+            ]  
+        },
+        {
+            "q": "Use of violence is ...",
+            "as": [
+                ["justified to allow the people in charge to stay in power",["C","V"]],
+                ["unacceptable",["LS"]]
+            ]  
+        },
+        {
+            "q": "Innovation and technological development should be driven by ...",
+            "as": [
+                ["market competition and individual incentives",["C"]],
+                ["objectives set by the people in charge",["V"]],
+                ["collective research and shared knowledge",["LS"]]
+            ]  
+        },
+        {
+            "q": "Ownership of intellectual property rights should belong to ...",
+            "as": [
+                ["the individual inventors or their employers",["C"]],
+                ["the people in charge who regulate and control intellectual property",["V"]],
+                ["the community and shared knowledge",["LS"]]
+            ]  
+        }
+    ]
+}

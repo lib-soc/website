@@ -14,6 +14,7 @@ dict_layouts = Dict(
     :cooperatives => generate_layout_html("main",controller,"cooperatives",libraries=["Leaflet"]),
     :communities => generate_layout_html("main",controller,"communities",libraries=["Leaflet"]),
     :partners => generate_layout_html("main",controller,"partners",libraries=["Leaflet"]),
+    :compass => generate_layout_html("main",controller,"compass"),
 )
 
 #---Page info-----------------------------------------------------
@@ -95,6 +96,17 @@ const partners_info = Dict(
     )
 )
 
+const compass_info = Dict(
+    "en" => Dict(
+        :title => "LibSoc - Political Compass",
+        :description => ""
+    ),
+    "ru" => Dict(
+        :title => "LibSoc - Политический компас",
+        :description => ""
+    )
+)
+
 function get_locale()
     data = payload()
     if :locale in keys(data)
@@ -159,6 +171,14 @@ function partners()
     html(:basic,:partners, layout = dict_layouts[:partners], context = @__MODULE__,
         title = partners_info[locale][:title],
         description = partners_info[locale][:description]
+    )
+end
+
+function political_compass()
+    locale = get_locale()
+    html(:basic,:compass, layout = dict_layouts[:compass], context = @__MODULE__,
+        title = compass_info[locale][:title],
+        description = compass_info[locale][:description]
     )
 end
 

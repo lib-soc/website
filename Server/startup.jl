@@ -18,3 +18,4 @@ if ENV["GENIE_ENV"]=="dev"
 else
     Genie.up(async=false)
 end
+
