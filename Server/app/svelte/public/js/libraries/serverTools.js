@@ -92,10 +92,10 @@ export function loadLocaleContent(content,componentName,loaded,callback) {
         }
     }
     getData("/locales/" + locale + "/" + componentName + ".json" ,function(response) {
-        if (callback!=undefined) {
-            callback(locale)
-        }
         let parsed = JSON.parse(response)
+        if (callback!=undefined) {
+            callback(parsed)
+        }
         content.set(parsed)
         loaded = 1
     })

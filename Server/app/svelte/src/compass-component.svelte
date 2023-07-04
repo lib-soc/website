@@ -5,13 +5,14 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
+    import { shuffleArray } from "/js/libraries/miscTools.js"
 
     // Import components
     
     // Main code
     let loaded
     let content = writable({})
-    let locale = loadLocaleContent(content,"compass-component",loaded)
+    let locale = loadLocaleContent(content,"compass-component",loaded,contentCallback)
 
     let qTag = 0
     let answers = []
@@ -19,6 +20,12 @@
     let capitalismScore = ""
     let vanguardismScore = ""
     let socialismScore = ""
+
+    function contentCallback(content) {
+        for (let q of content.qs) {
+            shuffleArray(q.as)
+        }
+    }
 
     function next(i) {
         if (answers[i]!=undefined) {

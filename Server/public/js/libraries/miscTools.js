@@ -38,7 +38,6 @@ export function px2rem(px) {
  * 
  * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
 */
-
 export function getTextWidth(text, font) {
     // re-use canvas object for better performance
     const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
@@ -108,5 +107,12 @@ export function validatePosNumber(event,input,callback,max) {
     }
     else {
         callback(input.value)
+    }
+}
+
+export function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
