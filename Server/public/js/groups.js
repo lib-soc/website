@@ -9,8 +9,22 @@ export let groups = [
         members: 1,
         contact: ["https://discord.gg/xAPZmyr8B6",
         {
-            en: "WhatsApp invite link",
+            en: "Discord invite link",
             ru: "Discord ссылка"
+        }]
+    },
+    {
+        location: [
+            {
+                en: "Denmark, Kolding",
+                ru: "Дания, Колдинг"
+            },
+        [55.49261908652738, 9.470268969851743]],
+        members: 1,
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh",
+        {
+            en: "WhatsApp invite link",
+            ru: "WhatsApp ссылка"
         }]
     },
     {
