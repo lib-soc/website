@@ -6,7 +6,7 @@ export let groups = [
                 ru: "Дания, Копенгаген"
             },
         [55.6840661150132, 12.557133959514688]],
-        members: 1,
+        members: 2,
         contact: ["https://discord.gg/xAPZmyr8B6",
         {
             en: "WhatsApp invite link",
