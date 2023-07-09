@@ -1,87 +1,42 @@
 export let groups = [
     {
-        location: [
-            {
-                en: "Denmark, Copenhagen",
-                ru: "Дания, Копенгаген"
-            },
-        [55.6840661150132, 12.557133959514688]],
+        location: ["DenmarkCopenhagen",[55.6840661150132, 12.557133959514688]],
         members: 1,
-        contact: ["https://discord.gg/xAPZmyr8B6",
-        {
-            en: "Discord invite link",
-            ru: "Discord ссылка"
-        }]
+        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
     },
     {
-        location: [
-            {
-                en: "Denmark, Kolding",
-                ru: "Дания, Колдинг"
-            },
-        [55.49261908652738, 9.470268969851743]],
+        location: ["DenmarkKolding", [55.49261908652738, 9.470268969851743]],
         members: 1,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh",
-        {
-            en: "WhatsApp invite link",
-            ru: "WhatsApp ссылка"
-        }]
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
     },
     {
-        location: [
-            {
-                en: "Estonia, Kohtla-Järve",
-                ru: "Эстония, Кохтла-Ярве"
-            },
-        [59.40629447076191, 27.280605339416322]],
+        location: ["EstoniaKohtlaJarve", [59.40629447076191, 27.280605339416322]],
         members: 3,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh",
-            {
-                en: "WhatsApp invite link",
-                ru: "WhatsApp ссылка"
-            }]
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
     },
     {
-        location: [
-            {
-                en: "Greece, Athens",
-                ru: "Греция, Афины"
-            },
-            [37.94877252621736, 23.677622972996158]],
+        location: ["GreeceAthens", [37.94877252621736, 23.677622972996158]],
         members: 1,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh",
-            {
-                en: "WhatsApp invite link",
-                ru: "WhatsApp ссылка"
-            }]
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
     },
     {
-        location: [
-            {
-                en: "Latvia, Riga",
-                ru: "Латвия, Рига"
-            },
-            [56.94748425529816, 24.003027136431925]],
+        location: ["LatviaRiga", [56.94748425529816, 24.003027136431925]],
         members: 2,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh",
-            {
-                en: "WhatsApp invite link",
-                ru: "WhatsApp ссылка"
-            }]
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
     },
 ]
 
-export function addMarkersGroups(map,content,locale) {
+export function addMarkersGroups(map,content) {
     for (let g of groups) {
         let coordinates
         let text = ""
         for (let field in g) {
             let fieldText = content[field] + ": "
             if (field=="contact") {
-                text += fieldText + "<a href='" + g.contact[0] + "' target='_blank' rel=noreferrer>" + g.contact[1][locale[0]] + "</a>"
+                text += fieldText + "<a href='" + g.contact[0] + "' target='_blank' rel=noreferrer>" + content[g.contact[1]] + "</a>"
             }
             else if (field=="location") {
-                text += fieldText + g[field][0][locale[0]] + "<br>"
+                text += fieldText + content[g[field][0]] + "<br>"
                 coordinates = g[field][1]
             }
             else {

@@ -6,5 +6,12 @@
     "subheading2": "Europe",
     "location": "Location",
     "members": "Members",
-    "contact": "Contact"
+    "contact": "Contact",
+    "DenmarkCopenhagen": "Denmark, Copenhagen",
+    "DenmarkKolding": "Denmark, Kolding",
+    "EstoniaKohtlaJarve": "Estonia, Kohtla-Järve",
+    "GreeceAthens": "Greece, Athens",
+    "LatviaRiga": "Latvia, Riga",
+    "DiscordInviteLink": "Discord invite link",
+    "WhatsAppInviteLink": "WhatsApp invite link"
 }

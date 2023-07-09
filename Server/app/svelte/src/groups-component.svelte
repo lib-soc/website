@@ -16,9 +16,9 @@
 
     let locale = loadLocaleContent(content,"groups-component",loaded)
 
-    function mapCallbackGroups(createMap,content,locale) {
+    function mapCallbackGroups(createMap,content) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersGroups(map,content,locale)
+        addMarkersGroups(map,content)
     }
     
     onMount(() => { 
@@ -40,9 +40,9 @@
                 <h4>{$content.subheading2}</h4>
                 {#each groups as group}
                     <div class="location-info">
-                        <p><b>{$content.location}: </b>{group.location[0][locale]}</p>
+                        <p><b>{$content.location}: </b>{$content[group.location[0]]}</p>
                         <p><b>{$content.members}: </b>{group.members}</p>
-                        <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{group.contact[1][locale]}</a></p>
+                        <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{$content[group.contact[1]]}</a></p>
                     </div>
                 {/each}
             </div>

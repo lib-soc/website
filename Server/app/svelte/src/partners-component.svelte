@@ -5,7 +5,7 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
-    //import { communities, addMarkersCommunities } from '/js/communities.js'
+    import { partners } from '/js/partners.js'
 
     // Import components
     import "/js/components/map-component.js" 
@@ -15,22 +15,6 @@
     let content = writable({})
 
     let locale = loadLocaleContent(content,"partners-component",loaded)
-
-    let partners = [
-        {
-            name: "Gaia's Fall",
-            type: {
-                en: "a place to discuss and organize",
-                ru: "место для общения и организации"
-            },
-            link: "https://discord.libsoc.org/invite/",
-            description: {
-                en: "Gaia's Fall is a server that promotes Solarpunk ideals, environmentalism, anarchism, and anti-capitalism. We encourage civil debates, discussions of theories and possibilities, and the creation of communities focused on shaping a better world. It is our official Discord server where we organize and work together.",
-                ru: "Gaia's Fall — это сервер, который продвигает идеалы соларпанка, защиту окружающей среды, анархизм и антикапитализм. Мы поощряем гражданские дебаты, обсуждение теорий и возможностей, а также создание сообществ, сосредоточенных на формировании лучшего мира. Это наш официальный сервер Discord, на котором мы организуемся и работаем вместе"
-            },
-            logo: "gaias_fall"
-        }
-    ]
 
     onMount(() => { 
 
@@ -57,11 +41,11 @@
                             </picture>
                             <div>
                                 <p><b>{$content.name}: </b>{partner.name}</p>
-                                <p><b>{$content.type}: </b>{partner.type[locale]}</p>
+                                <p><b>{$content.type}: </b>{$content[partner.type]}</p>
                                 <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
                             </div>
                         </div>
-                        <p><b>{$content.description}: </b>{partner.description[locale]}</p>
+                        <p><b>{$content.description}: </b>{$content[partner.description]}</p>
                     </div>
                 {/each}
             </div>

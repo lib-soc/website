@@ -16,9 +16,9 @@
 
     let locale = loadLocaleContent(content,"communities-component",loaded)
 
-    function mapCallbackCommunities(createMap,content,locale) {
+    function mapCallbackCommunities(createMap,content) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersCommunities(map,content,locale)
+        addMarkersCommunities(map,content)
     }
 
     onMount(() => { 
@@ -39,10 +39,10 @@
                 <h4>{$content.subheading2}</h4>
                 {#each communities as community}
                     <div class="location-info">
-                        <p><b>{$content.location}: </b>{community.location[0][locale]}</p>
-                        <p><b>{$content.status}: </b>{community.status[locale]}</p>
+                        <p><b>{$content.location}: </b>{$content[community.location[0]]}</p>
+                        <p><b>{$content.status}: </b>{$content[community.status]}</p>
                         <p><b>{$content.members}: </b>{community.members}</p>
-                        <p><b>{$content.contact}: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{community.contact[1][locale]}</a></p>
+                        <p><b>{$content.contact}: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{$content[community.contact[1]]}</a></p>
                     </div>
                 {/each}
                 

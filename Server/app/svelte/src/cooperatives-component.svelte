@@ -16,9 +16,9 @@
 
     let locale = loadLocaleContent(content,"cooperatives-component",loaded)
 
-    function mapCallbackCoops(createMap,content,locale) {
+    function mapCallbackCoops(createMap,content) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersCoops(map,content,locale)
+        addMarkersCoops(map,content)
     }
 
     onMount(() => { 
@@ -42,12 +42,12 @@
                         <div class="img-general-info">
                             <div>
                                 <p><b>{$content.name}: </b>{coop.name}</p>
-                                <p><b>{$content.location}: </b>{coop.location[0][locale]}</p>
-                                <p><b>{$content.market}: </b>{coop.market[locale]}</p>
+                                <p><b>{$content.location}: </b>{$content[coop.location[0]]}</p>
+                                <p><b>{$content.market}: </b>{$content[coop.market]}</p>
                                 <p><b>{$content.workers}: </b>{coop.workers}</p>
-                                <p><b>{$content.status}: </b>{coop.status[locale]}</p>
+                                <p><b>{$content.status}: </b>{$content[coop.status]}</p>
                                 <p><b>{$content.website}: </b><a href={"https://www."+coop.website} target="_blank" rel=noreferrer>{coop.website}</a></p>
-                                <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{coop.contact[1][locale]}</a></p>
+                                <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{$content[coop.contact[1]]}</a></p>
                             </div>
                             <picture>
                                 <source srcset={"/img/coops/"+coop.logo+".webp"}>
@@ -55,7 +55,7 @@
                                 <img class="coop-logo" alt="logo">
                             </picture>
                         </div>
-                        <p><b>{$content.description}: </b>{coop.description[locale]}</p>
+                        <p><b>{$content.description}: </b>{$content[coop.description]}</p>
                     </div>
                 {/each}
             </div>

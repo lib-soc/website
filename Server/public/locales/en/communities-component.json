@@ -6,5 +6,8 @@
     "location": "Location",
     "status": "Status",
     "members": "Members",
-    "contact": "Contact"
+    "contact": "Contact",
+    "EstoniaKohtlaJarve": "Estonia, Kohtla-Järve",
+    "forming": "forming",
+    "WhatsAppInviteLink": "WhatsApp invite link"
 }

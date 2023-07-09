@@ -1,1 +1,453 @@
-import{S as e,i as t,a as n,b as i,s as o,e as a,n as r,d as s,c as l,o as m,f as c,t as g,g as d,h as p,j as h,l as f,m as u,p as b}from"./index-4348483d.js";import{w as x}from"./index-71440b21.js";import{loadLocaleContent as w}from"../../../../../../../../../js/libraries/serverTools.js";import"../../../../../../../../../js/components/map-component.js";function v(e,t,n){const i=e.slice();return i[5]=t[n],i}function y(e){let t,n,o,a,r,l,m,x,w,y,j,z,D,F,G,E,O,R=e[0].heading+"",S=e[0].p1+"",T=e[0].subheading1+"",_=e[0].subheading2+"",A=e[4],C=[];for(let t=0;t<A.length;t+=1)C[t]=k(v(e,A,t));return{c(){t=c("div"),n=c("div"),o=c("h1"),a=g(R),r=d(),l=c("img"),x=d(),w=c("p"),y=g(S),j=d(),z=c("h3"),D=g(T),F=d(),G=c("h4"),E=g(_),O=d();for(let e=0;e<C.length;e+=1)C[e].c();p(l,"id","hands-img"),h(l.src,m="/img/common/handshake.svg")||p(l,"src","/img/common/handshake.svg"),p(l,"alt","hands"),p(n,"id","text-container"),p(t,"id","container")},m(e,s){i(e,t,s),f(t,n),f(n,o),f(o,a),f(n,r),f(n,l),f(n,x),f(n,w),f(w,y),f(n,j),f(n,z),f(z,D),f(n,F),f(n,G),f(G,E),f(n,O);for(let e=0;e<C.length;e+=1)C[e].m(n,null)},p(e,t){if(1&t&&R!==(R=e[0].heading+"")&&u(a,R),1&t&&S!==(S=e[0].p1+"")&&u(y,S),1&t&&T!==(T=e[0].subheading1+"")&&u(D,T),1&t&&_!==(_=e[0].subheading2+"")&&u(E,_),25&t){let i;for(A=e[4],i=0;i<A.length;i+=1){const o=v(e,A,i);C[i]?C[i].p(o,t):(C[i]=k(o),C[i].c(),C[i].m(n,null))}for(;i<C.length;i+=1)C[i].d(1);C.length=A.length}},d(e){e&&s(t),b(C,e)}}}function k(e){let t,n,o,a,r,l,m,h,b,x,w,v,y,k,j,z,D,F,G,E,O,R,S,T,_,A,C,H,I,L,M,N,W,q,B,J=e[0].name+"",K=e[5].name+"",P=e[0].type+"",Q=e[5].type[e[3]]+"",U=e[0].link+"",V=e[5].link+"",X=e[0].description+"",Y=e[5].description[e[3]]+"";return{c(){t=c("div"),n=c("div"),o=c("picture"),a=c("source"),r=d(),l=c("source"),m=d(),h=c("img"),b=d(),x=c("div"),w=c("p"),v=c("b"),y=g(J),k=g(": "),j=g(K),z=d(),D=c("p"),F=c("b"),G=g(P),E=g(": "),O=g(Q),R=d(),S=c("p"),T=c("b"),_=g(U),A=g(": "),C=c("a"),H=g(V),I=d(),L=c("p"),M=c("b"),N=g(X),W=g(": "),q=g(Y),B=d(),p(a,"srcset","/img/partners/"+e[5].logo+".webp"),p(l,"srcset","/img/partners/"+e[5].logo+".jpg"),p(h,"class","partner-logo"),p(h,"alt","logo"),p(C,"href",e[5].link),p(C,"target",";_blank;"),p(C,"rel","noreferrer"),p(n,"class","img-general-info"),p(t,"class","location-info")},m(e,s){i(e,t,s),f(t,n),f(n,o),f(o,a),f(o,r),f(o,l),f(o,m),f(o,h),f(n,b),f(n,x),f(x,w),f(w,v),f(v,y),f(v,k),f(w,j),f(x,z),f(x,D),f(D,F),f(F,G),f(F,E),f(D,O),f(x,R),f(x,S),f(S,T),f(T,_),f(T,A),f(S,C),f(C,H),f(t,I),f(t,L),f(L,M),f(M,N),f(M,W),f(L,q),f(t,B)},p(e,t){1&t&&J!==(J=e[0].name+"")&&u(y,J),1&t&&P!==(P=e[0].type+"")&&u(G,P),1&t&&U!==(U=e[0].link+"")&&u(_,U),1&t&&X!==(X=e[0].description+"")&&u(N,X)},d(e){e&&s(t)}}}function j(e){let t,n=0!=Object.keys(e[0]).length,o=n&&y(e);return{c(){o&&o.c(),t=a(),this.c=r},m(e,n){o&&o.m(e,n),i(e,t,n)},p(e,[i]){1&i&&(n=0!=Object.keys(e[0]).length),n?o?o.p(e,i):(o=y(e),o.c(),o.m(t.parentNode,t)):o&&(o.d(1),o=null)},i:r,o:r,d(e){o&&o.d(e),e&&s(t)}}}function z(e,t,n){let i,o,a=x({});l(e,a,(e=>n(0,i=e)));let r=w(a,"partners-component",o);return m((()=>{})),[i,o,a,r,[{name:"Gaia's Fall",type:{en:"a place to discuss and organize",ru:"место для общения и организации"},link:"https://discord.libsoc.org/invite/",description:{en:"Gaia's Fall is a server that promotes Solarpunk ideals, environmentalism, anarchism, and anti-capitalism. We encourage civil debates, discussions of theories and possibilities, and the creation of communities focused on shaping a better world. It is our official Discord server where we organize and work together.",ru:"Gaia's Fall — это сервер, который продвигает идеалы соларпанка, защиту окружающей среды, анархизм и антикапитализм. Мы поощряем гражданские дебаты, обсуждение теорий и возможностей, а также создание сообществ, сосредоточенных на формировании лучшего мира. Это наш официальный сервер Discord, на котором мы организуемся и работаем вместе"},logo:"gaias_fall"}]]}class D extends e{constructor(e){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#hands-img{position:absolute;width:10.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2;margin-top:-2rem}#text-container>:nth-child(3){margin-top:6rem}.img-general-info{display:flex;align-content:center;width:100%;gap:1.5rem;align-items:center;margin-bottom:1rem}.img-general-info>:nth-child(2){flex:none}.partner-logo{position:relative;right:0;max-height:6rem;max-width:100%;border-radius:1rem}h4{margin-bottom:2rem}.location-info{position:relative;margin-bottom:2rem}.location-info p{margin-bottom:0}a{color:#DD1C1A}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}h3{margin-bottom:2rem}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}@media only screen and (max-width: 500px){.img-general-info{display:flex;flex-direction:column;align-content:left;width:100%;gap:1rem;align-items:left;margin-bottom:0rem}.img-general-info>:nth-child(1){width:max-content}.img-general-info>:nth-child(2){width:100%}}</style>",t(this,{target:this.shadowRoot,props:n(this.attributes),customElement:!0},z,j,o,{},null),e&&e.target&&i(e.target,this,e.anchor)}}customElements.define("partners-component",D);export{D as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, c as validate_store, e as component_subscribe, o as onMount, g as globals, f as validate_each_argument, h as empty, n as noop, j as detach_dev, k as element, t as text, l as space, m as add_location, p as attr_dev, q as src_url_equal, u as append_dev, w as set_data_dev, x as destroy_each } from './index-42a25c61.js';
+import { w as writable } from './index-a1c185ea.js';
+import { loadLocaleContent } from '../../../../../../../../../js/libraries/serverTools.js';
+import { partners } from '../../../../../../../../../js/partners.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\partners-component.svelte generated by Svelte v3.52.0 */
+
+const { Object: Object_1 } = globals;
+
+const file = "src\\partners-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[4] = list[i];
+	return child_ctx;
+}
+
+// (25:4) {#if Object.keys($content).length!=0}
+function create_if_block(ctx) {
+	let div1;
+	let div0;
+	let h1;
+	let t0_value = /*$content*/ ctx[0].heading + "";
+	let t0;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let p;
+	let t3_value = /*$content*/ ctx[0].p1 + "";
+	let t3;
+	let t4;
+	let h3;
+	let t5_value = /*$content*/ ctx[0].subheading1 + "";
+	let t5;
+	let t6;
+	let h4;
+	let t7_value = /*$content*/ ctx[0].subheading2 + "";
+	let t7;
+	let t8;
+	let each_value = partners;
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			t0 = text(t0_value);
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			p = element("p");
+			t3 = text(t3_value);
+			t4 = space();
+			h3 = element("h3");
+			t5 = text(t5_value);
+			t6 = space();
+			h4 = element("h4");
+			t7 = text(t7_value);
+			t8 = space();
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			add_location(h1, file, 28, 16, 766);
+			attr_dev(img, "id", "hands-img");
+			if (!src_url_equal(img.src, img_src_value = "/img/common/handshake.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "hands");
+			add_location(img, file, 29, 16, 811);
+			add_location(p, file, 30, 16, 893);
+			add_location(h3, file, 31, 16, 931);
+			add_location(h4, file, 32, 16, 980);
+			attr_dev(div0, "id", "text-container");
+			add_location(div0, file, 27, 12, 723);
+			attr_dev(div1, "id", "container");
+			add_location(div1, file, 25, 8, 620);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, div0);
+			append_dev(div0, h1);
+			append_dev(h1, t0);
+			append_dev(div0, t1);
+			append_dev(div0, img);
+			append_dev(div0, t2);
+			append_dev(div0, p);
+			append_dev(p, t3);
+			append_dev(div0, t4);
+			append_dev(div0, h3);
+			append_dev(h3, t5);
+			append_dev(div0, t6);
+			append_dev(div0, h4);
+			append_dev(h4, t7);
+			append_dev(div0, t8);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div0, null);
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 1 && t0_value !== (t0_value = /*$content*/ ctx[0].heading + "")) set_data_dev(t0, t0_value);
+			if (dirty & /*$content*/ 1 && t3_value !== (t3_value = /*$content*/ ctx[0].p1 + "")) set_data_dev(t3, t3_value);
+			if (dirty & /*$content*/ 1 && t5_value !== (t5_value = /*$content*/ ctx[0].subheading1 + "")) set_data_dev(t5, t5_value);
+			if (dirty & /*$content*/ 1 && t7_value !== (t7_value = /*$content*/ ctx[0].subheading2 + "")) set_data_dev(t7, t7_value);
+
+			if (dirty & /*$content, partners*/ 1) {
+				each_value = partners;
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(25:4) {#if Object.keys($content).length!=0}",
+		ctx
+	});
+
+	return block;
+}
+
+// (34:16) {#each partners as partner}
+function create_each_block(ctx) {
+	let div2;
+	let div1;
+	let picture;
+	let source0;
+	let t0;
+	let source1;
+	let t1;
+	let img;
+	let t2;
+	let div0;
+	let p0;
+	let b0;
+	let t3_value = /*$content*/ ctx[0].name + "";
+	let t3;
+	let t4;
+	let t5_value = /*partner*/ ctx[4].name + "";
+	let t5;
+	let t6;
+	let p1;
+	let b1;
+	let t7_value = /*$content*/ ctx[0].type + "";
+	let t7;
+	let t8;
+	let t9_value = /*$content*/ ctx[0][/*partner*/ ctx[4].type] + "";
+	let t9;
+	let t10;
+	let p2;
+	let b2;
+	let t11_value = /*$content*/ ctx[0].link + "";
+	let t11;
+	let t12;
+	let a;
+	let t13_value = /*partner*/ ctx[4].link + "";
+	let t13;
+	let t14;
+	let p3;
+	let b3;
+	let t15_value = /*$content*/ ctx[0].description + "";
+	let t15;
+	let t16;
+	let t17_value = /*$content*/ ctx[0][/*partner*/ ctx[4].description] + "";
+	let t17;
+	let t18;
+
+	const block = {
+		c: function create() {
+			div2 = element("div");
+			div1 = element("div");
+			picture = element("picture");
+			source0 = element("source");
+			t0 = space();
+			source1 = element("source");
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			div0 = element("div");
+			p0 = element("p");
+			b0 = element("b");
+			t3 = text(t3_value);
+			t4 = text(": ");
+			t5 = text(t5_value);
+			t6 = space();
+			p1 = element("p");
+			b1 = element("b");
+			t7 = text(t7_value);
+			t8 = text(": ");
+			t9 = text(t9_value);
+			t10 = space();
+			p2 = element("p");
+			b2 = element("b");
+			t11 = text(t11_value);
+			t12 = text(": ");
+			a = element("a");
+			t13 = text(t13_value);
+			t14 = space();
+			p3 = element("p");
+			b3 = element("b");
+			t15 = text(t15_value);
+			t16 = text(": ");
+			t17 = text(t17_value);
+			t18 = space();
+			attr_dev(source0, "srcset", "/img/partners/" + /*partner*/ ctx[4].logo + ".webp");
+			add_location(source0, file, 37, 32, 1234);
+			attr_dev(source1, "srcset", "/img/partners/" + /*partner*/ ctx[4].logo + ".jpg");
+			add_location(source1, file, 38, 32, 1323);
+			attr_dev(img, "class", "partner-logo");
+			attr_dev(img, "alt", "logo");
+			add_location(img, file, 39, 32, 1411);
+			add_location(picture, file, 36, 28, 1191);
+			add_location(b0, file, 42, 35, 1560);
+			add_location(p0, file, 42, 32, 1557);
+			add_location(b1, file, 43, 35, 1639);
+			add_location(p1, file, 43, 32, 1636);
+			add_location(b2, file, 44, 35, 1728);
+			attr_dev(a, "href", /*partner*/ ctx[4].link);
+			attr_dev(a, "target", ";_blank;");
+			attr_dev(a, "rel", "noreferrer");
+			add_location(a, file, 44, 59, 1752);
+			add_location(p2, file, 44, 32, 1725);
+			add_location(div0, file, 41, 28, 1518);
+			attr_dev(div1, "class", "img-general-info");
+			add_location(div1, file, 35, 24, 1131);
+			add_location(b3, file, 47, 27, 1925);
+			add_location(p3, file, 47, 24, 1922);
+			attr_dev(div2, "class", "location-info");
+			add_location(div2, file, 34, 20, 1078);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div2, anchor);
+			append_dev(div2, div1);
+			append_dev(div1, picture);
+			append_dev(picture, source0);
+			append_dev(picture, t0);
+			append_dev(picture, source1);
+			append_dev(picture, t1);
+			append_dev(picture, img);
+			append_dev(div1, t2);
+			append_dev(div1, div0);
+			append_dev(div0, p0);
+			append_dev(p0, b0);
+			append_dev(b0, t3);
+			append_dev(b0, t4);
+			append_dev(p0, t5);
+			append_dev(div0, t6);
+			append_dev(div0, p1);
+			append_dev(p1, b1);
+			append_dev(b1, t7);
+			append_dev(b1, t8);
+			append_dev(p1, t9);
+			append_dev(div0, t10);
+			append_dev(div0, p2);
+			append_dev(p2, b2);
+			append_dev(b2, t11);
+			append_dev(b2, t12);
+			append_dev(p2, a);
+			append_dev(a, t13);
+			append_dev(div2, t14);
+			append_dev(div2, p3);
+			append_dev(p3, b3);
+			append_dev(b3, t15);
+			append_dev(b3, t16);
+			append_dev(p3, t17);
+			append_dev(div2, t18);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 1 && t3_value !== (t3_value = /*$content*/ ctx[0].name + "")) set_data_dev(t3, t3_value);
+			if (dirty & /*$content*/ 1 && t7_value !== (t7_value = /*$content*/ ctx[0].type + "")) set_data_dev(t7, t7_value);
+			if (dirty & /*$content*/ 1 && t9_value !== (t9_value = /*$content*/ ctx[0][/*partner*/ ctx[4].type] + "")) set_data_dev(t9, t9_value);
+			if (dirty & /*$content*/ 1 && t11_value !== (t11_value = /*$content*/ ctx[0].link + "")) set_data_dev(t11, t11_value);
+			if (dirty & /*$content*/ 1 && t15_value !== (t15_value = /*$content*/ ctx[0].description + "")) set_data_dev(t15, t15_value);
+			if (dirty & /*$content*/ 1 && t17_value !== (t17_value = /*$content*/ ctx[0][/*partner*/ ctx[4].description] + "")) set_data_dev(t17, t17_value);
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div2);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(34:16) {#each partners as partner}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let show_if = Object.keys(/*$content*/ ctx[0]).length != 0;
+	let if_block_anchor;
+	let if_block = show_if && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$content*/ 1) show_if = Object.keys(/*$content*/ ctx[0]).length != 0;
+
+			if (show_if) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $content;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('partners-component', slots, []);
+	let loaded;
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(0, $content = value));
+	let locale = loadLocaleContent(content, "partners-component", loaded);
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object_1.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<partners-component> was created with unknown prop '${key}'`);
+	});
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		loadLocaleContent,
+		partners,
+		loaded,
+		content,
+		locale,
+		$content
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('loaded' in $$props) $$invalidate(1, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(2, content = $$props.content);
+		if ('locale' in $$props) locale = $$props.locale;
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [$content, loaded, content];
+}
+
+class Partners_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#hands-img{position:absolute;width:10.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2;margin-top:-2rem}#text-container>:nth-child(3){margin-top:6rem}.img-general-info{display:flex;align-content:center;width:100%;gap:1.5rem;align-items:center;margin-bottom:1rem}.img-general-info>:nth-child(2){flex:none}.partner-logo{position:relative;right:0;max-height:6rem;max-width:100%;border-radius:1rem}h4{margin-bottom:2rem}.location-info{position:relative;margin-bottom:2rem}.location-info p{margin-bottom:0}a{color:#DD1C1A}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}h3{margin-bottom:2rem}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}@media only screen and (max-width: 500px){.img-general-info{display:flex;flex-direction:column;align-content:left;width:100%;gap:1rem;align-items:left;margin-bottom:0rem}.img-general-info>:nth-child(1){width:max-content}.img-general-info>:nth-child(2){width:100%}}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("partners-component", Partners_component);
+
+export { Partners_component as default };

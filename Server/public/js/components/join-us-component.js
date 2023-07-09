@@ -1,1 +1,516 @@
-import{S as o,i as t,a as i,b as r,s as n,e,n as a,d as s,c as m,o as l,f as c,t as p,g as u,j as d,h as g,k as h,l as f,m as v}from"./index-4348483d.js";import{w as b}from"./index-71440b21.js";import{addMarkersGroups as j}from"../../../../../../../../../js/groups.js";import{addMarkersCoops as x}from"../../../../../../../../../js/coops.js";import{addMarkersCommunities as y}from"../../../../../../../../../js/communities.js";import{loadLocaleContent as P}from"../../../../../../../../../js/libraries/serverTools.js";import"../../../../../../../../../js/components/map-component.js";function w(o){let t,i,n,e,a,m,l,b,j,x,y,P,w,k,O,A,S,T,D,H,N,L,M,U,z,B,E,G,R,W,Y,_,C,J,K,Z,q,F,I,Q,V,X,$,oo,to,io,ro,no,eo,ao,so,mo,lo,co,po,uo,go,ho,fo,vo,bo,jo,xo,yo,Po,wo,ko,Oo,Ao,So,To,Do,Ho,No,Lo,Mo,Uo,zo,Bo,Eo=o[0].heading+"",Go=o[0].condition1+"",Ro=o[0].condition2+"",Wo=o[0].condition3+"",Yo=o[0].conditionsOutcome+"",_o=o[0].subheading1+"",Co=o[0].valueProposition1+"",Jo=o[0].valueProposition2+"",Ko=o[0].valueProposition3+"",Zo=o[0].valueProposition4+"",qo=o[0].valueProposition5+"",Fo=o[0].subheading2+"",Io=o[0].findOur+"",Qo=o[0].group+"",Vo=o[0].community+"",Xo=o[0].or+"",$o=o[0].cooperative+"",ot=o[0].nearYou+"",tt=o[0].noneNear+"",it=o[0].WhatsAppGroup+"",rt=o[0].or+"",nt=o[0].DiscordServer+"",et=o[0].helpStart+"";return{c(){t=c("div"),i=c("div"),n=c("h1"),e=p(Eo),a=u(),m=c("img"),b=u(),j=c("ol"),x=c("li"),y=p(Go),P=u(),w=c("li"),k=p(Ro),O=u(),A=c("li"),S=p(Wo),T=u(),D=c("p"),H=u(),N=c("h2"),L=p(_o),M=u(),U=c("ol"),z=c("li"),B=p(Co),E=u(),G=c("li"),R=p(Jo),W=u(),Y=c("li"),_=p(Ko),C=u(),J=c("li"),K=p(Zo),Z=u(),q=c("p"),F=p(qo),I=u(),Q=c("h2"),V=p(Fo),X=u(),$=c("div"),oo=c("p"),to=p(Io),io=u(),ro=c("ol"),no=c("li"),eo=c("a"),ao=p(Qo),so=p(","),mo=u(),lo=c("li"),co=c("a"),po=p(Vo),uo=u(),go=p(Xo),ho=u(),fo=c("li"),vo=c("a"),bo=p($o),jo=u(),xo=c("p"),yo=p(ot),Po=u(),wo=c("p"),ko=p(tt),Oo=u(),Ao=c("a"),So=p(it),To=u(),Do=p(rt),Ho=u(),No=c("a"),Lo=p(nt),Mo=p(et),Uo=u(),zo=c("map-component"),d(m.src,l="/img/common/join-group.svg")||g(m,"src","/img/common/join-group.svg"),g(m,"id","join-group"),g(m,"alt","join group"),g(j,"id","condition-list"),g(U,"id","value-proposition-list"),g(eo,"href","/"+o[3]+"/groups"),g(co,"href","/"+o[3]+"/communities"),g(vo,"href","/"+o[3]+"/cooperatives"),g($,"id","call-to-action-list"),g(Ao,"href","https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh"),g(Ao,"target","_blank"),g(Ao,"rel","noreferrer"),g(No,"href","https://discord.gg/xAPZmyr8B6"),g(No,"target","_blank"),g(No,"rel","noreferrer"),h(zo,"id","map"),h(zo,"callback",Bo=o[5]),g(i,"id","text-container"),g(t,"id","container")},m(o,s){r(o,t,s),f(t,i),f(i,n),f(n,e),f(i,a),f(i,m),f(i,b),f(i,j),f(j,x),f(x,y),f(j,P),f(j,w),f(w,k),f(j,O),f(j,A),f(A,S),f(j,T),f(j,D),D.innerHTML=Yo,f(i,H),f(i,N),f(N,L),f(i,M),f(i,U),f(U,z),f(z,B),f(U,E),f(U,G),f(G,R),f(U,W),f(U,Y),f(Y,_),f(U,C),f(U,J),f(J,K),f(U,Z),f(U,q),f(q,F),f(i,I),f(i,Q),f(Q,V),f(i,X),f(i,$),f($,oo),f(oo,to),f($,io),f($,ro),f(ro,no),f(no,eo),f(eo,ao),f(no,so),f(ro,mo),f(ro,lo),f(lo,co),f(co,po),f(lo,uo),f(lo,go),f(ro,ho),f(ro,fo),f(fo,vo),f(vo,bo),f($,jo),f($,xo),f(xo,yo),f(i,Po),f(i,wo),f(wo,ko),f(wo,Oo),f(wo,Ao),f(Ao,So),f(wo,To),f(wo,Do),f(wo,Ho),f(wo,No),f(No,Lo),f(wo,Mo),f(i,Uo),f(i,zo)},p(o,t){1&t&&Eo!==(Eo=o[0].heading+"")&&v(e,Eo),1&t&&Go!==(Go=o[0].condition1+"")&&v(y,Go),1&t&&Ro!==(Ro=o[0].condition2+"")&&v(k,Ro),1&t&&Wo!==(Wo=o[0].condition3+"")&&v(S,Wo),1&t&&Yo!==(Yo=o[0].conditionsOutcome+"")&&(D.innerHTML=Yo),1&t&&_o!==(_o=o[0].subheading1+"")&&v(L,_o),1&t&&Co!==(Co=o[0].valueProposition1+"")&&v(B,Co),1&t&&Jo!==(Jo=o[0].valueProposition2+"")&&v(R,Jo),1&t&&Ko!==(Ko=o[0].valueProposition3+"")&&v(_,Ko),1&t&&Zo!==(Zo=o[0].valueProposition4+"")&&v(K,Zo),1&t&&qo!==(qo=o[0].valueProposition5+"")&&v(F,qo),1&t&&Fo!==(Fo=o[0].subheading2+"")&&v(V,Fo),1&t&&Io!==(Io=o[0].findOur+"")&&v(to,Io),1&t&&Qo!==(Qo=o[0].group+"")&&v(ao,Qo),1&t&&Vo!==(Vo=o[0].community+"")&&v(po,Vo),1&t&&Xo!==(Xo=o[0].or+"")&&v(go,Xo),1&t&&$o!==($o=o[0].cooperative+"")&&v(bo,$o),1&t&&ot!==(ot=o[0].nearYou+"")&&v(yo,ot),1&t&&tt!==(tt=o[0].noneNear+"")&&v(ko,tt),1&t&&it!==(it=o[0].WhatsAppGroup+"")&&v(So,it),1&t&&rt!==(rt=o[0].or+"")&&v(Do,rt),1&t&&nt!==(nt=o[0].DiscordServer+"")&&v(Lo,nt),1&t&&et!==(et=o[0].helpStart+"")&&v(Mo,et),1&t&&Bo!==(Bo=o[5])&&h(zo,"callback",Bo)},d(o){o&&s(t)}}}function k(o){let t,i=0!=Object.keys(o[0]).length,n=i&&w(o);return{c(){n&&n.c(),t=e(),this.c=a},m(o,i){n&&n.m(o,i),r(o,t,i)},p(o,[r]){1&r&&(i=0!=Object.keys(o[0]).length),i?n?n.p(o,r):(n=w(o),n.c(),n.m(t.parentNode,t)):n&&(n.d(1),n=null)},i:a,o:a,d(o){n&&n.d(o),o&&s(t)}}}function O(o,t,i){let r,n,e=b({});m(o,e,(o=>i(0,r=o)));let a=P(e,"join-us-component",n);function s(o,t,i){let r=o([51.505,-.09],3);j(r,t,i),x(r,t,i),y(r,t,i)}l((()=>{}));return[r,n,e,a,s,o=>s(o,r,a)]}class A extends o{constructor(o){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';h2{margin-bottom:1rem}#value-proposition-list{margin-bottom:2rem}#value-proposition-list>li{margin-bottom:1rem}ol li{position:relative;font-family:var(--serif,serif);margin-left:1.5rem;list-style-position:outside}#join-group{position:absolute;width:10.5rem;height:auto;left:calc(50% + 1.2rem);transform:translate(-50%);z-index:0;opacity:0.2}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#call-to-action-list>ol>li{position:relative;font-family:var(--serif,serif);margin-left:3rem}#condition-list{margin-bottom:2rem;margin-top:7rem}#condition-list>li{margin-bottom:1rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#call-to-action-list>p{margin-bottom:1rem}#call-to-action-list>:nth-child(1){margin-bottom:0.5rem}#call-to-action-list>:nth-child(2){margin-bottom:0rem}#call-to-action-list>ol>li{margin-bottom:0.5rem}#text-container a{color:#DD1C1A\n    }#container p{text-align:justify}</style>",t(this,{target:this.shadowRoot,props:i(this.attributes),customElement:!0},O,k,n,{},null),o&&o.target&&r(o.target,this,o.anchor)}}customElements.define("join-us-component",A);export{A as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, c as validate_store, e as component_subscribe, o as onMount, g as globals, h as empty, n as noop, j as detach_dev, k as element, t as text, l as space, m as add_location, q as src_url_equal, p as attr_dev, r as set_custom_element_data, u as append_dev, w as set_data_dev } from './index-42a25c61.js';
+import { w as writable } from './index-a1c185ea.js';
+import { addMarkersGroups } from '../../../../../../../../../js/groups.js';
+import { addMarkersCoops } from '../../../../../../../../../js/coops.js';
+import { addMarkersCommunities } from '../../../../../../../../../js/communities.js';
+import { loadLocaleContent } from '../../../../../../../../../js/libraries/serverTools.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\join-us-component.svelte generated by Svelte v3.52.0 */
+
+const { Object: Object_1 } = globals;
+
+const file = "src\\join-us-component.svelte";
+
+// (34:4) {#if Object.keys($content).length!=0}
+function create_if_block(ctx) {
+	let div2;
+	let div1;
+	let h1;
+	let t0_value = /*$content*/ ctx[0].heading + "";
+	let t0;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let ol0;
+	let li0;
+	let t3_value = /*$content*/ ctx[0].condition1 + "";
+	let t3;
+	let t4;
+	let li1;
+	let t5_value = /*$content*/ ctx[0].condition2 + "";
+	let t5;
+	let t6;
+	let li2;
+	let t7_value = /*$content*/ ctx[0].condition3 + "";
+	let t7;
+	let t8;
+	let p0;
+	let raw_value = /*$content*/ ctx[0].conditionsOutcome + "";
+	let t9;
+	let h20;
+	let t10_value = /*$content*/ ctx[0].subheading1 + "";
+	let t10;
+	let t11;
+	let ol1;
+	let li3;
+	let t12_value = /*$content*/ ctx[0].valueProposition1 + "";
+	let t12;
+	let t13;
+	let li4;
+	let t14_value = /*$content*/ ctx[0].valueProposition2 + "";
+	let t14;
+	let t15;
+	let li5;
+	let t16_value = /*$content*/ ctx[0].valueProposition3 + "";
+	let t16;
+	let t17;
+	let li6;
+	let t18_value = /*$content*/ ctx[0].valueProposition4 + "";
+	let t18;
+	let t19;
+	let p1;
+	let t20_value = /*$content*/ ctx[0].valueProposition5 + "";
+	let t20;
+	let t21;
+	let h21;
+	let t22_value = /*$content*/ ctx[0].subheading2 + "";
+	let t22;
+	let t23;
+	let div0;
+	let p2;
+	let t24_value = /*$content*/ ctx[0].findOur + "";
+	let t24;
+	let t25;
+	let ol2;
+	let li7;
+	let a0;
+	let t26_value = /*$content*/ ctx[0].group + "";
+	let t26;
+	let t27;
+	let t28;
+	let li8;
+	let a1;
+	let t29_value = /*$content*/ ctx[0].community + "";
+	let t29;
+	let t30;
+	let t31_value = /*$content*/ ctx[0].or + "";
+	let t31;
+	let t32;
+	let li9;
+	let a2;
+	let t33_value = /*$content*/ ctx[0].cooperative + "";
+	let t33;
+	let t34;
+	let p3;
+	let t35_value = /*$content*/ ctx[0].nearYou + "";
+	let t35;
+	let t36;
+	let p4;
+	let t37_value = /*$content*/ ctx[0].noneNear + "";
+	let t37;
+	let t38;
+	let a3;
+	let t39_value = /*$content*/ ctx[0].WhatsAppGroup + "";
+	let t39;
+	let t40;
+	let t41_value = /*$content*/ ctx[0].or + "";
+	let t41;
+	let t42;
+	let a4;
+	let t43_value = /*$content*/ ctx[0].DiscordServer + "";
+	let t43;
+	let t44_value = /*$content*/ ctx[0].helpStart + "";
+	let t44;
+	let t45;
+	let map_component;
+	let map_component_callback_value;
+
+	const block = {
+		c: function create() {
+			div2 = element("div");
+			div1 = element("div");
+			h1 = element("h1");
+			t0 = text(t0_value);
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			ol0 = element("ol");
+			li0 = element("li");
+			t3 = text(t3_value);
+			t4 = space();
+			li1 = element("li");
+			t5 = text(t5_value);
+			t6 = space();
+			li2 = element("li");
+			t7 = text(t7_value);
+			t8 = space();
+			p0 = element("p");
+			t9 = space();
+			h20 = element("h2");
+			t10 = text(t10_value);
+			t11 = space();
+			ol1 = element("ol");
+			li3 = element("li");
+			t12 = text(t12_value);
+			t13 = space();
+			li4 = element("li");
+			t14 = text(t14_value);
+			t15 = space();
+			li5 = element("li");
+			t16 = text(t16_value);
+			t17 = space();
+			li6 = element("li");
+			t18 = text(t18_value);
+			t19 = space();
+			p1 = element("p");
+			t20 = text(t20_value);
+			t21 = space();
+			h21 = element("h2");
+			t22 = text(t22_value);
+			t23 = space();
+			div0 = element("div");
+			p2 = element("p");
+			t24 = text(t24_value);
+			t25 = space();
+			ol2 = element("ol");
+			li7 = element("li");
+			a0 = element("a");
+			t26 = text(t26_value);
+			t27 = text(",");
+			t28 = space();
+			li8 = element("li");
+			a1 = element("a");
+			t29 = text(t29_value);
+			t30 = space();
+			t31 = text(t31_value);
+			t32 = space();
+			li9 = element("li");
+			a2 = element("a");
+			t33 = text(t33_value);
+			t34 = space();
+			p3 = element("p");
+			t35 = text(t35_value);
+			t36 = space();
+			p4 = element("p");
+			t37 = text(t37_value);
+			t38 = space();
+			a3 = element("a");
+			t39 = text(t39_value);
+			t40 = space();
+			t41 = text(t41_value);
+			t42 = space();
+			a4 = element("a");
+			t43 = text(t43_value);
+			t44 = text(t44_value);
+			t45 = space();
+			map_component = element("map-component");
+			add_location(h1, file, 36, 16, 1066);
+			if (!src_url_equal(img.src, img_src_value = "/img/common/join-group.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "id", "join-group");
+			attr_dev(img, "alt", "join group");
+			add_location(img, file, 37, 16, 1111);
+			add_location(li0, file, 39, 20, 1246);
+			add_location(li1, file, 40, 20, 1298);
+			add_location(li2, file, 41, 20, 1350);
+			add_location(p0, file, 42, 20, 1402);
+			attr_dev(ol0, "id", "condition-list");
+			add_location(ol0, file, 38, 16, 1200);
+			add_location(h20, file, 44, 16, 1484);
+			add_location(li3, file, 46, 20, 1587);
+			add_location(li4, file, 47, 20, 1646);
+			add_location(li5, file, 48, 20, 1705);
+			add_location(li6, file, 49, 20, 1764);
+			add_location(p1, file, 50, 20, 1823);
+			attr_dev(ol1, "id", "value-proposition-list");
+			add_location(ol1, file, 45, 16, 1533);
+			add_location(h21, file, 52, 16, 1899);
+			add_location(p2, file, 54, 20, 2000);
+			attr_dev(a0, "href", "/" + /*locale*/ ctx[3] + "/groups");
+			add_location(a0, file, 56, 28, 2081);
+			add_location(li7, file, 56, 24, 2077);
+			attr_dev(a1, "href", "/" + /*locale*/ ctx[3] + "/communities");
+			add_location(a1, file, 57, 28, 2173);
+			add_location(li8, file, 57, 24, 2169);
+			attr_dev(a2, "href", "/" + /*locale*/ ctx[3] + "/cooperatives");
+			add_location(a2, file, 58, 28, 2287);
+			add_location(li9, file, 58, 24, 2283);
+			add_location(ol2, file, 55, 20, 2047);
+			add_location(p3, file, 60, 20, 2408);
+			attr_dev(div0, "id", "call-to-action-list");
+			add_location(div0, file, 53, 16, 1948);
+			attr_dev(a3, "href", "https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh");
+			attr_dev(a3, "target", "_blank");
+			attr_dev(a3, "rel", "noreferrer");
+			add_location(a3, file, 62, 39, 2498);
+			attr_dev(a4, "href", "https://discord.gg/xAPZmyr8B6");
+			attr_dev(a4, "target", "_blank");
+			attr_dev(a4, "rel", "noreferrer");
+			add_location(a4, file, 62, 172, 2631);
+			add_location(p4, file, 62, 16, 2475);
+			set_custom_element_data(map_component, "id", "map");
+			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[5]);
+			add_location(map_component, file, 63, 16, 2772);
+			attr_dev(div1, "id", "text-container");
+			add_location(div1, file, 35, 12, 1023);
+			attr_dev(div2, "id", "container");
+			add_location(div2, file, 34, 8, 989);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div2, anchor);
+			append_dev(div2, div1);
+			append_dev(div1, h1);
+			append_dev(h1, t0);
+			append_dev(div1, t1);
+			append_dev(div1, img);
+			append_dev(div1, t2);
+			append_dev(div1, ol0);
+			append_dev(ol0, li0);
+			append_dev(li0, t3);
+			append_dev(ol0, t4);
+			append_dev(ol0, li1);
+			append_dev(li1, t5);
+			append_dev(ol0, t6);
+			append_dev(ol0, li2);
+			append_dev(li2, t7);
+			append_dev(ol0, t8);
+			append_dev(ol0, p0);
+			p0.innerHTML = raw_value;
+			append_dev(div1, t9);
+			append_dev(div1, h20);
+			append_dev(h20, t10);
+			append_dev(div1, t11);
+			append_dev(div1, ol1);
+			append_dev(ol1, li3);
+			append_dev(li3, t12);
+			append_dev(ol1, t13);
+			append_dev(ol1, li4);
+			append_dev(li4, t14);
+			append_dev(ol1, t15);
+			append_dev(ol1, li5);
+			append_dev(li5, t16);
+			append_dev(ol1, t17);
+			append_dev(ol1, li6);
+			append_dev(li6, t18);
+			append_dev(ol1, t19);
+			append_dev(ol1, p1);
+			append_dev(p1, t20);
+			append_dev(div1, t21);
+			append_dev(div1, h21);
+			append_dev(h21, t22);
+			append_dev(div1, t23);
+			append_dev(div1, div0);
+			append_dev(div0, p2);
+			append_dev(p2, t24);
+			append_dev(div0, t25);
+			append_dev(div0, ol2);
+			append_dev(ol2, li7);
+			append_dev(li7, a0);
+			append_dev(a0, t26);
+			append_dev(li7, t27);
+			append_dev(ol2, t28);
+			append_dev(ol2, li8);
+			append_dev(li8, a1);
+			append_dev(a1, t29);
+			append_dev(li8, t30);
+			append_dev(li8, t31);
+			append_dev(ol2, t32);
+			append_dev(ol2, li9);
+			append_dev(li9, a2);
+			append_dev(a2, t33);
+			append_dev(div0, t34);
+			append_dev(div0, p3);
+			append_dev(p3, t35);
+			append_dev(div1, t36);
+			append_dev(div1, p4);
+			append_dev(p4, t37);
+			append_dev(p4, t38);
+			append_dev(p4, a3);
+			append_dev(a3, t39);
+			append_dev(p4, t40);
+			append_dev(p4, t41);
+			append_dev(p4, t42);
+			append_dev(p4, a4);
+			append_dev(a4, t43);
+			append_dev(p4, t44);
+			append_dev(div1, t45);
+			append_dev(div1, map_component);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 1 && t0_value !== (t0_value = /*$content*/ ctx[0].heading + "")) set_data_dev(t0, t0_value);
+			if (dirty & /*$content*/ 1 && t3_value !== (t3_value = /*$content*/ ctx[0].condition1 + "")) set_data_dev(t3, t3_value);
+			if (dirty & /*$content*/ 1 && t5_value !== (t5_value = /*$content*/ ctx[0].condition2 + "")) set_data_dev(t5, t5_value);
+			if (dirty & /*$content*/ 1 && t7_value !== (t7_value = /*$content*/ ctx[0].condition3 + "")) set_data_dev(t7, t7_value);
+			if (dirty & /*$content*/ 1 && raw_value !== (raw_value = /*$content*/ ctx[0].conditionsOutcome + "")) p0.innerHTML = raw_value;			if (dirty & /*$content*/ 1 && t10_value !== (t10_value = /*$content*/ ctx[0].subheading1 + "")) set_data_dev(t10, t10_value);
+			if (dirty & /*$content*/ 1 && t12_value !== (t12_value = /*$content*/ ctx[0].valueProposition1 + "")) set_data_dev(t12, t12_value);
+			if (dirty & /*$content*/ 1 && t14_value !== (t14_value = /*$content*/ ctx[0].valueProposition2 + "")) set_data_dev(t14, t14_value);
+			if (dirty & /*$content*/ 1 && t16_value !== (t16_value = /*$content*/ ctx[0].valueProposition3 + "")) set_data_dev(t16, t16_value);
+			if (dirty & /*$content*/ 1 && t18_value !== (t18_value = /*$content*/ ctx[0].valueProposition4 + "")) set_data_dev(t18, t18_value);
+			if (dirty & /*$content*/ 1 && t20_value !== (t20_value = /*$content*/ ctx[0].valueProposition5 + "")) set_data_dev(t20, t20_value);
+			if (dirty & /*$content*/ 1 && t22_value !== (t22_value = /*$content*/ ctx[0].subheading2 + "")) set_data_dev(t22, t22_value);
+			if (dirty & /*$content*/ 1 && t24_value !== (t24_value = /*$content*/ ctx[0].findOur + "")) set_data_dev(t24, t24_value);
+			if (dirty & /*$content*/ 1 && t26_value !== (t26_value = /*$content*/ ctx[0].group + "")) set_data_dev(t26, t26_value);
+			if (dirty & /*$content*/ 1 && t29_value !== (t29_value = /*$content*/ ctx[0].community + "")) set_data_dev(t29, t29_value);
+			if (dirty & /*$content*/ 1 && t31_value !== (t31_value = /*$content*/ ctx[0].or + "")) set_data_dev(t31, t31_value);
+			if (dirty & /*$content*/ 1 && t33_value !== (t33_value = /*$content*/ ctx[0].cooperative + "")) set_data_dev(t33, t33_value);
+			if (dirty & /*$content*/ 1 && t35_value !== (t35_value = /*$content*/ ctx[0].nearYou + "")) set_data_dev(t35, t35_value);
+			if (dirty & /*$content*/ 1 && t37_value !== (t37_value = /*$content*/ ctx[0].noneNear + "")) set_data_dev(t37, t37_value);
+			if (dirty & /*$content*/ 1 && t39_value !== (t39_value = /*$content*/ ctx[0].WhatsAppGroup + "")) set_data_dev(t39, t39_value);
+			if (dirty & /*$content*/ 1 && t41_value !== (t41_value = /*$content*/ ctx[0].or + "")) set_data_dev(t41, t41_value);
+			if (dirty & /*$content*/ 1 && t43_value !== (t43_value = /*$content*/ ctx[0].DiscordServer + "")) set_data_dev(t43, t43_value);
+			if (dirty & /*$content*/ 1 && t44_value !== (t44_value = /*$content*/ ctx[0].helpStart + "")) set_data_dev(t44, t44_value);
+
+			if (dirty & /*$content*/ 1 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[5])) {
+				set_custom_element_data(map_component, "callback", map_component_callback_value);
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div2);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(34:4) {#if Object.keys($content).length!=0}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let show_if = Object.keys(/*$content*/ ctx[0]).length != 0;
+	let if_block_anchor;
+	let if_block = show_if && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$content*/ 1) show_if = Object.keys(/*$content*/ ctx[0]).length != 0;
+
+			if (show_if) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $content;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('join-us-component', slots, []);
+	let loaded;
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(0, $content = value));
+	let locale = loadLocaleContent(content, "join-us-component", loaded);
+
+	function mapCallback(createMap, content, locale) {
+		let map = createMap([51.505, -0.09], 3);
+		addMarkersGroups(map, content, locale);
+		addMarkersCoops(map, content, locale);
+		addMarkersCommunities(map, content, locale);
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object_1.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<join-us-component> was created with unknown prop '${key}'`);
+	});
+
+	const func = createMap => mapCallback(createMap, $content, locale);
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		addMarkersGroups,
+		addMarkersCoops,
+		addMarkersCommunities,
+		loadLocaleContent,
+		loaded,
+		content,
+		locale,
+		mapCallback,
+		$content
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('loaded' in $$props) $$invalidate(1, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(2, content = $$props.content);
+		if ('locale' in $$props) $$invalidate(3, locale = $$props.locale);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [$content, loaded, content, locale, mapCallback, func];
+}
+
+class Join_us_component extends SvelteElement {
+	constructor(options) {
+		super();
+
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';h2{margin-bottom:1rem}#value-proposition-list{margin-bottom:2rem}#value-proposition-list>li{margin-bottom:1rem}ol li{position:relative;font-family:var(--serif,serif);margin-left:1.5rem;list-style-position:outside}#join-group{position:absolute;width:10.5rem;height:auto;left:calc(50% + 1.2rem);transform:translate(-50%);z-index:0;opacity:0.2}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#call-to-action-list>ol>li{position:relative;font-family:var(--serif,serif);margin-left:3rem}#condition-list{margin-bottom:2rem;margin-top:7rem}#condition-list>li{margin-bottom:1rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#call-to-action-list>p{margin-bottom:1rem}#call-to-action-list>:nth-child(1){margin-bottom:0.5rem}#call-to-action-list>:nth-child(2){margin-bottom:0rem}#call-to-action-list>ol>li{margin-bottom:0.5rem}#text-container a{color:#DD1C1A
+    }#container p{text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("join-us-component", Join_us_component);
+
+export { Join_us_component as default };
