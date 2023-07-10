@@ -17,7 +17,7 @@
     let locale = loadLocaleContent(content,"cooperatives-component",loaded)
 
     function mapCallbackCoops(createMap,content) {
-        let map = createMap([51.505, -0.09],2)
+        let map = createMap([22, 0],2)
         addMarkersCoops(map,content)
     }
 

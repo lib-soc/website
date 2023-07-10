@@ -17,7 +17,7 @@
     let locale = loadLocaleContent(content,"groups-component",loaded)
 
     function mapCallbackGroups(createMap,content) {
-        let map = createMap([51.505, -0.09],2)
+        let map = createMap([22, 0],2)
         addMarkersGroups(map,content)
     }
     

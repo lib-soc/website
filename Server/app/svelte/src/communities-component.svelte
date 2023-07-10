@@ -17,7 +17,7 @@
     let locale = loadLocaleContent(content,"communities-component",loaded)
 
     function mapCallbackCommunities(createMap,content) {
-        let map = createMap([51.505, -0.09],2)
+        let map = createMap([22, 0],2)
         addMarkersCommunities(map,content)
     }
 
