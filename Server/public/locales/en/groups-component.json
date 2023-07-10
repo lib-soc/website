@@ -7,11 +7,12 @@
     "location": "Location",
     "members": "Members",
     "contact": "Contact",
+    "DiscordInviteLink": "Discord invite link",
+    "WhatsAppInviteLink": "WhatsApp invite link",
     "DenmarkCopenhagen": "Denmark, Copenhagen",
     "DenmarkKolding": "Denmark, Kolding",
     "EstoniaKohtlaJarve": "Estonia, Kohtla-Järve",
     "GreeceAthens": "Greece, Athens",
     "LatviaRiga": "Latvia, Riga",
-    "DiscordInviteLink": "Discord invite link",
-    "WhatsAppInviteLink": "WhatsApp invite link"
+    "CanadaHalifax": "Canada, Halifax"
 }

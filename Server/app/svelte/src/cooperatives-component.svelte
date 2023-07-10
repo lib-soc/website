@@ -36,7 +36,6 @@
                 <p>{$content.p2}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackCoops(createMap,$content,locale)}></map-component>
-                <h4>{$content.subheading2}</h4>
                 {#each coops as coop}
                     <div class="location-info">
                         <div class="img-general-info">

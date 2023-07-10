@@ -36,7 +36,6 @@
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackCommunities(createMap,$content,locale)}></map-component>
-                <h4>{$content.subheading2}</h4>
                 {#each communities as community}
                     <div class="location-info">
                         <p><b>{$content.location}: </b>{$content[community.location[0]]}</p>

@@ -16,13 +16,21 @@
     let loaded
     let content = writable({})
 
+    let contentGroups = writable({})
+    let contentCommunities = writable({})
+    let contentCoops = writable({})
+
+    loadLocaleContent(contentGroups,"groups-component")
+    loadLocaleContent(contentCommunities,"communities-component")
+    loadLocaleContent(contentCoops,"cooperatives-component")
+
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
-    function mapCallback(createMap,content,locale) {
+    function mapCallback(createMap,content) {
         let map = createMap([51.505, -0.09],3)
-        addMarkersGroups(map,content,locale)
-        addMarkersCoops(map,content,locale)
-        addMarkersCommunities(map,content,locale)
+        addMarkersGroups(map,$contentGroups)
+        addMarkersCommunities(map,$contentCommunities)
+        addMarkersCoops(map,$contentCoops)
     }
 
     onMount(() => { 
@@ -61,7 +69,7 @@
                     <p>{$content.nearYou}</p>
                 </div>
                 <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
-                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content)}></map-component>
             </div>
         </div>
     {/if}

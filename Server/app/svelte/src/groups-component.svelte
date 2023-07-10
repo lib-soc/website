@@ -37,7 +37,6 @@
                 <p>{$content.p2}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
-                <h4>{$content.subheading2}</h4>
                 {#each groups as group}
                     <div class="location-info">
                         <p><b>{$content.location}: </b>{$content[group.location[0]]}</p>

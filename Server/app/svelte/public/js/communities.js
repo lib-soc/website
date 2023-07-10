@@ -1,7 +1,7 @@
 
 export let communities = [
     {
-        location: ["CanadaMontreal",[44.654781585774785, -63.61076905562609]],
+        location: ["CanadaMontreal",[45.55541047232767, -73.42859611607271]],
         status: "forming",
         members: 2,
         contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]

@@ -7,11 +7,12 @@
     "location": "Локация",
     "members": "Участники",
     "contact": "Контакт",
+    "DiscordInviteLink": "Discord ссылка",
+    "WhatsAppInviteLink": "WhatsApp ссылка",
     "DenmarkCopenhagen": "Дания, Копенгаген",
     "DenmarkKolding": "Дания, Колдинг",
     "EstoniaKohtlaJarve": "Эстония, Кохтла-Ярве",
     "GreeceAthens": "Греция, Афины",
     "LatviaRiga": "Латвия, Рига",
-    "DiscordInviteLink": "Discord ссылка",
-    "WhatsAppInviteLink": "WhatsApp ссылка"
+    "CanadaHalifax": "Канада, Галифакс"
 }
