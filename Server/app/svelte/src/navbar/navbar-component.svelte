@@ -300,13 +300,10 @@
         color: rgb(127, 127, 127);
     }
 
-    #locales-dropdown>:first-child {
-        padding-bottom: 0.5rem;
-    }
-
-    #locales-dropdown>:nth-child(2) {
+    #locales-dropdown> * {
         padding-top: 0.5rem;
     }
+
 
 
     /* Responsiveness */
