@@ -27,7 +27,7 @@
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
     function mapCallback(createMap,content) {
-        let map = createMap([51.505, -0.09],3)
+        let map = createMap([51.505, -0.09],2)
         addMarkersGroups(map,$contentGroups)
         addMarkersCommunities(map,$contentCommunities)
         addMarkersCoops(map,$contentCoops)
