@@ -61,7 +61,7 @@
                 <h2>{$content.subheading2}</h2>
                 <div id="call-to-action-list">
                     <p>{$content.findOur}</p>
-                    <ol>
+                    <ol id="entities-list">
                         <li><a href={"/" + locale + "/groups"}>{$content.group}</a>,</li> 
                         <li><a href={"/" + locale + "/communities"}>{$content.community}</a> {$content.or}</li> 
                         <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a></li>
@@ -78,6 +78,36 @@
 
 <style>
     @import '/css/common.css';
+
+    #entities-list li {
+        list-style: none;
+    }
+
+    #entities-list li:before {
+        content: '';
+        display: inline-block;
+        height: 1.1rem;
+        width: 1rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: -1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    #entities-list li:nth-of-type(1):before {
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-green.png);
+    }
+    #entities-list li:nth-of-type(2):before {
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-red.png);
+    }
+    #entities-list li:nth-of-type(3):before {
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-blue.png);
+    }
+
+    #entities-list li::marker {
+        display: inline-block;
+        height: 1rem;
+    }
 
     h2 {
         margin-bottom: 1rem;
