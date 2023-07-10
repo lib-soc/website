@@ -34,7 +34,7 @@ export function addMarkersCommunities(map,content) {
                 text += fieldText + g[field] + "<br>"
             }
         }
-        var greenIcon = new L.Icon({
+        var markerIcon = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
             iconSize: [25, 41],
@@ -42,7 +42,7 @@ export function addMarkersCommunities(map,content) {
             popupAnchor: [1, -34],
             shadowSize: [41, 41]
         });
-        let marker = L.marker(coordinates, {icon: greenIcon})
+        let marker = L.marker(coordinates, {icon: markerIcon})
         marker.addTo(map).bindPopup(text)
     }
 }
