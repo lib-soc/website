@@ -1,5 +1,5 @@
 
-export let communities = [
+export let communes = [
     {
         location: ["CanadaMontreal",[45.55541047232767, -73.42859611607271]],
         status: "forming",
@@ -20,8 +20,8 @@ export let communities = [
     }
 ]
 
-export function addMarkersCommunities(map,content) {
-    for (let g of communities) {
+export function addMarkersCommunes(map,content) {
+    for (let g of communes) {
         let coordinates
         let text = ""
         for (let field in g) {

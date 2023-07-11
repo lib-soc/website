@@ -50,9 +50,9 @@
                         <p>{$content.groupsText}</p>
                     </div>
                     <div>
-                        <h2>{$content.communitiesTitle}</h2>
-                        <img id="communities-img" src="/img/common/communities.svg" alt="communities">
-                        <p>{$content.communitiesText}</p>
+                        <h2>{$content.communesTitle}</h2>
+                        <img id="communes-img" src="/img/common/commune.svg" alt="communes">
+                        <p>{$content.communesText}</p>
                     </div>
                     <div>
                         <h2>{$content.cooperativesTitle}</h2>
@@ -72,7 +72,7 @@
         text-align: center;
     }
     
-    #groups-img, #communities-img, #coops-img {
+    #groups-img, #communes-img, #coops-img {
         position: absolute;
         left: 50%;
         transform: translate(-50%);

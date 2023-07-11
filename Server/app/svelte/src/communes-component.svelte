@@ -1,10 +1,10 @@
-<svelte:options tag="communities-component" />
+<svelte:options tag="communes-component" />
 
 <script>
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { communities, addMarkersCommunities } from '/js/communities.js'
+    import { communes, addMarkersCommunes } from '/js/communes.js'
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
@@ -14,11 +14,11 @@
     let loaded
     let content = writable({})
 
-    let locale = loadLocaleContent(content,"communities-component",loaded)
+    let locale = loadLocaleContent(content,"communes-component",loaded)
 
-    function mapCallbackCommunities(createMap,content) {
+    function mapCallbackCommunes(createMap,content) {
         let map = createMap([22, 0],2)
-        addMarkersCommunities(map,content)
+        addMarkersCommunes(map,content)
     }
 
     onMount(() => { 
@@ -32,16 +32,16 @@
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
                 <h1>{$content.heading}</h1>
-                <img id="communities-img" src="/img/common/communities.svg" alt="communities">
+                <img id="commune-img" src="/img/common/commune.svg" alt="commune">
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackCommunities(createMap,$content,locale)}></map-component>
-                {#each communities as community}
+                <map-component id="map" callback={(createMap) => mapCallbackCommunes(createMap,$content,locale)}></map-component>
+                {#each communes as commune}
                     <div class="location-info">
-                        <p><b>{$content.location}: </b>{$content[community.location[0]]}</p>
-                        <p><b>{$content.status}: </b>{$content[community.status]}</p>
-                        <p><b>{$content.members}: </b>{community.members}</p>
-                        <p><b>{$content.contact}: </b><a href={community.contact[0]} target=;_blank; rel=noreferrer>{$content[community.contact[1]]}</a></p>
+                        <p><b>{$content.location}: </b>{$content[commune.location[0]]}</p>
+                        <p><b>{$content.status}: </b>{$content[commune.status]}</p>
+                        <p><b>{$content.members}: </b>{commune.members}</p>
+                        <p><b>{$content.contact}: </b><a href={commune.contact[0]} target=;_blank; rel=noreferrer>{$content[commune.contact[1]]}</a></p>
                     </div>
                 {/each}
                 
@@ -53,7 +53,7 @@
 <style>
     @import '/css/common.css';
 
-    #communities-img {
+    #commune-img {
         position: absolute;
         width: 11.5rem;
         left: 50%;

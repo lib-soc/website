@@ -74,7 +74,7 @@
                     <li><a href={"/"+locale+"/manifesto"}>{$content.manifesto}</a></li>
                     <li><a href={"/"+locale+"/join-us"}>{$content.joinUs}</a></li>
                     <li><a href={"/"+locale+"/groups"}>{$content.groups}</a></li>
-                    <li><a href={"/"+locale+"/communities"}>{$content.communities}</a></li>
+                    <li><a href={"/"+locale+"/communes"}>{$content.communes}</a></li>
                     <li><a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a></li>
                     <li><a href={"/"+locale+"/partners"}>{$content.partners}</a></li>
                     <li id="locales">

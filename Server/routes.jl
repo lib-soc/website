@@ -13,7 +13,8 @@ route("/:locale/groups/*", BasicController.groups, named = :groups)
 
 route("/:locale/cooperatives/*", BasicController.cooperatives, named = :cooperatives)
 
-route("/:locale/communities/*", BasicController.communities, named = :communities)
+route("/:locale/communes/*", BasicController.communes, named = :communes)
+route("/:locale/communities/*", BasicController.communes, named = :communities) # deprecate
 
 route("/:locale/partners/*", BasicController.partners, named = :partners)
 

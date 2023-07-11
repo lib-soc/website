@@ -12,7 +12,7 @@ dict_layouts = Dict(
     :join_us => generate_layout_html("main",controller,"join_us",libraries=["Leaflet"]),
     :groups => generate_layout_html("main",controller,"groups",libraries=["Leaflet"]),
     :cooperatives => generate_layout_html("main",controller,"cooperatives",libraries=["Leaflet"]),
-    :communities => generate_layout_html("main",controller,"communities",libraries=["Leaflet"]),
+    :communes => generate_layout_html("main",controller,"communes",libraries=["Leaflet"]),
     :partners => generate_layout_html("main",controller,"partners",libraries=["Leaflet"]),
     :compass => generate_layout_html("main",controller,"compass"),
 )
@@ -74,9 +74,9 @@ const cooperatives_info = Dict(
     )
 )
 
-const communities_info = Dict(
+const communes_info = Dict(
     "en" => Dict(
-        :title => "LibSoc - Communities",
+        :title => "LibSoc - Communes",
         :description => ""
     ),
     "ru" => Dict(
@@ -158,11 +158,11 @@ function cooperatives()
     )
 end
 
-function communities()
+function communes()
     locale = get_locale()
-    html(:basic,:communities, layout = dict_layouts[:communities], context = @__MODULE__,
-        title = communities_info[locale][:title],
-        description = communities_info[locale][:description]
+    html(:basic,:communes, layout = dict_layouts[:communes], context = @__MODULE__,
+        title = communes_info[locale][:title],
+        description = communes_info[locale][:description]
     )
 end
 

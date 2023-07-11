@@ -25,6 +25,11 @@ export let groups = [
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
     },
     {
+        location: ["Ireland", [53.280192832733576, -7.688103518964818]],
+        members: 6,
+        contact: ["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
+    },
+    {
         location: ["LatviaRiga", [56.94748425529816, 24.003027136431925]],
         members: 2,
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
