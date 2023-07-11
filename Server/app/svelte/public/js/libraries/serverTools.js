@@ -68,7 +68,8 @@ function onlyUnique(value, index, array) {
 
 export let locales = {
     en: "English",
-    ru: "Русский"
+    ru: "Русский",
+    lv: "Latviešu"
 }
 
 export function loadLocaleContent(content,componentName,loaded,callback) {

@@ -28,6 +28,10 @@ const landing_info = Dict(
         :title => "LibSoc - Глобальная сеть либертарных социалистов",
         :description => ""
     ),
+    "lv" => Dict(
+        :title => "LibSoc - Globalais libertāro sociālistu tikls",
+        :description => "" 
+    )
 )
 
 const manifesto_info = Dict(
@@ -38,6 +42,10 @@ const manifesto_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Манифест",
         :description => ""
+    ),
+    "lv" => Dict(
+        :title => "LibSoc - Manifests",
+        :description => "" 
     )
 )
 
@@ -50,6 +58,10 @@ const join_us_info = Dict(
         :title => "LibSoc - Присоединяйся",
         :description => ""
     ),
+    "lv" => Dict(
+        :title => "LibSoc - Pievienojies",
+        :description => "" 
+    )
 )
 
 const groups_info = Dict(
@@ -60,6 +72,10 @@ const groups_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Группы",
         :description => ""
+    ),
+    "lv" => Dict(
+        :title => "LibSoc - Grupas",
+        :description => "" 
     )
 )
 
@@ -71,6 +87,10 @@ const cooperatives_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Кооперативы",
         :description => ""
+    ),
+    "lv" => Dict(
+        :title => "LibSoc - Kooperatīvi",
+        :description => "" 
     )
 )
 
@@ -82,6 +102,10 @@ const communities_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Коммуны",
         :description => ""
+    ),
+    "lv" => Dict(
+        :title => "LibSoc - Komūnas",
+        :description => "" 
     )
 )
 
@@ -93,6 +117,10 @@ const partners_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Партнеры",
         :description => ""
+    ),
+    "lv" => Dict(
+        :title => "LibSoc - Atbalstītaji",
+        :description => "" 
     )
 )
 
@@ -104,6 +132,10 @@ const compass_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Политический компас",
         :description => ""
+    ),
+    "lv" => Dict(
+        :title => "LibSoc - Politiskais kompass",
+        :description => "" 
     )
 )
 
