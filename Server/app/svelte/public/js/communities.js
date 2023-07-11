@@ -11,6 +11,12 @@ export let communities = [
         status: "forming",
         members: 2,
         contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
+    },
+    {
+        location: ["Latvia",[56.934159375258055, 25.269099001330265]],
+        status: "forming",
+        members: 1,
+        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
     }
 ]
 
