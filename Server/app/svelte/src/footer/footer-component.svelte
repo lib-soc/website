@@ -24,8 +24,8 @@
                     <div id="contact-us-container">
                         <h2>{$content.contactUs}</h2>
                         <!--<p>Email: <a href="mailto:info@chiron.com">info@libsoc.org</a></p>-->
-                        <p>WhatsApp: <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer style="margin-left: 0.5rem;">{$content.inviteLink}</a></p>
                         <p>Discord: <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer style="margin-left: 1.8rem;">{$content.inviteLink}</a></p>
+                        <p>WhatsApp: <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer style="margin-left: 0.5rem;">{$content.inviteLink}</a></p>
                     </div>
                 </div>
                 <button on:click={() => {location.href='#'}} id="footer-up" aria-label="go up">
