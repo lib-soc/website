@@ -47,7 +47,6 @@
                             <div>
                                 <p><b>{$content.name}: </b>{party.name}</p>
                                 <p><b>{$content.location}: </b>{$content[party.location[0]]}</p>
-                                <p><b>{$content.members}: </b>{party.members}</p>
                                 <p><b>{$content.link}: </b><a href={party.link} target=;_blank; rel=noreferrer>{party.link}</a></p>
                             </div>
                         </div>
@@ -104,7 +103,7 @@
     .party-logo {
         position: relative;
         right: 0;
-        max-height: 7rem;
+        max-height: 6rem;
         max-width: 100%;
         border-radius: 1rem;
     }

@@ -3,7 +3,7 @@ export let parties = [
         logo: "roots",
         name: "Roots",
         location: ["ireland",[52.98479517270413, -7.649233227534782]],
-        members: 6,
+        //members: 6,
         link: "https://discord.gg/pSTMacJZsK",
         description: "descriptionRoots"
     }
