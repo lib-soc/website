@@ -13,6 +13,7 @@ dict_layouts = Dict(
     :groups => generate_layout_html("main",controller,"groups",libraries=["Leaflet"]),
     :cooperatives => generate_layout_html("main",controller,"cooperatives",libraries=["Leaflet"]),
     :communes => generate_layout_html("main",controller,"communes",libraries=["Leaflet"]),
+    :parties => generate_layout_html("main",controller,"parties",libraries=["Leaflet"]),
     :partners => generate_layout_html("main",controller,"partners",libraries=["Leaflet"]),
     :compass => generate_layout_html("main",controller,"compass"),
 )
@@ -96,6 +97,17 @@ const partners_info = Dict(
     )
 )
 
+const parties_info = Dict(
+    "en" => Dict(
+        :title => "LibSoc - Parties",
+        :description => ""
+    ),
+    "ru" => Dict(
+        :title => "LibSoc - Партии",
+        :description => ""
+    )
+)
+
 const compass_info = Dict(
     "en" => Dict(
         :title => "LibSoc - Political Compass",
@@ -171,6 +183,14 @@ function partners()
     html(:basic,:partners, layout = dict_layouts[:partners], context = @__MODULE__,
         title = partners_info[locale][:title],
         description = partners_info[locale][:description]
+    )
+end
+
+function parties()
+    locale = get_locale()
+    html(:basic,:parties, layout = dict_layouts[:parties], context = @__MODULE__,
+        title = parties_info[locale][:title],
+        description = parties_info[locale][:description]
     )
 end
 

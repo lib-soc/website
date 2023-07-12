@@ -7,6 +7,7 @@
     import { addMarkersGroups } from '/js/groups.js'
     import { addMarkersCoops } from '/js/coops.js'
     import { addMarkersCommunities } from '/js/communities.js'
+    import { addMarkersParties } from '/js/parties.js'
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
@@ -19,10 +20,12 @@
     let contentGroups = writable({})
     let contentCommunities = writable({})
     let contentCoops = writable({})
+    let contentParties = writable({})
 
     loadLocaleContent(contentGroups,"groups-component")
     loadLocaleContent(contentCommunities,"communities-component")
     loadLocaleContent(contentCoops,"cooperatives-component")
+    loadLocaleContent(contentParties,"parties-component")
 
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
@@ -31,6 +34,7 @@
         addMarkersGroups(map,$contentGroups)
         addMarkersCommunities(map,$contentCommunities)
         addMarkersCoops(map,$contentCoops)
+        addMarkersParties(map,$contentParties)
     }
 
     onMount(() => { 
@@ -63,8 +67,9 @@
                     <p>{$content.findOur}</p>
                     <ol id="entities-list">
                         <li><a href={"/" + locale + "/groups"}>{$content.group}</a>,</li> 
-                        <li><a href={"/" + locale + "/communes"}>{$content.commune}</a> {$content.or}</li> 
-                        <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a></li>
+                        <li><a href={"/" + locale + "/communes"}>{$content.commune}</a></li> 
+                        <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a> {$content.or}</li>
+                        <li><a href={"/" + locale + "/parties"}>{$content.party}</a></li> 
                     </ol>
                     <p>{$content.nearYou}</p>
                 </div>
@@ -102,6 +107,9 @@
     }
     #entities-list li:nth-of-type(3):before {
         background-image: url(https://www.libsoc.org/img/common/markers/marker-blue.png);
+    }
+    #entities-list li:nth-of-type(4):before {
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-gold.png);
     }
 
     #entities-list li::marker {

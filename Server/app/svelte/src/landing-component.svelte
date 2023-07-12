@@ -17,10 +17,10 @@
 
     function changeWidth(locale) {
         if (locale=="ru") {
-            gridWidth = "1.2fr 1.05fr 1fr"
+            gridWidth = "1fr 1fr"
         }
         else {
-            gridWidth = "1.2fr 1.1fr 1fr"
+            gridWidth = "1fr 1fr"
         }
     }
 
@@ -59,6 +59,11 @@
                         <img id="coops-img" src="/img/common/coops.svg" alt="coops">
                         <p>{$content.cooperativesText}</p>
                     </div>
+                    <div>
+                        <h2>{$content.partiesTitle}</h2>
+                        <img id="parties-img" src="/img/common/parties.svg" alt="coops">
+                        <p>{$content.partiesText}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,13 +77,18 @@
         text-align: center;
     }
     
-    #groups-img, #communes-img, #coops-img {
+    #groups-img, #communes-img, #coops-img, #parties-img {
         position: absolute;
         left: 50%;
         transform: translate(-50%);
         z-index: 0;
         opacity: 0.2;
         height: 8rem;
+    }
+
+    #coops-img {
+        margin-top: 0.5rem;
+        height: 7.5rem;
     }
 
     #text-container {
@@ -93,7 +103,7 @@
 
     #container {
         margin: auto;
-        max-width: 1000px;
+        max-width: 800px;
         margin-top: 2rem;
         margin-bottom: 5rem;
     }
@@ -109,6 +119,7 @@
     #container-grid {
         display: grid;
         grid-template-columns: var(--grid-width);
+        grid-template-rows: var(--grid-width);
         grid-gap: 4rem;
         margin-top: 2rem;
     }

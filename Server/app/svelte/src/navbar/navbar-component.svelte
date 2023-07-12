@@ -76,6 +76,7 @@
                     <li><a href={"/"+locale+"/groups"}>{$content.groups}</a></li>
                     <li><a href={"/"+locale+"/communes"}>{$content.communes}</a></li>
                     <li><a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a></li>
+                    <li><a href={"/"+locale+"/parties"}>{$content.parties}</a></li>
                     <li><a href={"/"+locale+"/partners"}>{$content.partners}</a></li>
                     <li id="locales">
                         <button on:click={showLocales}>
