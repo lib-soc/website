@@ -2,13 +2,15 @@ https://www.libsoc.org/en/
 https://www.libsoc.org/en/manifesto/
 https://www.libsoc.org/en/join-us/
 https://www.libsoc.org/en/groups/
-https://www.libsoc.org/en/communities/
+https://www.libsoc.org/en/communes/
 https://www.libsoc.org/en/cooperatives/
 https://www.libsoc.org/en/partners/
+https://www.libsoc.org/en/parties/
 https://www.libsoc.org/ru/
 https://www.libsoc.org/ru/manifesto/
 https://www.libsoc.org/ru/join-us/
 https://www.libsoc.org/ru/groups/
-https://www.libsoc.org/ru/communities/
+https://www.libsoc.org/ru/communes/
 https://www.libsoc.org/ru/cooperatives/
 https://www.libsoc.org/ru/partners/
+https://www.libsoc.org/ru/parties/
