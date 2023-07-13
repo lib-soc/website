@@ -38,7 +38,7 @@
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackParties(createMap,$content)}></map-component>
                 {#each Object.entries(partiesByCountry) as [name,parties]}
-                    <h4 class="country-name">{name}</h4>
+                    <h4 class="country-name">{$content[name]}</h4>
                     <div class="country-block">
                         {#each parties as party}
                         <div class="location-info">
