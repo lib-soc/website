@@ -9,15 +9,16 @@
     // Import components
 
     // Main code
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
-    let locale = loadLocaleContent(content,"footer-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
+    loadLocaleContent(content,"footer-component",loaded)
 
 </script>
   
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <footer>
             <div id="footer-content-container">
                 <div id="footer-grid-content-container" class="logged">

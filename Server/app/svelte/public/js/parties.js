@@ -2,12 +2,23 @@ export let parties = [
     {
         logo: "roots",
         name: "Roots",
-        location: ["ireland",[52.98479517270413, -7.649233227534782]],
+        location: ["Ireland",[52.98479517270413, -7.649233227534782]],
         //members: 6,
         link: "https://discord.gg/pSTMacJZsK",
         description: "descriptionRoots"
     }
 ]
+
+export let partiesByCountry = {}
+for (let g of parties) {
+    let country = g.location[0]
+    if (country in partiesByCountry) {
+        partiesByCountry[country].push(g)
+    }
+    else {
+        partiesByCountry[country] = [g]
+    }
+}
 
 export function addMarkersParties(map,content) {
     for (let g of parties) {

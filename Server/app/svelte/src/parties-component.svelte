@@ -4,17 +4,18 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { parties, addMarkersParties } from '/js/parties.js'
+    import { partiesByCountry, addMarkersParties } from '/js/parties.js'
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
-    let locale = loadLocaleContent(content,"parties-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
+    loadLocaleContent(content,"parties-component",loaded)
 
     function mapCallbackParties(createMap,content) {
         let map = createMap([22, 0],2)
@@ -26,8 +27,8 @@
     })
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
@@ -36,21 +37,26 @@
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackParties(createMap,$content)}></map-component>
-                {#each parties as party}
-                    <div class="location-info">
-                        <div class="img-general-info">
-                            <picture>
-                                <source srcset={"/img/parties/"+party.logo+".webp"}>
-                                <source srcset={"/img/parties/"+party.logo+".jpg"}>
-                                <img class="party-logo" alt="logo">
-                            </picture>
-                            <div>
-                                <p><b>{$content.name}: </b>{party.name}</p>
-                                <p><b>{$content.location}: </b>{$content[party.location[0]]}</p>
-                                <p><b>{$content.link}: </b><a href={party.link} target=;_blank; rel=noreferrer>{party.link}</a></p>
+                {#each Object.entries(partiesByCountry) as [name,parties]}
+                    <h4 class="country-name">{name}</h4>
+                    <div class="country-block">
+                        {#each parties as party}
+                        <div class="location-info">
+                            <div class="img-general-info">
+                                <picture>
+                                    <source srcset={"/img/parties/"+party.logo+".webp"}>
+                                    <source srcset={"/img/parties/"+party.logo+".jpg"}>
+                                    <img class="party-logo" alt="logo">
+                                </picture>
+                                <div>
+                                    <p><b>{$content.name}: </b>{party.name}</p>
+                                    <p><b>{$content.location}: </b>{$content[party.location[0]]}</p>
+                                    <p><b>{$content.link}: </b><a href={party.link} target=;_blank; rel=noreferrer>{party.link}</a></p>
+                                </div>
                             </div>
+                            <p><b>{$content.description}: </b>{$content[party.description]}</p>
                         </div>
-                        <p><b>{$content.description}: </b>{$content[party.description]}</p>
+                    {/each}
                     </div>
                 {/each}
             </div>
@@ -78,9 +84,17 @@
         margin-bottom: 2rem;
     }
 
+    .country-name {
+        margin-bottom: 1rem;
+    }
+
+    .country-block {
+        margin-bottom: 2rem;
+    }
+
     .location-info {
         position: relative;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .location-info p {
@@ -93,7 +107,7 @@
         width: 100%;
         gap: 1.5rem;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
 
     .img-general-info>:nth-child(2) {
@@ -103,7 +117,7 @@
     .party-logo {
         position: relative;
         right: 0;
-        max-height: 6rem;
+        max-height: 5.5rem;
         max-width: 100%;
         border-radius: 1rem;
     }

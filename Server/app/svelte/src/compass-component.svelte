@@ -10,8 +10,9 @@
     // Import components
     
     // Main code
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
+    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"compass-component",loaded,contentCallback)
 
     let qTag = 0
@@ -52,8 +53,8 @@
     /**/
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <div id="container">
             <div id="text-container">
                 <h1>{$content.heading}</h1>

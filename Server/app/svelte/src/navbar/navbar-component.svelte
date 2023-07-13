@@ -11,7 +11,7 @@
     let hambInput
     let navbar
     let localesDropdown
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
     let locale = loadLocaleContent(content,"navbar-component",loaded)

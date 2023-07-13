@@ -5,24 +5,25 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
-    import { partners } from '/js/partners.js'
+    import { partnersByCountry } from '/js/partners.js'
 
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
-    let locale = loadLocaleContent(content,"partners-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
+    loadLocaleContent(content,"partners-component",loaded)
 
     onMount(() => { 
 
     })
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
@@ -30,22 +31,27 @@
                 <img id="hands-img" src="/img/common/handshake.svg" alt="hands">
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <h4>{$content.subheading2}</h4>
-                {#each partners as partner}
-                    <div class="location-info">
-                        <div class="img-general-info">
-                            <picture>
-                                <source srcset={"/img/partners/"+partner.logo+".webp"}>
-                                <source srcset={"/img/partners/"+partner.logo+".jpg"}>
-                                <img class="partner-logo" alt="logo">
-                            </picture>
-                            <div>
-                                <p><b>{$content.name}: </b>{partner.name}</p>
-                                <p><b>{$content.type}: </b>{$content[partner.type]}</p>
-                                <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
+                {#each Object.entries(partnersByCountry) as [name,partners]}
+                    <h4 class="country-name">{$content[name]}</h4>
+                    <div class="country-block">
+                        {#each partners as partner}
+                        <div class="location-info">
+                            <div class="img-general-info">
+                                <picture>
+                                    <source srcset={"/img/partners/"+partner.logo+".webp"}>
+                                    <source srcset={"/img/partners/"+partner.logo+".jpg"}>
+                                    <img class="partner-logo" alt="logo">
+                                </picture>
+                                <div>
+                                    <p><b>{$content.name}: </b>{partner.name}</p>
+                                    <p><b>{$content.type}: </b>{$content[partner.type]}</p>
+                                    <p><b>{$content.location}: </b>{$content[partner.location[0][0]] + (partner.location[0][1]=="" ? "" : ", " +  $content[partner.location[0][1]])}</p>
+                                    <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
+                                </div>
                             </div>
+                            <p><b>{$content.description}: </b>{$content[partner.description]}</p>
                         </div>
-                        <p><b>{$content.description}: </b>{$content[partner.description]}</p>
+                    {/each}
                     </div>
                 {/each}
             </div>
@@ -76,7 +82,7 @@
         width: 100%;
         gap: 1.5rem;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .img-general-info>:nth-child(2) {
@@ -86,7 +92,7 @@
     .partner-logo {
         position: relative;
         right: 0;
-        max-height: 6rem;
+        max-height: 6.5rem;
         max-width: 100%;
         border-radius: 1rem;
     }
@@ -95,9 +101,17 @@
         margin-bottom: 2rem;
     }
 
+    .country-name {
+        margin-bottom: 0.5rem;
+    }
+
+    .country-block {
+        margin-bottom: 2rem;
+    }
+
     .location-info {
         position: relative;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .location-info p {

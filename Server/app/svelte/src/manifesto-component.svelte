@@ -26,12 +26,12 @@
     let root
     let main
 
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
+    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"manifesto-component",loaded)
     
-
     const htmlDelims = ["ul","ol"]
     getData("/locales/"+ locale + "/manifesto.txt",function(response) {
         let splitText = response.split(/\r?\n/)
@@ -164,8 +164,8 @@
     })
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <div id="container" bind:this={root}>
             <div id="text-container">
                 {#key key}

@@ -96,8 +96,13 @@ export function loadLocaleContent(content,componentName,loaded,callback) {
         if (callback!=undefined) {
             callback(parsed)
         }
-        content.set(parsed)
-        loaded = 1
+        content.update((obj) => {
+            Object.assign(obj,parsed)
+            return obj
+        })
+        loaded.update((val) => {
+            return val + 1
+        })
     })
     return locale
 }

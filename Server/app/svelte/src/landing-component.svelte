@@ -12,7 +12,7 @@
     // Main code
     let grid
     let gridWidth
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
     function changeWidth(locale) {
@@ -24,6 +24,7 @@
         }
     }
 
+    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"landing-component",loaded,changeWidth)
     changeWidth(locale)
 
@@ -32,8 +33,8 @@
     })
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <div id="container">
             <picture>
                 <source srcset="/img/crowd.webp">
@@ -121,6 +122,7 @@
         grid-template-columns: var(--grid-width);
         grid-template-rows: var(--grid-width);
         grid-gap: 4rem;
+        row-gap: 3rem;
         margin-top: 2rem;
     }
 

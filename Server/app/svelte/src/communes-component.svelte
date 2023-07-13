@@ -4,16 +4,17 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { communes, addMarkersCommunes } from '/js/communes.js'
+    import { communesByCountry, addMarkersCommunes } from '/js/communes.js'
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
+    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"communes-component",loaded)
 
     function mapCallbackCommunes(createMap,content) {
@@ -26,8 +27,8 @@
     })
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==2}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
@@ -36,15 +37,19 @@
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackCommunes(createMap,$content,locale)}></map-component>
-                {#each communes as commune}
-                    <div class="location-info">
-                        <p><b>{$content.location}: </b>{$content[commune.location[0]]}</p>
-                        <p><b>{$content.status}: </b>{$content[commune.status]}</p>
-                        <p><b>{$content.members}: </b>{commune.members}</p>
-                        <p><b>{$content.contact}: </b><a href={commune.contact[0]} target=;_blank; rel=noreferrer>{$content[commune.contact[1]]}</a></p>
+                {#each Object.entries(communesByCountry) as [name,communes]}
+                    <h4 class="country-name">{$content[name]}</h4>
+                    <div class="country-block">
+                        {#each communes as commune}
+                            <div class="location-info">
+                                <p><b>{$content.location}: </b>{$content[commune.location[0][0]] + (commune.location[0][1]=="" ? "" : ", " +  $content[commune.location[0][1]])}</p>
+                                <p><b>{$content.status}: </b>{$content[commune.status]}</p>
+                                <p><b>{$content.members}: </b>{commune.members}</p>
+                                <p><b>{$content.contact}: </b><a href={commune.contact[0]} target=;_blank; rel=noreferrer>{$content[commune.contact[1]]}</a></p>
+                            </div>
+                        {/each}
                     </div>
                 {/each}
-                
             </div>
         </div>
     {/if}
@@ -66,9 +71,14 @@
         margin-top: 8rem;
     }
 
-    h4 {
+    .country-name {
+        margin-bottom: 0.5rem;
+    }
+
+    .country-block {
         margin-bottom: 2rem;
     }
+
 
     .location-info {
         position: relative;

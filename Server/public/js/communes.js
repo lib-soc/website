@@ -1,24 +1,35 @@
 
 export let communes = [
     {
-        location: ["CanadaMontreal",[45.55541047232767, -73.42859611607271]],
+        location: [["Canada","Montreal"],[45.55541047232767, -73.42859611607271]],
         status: "forming",
         members: 2,
         contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
     },
     {
-        location: ["EstoniaKohtlaJarve",[59.409521829709504, 27.288415912535914]],
+        location: [["Estonia","KohtlaJarve"],[59.409521829709504, 27.288415912535914]],
         status: "forming",
         members: 2,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
+        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
     },
     {
-        location: ["Latvia",[56.934159375258055, 25.269099001330265]],
+        location: [["Latvia",""],[56.934159375258055, 25.269099001330265]],
         status: "forming",
         members: 1,
-        contact: ["https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh","WhatsAppInviteLink"]
+        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
     }
 ]
+
+export let communesByCountry = {}
+for (let c of communes) {
+    let country = c.location[0][0]
+    if (country in communesByCountry) {
+        communesByCountry[country].push(c)
+    }
+    else {
+        communesByCountry[country] = [c]
+    }
+}
 
 export function addMarkersCommunes(map,content) {
     for (let g of communes) {
@@ -30,7 +41,9 @@ export function addMarkersCommunes(map,content) {
                 text += fieldText + "<a href='" + g.contact[0] + "' target='_blank' rel=noreferrer>" + content[g.contact[1]]+ "</a>"
             }
             else if (field=="location") {
-                text += fieldText + content[g[field][0]]+ "<br>"
+                let location = g[field][0]
+                let town = location[1]=="" ? "" : ", " + content[location[1]]
+                text += fieldText + content[location[0]] + town + "<br>"
                 coordinates = g[field][1]
             }
             else if (field=="status") {

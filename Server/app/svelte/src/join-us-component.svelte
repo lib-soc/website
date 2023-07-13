@@ -14,27 +14,22 @@
     import "/js/components/map-component.js" 
 
     // Main code
-    let loaded
+    let loaded = writable(0)
     let content = writable({})
 
-    let contentGroups = writable({})
-    let contentCommunities = writable({})
-    let contentCoops = writable({})
-    let contentParties = writable({})
-
-    loadLocaleContent(contentGroups,"groups-component")
-    loadLocaleContent(contentCommunities,"communities-component")
-    loadLocaleContent(contentCoops,"cooperatives-component")
-    loadLocaleContent(contentParties,"parties-component")
-
+    loadLocaleContent(content,"groups-component",loaded)
+    loadLocaleContent(content,"communities-component",loaded)
+    loadLocaleContent(content,"cooperatives-component",loaded)
+    loadLocaleContent(content,"parties-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
     function mapCallback(createMap,content) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,$contentGroups)
-        addMarkersCommunities(map,$contentCommunities)
-        addMarkersCoops(map,$contentCoops)
-        addMarkersParties(map,$contentParties)
+        addMarkersGroups(map,content)
+        addMarkersCommunities(map,content)
+        addMarkersCoops(map,content)
+        addMarkersParties(map,content)
     }
 
     onMount(() => { 
@@ -42,8 +37,8 @@
     })
 </script>
 
-{#key loaded}
-    {#if Object.keys($content).length!=0}
+{#key $loaded}
+    {#if $loaded==6}
         <div id="container">
             <div id="text-container">
                 <h1>{$content.heading}</h1>
