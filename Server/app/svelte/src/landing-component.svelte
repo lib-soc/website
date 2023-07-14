@@ -186,7 +186,7 @@
         grid-gap: 4rem;
         row-gap: 3rem;
         margin-top: 2rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 
     #container-grid > div {
