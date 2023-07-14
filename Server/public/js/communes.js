@@ -31,10 +31,12 @@ for (let c of communes) {
     }
 }
 
+export let communesMarkersLayer = L.layerGroup()
+
 export function addMarkersCommunes(map,content) {
     for (let g of communes) {
         let coordinates
-        let text = ""
+        let text = "<b>Commune</b><br>"
         for (let field in g) {
             let fieldText = content[field] + ": "
             if (field=="contact") {
@@ -62,6 +64,7 @@ export function addMarkersCommunes(map,content) {
             shadowSize: [41, 41]
         });
         let marker = L.marker(coordinates, {icon: markerIcon})
-        marker.addTo(map).bindPopup(text)
+        marker.addTo(communesMarkersLayer).bindPopup(text)
     }
+    communesMarkersLayer.addTo(map)
 }

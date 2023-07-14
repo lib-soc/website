@@ -3,11 +3,15 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
     import { writable } from 'svelte/store';
+    import { addMarkersGroups, groupsMarkersLayer } from '/js/groups.js'
+    import { addMarkersCoops, coopsMarkersLayer } from '/js/coops.js'
+    import { addMarkersCommunes, communesMarkersLayer } from '/js/communes.js'
+    import { addMarkersParties, partiesMarkersLayer } from '/js/parties.js'
+    import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
-    
+    import "/js/components/map-component.js" 
 
     // Main code
     let grid
@@ -24,9 +28,29 @@
         }
     }
 
+    loadLocaleContent(content,"groups-component",loaded)
+    loadLocaleContent(content,"communes-component",loaded)
+    loadLocaleContent(content,"cooperatives-component",loaded)
+    loadLocaleContent(content,"parties-component",loaded)
     loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"landing-component",loaded,changeWidth)
     changeWidth(locale)
+
+    function mapCallback(createMap,content) {
+        let map = createMap([22, 0],2)
+        addMarkersGroups(map,content)
+        addMarkersCommunes(map,content)
+        addMarkersCoops(map,content)
+        addMarkersParties(map,content)
+
+        let overlayMaps = {}
+        overlayMaps[content.groups] = groupsMarkersLayer
+        overlayMaps[content.communes] = communesMarkersLayer
+        overlayMaps[content.cooperatives] = coopsMarkersLayer
+        overlayMaps[content.parties] = partiesMarkersLayer
+        
+        L.control.layers(null, overlayMaps).addTo(map)
+    }
 
     onMount(() => { 
 
@@ -34,7 +58,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==6}
         <div id="container">
             <picture>
                 <source srcset="/img/crowd.webp">
@@ -46,25 +70,32 @@
                 <p>{$content.top}</p>
                 <div bind:this={grid} id="container-grid" style="--grid-width: {gridWidth}">
                     <div>
-                        <h2>{$content.groupsTitle}</h2>
+                        <a href={"/" + locale + "/groups"}><h2>{$content.groupsTitle}</h2></a>
                         <img id="groups-img" src="/img/common/groups.svg" alt="groups">
                         <p>{$content.groupsText}</p>
                     </div>
                     <div>
-                        <h2>{$content.communesTitle}</h2>
+                        <a href={"/" + locale + "/communes"}><h2>{$content.communesTitle}</h2></a>
                         <img id="communes-img" src="/img/common/commune.svg" alt="communes">
                         <p>{$content.communesText}</p>
                     </div>
                     <div>
-                        <h2>{$content.cooperativesTitle}</h2>
+                        <a href={"/" + locale + "/coops"}><h2>{$content.cooperativesTitle}</h2></a>
                         <img id="coops-img" src="/img/common/coops.svg" alt="coops">
                         <p>{$content.cooperativesText}</p>
                     </div>
                     <div>
-                        <h2>{$content.partiesTitle}</h2>
+                        <a href={"/" + locale + "/parties"}><h2>{$content.partiesTitle}</h2></a>
                         <img id="parties-img" src="/img/common/parties.svg" alt="coops">
                         <p>{$content.partiesText}</p>
                     </div>
+                </div>
+                <h1>{$content.findUs}</h1>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
+                <h1>{$content.whatNow}</h1>
+                <div id="action-container">
+                    <a class="link-button" href={"/" + locale + "/join-us"}>{$content.joinUs}</a>
+                    <a class="link-button"  href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer >{$content.talkWithUs}</a>
                 </div>
             </div>
         </div>
@@ -74,7 +105,38 @@
 <style>
     @import '/css/common.css';
 
-    #container-grid > div > h2 {
+    #action-container {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 2rem;
+        max-width: 34rem;
+    }
+
+    .link-button {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-family: var(--sans-serif,sans-serif);
+        width: 14rem;
+        line-height: 4rem;
+        background: #cb1816;
+        color: white;
+        text-align: center;
+    }
+
+    #map {
+        --margin-top: 1rem;
+        --height: 30rem;
+        --width: 100%;
+        --margin-bottom: 3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #container-grid > div > a > h2 {
         text-align: center;
     }
     
@@ -124,6 +186,7 @@
         grid-gap: 4rem;
         row-gap: 3rem;
         margin-top: 2rem;
+        margin-bottom: 3rem;
     }
 
     #container-grid > div {
@@ -138,10 +201,21 @@
 
     @media only screen and (max-width: 1060px) {
         #container-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
+
+        #action-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        #container-grid >:nth-child(2) {
+            height: calc(100% - 2rem);
+        }
+
     }
 
 </style>

@@ -32,7 +32,7 @@
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
-                <h1>{$content.heading}</h1>
+                <h1>{$content.communes}</h1>
                 <img id="commune-img" src="/img/common/commune.svg" alt="commune">
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>

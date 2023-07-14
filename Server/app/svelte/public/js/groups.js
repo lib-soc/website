@@ -47,15 +47,15 @@ for (let g of groups) {
     }
 }
 
-let groupsLoaded = false
+export let groupsMarkersLayer = L.layerGroup()
 let groupsMarkersLayerOut = L.layerGroup()
 let groupsMarkersLayerIn = L.layerGroup()
 
 let contactGeneral =["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
 
-function addMarkerGroups(g,layer,content) {
+function addMarkersToLayer(g,layer,content) {
     let coordinates
-    let text = ""
+    let text = "<b>Group</b><br>"
     for (let field in g) {
         let fieldText = content[field] + ": "
         if (field=="contact") {
@@ -85,13 +85,13 @@ function addMarkerGroups(g,layer,content) {
 
 export function addMarkersGroups(map,content) {
     for (let g of groups) {
-        addMarkerGroups(g,groupsMarkersLayerIn,content)
+        addMarkersToLayer(g,groupsMarkersLayerIn,content)
     }
     for (let gs of Object.values(groupsByCountry)) {
         if (gs.length==1) {
             let g = {...gs[0]}
             g.location[0][1] = ""
-            addMarkerGroups(g,groupsMarkersLayerOut,content)
+            addMarkersToLayer(g,groupsMarkersLayerOut,content)
         }
         else {
             let locationName = [gs[0].location[0][0],""]
@@ -114,21 +114,22 @@ export function addMarkersGroups(map,content) {
                 contact: contact
             }
             
-            addMarkerGroups(gNew,groupsMarkersLayerOut,content)
+            addMarkersToLayer(gNew,groupsMarkersLayerOut,content)
         }
     }
-    groupsMarkersLayerOut.addTo(map)
+    groupsMarkersLayerOut.addTo(groupsMarkersLayer)
+    groupsMarkersLayer.addTo(map)
     map.on("zoomend", () => onZoomEnd(map))
 }
 
 function onZoomEnd(map) {
     let zoomLevel = map.getZoom()
     if (zoomLevel==3) {
-        map.removeLayer(groupsMarkersLayerIn)
-        groupsMarkersLayerOut.addTo(map)
+        groupsMarkersLayer.removeLayer(groupsMarkersLayerIn)
+        groupsMarkersLayerOut.addTo(groupsMarkersLayer)
     }
     else if (zoomLevel==4) {
-        map.removeLayer(groupsMarkersLayerOut)
-        groupsMarkersLayerIn.addTo(map)
+        groupsMarkersLayer.removeLayer(groupsMarkersLayerOut)
+        groupsMarkersLayerIn.addTo(groupsMarkersLayer)
     }
 }

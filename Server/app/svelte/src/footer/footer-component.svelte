@@ -37,7 +37,7 @@
                         </g>
                     </svg>                              
                 </button>
-                <p id="footer-copyright">Licensed under a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/legalcode "  target="_blank" rel=noreferrer >CC BY 4.0 license.</a></p>  
+                <p id="footer-copyright">Licensed under a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/legalcode "  target="_blank" rel=noreferrer >CC BY 4.0 license</a></p>  
             </div>
         </footer>
     {/if}

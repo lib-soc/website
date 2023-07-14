@@ -31,7 +31,7 @@
     {#if $loaded==2}
         <div id="container">
             <div id="text-container">
-                <h1>{$content.heading}</h1>
+                <h1>{$content.cooperatives}</h1>
                 <img id="coops-img" src="/img/common/coops.svg" alt="coops">
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
@@ -113,7 +113,7 @@
 
     .location-info {
         position: relative;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .location-info p {

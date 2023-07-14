@@ -4,10 +4,10 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { addMarkersGroups } from '/js/groups.js'
-    import { addMarkersCoops } from '/js/coops.js'
-    import { addMarkersCommunities } from '/js/communities.js'
-    import { addMarkersParties } from '/js/parties.js'
+    import { addMarkersGroups, groupsMarkersLayer } from '/js/groups.js'
+    import { addMarkersCoops, coopsMarkersLayer } from '/js/coops.js'
+    import { addMarkersCommunes, communesMarkersLayer } from '/js/communes.js'
+    import { addMarkersParties, partiesMarkersLayer } from '/js/parties.js'
     import { loadLocaleContent } from "/js/libraries/serverTools.js"
 
     // Import components
@@ -18,7 +18,7 @@
     let content = writable({})
 
     loadLocaleContent(content,"groups-component",loaded)
-    loadLocaleContent(content,"communities-component",loaded)
+    loadLocaleContent(content,"communes-component",loaded)
     loadLocaleContent(content,"cooperatives-component",loaded)
     loadLocaleContent(content,"parties-component",loaded)
     loadLocaleContent(content,"countries",loaded)
@@ -27,9 +27,17 @@
     function mapCallback(createMap,content) {
         let map = createMap([22, 0],2)
         addMarkersGroups(map,content)
-        addMarkersCommunities(map,content)
+        addMarkersCommunes(map,content)
         addMarkersCoops(map,content)
         addMarkersParties(map,content)
+
+        let overlayMaps = {
+            "Groups": groupsMarkersLayer,
+            "Communes": communesMarkersLayer,
+            "Coops": coopsMarkersLayer,
+            "Parties": partiesMarkersLayer,
+        }
+        L.control.layers(null, overlayMaps).addTo(map)
     }
 
     onMount(() => { 

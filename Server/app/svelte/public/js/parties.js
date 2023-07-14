@@ -20,10 +20,12 @@ for (let g of parties) {
     }
 }
 
+export let partiesMarkersLayer = L.layerGroup()
+
 export function addMarkersParties(map,content) {
     for (let g of parties) {
         let coordinates
-        let text = ""
+        let text = "<b>Party</b><br>"
         for (let field in g) {
             let fieldText
             if (field!="logo") {
@@ -58,6 +60,7 @@ export function addMarkersParties(map,content) {
             shadowSize: [41, 41]
         });
         let marker = L.marker(coordinates, {icon: markerIcon})
-        marker.addTo(map).bindPopup(text)
+        marker.addTo(partiesMarkersLayer).bindPopup(text)
     }
+    partiesMarkersLayer.addTo(map)
 }

@@ -13,6 +13,7 @@
     let localesDropdown
     let loaded = writable(0)
     let content = writable({})
+    let logoText
 
     let locale = loadLocaleContent(content,"navbar-component",loaded)
 
@@ -50,6 +51,31 @@
         location.href = loc
     }
 
+    function fixHeading() {
+        if (locale=="ru") {
+            let func = () => {
+                if (logoText==undefined) {
+                    setTimeout(func,100)
+                }
+                else {
+                    if (window.innerWidth < 400 && logoText.style.lineHeight!="100%") {
+                        logoText.style.lineHeight = "120%"
+                        logoText.style.top = "1rem"
+                        logoText.style.width = "16rem"
+                    }
+                    else if (window.innerWidth > 400 && logoText.style.lineHeight!="400%") {
+                        logoText.style.lineHeight = "400%"
+                        logoText.style.top = "0rem"
+                        logoText.style.width = "auto"
+                    }
+                }
+            }
+            func()
+            addEventListener("resize", func)
+        }
+    }
+
+
     onMount(() => {
 
     })
@@ -59,6 +85,7 @@
 <!-- Navigation bar -->
 {#key loaded}
     {#if Object.keys($content).length!=0}
+    {fixHeading()}
         <header bind:this={navbar} id="navbar">
             <!-- Hamburger icon -->
             <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
@@ -66,7 +93,7 @@
             <!-- Logo -->
             <a id=logo-container href={"/" + locale + "/"}>
                 <img src="/img/common/flag.png" id="navbar-logo" alt="logo">
-                <span id="navbar-logo-text">{$content.orgName}</span>
+                <span bind:this={logoText} id="navbar-logo-text" >{@html $content.orgName}</span>
             </a>
             <!-- Menu -->
             <nav id="nav">
@@ -139,11 +166,9 @@
 
     #navbar-logo-text {
         position: relative;
-        width: auto;
+        word-wrap: normal;
         height: 100%;
         line-height: 400%;
-        white-space: nowrap;
-        text-align: center;
         font-size: 1.4rem;
         color: #292222;
         font-family: var(--sans-serif, sans-serif);

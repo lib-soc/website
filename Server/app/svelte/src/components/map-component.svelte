@@ -8,6 +8,7 @@
 
     // Export statements
     export let callback = null
+    export let colors = null
     
     // Main code
     let mapContainer
@@ -21,14 +22,20 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             minNativeZoom: 2,
             minZoom: 2,
-            maxNativeZoom: 16,
-            maxZoom: 16,
+            maxNativeZoom: 14,
+            maxZoom: 14,
         }).addTo(map);
         return map
     }
 
     onMount(() => { 
         callback(createMap)
+        if (colors!=null) {
+            let els = mapContainer.getElementsByClassName("leaflet-control-layers-overlays")[0].children
+            for (let i=0;i<els.length;i++) {
+                els[i].children[0].children[0].style.accentColor = colors[i]
+            }
+        }
     })
 </script>
 
@@ -41,7 +48,8 @@
     #map {
         height: var(--height);
         width: var(--width,100%);
-        margin-bottom: var(--margin-bottom,0)
+        margin-top: var(--margin-top,0);
+        margin-bottom: var(--margin-bottom,0);
     }
 
 </style>
