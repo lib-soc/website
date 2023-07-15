@@ -4,19 +4,19 @@ export let communes = [
         location: [["Canada","Montreal"],[45.55541047232767, -73.42859611607271]],
         status: "forming",
         members: 2,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Estonia","KohtlaJarve"],[59.409521829709504, 27.288415912535914]],
         status: "forming",
         members: 2,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Latvia",""],[56.934159375258055, 25.269099001330265]],
         status: "forming",
         members: 1,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     }
 ]
 

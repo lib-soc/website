@@ -2,27 +2,27 @@ export let groups = [
     {
         location: [["Canada","Halifax"],[44.65166135030067, -63.59289968306866]],
         members: 2,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Denmark","Copenhagen"],[55.6840661150132, 12.557133959514688]],
         members: 1,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Denmark","Kolding"], [55.49261908652738, 9.470268969851743]],
         members: 1,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Estonia","KohtlaJarve"], [59.40629447076191, 27.280605339416322]],
         members: 3,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Greece","Athens"], [37.94877252621736, 23.677622972996158]],
         members: 1,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
         location: [["Ireland",""], [53.280192832733576, -7.688103518964818]],
@@ -32,7 +32,7 @@ export let groups = [
     {
         location: [["Latvia","Riga"], [56.94748425529816, 24.003027136431925]],
         members: 2,
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"]
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
 ]
 

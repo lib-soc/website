@@ -7,7 +7,7 @@ export let coops = [
         workers: 2,
         status: "inDevelopment",
         website: "chrn.health",
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"],
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"],
         description: "descriptionChironHealth"
     },
     {
@@ -18,7 +18,7 @@ export let coops = [
         workers: 1,
         status: "inDevelopment",
         website: "-",
-        contact: ["https://discord.gg/xAPZmyr8B6","DiscordInviteLink"],
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"],
         description: "kuuskDescription"
     }
 ]
