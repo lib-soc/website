@@ -76,7 +76,7 @@
                     </ol>
                     <p>{$content.nearYou}</p>
                 </div>
-                <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
+                <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
                 <map-component id="map" callback={(createMap) => mapCallback(createMap,$content)}></map-component>
             </div>
         </div>

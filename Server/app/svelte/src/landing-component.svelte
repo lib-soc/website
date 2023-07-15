@@ -95,7 +95,7 @@
                 <h1>{$content.whatNow}</h1>
                 <div id="action-container">
                     <a class="link-button" href={"/" + locale + "/join-us"}>{$content.joinUs}</a>
-                    <a class="link-button"  href="https://discord.gg/xAPZmyr8B6" target="_blank" rel=noreferrer >{$content.talkWithUs}</a>
+                    <a class="link-button"  href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer >{$content.talkWithUs}</a>
                 </div>
             </div>
         </div>
