@@ -30,7 +30,7 @@ export let groups = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
-        location: [["Ireland",""], [53.280192832733576, -7.688103518964818]],
+        location: [["Ireland"], [53.280192832733576, -7.688103518964818]],
         members: 6,
         contact: ["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
     },
@@ -39,6 +39,11 @@ export let groups = [
         members: 2,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
+    {
+        location: [["USA","Florida"], [26.945024427155868, -81.22162645059898]],
+        members: 2,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    }
 ]
 
 export let groupsByCountry = {}
@@ -68,8 +73,8 @@ function addMarkersToLayer(g,layer,content) {
         }
         else if (field=="location") {
             let location = g[field][0]
-            let town = location[1]=="" ? "" : ", " + content[location[1]]
-            text += fieldText + content[location[0]] + town + "<br>"
+            let locationString = location.map(x => content[x]).join(", ")
+            text += fieldText + locationString + "<br>"
             coordinates = g[field][1]
         }
         else {
@@ -99,7 +104,7 @@ export function addMarkersGroups(map,content) {
             addMarkersToLayer(g,groupsMarkersLayerOut,content)
         }
         else {
-            let locationName = [gs[0].location[0][0],""]
+            let locationName = [gs[0].location[0][0]]
             let locationCoordinates = [0,0]
             let members = 0
             let contact = gs[0].contact

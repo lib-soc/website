@@ -2,7 +2,7 @@ export let partners = [
     {
         name: "Gaia's Fall",
         type: "typeGaiasFall",
-        location: [["Online",""],[0,0]],
+        location: [["Online"],[0,0]],
         link: "https://discord.libsoc.org/invite/",
         description: "descriptionGaiasFall",
         logo: "gaias_fall"

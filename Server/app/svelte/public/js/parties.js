@@ -41,7 +41,8 @@ export function addMarkersParties(map,content) {
                 text += fieldText + "<a href='" + g.website + "' target='_blank' rel=noreferrer>" + g.website + "</a>" + "<br>"
             }
             else if (field=="location") {
-                text += fieldText + content[g[field][0]] + "<br>"
+                let locationString = location.map(x => content[x]).join(", ")
+                text += fieldText + locationString + "<br>"
                 coordinates = g[field][1]
             }
             else if (field=="description") {

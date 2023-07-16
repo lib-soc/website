@@ -33,9 +33,10 @@
             <div id="text-container">
                 <h1>{$content.cooperatives}</h1>
                 <img id="coops-img" src="/img/common/coops.svg" alt="coops">
-                <p>{$content.p1}</p>
+                <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackCoops(createMap,$content,locale)}></map-component>
+                <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(coopsByCountry) as [name,coops]}
                     <h4 class="country-name">{$content[name]}</h4>
                     <div class="country-block">
@@ -44,7 +45,7 @@
                                 <div class="img-general-info">
                                     <div>
                                         <p><b>{$content.name}: </b>{coop.name}</p>
-                                        <p><b>{$content.location}: </b>{$content[coop.location[0][0]] + (coop.location[0][1]=="" ? "" : ", " +  $content[coop.location[0][1]])}</p>
+                                        <p><b>{$content.location}: </b>{coop.location[0].map(x => $content[x]).join(", ")}</p>
                                         <p><b>{$content.market}: </b>{$content[coop.market]}</p>
                                         <p><b>{$content.workers}: </b>{coop.workers}</p>
                                         <p><b>{$content.status}: </b>{$content[coop.status]}</p>
@@ -69,6 +70,14 @@
 
 <style>
     @import '/css/common.css';
+
+    .description {
+        margin-bottom: 1rem;
+    }
+
+    #add-prompt {
+        margin-bottom: 2rem;
+    }
 
     #coops-img {
         position: absolute;
@@ -127,7 +136,7 @@
     #map {
         --height: 30rem;
         --width: 100%;
-        --margin-bottom: 3rem;
+        --margin-bottom: 0.5rem;
     }
 
     #text-container {
@@ -142,6 +151,7 @@
     }
 
     h3 {
+        margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
@@ -150,10 +160,6 @@
         max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
-    }
-
-    #container>div>p {
-        margin-bottom: 1rem;
     }
 
     #container p {

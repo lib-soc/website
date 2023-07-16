@@ -34,9 +34,10 @@
             <div id="text-container">
                 <h1>{$content.parties}</h1>
                 <img id="party-img" src="/img/common/parties.svg" alt="party">
-                <p>{$content.p1}</p>
+                <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackParties(createMap,$content)}></map-component>
+                <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(partiesByCountry) as [name,parties]}
                     <h4 class="country-name">{$content[name]}</h4>
                     <div class="country-block">
@@ -66,6 +67,14 @@
 
 <style>
     @import '/css/common.css';
+
+    .description {
+        margin-bottom: 1rem;
+    }
+
+    #add-prompt {
+        margin-bottom: 2rem;
+    }
 
     #party-img {
         position: absolute;
@@ -129,7 +138,7 @@
     #map {
         --height: 30rem;
         --width: 100%;
-        --margin-bottom: 3rem;
+        --margin-bottom: 0.5rem;
     }
 
     #text-container {
@@ -152,10 +161,6 @@
         max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
-    }
-
-    #container>div>p {
-        margin-bottom: 1rem;
     }
 
     #container p {

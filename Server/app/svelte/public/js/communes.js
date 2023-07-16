@@ -7,7 +7,7 @@ export let communes = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
-        location: [["Denmark",""],[55.915625218626275, 9.673445220831253]],
+        location: [["Denmark"],[55.915625218626275, 9.673445220831253]],
         status: "forming",
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
@@ -19,7 +19,7 @@ export let communes = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
-        location: [["Latvia",""],[56.934159375258055, 25.269099001330265]],
+        location: [["Latvia"],[56.934159375258055, 25.269099001330265]],
         status: "forming",
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
@@ -50,8 +50,8 @@ export function addMarkersCommunes(map,content) {
             }
             else if (field=="location") {
                 let location = g[field][0]
-                let town = location[1]=="" ? "" : ", " + content[location[1]]
-                text += fieldText + content[location[0]] + town + "<br>"
+                let locationString = location.map(x => content[x]).join(", ")
+                text += fieldText + locationString + "<br>"
                 coordinates = g[field][1]
             }
             else if (field=="status") {

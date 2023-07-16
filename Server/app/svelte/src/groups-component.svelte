@@ -34,15 +34,16 @@
             <div id="text-container">
                 <h1>{$content.groups}</h1>
                 <img id="groups-img" src="/img/common/groups.svg" alt="groups">
-                <p>{$content.p1}</p>
+                <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content)}></map-component>
+                <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(groupsByCountry) as [name,groups]}
                     <h4 class="country-name">{$content[name]}</h4>
                     <div class="country-block">
                         {#each groups as group}
                             <div class="location-info">
-                                <p><b>{$content.location}: </b>{$content[group.location[0][0]] + (group.location[0][1]=="" ? "" : ", " +  $content[group.location[0][1]])}</p>
+                                <p><b>{$content.location}: </b>{group.location[0].map(x => $content[x]).join(", ")}</p>
                                 <p><b>{$content.members}: </b>{group.members}</p>
                                 <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{$content[group.contact[1]]}</a></p>
                             </div>
@@ -56,6 +57,14 @@
 
 <style>
     @import '/css/common.css';
+
+    .description {
+        margin-bottom: 1rem;
+    }
+
+    #add-prompt {
+        margin-bottom: 2rem;
+    }
 
     #groups-img {
         position: absolute;
@@ -117,10 +126,6 @@
         max-width: 800px;
         margin-top: 1rem;
         margin-bottom: 4rem;
-    }
-
-    #container>div>p {
-        margin-bottom: 1rem;
     }
 
     #container p {
