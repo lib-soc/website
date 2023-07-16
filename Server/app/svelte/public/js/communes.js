@@ -42,7 +42,7 @@ export let communesMarkersLayer = L.layerGroup()
 export function addMarkersCommunes(map,content) {
     for (let g of communes) {
         let coordinates
-        let text = "<b>Commune</b><br>"
+        let text = "<b>"+content["Commune"]+"</b><br>"
         for (let field in g) {
             let fieldText = content[field] + ": "
             if (field=="contact") {

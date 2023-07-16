@@ -60,7 +60,7 @@ let contactGeneral =["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
 
 function addMarkersToLayer(g,layer,content) {
     let coordinates
-    let text = "<b>Group</b><br>"
+    let text = "<b>"+content["Group"]+"</b><br>"
     for (let field in g) {
         let fieldText = content[field] + ": "
         if (field=="contact") {

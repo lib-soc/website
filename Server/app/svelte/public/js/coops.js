@@ -39,7 +39,7 @@ export let coopsMarkersLayer = L.layerGroup()
 export function addMarkersCoops(map,content) {
     for (let g of coops) {
         let coordinates
-        let text = "<b>Cooperative</b><br>"
+        let text = "<b>"+content["Cooperative"]+"</b><br>"
         for (let field in g) {
             let fieldText
             if (field!="logo") {

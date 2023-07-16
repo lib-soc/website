@@ -25,7 +25,7 @@ export let partiesMarkersLayer = L.layerGroup()
 export function addMarkersParties(map,content) {
     for (let g of parties) {
         let coordinates
-        let text = "<b>Party</b><br>"
+        let text = "<b>"+content["Party"]+"</b><br>"
         for (let field in g) {
             let fieldText
             if (field!="logo") {
