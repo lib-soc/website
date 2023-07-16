@@ -39,7 +39,7 @@ export let coopsMarkersLayer = L.layerGroup()
 export function addMarkersCoops(map,content) {
     for (let g of coops) {
         let coordinates
-        let text = "<b>Cooperative</b><br>"
+        let text = "<b>"+content["Cooperative"]+"</b><br>"
         for (let field in g) {
             let fieldText
             if (field!="logo") {
@@ -56,8 +56,8 @@ export function addMarkersCoops(map,content) {
             }
             else if (field=="location") {
                 let location = g[field][0]
-                let town = location[1]=="" ? "" : ", " + content[location[1]]
-                text += fieldText + content[location[0]] + town + "<br>"
+                let locationString = location.map(x => content[x]).join(", ")
+                text += fieldText + locationString + "<br>"
                 coordinates = g[field][1]
             }
             else if (field=="market" || field=="status" || field=="description") {

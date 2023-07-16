@@ -1,4 +1,5 @@
 {
+    "map-prompt": "Want to appear on our map? Contact us!",
     "Online": "Online",
     "Denmark": "Denmark",
     "Estonia": "Estonia",
@@ -8,11 +9,13 @@
     "Germany": "Germany",
     "Copenhagen": "Copenhagen",
     "Ireland": "Ireland",
+    "USA": "USA",
     "Montreal": "Montreal",
     "Kolding": "Kolding",
     "KohtlaJarve": "Kohtla-Järve",
     "Athens": "Athens",
     "Riga": "Riga",
     "Halifax": "Halifax",
-    "Wiesbaden": "Wiesbaden"
+    "Wiesbaden": "Wiesbaden",
+    "Florida": "Florida"
 }
