@@ -65,7 +65,6 @@
                 <source srcset="/img/crowd.png">
                 <img id="crowd" alt="crowd">
             </picture>
-            
             <div id="text-container">
                 <p>{$content.top}</p>
                 <div bind:this={grid} id="container-grid" style="--grid-width: {gridWidth}">
@@ -90,7 +89,24 @@
                         <p>{$content.partiesText}</p>
                     </div>
                 </div>
-                <h1>{$content.findUs}</h1>
+                <!--
+                <div id="values-container">
+                    <h1>Our Values</h1>
+                    <h2>Environmentalism</h2>
+                    <p>We are committed to environmental preservation and the urgent need to safeguard our planet's biodiversity. We embrace sustainable practices, such as permaculture, as essential components of our vision for the future. We emphasize the harmonious integration of landscapes, ecosystems, and human settlements. We strive to create resilient and self-sustaining systems that promote biodiversity, enhance soil fertility, conserve water resources, and foster ecological balance.</p>
+                    <h2>Against animal exploitation</h2>
+                    <p>We embrace a compassionate approach to our relationship with animals, recognizing the inherent value and welfare of all sentient beings. We strive to build a more harmonious coexistence between humans and animals, promoting sustainable and cruelty-free practices that benefit both the planet and its inhabitants. This commitment reflects our deep understanding of the interconnectedness of all living beings.</p>
+                    <h2>Queer liberation</h2>
+                    <p>We strive for a society free from the constraints and hierarchies imposed by gender or sexual norms. We envision a world where the word “queer” becomes meaningless because individuals are not defined or limited by their assigned gender at birth, where the binary constructs of male and female are dismantled, and where everyone can freely express their authentic selves without fear of discrimination or marginalization.</p>
+                    <h2>Racial Justice</h2>
+                    <p>We actively challenge and dismantle systemic racism, discrimination, and inequality in all its forms. We advocate for a society that recognizes and celebrates the diversity of human experiences, irrespective of their race or ethnicity. We strive to address the historical and ongoing impacts of racism, dismantle racist structures, and uplift marginalized communities.</p>
+                    <h2>Anti-Imperialism</h2>
+                    <p>We stand in solidarity with indigenous peoples and support their right to self-determination, land sovereignty, and cultural preservation. We challenge global systems that exploit and subjugate nations and communities.</p>
+                    <h2>Peace and non-violence</h2>
+                    <p>We promote peaceful resolutions to conflicts and oppose war, militarization, and violence. We advocate for non-violent strategies that address social issues and create lasting positive change.</p>
+                </div>
+                -->
+                <h1 id="find-us">{$content.findUs}</h1>
                 <map-component id="map" callback={(createMap) => mapCallback(createMap,$content)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
                 <h1>{$content.whatNow}</h1>
                 <div id="action-container">
@@ -104,6 +120,10 @@
 
 <style>
     @import '/css/common.css';
+
+    #values-container {
+        margin-bottom: 3rem;
+    }
 
     #action-container {
         display: flex;
@@ -134,6 +154,7 @@
     h1 {
         font-size: 2rem;
         text-align: center;
+        margin-bottom: 1rem;
     }
 
     #container-grid > div > a > h2 {
@@ -184,9 +205,9 @@
         grid-template-columns: var(--grid-width);
         grid-template-rows: var(--grid-width);
         grid-gap: 4rem;
-        row-gap: 3rem;
+        row-gap: 2.5rem;
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     #container-grid > div {

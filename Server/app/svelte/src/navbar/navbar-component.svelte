@@ -58,12 +58,12 @@
                     setTimeout(func,100)
                 }
                 else {
-                    if (window.innerWidth < 400 && logoText.style.lineHeight!="100%") {
+                    if (((window.innerWidth < 1700 && window.innerWidth > 1400) || window.innerWidth < 400) && logoText.style.lineHeight!="100%") {
                         logoText.style.lineHeight = "120%"
                         logoText.style.top = "1rem"
                         logoText.style.width = "16rem"
                     }
-                    else if (window.innerWidth > 400 && logoText.style.lineHeight!="400%") {
+                    else if (((window.innerWidth > 1700) || (window.innerWidth > 400 && window.innerWidth < 1400)) && logoText.style.lineHeight!="400%") {
                         logoText.style.lineHeight = "400%"
                         logoText.style.top = "0rem"
                         logoText.style.width = "auto"
@@ -336,7 +336,7 @@
 
 
     /* Responsiveness */
-    @media only screen and (min-width: 1500px) {
+    @media only screen and (min-width: 1400px) {
 
         #navbar {
             position: relative;
@@ -369,7 +369,7 @@
         }
 
         #menu a {
-            padding: 1.2rem;
+            padding: 0.9rem;
             padding-top: 1.9rem;
             padding-bottom: 1.9rem;
         }
