@@ -6,7 +6,7 @@ export let coops = [
         market:   "wellnessAndHealth",
         workers: 2,
         status: "inDevelopment",
-        website: "chrn.health",
+        website: [ "https://www.chrn.health/", "chrn.health"],
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"],
         description: "descriptionChironHealth"
     },
@@ -52,7 +52,7 @@ export function addMarkersCoops(map,content) {
                 text += fieldText + "<a href='https://www." + g.contact[0] + "' target='_blank' rel=noreferrer>" + content[g.contact[1]] + "</a>" + "<br>"
             }
             else if (field=="website") {
-                text += fieldText + "<a href='" + g.website + "' target='_blank' rel=noreferrer>" + g.website + "</a>" + "<br>"
+                text += fieldText + "<a href='" + g.website[0] + "' target='_blank' rel=noreferrer>" + g.website[1] + "</a>" + "<br>"
             }
             else if (field=="location") {
                 let location = g[field][0]
