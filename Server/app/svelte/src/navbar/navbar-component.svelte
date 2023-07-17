@@ -10,7 +10,7 @@
     // Main code
     let hambInput
     let navbar
-    let localesDropdown
+    let localesDropdown;
     let loaded = writable(0)
     let content = writable({})
     let logoText
@@ -85,7 +85,7 @@
 <!-- Navigation bar -->
 {#key loaded}
     {#if Object.keys($content).length!=0}
-    {fixHeading()}
+    {fixHeading()}{console.log($content)}
         <header bind:this={navbar} id="navbar">
             <!-- Hamburger icon -->
             <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
@@ -100,11 +100,25 @@
                 <ul id="menu">
                     <li><a href={"/"+locale+"/manifesto"}>{$content.manifesto}</a></li>
                     <li><a href={"/"+locale+"/join-us"}>{$content.joinUs}</a></li>
-                    <li><a href={"/"+locale+"/groups"}>{$content.groups}</a></li>
-                    <li><a href={"/"+locale+"/communes"}>{$content.communes}</a></li>
-                    <li><a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a></li>
-                    <li><a href={"/"+locale+"/parties"}>{$content.parties}</a></li>
-                    <li><a href={"/"+locale+"/partners"}>{$content.partners}</a></li>
+                    
+                    <!-- Options dropdown -->
+                    <!-- A list of links pointing to different pages of the website. Implemented as a div opened on :hover-->
+                    <li id="options-container">
+                        <button id="options-button">{$content.aboutUs}</button>
+                        <div id="options-dropdown">
+                            <ul id="options-list">
+                                <li><a href={"/"+locale+"/groups"}>{$content.groups}</a></li>
+                                <li><a href={"/"+locale+"/communes"}>{$content.communes}</a></li>
+                                
+                                <li><a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a></li>
+                                <li><a href={"/"+locale+"/parties"}>{$content.parties}</a></li>
+                                <li><a href={"/"+locale+"/partners"}>{$content.partners}</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+
+                 
                     <li id="locales">
                         <button on:click={showLocales}>
                             <picture>
@@ -119,6 +133,7 @@
                             <button on:click={() => changeLocale(loc)}>{name}</button>
                         {/each}
                     </div>
+                    
                 </ul>
             </nav>
         </header>
@@ -131,12 +146,14 @@
     @import '/css/common.css';
 
     /* Header */
-    #navbar{
+    #navbar{    
         position: relative;
         top: 0;
         width: min(100%,116rem);
         z-index: 1000000000;
         height: 5.26rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 
     #navbar * {
@@ -185,7 +202,7 @@
         overflow: hidden;
         z-index: 0;
     }
-    #menu a {
+    #menu a, #options-button {
         display: block;
         padding: 1.2rem;
         padding-top: 1rem;
@@ -282,6 +299,38 @@
         top: 0;
     }
 
+    /* Options */
+
+    #options-dropdown {
+        position: absolute;
+        display: none;
+        border: #404040 solid 0.1rem;
+        /*padding: 0.5rem;*/
+        background-color: white;
+        overflow: auto;
+        width: 35%;
+    }
+
+    #options-list > li a {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    #options-list > li:hover {
+        background-color: rgb(187 53 52 / 96%);
+        width: 100%;
+    }
+
+    #options-list > li:hover > a{
+        color: white;
+    }
+
+    #options-container:hover #options-dropdown {
+        display: block;
+    }
+    
+
+
     /*Localization*/
 
     #locales {
@@ -340,9 +389,11 @@
 
         #navbar {
             position: relative;
-            width: min(95%,116rem);
+            width: min(100%,116rem);
             left: 50%;
             transform: translateX(-50%);
+            padding-right: 4rem;
+            padding-left: 4rem;
         }
 
         #nav {
@@ -363,12 +414,12 @@
             float: left;
         }
 
-        #menu a:hover {
+        #menu a:hover, #options-button:hover {
             background-color: transparent;
             color: rgb(127, 127, 127);
         }
 
-        #menu a {
+        #menu a, #options-button {
             padding: 1.2rem;
             padding-top: 1.9rem;
             padding-bottom: 1.9rem;
