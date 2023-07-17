@@ -10,6 +10,7 @@
     "Copenhagen": "Copenhagen",
     "Ireland": "Ireland",
     "USA": "USA",
+    "Bulgaria": "Bulgaria",
     "Montreal": "Montreal",
     "Kolding": "Kolding",
     "KohtlaJarve": "Kohtla-Järve",
@@ -18,5 +19,6 @@
     "Halifax": "Halifax",
     "Wiesbaden": "Wiesbaden",
     "Florida": "Florida",
-    "Tallinn": "Tallinn"
+    "Tallinn": "Tallinn",
+    "Varna": "Varna"
 }

@@ -1,5 +1,10 @@
 export let groups = [
     {
+        location: [["Bulgaria","Varna"],[43.21582161671174, 27.89896092161012]],
+        members: 1,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
         location: [["Canada","Halifax"],[44.65166135030067, -63.59289968306866]],
         members: 2,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
