@@ -20,6 +20,11 @@ export let groups = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
+        location: [["Estonia","Tallinn"], [59.39180354687856, 24.72304565687877]],
+        members: 1,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
         location: [["Germany","Wiesbaden"], [50.07459620869791, 8.234984059337897]],
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
