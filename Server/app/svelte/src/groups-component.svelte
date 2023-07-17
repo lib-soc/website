@@ -102,7 +102,7 @@
     #map {
         --height: 30rem;
         --width: 100%;
-        --margin-bottom: 3rem;
+        --margin-bottom: 0.5rem;
     }
 
     #text-container {

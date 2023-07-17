@@ -105,7 +105,7 @@ export function addMarkersGroups(map,content) {
     for (let gs of Object.values(groupsByCountry)) {
         if (gs.length==1) {
             let g = {...gs[0]}
-            g.location[0][1] = ""
+            g.location[0] = [g.location[0][0]]
             addMarkersToLayer(g,groupsMarkersLayerOut,content)
         }
         else {
@@ -128,7 +128,6 @@ export function addMarkersGroups(map,content) {
                 members: members,
                 contact: contact
             }
-            
             addMarkersToLayer(gNew,groupsMarkersLayerOut,content)
         }
     }
