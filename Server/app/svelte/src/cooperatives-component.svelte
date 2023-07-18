@@ -49,7 +49,7 @@
                                         <p><b>{$content.market}: </b>{$content[coop.market]}</p>
                                         <p><b>{$content.workers}: </b>{coop.workers}</p>
                                         <p><b>{$content.status}: </b>{$content[coop.status]}</p>
-                                        <p><b>{$content.website}: </b><a href={"https://www."+coop.website} target="_blank" rel=noreferrer>{coop.website}</a></p>
+                                        <p><b>{$content.website}: </b><a href={coop.website[0]} target="_blank" rel=noreferrer>{coop.website[1]}</a></p>
                                         <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{$content[coop.contact[1]]}</a></p>
                                     </div>
                                     <picture>

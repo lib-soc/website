@@ -6,7 +6,7 @@ export let coops = [
         market:   "wellnessAndHealth",
         workers: 2,
         status: "inDevelopment",
-        website: [ "https://www.chrn.health/", "chrn.health"],
+        website: ["https://www.chrn.health/", "chrn.health"],
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"],
         description: "descriptionChironHealth"
     },
@@ -17,7 +17,7 @@ export let coops = [
         market: "herbalTeas",
         workers: 1,
         status: "inDevelopment",
-        website: "-",
+        website: ["-","-"],
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"],
         description: "kuuskDescription"
     }
