@@ -10,6 +10,11 @@ export let groups = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
+        location: [["Canada","Toronto"], [43.6960589794647, -79.37396957644577]],
+        members: 1,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
         location: [["Denmark","Copenhagen"],[55.6840661150132, 12.557133959514688]],
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
@@ -51,6 +56,11 @@ export let groups = [
     },
     {
         location: [["USA","Florida"], [26.945024427155868, -81.22162645059898]],
+        members: 2,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
+        location: [["USA","Colorado","Louisville"], [39.965026323855334, -105.15948886693151]],
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     }
