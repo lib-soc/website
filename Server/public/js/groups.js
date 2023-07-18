@@ -172,3 +172,37 @@ function onZoomEnd(map) {
         groupsMarkersLayerIn.addTo(groupsMarkersLayer)
     }
 }
+/*
+function reverseGeocode(latitude, longitude) {
+    let url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
+    
+    // Create a new XMLHttpRequest object
+    let xhr = new XMLHttpRequest();
+    
+    // Set up the AJAX request
+    xhr.open('GET', url, true);
+    
+    // Define the onload function
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Parse the response JSON
+        let response = JSON.parse(xhr.responseText);
+        
+        // Extract the address information from the response
+        let address = response.address;
+        let city = address.city || address.town || address.village || address.hamlet;
+        let country = address.country;
+        let fullAddress = city + ', ' + country;
+        
+        // Do something with the address
+        console.log(fullAddress);
+      }
+    };
+    
+    // Send the AJAX request
+    xhr.send();
+  }
+  
+let latitude = 123.456; // Replace with your latitude
+let longitude = 78.901; // Replace with your longitude
+reverseGeocode(latitude, longitude);*/
