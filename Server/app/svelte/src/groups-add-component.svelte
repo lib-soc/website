@@ -14,6 +14,7 @@
     let loaded = writable(0)
     let content = writable({})
 
+    let confirmationMsg
     let addressInput
     let contactInput
     let addressVec
@@ -88,11 +89,24 @@
         })
     }
 
+    function updateConfirmationMsg(response) {
+        if (response!==false) {
+
+            confirmationMsg.innerHTML = "You have been added to our database! Now go to our Discord to verify yourself."
+            confirmationMsg.style.color = "green"
+        }
+        else {
+            confirmationMsg.innerHTML = "Something went wrong."
+            confirmationMsg.style.color = "red"
+        }
+        
+    }
+
     function submitLocation() {
         if (addressVec!=undefined) {
             let data = [...addressVec,userPinLat,userPinLng,contactInput.value]
             let url = "/" + locale + "/groups-add-post/"
-            sendText(url,JSON.stringify(data))
+            sendText(url,JSON.stringify(data),updateConfirmationMsg)
         }
         
     }
@@ -119,6 +133,7 @@
                 <label for="address-input">Location: </label><input bind:this={addressInput} id="address-input" type="text" readonly><br>
                 <label for="contact-input">Contact: </label><input bind:this={contactInput} id="contact-input" type="text">
                 <button id="submit-button" on:click={submitLocation}>Submit</button>
+                <p id="confirmation-msg" bind:this={confirmationMsg}></p>
                 <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
             </div>
         </div>
@@ -127,6 +142,11 @@
 
 <style>
     @import '/css/common.css';
+
+    #confirmation-msg {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+    }
 
     ol li {
         margin-left: 3rem;
@@ -164,8 +184,8 @@
 
     #submit-button {
         display: block;
+        margin: auto;
         margin-top: 2rem;
-        margin-bottom: 2rem;
         padding: 1rem 2rem;
         font-size: 1.4rem;
         font-family: var(--sans-serif,sans-serif);
@@ -215,6 +235,7 @@
     #map {
         --height: 30rem;
         --width: 100%;
+        --margin-top: 2rem;
         --margin-bottom: 0.5rem;
     }
 

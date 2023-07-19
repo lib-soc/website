@@ -56,6 +56,7 @@ export function sendText(route,data,callback) {
                     callback(xhr.responseText)
                 }
             } else {
+                callback(false)
                 // Oh no! There has been an error with the request!
             }
             }

@@ -53,9 +53,11 @@ export function sendText(route,data,callback) {
             if (status === 0 || (status >= 200 && status < 400)) {
                 // The request has been completed successfully
                 if (callback !== undefined) {
+                    console.log(xhr.responseText)
                     callback(xhr.responseText)
                 }
             } else {
+                callback(false)
                 // Oh no! There has been an error with the request!
             }
             }
