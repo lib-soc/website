@@ -1,1 +1,714 @@
-import{S as t,i as n,a as e,b as i,s as o,e as r,n as s,d as a,c as l,o as m,f as c,t as u,g as p,h as d,j as g,l as h,m as f,q as b,p as v,r as q}from"./index-4348483d.js";import{w as x}from"./index-71440b21.js";import{loadLocaleContent as _}from"../../../../../../../../../js/libraries/serverTools.js";import{shuffleArray as z}from"../../../../../../../../../js/libraries/miscTools.js";function w(t,n,e){const i=t.slice();return i[19]=n[e],i[21]=e,i}function y(t){let n,e,r,s,l,m,b,v,q=t[5].heading+"",x=t[0],_=S(t);return{c(){n=c("div"),e=c("div"),r=c("h1"),s=u(q),l=p(),m=c("img"),v=p(),_.c(),d(m,"id","compass-img"),g(m.src,b="/img/common/compass.svg")||d(m,"src","/img/common/compass.svg"),d(m,"alt","compass"),d(e,"id","text-container"),d(n,"id","container")},m(t,o){i(t,n,o),h(n,e),h(e,r),h(r,s),h(e,l),h(e,m),h(e,v),_.m(e,null)},p(t,n){32&n&&q!==(q=t[5].heading+"")&&f(s,q),1&n&&o(x,x=t[0])?(_.d(1),_=S(t),_.c(),_.m(e,null)):_.p(t,n)},d(t){t&&a(n),_.d(t)}}}function k(t){let n,e,o,r,s,l,m,g,v,q,x,_,z,w,y,k,j,C,S,B,M,N,T,D;return{c(){n=c("p"),n.textContent="You are compatible with ...",e=p(),o=c("ul"),r=c("li"),s=u("capitalism by "),l=c("span"),m=u(t[2]),g=u("%"),v=p(),q=c("li"),x=u("vanguardism by "),_=c("span"),z=u(t[3]),w=u("%"),y=p(),k=c("li"),j=u("libertarian socialism by "),C=c("span"),S=u(t[4]),B=u("%"),M=p(),N=c("button"),N.textContent="back",d(o,"class","results-list"),d(N,"class","quiz-buttons")},m(a,c){i(a,n,c),i(a,e,c),i(a,o,c),h(o,r),h(r,s),h(r,l),h(l,m),h(r,g),h(o,v),h(o,q),h(q,x),h(q,_),h(_,z),h(q,w),h(o,y),h(o,k),h(k,j),h(k,C),h(C,S),h(k,B),i(a,M,c),i(a,N,c),T||(D=b(N,"click",t[16]),T=!0)},p(t,n){4&n&&f(m,t[2]),8&n&&f(z,t[3]),16&n&&f(S,t[4])},d(t){t&&a(n),t&&a(e),t&&a(o),t&&a(M),t&&a(N),T=!1,D()}}}function j(t){let n,e,o,r,s,l,m,g,x,_=t[5].qs[t[0]].q+"",z=t[5].qs[t[0]].as,y=[];for(let n=0;n<z.length;n+=1)y[n]=C(w(t,z,n));return{c(){n=c("p"),e=u(_),o=p(),r=c("div");for(let t=0;t<y.length;t+=1)y[t].c();s=p(),l=c("button"),l.textContent="back",m=c("button"),m.textContent="next",d(r,"class","quiz-inputs"),d(l,"class","quiz-buttons"),d(m,"class","quiz-buttons")},m(a,c){i(a,n,c),h(n,e),i(a,o,c),i(a,r,c);for(let t=0;t<y.length;t+=1)y[t].m(r,null);i(a,s,c),i(a,l,c),i(a,m,c),g||(x=[b(l,"click",t[14]),b(m,"click",t[15])],g=!0)},p(t,n){if(33&n&&_!==(_=t[5].qs[t[0]].q+"")&&f(e,_),35&n){let e;for(z=t[5].qs[t[0]].as,e=0;e<z.length;e+=1){const i=w(t,z,e);y[e]?y[e].p(i,n):(y[e]=C(i),y[e].c(),y[e].m(r,null))}for(;e<y.length;e+=1)y[e].d(1);y.length=z.length}},d(t){t&&a(n),t&&a(o),t&&a(r),v(y,t),t&&a(s),t&&a(l),t&&a(m),g=!1,q(x)}}}function C(t){let n,e,o,r,s,l,m,g,v,x=t[19][0]+"";function _(){return t[13](t[19])}return{c(){n=c("div"),e=c("input"),r=p(),s=c("button"),l=u(x),m=p(),d(e,"type","radio"),d(e,"id","option"+t[21]),d(e,"name","options"),e.__value=o=t[19][1],e.value=e.__value,t[12][0].push(e),d(s,"class","input-label"),d(s,"for","option"+t[21]),d(n,"class","radio-container")},m(o,a){i(o,n,a),h(n,e),e.checked=e.__value===t[1][t[0]],h(n,r),h(n,s),h(s,l),h(n,m),g||(v=[b(e,"change",t[11]),b(s,"click",_)],g=!0)},p(n,i){t=n,33&i&&o!==(o=t[19][1])&&(e.__value=o,e.value=e.__value),3&i&&(e.checked=e.__value===t[1][t[0]]),33&i&&x!==(x=t[19][0]+"")&&f(l,x)},d(i){i&&a(n),t[12][0].splice(t[12][0].indexOf(e),1),g=!1,q(v)}}}function S(t){let n;function e(t,n){return t[0]!=t[5].qs.length?j:k}let o=e(t),s=o(t);return{c(){s.c(),n=r()},m(t,e){s.m(t,e),i(t,n,e)},p(t,i){o===(o=e(t))&&s?s.p(t,i):(s.d(1),s=o(t),s&&(s.c(),s.m(n.parentNode,n)))},d(t){s.d(t),t&&a(n)}}}function B(t){let n,e=2==t[6]&&y(t);return{c(){e&&e.c(),n=r()},m(t,o){e&&e.m(t,o),i(t,n,o)},p(t,i){2==t[6]?e?e.p(t,i):(e=y(t),e.c(),e.m(n.parentNode,n)):e&&(e.d(1),e=null)},d(t){e&&e.d(t),t&&a(n)}}}function M(t){let n,e=t[6],l=B(t);return{c(){l.c(),n=r(),this.c=s},m(t,e){l.m(t,e),i(t,n,e)},p(t,[i]){64&i&&o(e,e=t[6])?(l.d(1),l=B(t),l.c(),l.m(n.parentNode,n)):l.p(t,i)},i:s,o:s,d(t){t&&a(n),l.d(t)}}}function N(t,n,e){let i,o,r=x(0);l(t,r,(t=>e(6,o=t)));let s=x({});l(t,s,(t=>e(5,i=t))),_(s,"countries",r),_(s,"compass-component",r,(function(t){for(let n of t.qs)z(n.as)}));let a=0,c=[],u="",p="",d="";function g(t){null!=c[t]&&a<i.qs.length&&(a==i.qs.length-1&&(e(2,u=Math.round(100*c.map((t=>t.includes("C"))).filter(Boolean).length/c.length).toString()),e(3,p=Math.round(100*c.map((t=>t.includes("V"))).filter(Boolean).length/c.length).toString()),e(4,d=Math.round(100*c.map((t=>t.includes("LS"))).filter(Boolean).length/c.length).toString())),e(0,a+=1))}function h(t){0!=a&&e(0,a-=1)}m((()=>{}));return[a,c,u,p,d,i,o,r,s,g,h,function(){c[a]=this.__value,e(1,c)},[[]],t=>e(1,c[a]=t[1],c),()=>h(),()=>g(a),()=>h()]}class T extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';.results-list{margin-left:2rem;margin-bottom:2rem}.results-list li{margin-bottom:0.5rem}.radio-container{display:grid;grid-template-columns:min-content auto;margin-bottom:1rem}.quiz-inputs{position:relative;margin-bottom:2rem}.quiz-inputs input{position:relative;top:-0.1rem;height:1.2rem;width:1.2rem;margin:auto;accent-color:#DD1C1A;cursor:pointer}.quiz-inputs button{font-family:var(--serif,serif);font-size:1.15rem;margin-left:1rem;position:relative;top:-0.2rem;text-align:left}.quiz-buttons:nth-of-type(1){margin-right:2rem}.quiz-buttons{font-size:1.3rem;color:white;padding:1.5rem;padding-top:0.5rem;padding-bottom:0.5rem;background-color:#5B6970;border-radius:1rem}#compass-img{position:absolute;width:9rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}</style>",n(this,{target:this.shadowRoot,props:e(this.attributes),customElement:!0},N,M,o,{},null),t&&t.target&&i(t.target,this,t.anchor)}}customElements.define("compass-component",T);export{T as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, c as validate_store, e as component_subscribe, o as onMount, f as empty, n as noop, h as detach_dev, k as element, t as text, l as space, m as add_location, p as attr_dev, q as src_url_equal, u as append_dev, w as set_data_dev, j as validate_each_argument, y as listen_dev, x as destroy_each, z as run_all, A as prop_dev } from './index-d19aafba.js';
+import { w as writable } from './index-4664ced0.js';
+import { loadLocaleContent } from '../../../../../../../../../js/libraries/serverTools.js';
+import { shuffleArray } from '../../../../../../../../../js/libraries/miscTools.js';
+
+/* src\compass-component.svelte generated by Svelte v3.52.0 */
+const file = "src\\compass-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[19] = list[i];
+	child_ctx[21] = i;
+	return child_ctx;
+}
+
+// (57:4) {#if $loaded==2}
+function create_if_block(ctx) {
+	let div1;
+	let div0;
+	let h1;
+	let t0_value = /*$content*/ ctx[5].heading + "";
+	let t0;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let previous_key = /*qTag*/ ctx[0];
+	let key_block = create_key_block_1(ctx);
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			t0 = text(t0_value);
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			key_block.c();
+			add_location(h1, file, 59, 16, 1759);
+			attr_dev(img, "id", "compass-img");
+			if (!src_url_equal(img.src, img_src_value = "/img/common/compass.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "compass");
+			add_location(img, file, 60, 16, 1804);
+			attr_dev(div0, "id", "text-container");
+			add_location(div0, file, 58, 12, 1716);
+			attr_dev(div1, "id", "container");
+			add_location(div1, file, 57, 8, 1682);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, div0);
+			append_dev(div0, h1);
+			append_dev(h1, t0);
+			append_dev(div0, t1);
+			append_dev(div0, img);
+			append_dev(div0, t2);
+			key_block.m(div0, null);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 32 && t0_value !== (t0_value = /*$content*/ ctx[5].heading + "")) set_data_dev(t0, t0_value);
+
+			if (dirty & /*qTag*/ 1 && safe_not_equal(previous_key, previous_key = /*qTag*/ ctx[0])) {
+				key_block.d(1);
+				key_block = create_key_block_1(ctx);
+				key_block.c();
+				key_block.m(div0, null);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(57:4) {#if $loaded==2}",
+		ctx
+	});
+
+	return block;
+}
+
+// (74:16) {:else}
+function create_else_block(ctx) {
+	let p;
+	let t1;
+	let ul;
+	let li0;
+	let t2;
+	let span0;
+	let t3;
+	let t4;
+	let t5;
+	let li1;
+	let t6;
+	let span1;
+	let t7;
+	let t8;
+	let t9;
+	let li2;
+	let t10;
+	let span2;
+	let t11;
+	let t12;
+	let t13;
+	let button;
+	let mounted;
+	let dispose;
+
+	const block = {
+		c: function create() {
+			p = element("p");
+			p.textContent = "You are compatible with ...";
+			t1 = space();
+			ul = element("ul");
+			li0 = element("li");
+			t2 = text("capitalism by ");
+			span0 = element("span");
+			t3 = text(/*capitalismScore*/ ctx[2]);
+			t4 = text("%");
+			t5 = space();
+			li1 = element("li");
+			t6 = text("vanguardism by ");
+			span1 = element("span");
+			t7 = text(/*vanguardismScore*/ ctx[3]);
+			t8 = text("%");
+			t9 = space();
+			li2 = element("li");
+			t10 = text("libertarian socialism by ");
+			span2 = element("span");
+			t11 = text(/*socialismScore*/ ctx[4]);
+			t12 = text("%");
+			t13 = space();
+			button = element("button");
+			button.textContent = "back";
+			add_location(p, file, 74, 20, 2731);
+			add_location(span0, file, 76, 42, 2856);
+			add_location(li0, file, 76, 24, 2838);
+			add_location(span1, file, 77, 43, 2937);
+			add_location(li1, file, 77, 24, 2918);
+			add_location(span2, file, 78, 53, 3029);
+			add_location(li2, file, 78, 24, 3000);
+			attr_dev(ul, "class", "results-list");
+			add_location(ul, file, 75, 20, 2787);
+			attr_dev(button, "class", "quiz-buttons");
+			add_location(button, file, 80, 20, 3113);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, p, anchor);
+			insert_dev(target, t1, anchor);
+			insert_dev(target, ul, anchor);
+			append_dev(ul, li0);
+			append_dev(li0, t2);
+			append_dev(li0, span0);
+			append_dev(span0, t3);
+			append_dev(li0, t4);
+			append_dev(ul, t5);
+			append_dev(ul, li1);
+			append_dev(li1, t6);
+			append_dev(li1, span1);
+			append_dev(span1, t7);
+			append_dev(li1, t8);
+			append_dev(ul, t9);
+			append_dev(ul, li2);
+			append_dev(li2, t10);
+			append_dev(li2, span2);
+			append_dev(span2, t11);
+			append_dev(li2, t12);
+			insert_dev(target, t13, anchor);
+			insert_dev(target, button, anchor);
+
+			if (!mounted) {
+				dispose = listen_dev(button, "click", /*click_handler_3*/ ctx[16], false, false, false);
+				mounted = true;
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*capitalismScore*/ 4) set_data_dev(t3, /*capitalismScore*/ ctx[2]);
+			if (dirty & /*vanguardismScore*/ 8) set_data_dev(t7, /*vanguardismScore*/ ctx[3]);
+			if (dirty & /*socialismScore*/ 16) set_data_dev(t11, /*socialismScore*/ ctx[4]);
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(p);
+			if (detaching) detach_dev(t1);
+			if (detaching) detach_dev(ul);
+			if (detaching) detach_dev(t13);
+			if (detaching) detach_dev(button);
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_else_block.name,
+		type: "else",
+		source: "(74:16) {:else}",
+		ctx
+	});
+
+	return block;
+}
+
+// (63:16) {#if qTag!=$content.qs.length}
+function create_if_block_1(ctx) {
+	let p;
+	let t0_value = /*$content*/ ctx[5].qs[/*qTag*/ ctx[0]].q + "";
+	let t0;
+	let t1;
+	let div;
+	let t2;
+	let button0;
+	let button1;
+	let mounted;
+	let dispose;
+	let each_value = /*$content*/ ctx[5].qs[/*qTag*/ ctx[0]].as;
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			p = element("p");
+			t0 = text(t0_value);
+			t1 = space();
+			div = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			t2 = space();
+			button0 = element("button");
+			button0.textContent = "back";
+			button1 = element("button");
+			button1.textContent = "next";
+			add_location(p, file, 63, 20, 1969);
+			attr_dev(div, "class", "quiz-inputs");
+			add_location(div, file, 64, 20, 2019);
+			attr_dev(button0, "class", "quiz-buttons");
+			add_location(button0, file, 72, 20, 2544);
+			attr_dev(button1, "class", "quiz-buttons");
+			add_location(button1, file, 72, 90, 2614);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, p, anchor);
+			append_dev(p, t0);
+			insert_dev(target, t1, anchor);
+			insert_dev(target, div, anchor);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div, null);
+			}
+
+			insert_dev(target, t2, anchor);
+			insert_dev(target, button0, anchor);
+			insert_dev(target, button1, anchor);
+
+			if (!mounted) {
+				dispose = [
+					listen_dev(button0, "click", /*click_handler_1*/ ctx[14], false, false, false),
+					listen_dev(button1, "click", /*click_handler_2*/ ctx[15], false, false, false)
+				];
+
+				mounted = true;
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content, qTag*/ 33 && t0_value !== (t0_value = /*$content*/ ctx[5].qs[/*qTag*/ ctx[0]].q + "")) set_data_dev(t0, t0_value);
+
+			if (dirty & /*answers, qTag, $content*/ 35) {
+				each_value = /*$content*/ ctx[5].qs[/*qTag*/ ctx[0]].as;
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(p);
+			if (detaching) detach_dev(t1);
+			if (detaching) detach_dev(div);
+			destroy_each(each_blocks, detaching);
+			if (detaching) detach_dev(t2);
+			if (detaching) detach_dev(button0);
+			if (detaching) detach_dev(button1);
+			mounted = false;
+			run_all(dispose);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block_1.name,
+		type: "if",
+		source: "(63:16) {#if qTag!=$content.qs.length}",
+		ctx
+	});
+
+	return block;
+}
+
+// (66:24) {#each $content.qs[qTag].as as a,i}
+function create_each_block(ctx) {
+	let div;
+	let input;
+	let input_value_value;
+	let t0;
+	let button;
+	let t1_value = /*a*/ ctx[19][0] + "";
+	let t1;
+	let t2;
+	let mounted;
+	let dispose;
+
+	function click_handler() {
+		return /*click_handler*/ ctx[13](/*a*/ ctx[19]);
+	}
+
+	const block = {
+		c: function create() {
+			div = element("div");
+			input = element("input");
+			t0 = space();
+			button = element("button");
+			t1 = text(t1_value);
+			t2 = space();
+			attr_dev(input, "type", "radio");
+			attr_dev(input, "id", "option" + /*i*/ ctx[21]);
+			attr_dev(input, "name", "options");
+			input.__value = input_value_value = /*a*/ ctx[19][1];
+			input.value = input.__value;
+			/*$$binding_groups*/ ctx[12][0].push(input);
+			add_location(input, file, 67, 32, 2198);
+			attr_dev(button, "class", "input-label");
+			attr_dev(button, "for", "option" + /*i*/ ctx[21]);
+			add_location(button, file, 68, 32, 2323);
+			attr_dev(div, "class", "radio-container");
+			add_location(div, file, 66, 28, 2135);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div, anchor);
+			append_dev(div, input);
+			input.checked = input.__value === /*answers*/ ctx[1][/*qTag*/ ctx[0]];
+			append_dev(div, t0);
+			append_dev(div, button);
+			append_dev(button, t1);
+			append_dev(div, t2);
+
+			if (!mounted) {
+				dispose = [
+					listen_dev(input, "change", /*input_change_handler*/ ctx[11]),
+					listen_dev(button, "click", click_handler, false, false, false)
+				];
+
+				mounted = true;
+			}
+		},
+		p: function update(new_ctx, dirty) {
+			ctx = new_ctx;
+
+			if (dirty & /*$content, qTag*/ 33 && input_value_value !== (input_value_value = /*a*/ ctx[19][1])) {
+				prop_dev(input, "__value", input_value_value);
+				input.value = input.__value;
+			}
+
+			if (dirty & /*answers, qTag*/ 3) {
+				input.checked = input.__value === /*answers*/ ctx[1][/*qTag*/ ctx[0]];
+			}
+
+			if (dirty & /*$content, qTag*/ 33 && t1_value !== (t1_value = /*a*/ ctx[19][0] + "")) set_data_dev(t1, t1_value);
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div);
+			/*$$binding_groups*/ ctx[12][0].splice(/*$$binding_groups*/ ctx[12][0].indexOf(input), 1);
+			mounted = false;
+			run_all(dispose);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(66:24) {#each $content.qs[qTag].as as a,i}",
+		ctx
+	});
+
+	return block;
+}
+
+// (62:16) {#key qTag}
+function create_key_block_1(ctx) {
+	let if_block_anchor;
+
+	function select_block_type(ctx, dirty) {
+		if (/*qTag*/ ctx[0] != /*$content*/ ctx[5].qs.length) return create_if_block_1;
+		return create_else_block;
+	}
+
+	let current_block_type = select_block_type(ctx);
+	let if_block = current_block_type(ctx);
+
+	const block = {
+		c: function create() {
+			if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+				if_block.p(ctx, dirty);
+			} else {
+				if_block.d(1);
+				if_block = current_block_type(ctx);
+
+				if (if_block) {
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			}
+		},
+		d: function destroy(detaching) {
+			if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block_1.name,
+		type: "key",
+		source: "(62:16) {#key qTag}",
+		ctx
+	});
+
+	return block;
+}
+
+// (56:0) {#key $loaded}
+function create_key_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*$loaded*/ ctx[6] == 2 && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (/*$loaded*/ ctx[6] == 2) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block.name,
+		type: "key",
+		source: "(56:0) {#key $loaded}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let previous_key = /*$loaded*/ ctx[6];
+	let key_block_anchor;
+	let key_block = create_key_block(ctx);
+
+	const block = {
+		c: function create() {
+			key_block.c();
+			key_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			key_block.m(target, anchor);
+			insert_dev(target, key_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$loaded*/ 64 && safe_not_equal(previous_key, previous_key = /*$loaded*/ ctx[6])) {
+				key_block.d(1);
+				key_block = create_key_block(ctx);
+				key_block.c();
+				key_block.m(key_block_anchor.parentNode, key_block_anchor);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(key_block_anchor);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $content;
+	let $loaded;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('compass-component', slots, []);
+	let loaded = writable(0);
+	validate_store(loaded, 'loaded');
+	component_subscribe($$self, loaded, value => $$invalidate(6, $loaded = value));
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(5, $content = value));
+	loadLocaleContent(content, "countries", loaded);
+	let locale = loadLocaleContent(content, "compass-component", loaded, contentCallback);
+	let qTag = 0;
+	let answers = [];
+	let capitalismScore = "";
+	let vanguardismScore = "";
+	let socialismScore = "";
+
+	function contentCallback(content) {
+		for (let q of content.qs) {
+			shuffleArray(q.as);
+		}
+	}
+
+	function next(i) {
+		if (answers[i] != undefined) {
+			if (qTag < $content.qs.length) {
+				if (qTag == $content.qs.length - 1) {
+					$$invalidate(2, capitalismScore = Math.round(answers.map(x => x.includes("C")).filter(Boolean).length * 100 / answers.length).toString());
+					$$invalidate(3, vanguardismScore = Math.round(answers.map(x => x.includes("V")).filter(Boolean).length * 100 / answers.length).toString());
+					$$invalidate(4, socialismScore = Math.round(answers.map(x => x.includes("LS")).filter(Boolean).length * 100 / answers.length).toString());
+				}
+
+				$$invalidate(0, qTag = qTag + 1);
+			}
+		}
+	}
+
+	function back(i) {
+		if (qTag != 0) {
+			$$invalidate(0, qTag = qTag - 1);
+		}
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<compass-component> was created with unknown prop '${key}'`);
+	});
+
+	const $$binding_groups = [[]];
+
+	function input_change_handler() {
+		answers[qTag] = this.__value;
+		$$invalidate(1, answers);
+	}
+
+	const click_handler = a => $$invalidate(1, answers[qTag] = a[1], answers);
+	const click_handler_1 = () => back();
+	const click_handler_2 = () => next(qTag);
+	const click_handler_3 = () => back();
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		loadLocaleContent,
+		shuffleArray,
+		loaded,
+		content,
+		locale,
+		qTag,
+		answers,
+		capitalismScore,
+		vanguardismScore,
+		socialismScore,
+		contentCallback,
+		next,
+		back,
+		$content,
+		$loaded
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('loaded' in $$props) $$invalidate(7, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(8, content = $$props.content);
+		if ('locale' in $$props) locale = $$props.locale;
+		if ('qTag' in $$props) $$invalidate(0, qTag = $$props.qTag);
+		if ('answers' in $$props) $$invalidate(1, answers = $$props.answers);
+		if ('capitalismScore' in $$props) $$invalidate(2, capitalismScore = $$props.capitalismScore);
+		if ('vanguardismScore' in $$props) $$invalidate(3, vanguardismScore = $$props.vanguardismScore);
+		if ('socialismScore' in $$props) $$invalidate(4, socialismScore = $$props.socialismScore);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [
+		qTag,
+		answers,
+		capitalismScore,
+		vanguardismScore,
+		socialismScore,
+		$content,
+		$loaded,
+		loaded,
+		content,
+		next,
+		back,
+		input_change_handler,
+		$$binding_groups,
+		click_handler,
+		click_handler_1,
+		click_handler_2,
+		click_handler_3
+	];
+}
+
+class Compass_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';.results-list{margin-left:2rem;margin-bottom:2rem}.results-list li{margin-bottom:0.5rem}.radio-container{display:grid;grid-template-columns:min-content auto;margin-bottom:1rem}.quiz-inputs{position:relative;margin-bottom:2rem}.quiz-inputs input{position:relative;top:-0.1rem;height:1.2rem;width:1.2rem;margin:auto;accent-color:#DD1C1A;cursor:pointer}.quiz-inputs button{font-family:var(--serif,serif);font-size:1.15rem;margin-left:1rem;position:relative;top:-0.2rem;text-align:left}.quiz-buttons:nth-of-type(1){margin-right:2rem}.quiz-buttons{font-size:1.3rem;color:white;padding:1.5rem;padding-top:0.5rem;padding-bottom:0.5rem;background-color:#5B6970;border-radius:1rem}#compass-img{position:absolute;width:9rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("compass-component", Compass_component);
+
+export { Compass_component as default };

@@ -1,6 +1,6 @@
 
 module DatabaseSupport
-#=
+
 using SearchLight, SearchLightPostgreSQL, LibPQ
 using DataFrames
 
@@ -133,5 +133,5 @@ function add_foreign_key(table,name,table2,name2)
     ADD CONSTRAINT fk_$(table)_$(table2)_$(name) FOREIGN KEY ($name) REFERENCES $table2 ($name2);"""
     SearchLight.query(query)
 end
-=#
+
 end

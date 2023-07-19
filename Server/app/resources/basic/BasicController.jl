@@ -11,6 +11,7 @@ dict_layouts = Dict(
     :manifesto => generate_layout_html("main",controller,"manifesto"),
     :join_us => generate_layout_html("main",controller,"join_us",libraries=["Leaflet"]),
     :groups => generate_layout_html("main",controller,"groups",libraries=["Leaflet"]),
+    :groups_add => generate_layout_html("main",controller,"groups_add",libraries=["Leaflet"]),
     :cooperatives => generate_layout_html("main",controller,"cooperatives",libraries=["Leaflet"]),
     :communes => generate_layout_html("main",controller,"communes",libraries=["Leaflet"]),
     :parties => generate_layout_html("main",controller,"parties",libraries=["Leaflet"]),
@@ -162,6 +163,14 @@ function groups()
     )
 end
 
+function groups_add()
+    locale = get_locale()
+    html(:basic,:groups_add, layout = dict_layouts[:groups_add], context = @__MODULE__,
+        title = groups_info[locale][:title],
+        description = groups_info[locale][:description]
+    )
+end
+
 function cooperatives()
     locale = get_locale()
     html(:basic,:cooperatives, layout = dict_layouts[:cooperatives], context = @__MODULE__,
@@ -202,4 +211,16 @@ function political_compass()
     )
 end
 
+function groups_add_post()
+    data = collect(JSON3.read(rawpayload()))
+    push!(data,1)
+    dict = Dict(zip(["country","state","town","latitude","longitude","contact","members"],data))
+    insert_into_table("groups",dict)
 end
+
+end
+
+#=
+json_string = """["United States","California",null,38.24508142880928,-120.58593750000001,""]"""
+data = JSON3.read(json_string)´
+=#

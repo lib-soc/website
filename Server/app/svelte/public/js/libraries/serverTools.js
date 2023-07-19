@@ -1,17 +1,17 @@
 
 // Get data from server
 export function getData(path,callback) {   
-    var xhr = new XMLHttpRequest();
-        xhr.overrideMimeType("application/json");
-    xhr.open('GET', path, true);
+    let xhr = new XMLHttpRequest();
+    xhr.overrideMimeType("application/json")
+    xhr.open('GET', path, true)
     xhr.onreadystatechange = function () {
-          if (xhr.readyState == 4 && xhr.status == "200") {
+        if (xhr.readyState == 4 && xhr.status == "200") {
             if (callback !== undefined) {
-                callback(xhr.responseText);
+                callback(xhr.responseText)
             }
-          }
+        }
     };
-    xhr.send(null);  
+    xhr.send()  
 }
 
  // Parse JSON from given path into a given variable under a given key
@@ -35,6 +35,7 @@ export function sendData(route,data,callback) {
                     callback(xhr.responseText)
                 }
             } else {
+                console.log("Request gave an error")
                 // Oh no! There has been an error with the request!
             }
             }

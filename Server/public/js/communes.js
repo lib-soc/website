@@ -39,7 +39,7 @@ for (let c of communes) {
 
 export let communesMarkersLayer = L.layerGroup()
 
-export function addMarkersCommunes(map,content) {
+export function addMarkersCommunes(map,content,locale) {
     for (let g of communes) {
         let coordinates
         let text = "<b>"+content["Commune"]+"</b><br>"
@@ -50,7 +50,14 @@ export function addMarkersCommunes(map,content) {
             }
             else if (field=="location") {
                 let location = g[field][0]
-                let locationString = location.map(x => content[x]).join(", ")
+                let locationString
+                if (locale=="en") {
+                    locationString = location.map(x => x).join(", ")
+                }
+                else {
+                    locationString = location.map(x => content[x]).join(", ")
+                }
+
                 text += fieldText + locationString + "<br>"
                 coordinates = g[field][1]
             }

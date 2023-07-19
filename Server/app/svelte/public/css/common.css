@@ -310,7 +310,7 @@ input[type="text"],input[type="email"],input[type="password"],input[type="number
     border-color: black;
     border: black solid 0.063rem;
     padding-left: 0.5rem;
-    font: 1.3rem var(--serif, serif);
+    font: 1.15rem var(--serif, serif);
 }
 
 input[type="text"] {

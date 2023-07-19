@@ -15,11 +15,19 @@
     let content = writable({})
 
     loadLocaleContent(content,"countries",loaded)
-    loadLocaleContent(content,"parties-component",loaded)
+    let locale = loadLocaleContent(content,"parties-component",loaded)
 
-    function mapCallbackParties(createMap,content) {
+    function mapCallbackParties(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersParties(map,content)
+        addMarkersParties(map,content,locale)
+    }
+
+    function getCountry(name) {
+        return locale=="en" ? name : $content[name]
+    }
+
+    function getAddress(group) {
+        return locale=="en" ? group.location : $content[group.location]
     }
 
     onMount(() => { 
@@ -36,10 +44,10 @@
                 <img id="party-img" src="/img/common/parties.svg" alt="party">
                 <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackParties(createMap,$content)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallbackParties(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(partiesByCountry) as [name,parties]}
-                    <h4 class="country-name">{$content[name]}</h4>
+                    <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
                         {#each parties as party}
                         <div class="location-info">
@@ -51,7 +59,7 @@
                                 </picture>
                                 <div>
                                     <p><b>{$content.name}: </b>{party.name}</p>
-                                    <p><b>{$content.location}: </b>{$content[party.location[0]]}</p>
+                                    <p><b>{$content.location}: </b>{getAddress(party)}</p>
                                     <p><b>{$content.link}: </b><a href={party.link} target=;_blank; rel=noreferrer>{party.link}</a></p>
                                 </div>
                             </div>

@@ -17,9 +17,17 @@
     loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"communes-component",loaded)
 
-    function mapCallbackCommunes(createMap,content) {
+    function mapCallbackCommunes(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersCommunes(map,content)
+        addMarkersCommunes(map,content,locale)
+    }
+
+    function getCountry(name) {
+        return locale=="en" ? name : $content[name]
+    }
+
+    function getAddress(group) {
+        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
     }
 
     onMount(() => { 
@@ -39,11 +47,11 @@
                 <map-component id="map" callback={(createMap) => mapCallbackCommunes(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(communesByCountry) as [name,communes]}
-                    <h4 class="country-name">{$content[name]}</h4>
+                    <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
                         {#each communes as commune}
                             <div class="location-info">
-                                <p><b>{$content.location}: </b>{commune.location[0].map(x => $content[x]).join(", ")}</p>
+                                <p><b>{$content.location}: </b>{getAddress(commune)}</p>
                                 <p><b>{$content.status}: </b>{$content[commune.status]}</p>
                                 <p><b>{$content.members}: </b>{commune.members}</p>
                                 <p><b>{$content.contact}: </b><a href={commune.contact[0]} target=;_blank; rel=noreferrer>{$content[commune.contact[1]]}</a></p>

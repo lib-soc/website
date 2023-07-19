@@ -14,12 +14,20 @@
     let loaded = writable(0)
     let content = writable({})
 
-    loadLocaleContent(content,"countries",loaded)
-    let locale = loadLocaleContent(content,"cooperatives-component",loaded)
+    let locale = loadLocaleContent(content,"countries",loaded)
+    loadLocaleContent(content,"cooperatives-component",loaded)
 
     function mapCallbackCoops(createMap,content) {
         let map = createMap([22, 0],2)
-        addMarkersCoops(map,content)
+        addMarkersCoops(map,content,locale)
+    }
+
+    function getCountry(name) {
+        return locale=="en" ? name : $content[name]
+    }
+
+    function getAddress(group) {
+        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
     }
 
     onMount(() => { 
@@ -38,14 +46,14 @@
                 <map-component id="map" callback={(createMap) => mapCallbackCoops(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(coopsByCountry) as [name,coops]}
-                    <h4 class="country-name">{$content[name]}</h4>
+                    <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
                         {#each coops as coop}
                             <div class="location-info">
                                 <div class="img-general-info">
                                     <div>
                                         <p><b>{$content.name}: </b>{coop.name}</p>
-                                        <p><b>{$content.location}: </b>{coop.location[0].map(x => $content[x]).join(", ")}</p>
+                                        <p><b>{$content.location}: </b>{getAddress(coop)}</p>
                                         <p><b>{$content.market}: </b>{$content[coop.market]}</p>
                                         <p><b>{$content.workers}: </b>{coop.workers}</p>
                                         <p><b>{$content.status}: </b>{$content[coop.status]}</p>

@@ -11,6 +11,10 @@ route("/:locale/join-us/*", BasicController.join_us, named = :join_us)
 
 route("/:locale/groups/*", BasicController.groups, named = :groups)
 
+route("/:locale/groups-add/*", BasicController.groups_add, named = :groups_add)
+
+route("/:locale/groups-add-post/*", BasicController.groups_add_post, method = POST, named = :groups_add_post)
+
 route("/:locale/cooperatives/*", BasicController.cooperatives, named = :cooperatives)
 
 route("/:locale/communes/*", BasicController.communes, named = :communes)

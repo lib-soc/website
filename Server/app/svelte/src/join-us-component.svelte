@@ -24,12 +24,12 @@
     loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
-    function mapCallback(createMap,content) {
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content)
-        addMarkersCommunes(map,content)
-        addMarkersCoops(map,content)
-        addMarkersParties(map,content)
+        addMarkersGroups(map,content,locale)
+        addMarkersCommunes(map,content,locale)
+        addMarkersCoops(map,content,locale)
+        addMarkersParties(map,content,locale)
 
         let overlayMaps = {
             "Groups": groupsMarkersLayer,
@@ -77,7 +77,7 @@
                     <p>{$content.nearYou}</p>
                 </div>
                 <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
-                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
             </div>
         </div>
     {/if}

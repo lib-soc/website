@@ -15,7 +15,15 @@
     let content = writable({})
 
     loadLocaleContent(content,"countries",loaded)
-    loadLocaleContent(content,"partners-component",loaded)
+    let locale = loadLocaleContent(content,"partners-component",loaded)
+
+    function getCountry(name) {
+        return locale=="en" ? name : $content[name]
+    }
+
+    function getAddress(group) {
+        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
+    }
 
     onMount(() => { 
 
@@ -32,7 +40,7 @@
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
                 {#each Object.entries(partnersByCountry) as [name,partners]}
-                    <h4 class="country-name">{$content[name]}</h4>
+                    <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
                         {#each partners as partner}
                         <div class="location-info">
@@ -45,7 +53,7 @@
                                 <div>
                                     <p><b>{$content.name}: </b>{partner.name}</p>
                                     <p><b>{$content.type}: </b>{$content[partner.type]}</p>
-                                    <p><b>{$content.location}: </b>{$content[partner.location[0][0]] + (partner.location[0][1]=="" ? "" : ", " +  $content[partner.location[0][1]])}</p>
+                                    <p><b>{$content.location}: </b>{getAddress(partner)}</p>
                                     <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
                                 </div>
                             </div>

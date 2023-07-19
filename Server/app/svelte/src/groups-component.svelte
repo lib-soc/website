@@ -5,7 +5,7 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { groupsByCountry, addMarkersGroups } from '/js/groups.js'
-    import { loadLocaleContent} from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -14,16 +14,24 @@
     let loaded = writable(0)
     let content = writable({})
 
-    loadLocaleContent(content,"groups-component",loaded)
+    let locale = loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"countries",loaded)
 
-    function mapCallbackGroups(createMap,content) {
+    function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content)
+        addMarkersGroups(map,content,locale)
+    }
+
+    function getCountry(name) {
+        return locale=="en" ? name : $content[name]
+    }
+
+    function getAddress(group) {
+        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
     }
     
     onMount(() => { 
-        //    {console.log(loaded)}
+
     })
 </script>
 
@@ -36,14 +44,14 @@
                 <img id="groups-img" src="/img/common/groups.svg" alt="groups">
                 <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
                 {#each Object.entries(groupsByCountry) as [name,groups]}
-                    <h4 class="country-name">{$content[name]}</h4>
+                    <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
                         {#each groups as group}
                             <div class="location-info">
-                                <p><b>{$content.location}: </b>{group.location[0].map(x => $content[x]).join(", ")}</p>
+                                <p><b>{$content.location}: </b>{getAddress(group)}</p>
                                 <p><b>{$content.members}: </b>{group.members}</p>
                                 <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{$content[group.contact[1]]}</a></p>
                             </div>

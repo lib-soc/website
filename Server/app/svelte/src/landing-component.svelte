@@ -36,12 +36,12 @@
     let locale = loadLocaleContent(content,"landing-component",loaded,changeWidth)
     changeWidth(locale)
 
-    function mapCallback(createMap,content) {
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content)
-        addMarkersCommunes(map,content)
-        addMarkersCoops(map,content)
-        addMarkersParties(map,content)
+        addMarkersGroups(map,content,locale)
+        addMarkersCommunes(map,content,locale)
+        addMarkersCoops(map,content,locale)
+        addMarkersParties(map,content,locale)
 
         let overlayMaps = {}
         overlayMaps[content.groups] = groupsMarkersLayer
@@ -107,7 +107,7 @@
                 </div>
                 -->
                 <h1 id="find-us">{$content.findUs}</h1>
-                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
                 <h1>{$content.whatNow}</h1>
                 <div id="action-container">
                     <a class="link-button" href={"/" + locale + "/join-us"}>{$content.joinUs}</a>

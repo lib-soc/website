@@ -25,7 +25,7 @@ export let groups = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
-        location: [["Estonia","KohtlaJarve"], [59.40629447076191, 27.280605339416322]],
+        location: [["Estonia","Kohtla-Järve"], [59.40629447076191, 27.280605339416322]],
         members: 3,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
@@ -93,7 +93,7 @@ let groupsMarkersLayerIn = L.layerGroup()
 
 let contactGeneral =["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
 
-function addMarkersToLayer(g,layer,content) {
+function addMarkersToLayer(g,layer,content,locale) {
     let coordinates
     let text = "<b>"+content["Group"]+"</b><br>"
     for (let field in g) {
@@ -103,7 +103,13 @@ function addMarkersToLayer(g,layer,content) {
         }
         else if (field=="location") {
             let location = g[field][0]
-            let locationString = location.map(x => content[x]).join(", ")
+            let locationString
+            if (locale=="en") {
+                locationString = location.map(x => x).join(", ")
+            }
+            else {
+                locationString = location.map(x => content[x]).join(", ")
+            }
             text += fieldText + locationString + "<br>"
             coordinates = g[field][1]
         }
@@ -123,15 +129,15 @@ function addMarkersToLayer(g,layer,content) {
     marker.addTo(layer).bindPopup(text)
 }
 
-export function addMarkersGroups(map,content) {
+export function addMarkersGroups(map,content,locale) {
     for (let g of groups) {
-        addMarkersToLayer(g,groupsMarkersLayerIn,content)
+        addMarkersToLayer(g,groupsMarkersLayerIn,content,locale)
     }
     for (let gs of Object.values(groupsByCountry)) {
         if (gs.length==1) {
             let g = {...gs[0]}
             g.location[0] = [g.location[0][0]]
-            addMarkersToLayer(g,groupsMarkersLayerOut,content)
+            addMarkersToLayer(g,groupsMarkersLayerOut,content,locale)
         }
         else {
             let locationName = [gs[0].location[0][0]]
@@ -153,7 +159,7 @@ export function addMarkersGroups(map,content) {
                 members: members,
                 contact: contact
             }
-            addMarkersToLayer(gNew,groupsMarkersLayerOut,content)
+            addMarkersToLayer(gNew,groupsMarkersLayerOut,content,locale)
         }
     }
     groupsMarkersLayerOut.addTo(groupsMarkersLayer)
@@ -172,37 +178,5 @@ function onZoomEnd(map) {
         groupsMarkersLayerIn.addTo(groupsMarkersLayer)
     }
 }
-/*
-function reverseGeocode(latitude, longitude) {
-    let url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
-    
-    // Create a new XMLHttpRequest object
-    let xhr = new XMLHttpRequest();
-    
-    // Set up the AJAX request
-    xhr.open('GET', url, true);
-    
-    // Define the onload function
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        // Parse the response JSON
-        let response = JSON.parse(xhr.responseText);
-        
-        // Extract the address information from the response
-        let address = response.address;
-        let city = address.city || address.town || address.village || address.hamlet;
-        let country = address.country;
-        let fullAddress = city + ', ' + country;
-        
-        // Do something with the address
-        console.log(fullAddress);
-      }
-    };
-    
-    // Send the AJAX request
-    xhr.send();
-  }
+
   
-let latitude = 123.456; // Replace with your latitude
-let longitude = 78.901; // Replace with your longitude
-reverseGeocode(latitude, longitude);*/

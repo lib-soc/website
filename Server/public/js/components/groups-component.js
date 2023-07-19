@@ -1,1 +1,576 @@
-import{S as t,i as o,a as n,b as e,s as r,e as a,n as i,d as m,c as s,o as c,f as l,t as p,g,h as u,j as d,k as h,l as f,m as b,p as j}from"./index-4348483d.js";import{w as x}from"./index-71440b21.js";import{addMarkersGroups as v,groupsByCountry as w}from"../../../../../../../../../js/groups.js";import{loadLocaleContent as y}from"../../../../../../../../../js/libraries/serverTools.js";import"../../../../../../../../../js/components/map-component.js";function k(t,o,n){const e=t.slice();return e[7]=o[n][0],e[8]=o[n][1],e}function z(t,o,n){const e=t.slice();return e[11]=o[n],e}function D(t){let o,n,r,a,i,s,c,x,v,y,z,D,E,O,R,T,A,C,H,L,M=t[1].groups+"",S=t[1].p1+"",_=t[1].subheading1+"",q=t[1]["map-prompt"]+"",B=Object.entries(w),F=[];for(let o=0;o<B.length;o+=1)F[o]=N(k(t,B,o));return{c(){o=l("div"),n=l("div"),r=l("h1"),a=p(M),i=g(),s=l("img"),x=g(),v=l("p"),y=p(S),z=g(),D=l("h3"),E=p(_),O=g(),R=l("map-component"),A=g(),C=l("p"),H=p(q),L=g();for(let t=0;t<F.length;t+=1)F[t].c();u(s,"id","groups-img"),d(s.src,c="/img/common/groups.svg")||u(s,"src","/img/common/groups.svg"),u(s,"alt","groups"),u(v,"class","description"),h(R,"id","map"),h(R,"callback",T=t[5]),u(C,"id","add-prompt"),u(n,"id","text-container"),u(o,"id","container")},m(t,m){e(t,o,m),f(o,n),f(n,r),f(r,a),f(n,i),f(n,s),f(n,x),f(n,v),f(v,y),f(n,z),f(n,D),f(D,E),f(n,O),f(n,R),f(n,A),f(n,C),f(C,H),f(n,L);for(let t=0;t<F.length;t+=1)F[t].m(n,null)},p(t,o){if(2&o&&M!==(M=t[1].groups+"")&&b(a,M),2&o&&S!==(S=t[1].p1+"")&&b(y,S),2&o&&_!==(_=t[1].subheading1+"")&&b(E,_),2&o&&T!==(T=t[5])&&h(R,"callback",T),2&o&&q!==(q=t[1]["map-prompt"]+"")&&b(H,q),2&o){let e;for(B=Object.entries(w),e=0;e<B.length;e+=1){const r=k(t,B,e);F[e]?F[e].p(r,o):(F[e]=N(r),F[e].c(),F[e].m(n,null))}for(;e<F.length;e+=1)F[e].d(1);F.length=B.length}},d(t){t&&m(o),j(F,t)}}}function E(t){let o,n,r,a,i,s,c,d,h,j,x,v,w,y,k,z,D,E,N,O=t[1].location+"",R=t[11].location[0].map(t[6]).join(", ")+"",T=t[1].members+"",A=t[11].members+"",C=t[1].contact+"",H=t[1][t[11].contact[1]]+"";return{c(){o=l("div"),n=l("p"),r=l("b"),a=p(O),i=p(": "),s=p(R),c=g(),d=l("p"),h=l("b"),j=p(T),x=p(": "),v=p(A),w=g(),y=l("p"),k=l("b"),z=p(C),D=p(": "),E=l("a"),N=p(H),u(E,"href",t[11].contact[0]),u(E,"target",";_blank;"),u(E,"rel","noreferrer"),u(o,"class","location-info")},m(t,m){e(t,o,m),f(o,n),f(n,r),f(r,a),f(r,i),f(n,s),f(o,c),f(o,d),f(d,h),f(h,j),f(h,x),f(d,v),f(o,w),f(o,y),f(y,k),f(k,z),f(k,D),f(y,E),f(E,N)},p(t,o){2&o&&O!==(O=t[1].location+"")&&b(a,O),2&o&&R!==(R=t[11].location[0].map(t[6]).join(", ")+"")&&b(s,R),2&o&&T!==(T=t[1].members+"")&&b(j,T),2&o&&C!==(C=t[1].contact+"")&&b(z,C),2&o&&H!==(H=t[1][t[11].contact[1]]+"")&&b(N,H)},d(t){t&&m(o)}}}function N(t){let o,n,r,a,i,s=t[1][t[7]]+"",c=t[8],d=[];for(let o=0;o<c.length;o+=1)d[o]=E(z(t,c,o));return{c(){o=l("h4"),n=p(s),r=g(),a=l("div");for(let t=0;t<d.length;t+=1)d[t].c();i=g(),u(o,"class","country-name"),u(a,"class","country-block")},m(t,m){e(t,o,m),f(o,n),e(t,r,m),e(t,a,m);for(let t=0;t<d.length;t+=1)d[t].m(a,null);f(a,i)},p(t,o){if(2&o&&s!==(s=t[1][t[7]]+"")&&b(n,s),2&o){let n;for(c=t[8],n=0;n<c.length;n+=1){const e=z(t,c,n);d[n]?d[n].p(e,o):(d[n]=E(e),d[n].c(),d[n].m(a,i))}for(;n<d.length;n+=1)d[n].d(1);d.length=c.length}},d(t){t&&m(o),t&&m(r),t&&m(a),j(d,t)}}}function O(t){let o,n=2==t[0]&&D(t);return{c(){n&&n.c(),o=a()},m(t,r){n&&n.m(t,r),e(t,o,r)},p(t,e){2==t[0]?n?n.p(t,e):(n=D(t),n.c(),n.m(o.parentNode,o)):n&&(n.d(1),n=null)},d(t){n&&n.d(t),t&&m(o)}}}function R(t){let o,n=t[0],s=O(t);return{c(){s.c(),o=a(),this.c=i},m(t,n){s.m(t,n),e(t,o,n)},p(t,[e]){1&e&&r(n,n=t[0])?(s.d(1),s=O(t),s.c(),s.m(o.parentNode,o)):s.p(t,e)},i:i,o:i,d(t){t&&m(o),s.d(t)}}}function T(t,o,n){let e,r,a=x(0);s(t,a,(t=>n(0,e=t)));let i=x({});function m(t,o){let n=t([22,0],2);v(n,o)}s(t,i,(t=>n(1,r=t))),y(i,"groups-component",a),y(i,"countries",a),c((()=>{}));return[e,r,a,i,m,t=>m(t,r),t=>r[t]]}class A extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';.description{margin-bottom:1rem}#add-prompt{margin-bottom:2rem}#groups-img{position:absolute;width:14rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}.country-name{margin-bottom:0.5rem}.country-block{margin-bottom:2rem}.location-info{margin-bottom:0.75rem}.location-info p{margin-bottom:0}a{color:#DD1C1A}#map{--height:30rem;--width:100%;--margin-bottom:0.5rem}#text-container{position:relative;max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}h3{margin-bottom:1rem}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container p{text-align:justify}</style>",o(this,{target:this.shadowRoot,props:n(this.attributes),customElement:!0},T,R,r,{},null),t&&t.target&&e(t.target,this,t.anchor)}}customElements.define("groups-component",A);export{A as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, c as validate_store, e as component_subscribe, o as onMount, g as globals, f as empty, n as noop, h as detach_dev, j as validate_each_argument, k as element, t as text, l as space, m as add_location, p as attr_dev, q as src_url_equal, r as set_custom_element_data, u as append_dev, w as set_data_dev, x as destroy_each } from './index-d19aafba.js';
+import { w as writable } from './index-4664ced0.js';
+import { groupsByCountry, addMarkersGroups } from '../../../../../../../../../js/groups.js';
+import { loadLocaleContent, getData, sendData } from '../../../../../../../../../js/libraries/serverTools.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\groups-component.svelte generated by Svelte v3.52.0 */
+
+const { Object: Object_1 } = globals;
+
+const file = "src\\groups-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[9] = list[i][0];
+	child_ctx[10] = list[i][1];
+	return child_ctx;
+}
+
+function get_each_context_1(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[13] = list[i];
+	return child_ctx;
+}
+
+// (39:4) {#if $loaded==2}
+function create_if_block(ctx) {
+	let div1;
+	let div0;
+	let h1;
+	let t0_value = /*$content*/ ctx[0].groups + "";
+	let t0;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let p0;
+	let t3_value = /*$content*/ ctx[0].p1 + "";
+	let t3;
+	let t4;
+	let h3;
+	let t5_value = /*$content*/ ctx[0].subheading1 + "";
+	let t5;
+	let t6;
+	let map_component;
+	let map_component_callback_value;
+	let t7;
+	let p1;
+	let t8_value = /*$content*/ ctx[0]["map-prompt"] + "";
+	let t8;
+	let t9;
+	let each_value = Object.entries(groupsByCountry);
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			div1 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			t0 = text(t0_value);
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			p0 = element("p");
+			t3 = text(t3_value);
+			t4 = space();
+			h3 = element("h3");
+			t5 = text(t5_value);
+			t6 = space();
+			map_component = element("map-component");
+			t7 = space();
+			p1 = element("p");
+			t8 = text(t8_value);
+			t9 = space();
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			add_location(h1, file, 42, 16, 1236);
+			attr_dev(img, "id", "groups-img");
+			if (!src_url_equal(img.src, img_src_value = "/img/common/groups.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "groups");
+			add_location(img, file, 43, 16, 1280);
+			attr_dev(p0, "class", "description");
+			add_location(p0, file, 44, 16, 1361);
+			add_location(h3, file, 45, 16, 1419);
+			set_custom_element_data(map_component, "id", "map");
+			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[8]);
+			add_location(map_component, file, 46, 16, 1468);
+			attr_dev(p1, "id", "add-prompt");
+			add_location(p1, file, 47, 16, 1597);
+			attr_dev(div0, "id", "text-container");
+			add_location(div0, file, 41, 12, 1193);
+			attr_dev(div1, "id", "container");
+			add_location(div1, file, 39, 8, 1090);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div1, anchor);
+			append_dev(div1, div0);
+			append_dev(div0, h1);
+			append_dev(h1, t0);
+			append_dev(div0, t1);
+			append_dev(div0, img);
+			append_dev(div0, t2);
+			append_dev(div0, p0);
+			append_dev(p0, t3);
+			append_dev(div0, t4);
+			append_dev(div0, h3);
+			append_dev(h3, t5);
+			append_dev(div0, t6);
+			append_dev(div0, map_component);
+			append_dev(div0, t7);
+			append_dev(div0, p1);
+			append_dev(p1, t8);
+			append_dev(div0, t9);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div0, null);
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 1 && t0_value !== (t0_value = /*$content*/ ctx[0].groups + "")) set_data_dev(t0, t0_value);
+			if (dirty & /*$content*/ 1 && t3_value !== (t3_value = /*$content*/ ctx[0].p1 + "")) set_data_dev(t3, t3_value);
+			if (dirty & /*$content*/ 1 && t5_value !== (t5_value = /*$content*/ ctx[0].subheading1 + "")) set_data_dev(t5, t5_value);
+
+			if (dirty & /*$content*/ 1 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[8])) {
+				set_custom_element_data(map_component, "callback", map_component_callback_value);
+			}
+
+			if (dirty & /*$content*/ 1 && t8_value !== (t8_value = /*$content*/ ctx[0]["map-prompt"] + "")) set_data_dev(t8, t8_value);
+
+			if (dirty & /*Object, groupsByCountry, $content, getAddress, getCountry*/ 193) {
+				each_value = Object.entries(groupsByCountry);
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div1);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(39:4) {#if $loaded==2}",
+		ctx
+	});
+
+	return block;
+}
+
+// (52:24) {#each groups as group}
+function create_each_block_1(ctx) {
+	let div;
+	let p0;
+	let b0;
+	let t0_value = /*$content*/ ctx[0].location + "";
+	let t0;
+	let t1;
+	let t2_value = /*getAddress*/ ctx[7](/*group*/ ctx[13]) + "";
+	let t2;
+	let t3;
+	let p1;
+	let b1;
+	let t4_value = /*$content*/ ctx[0].members + "";
+	let t4;
+	let t5;
+	let t6_value = /*group*/ ctx[13].members + "";
+	let t6;
+	let t7;
+	let p2;
+	let b2;
+	let t8_value = /*$content*/ ctx[0].contact + "";
+	let t8;
+	let t9;
+	let a;
+	let t10_value = /*$content*/ ctx[0][/*group*/ ctx[13].contact[1]] + "";
+	let t10;
+
+	const block = {
+		c: function create() {
+			div = element("div");
+			p0 = element("p");
+			b0 = element("b");
+			t0 = text(t0_value);
+			t1 = text(": ");
+			t2 = text(t2_value);
+			t3 = space();
+			p1 = element("p");
+			b1 = element("b");
+			t4 = text(t4_value);
+			t5 = text(": ");
+			t6 = text(t6_value);
+			t7 = space();
+			p2 = element("p");
+			b2 = element("b");
+			t8 = text(t8_value);
+			t9 = text(": ");
+			a = element("a");
+			t10 = text(t10_value);
+			add_location(b0, file, 53, 35, 1980);
+			add_location(p0, file, 53, 32, 1977);
+			add_location(b1, file, 54, 35, 2068);
+			add_location(p1, file, 54, 32, 2065);
+			add_location(b2, file, 55, 35, 2151);
+			attr_dev(a, "href", /*group*/ ctx[13].contact[0]);
+			attr_dev(a, "target", ";_blank;");
+			attr_dev(a, "rel", "noreferrer");
+			add_location(a, file, 55, 62, 2178);
+			add_location(p2, file, 55, 32, 2148);
+			attr_dev(div, "class", "location-info");
+			add_location(div, file, 52, 28, 1916);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div, anchor);
+			append_dev(div, p0);
+			append_dev(p0, b0);
+			append_dev(b0, t0);
+			append_dev(b0, t1);
+			append_dev(p0, t2);
+			append_dev(div, t3);
+			append_dev(div, p1);
+			append_dev(p1, b1);
+			append_dev(b1, t4);
+			append_dev(b1, t5);
+			append_dev(p1, t6);
+			append_dev(div, t7);
+			append_dev(div, p2);
+			append_dev(p2, b2);
+			append_dev(b2, t8);
+			append_dev(b2, t9);
+			append_dev(p2, a);
+			append_dev(a, t10);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 1 && t0_value !== (t0_value = /*$content*/ ctx[0].location + "")) set_data_dev(t0, t0_value);
+			if (dirty & /*$content*/ 1 && t4_value !== (t4_value = /*$content*/ ctx[0].members + "")) set_data_dev(t4, t4_value);
+			if (dirty & /*$content*/ 1 && t8_value !== (t8_value = /*$content*/ ctx[0].contact + "")) set_data_dev(t8, t8_value);
+			if (dirty & /*$content*/ 1 && t10_value !== (t10_value = /*$content*/ ctx[0][/*group*/ ctx[13].contact[1]] + "")) set_data_dev(t10, t10_value);
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block_1.name,
+		type: "each",
+		source: "(52:24) {#each groups as group}",
+		ctx
+	});
+
+	return block;
+}
+
+// (49:16) {#each Object.entries(groupsByCountry) as [name,groups]}
+function create_each_block(ctx) {
+	let h4;
+	let t0_value = /*getCountry*/ ctx[6](/*name*/ ctx[9]) + "";
+	let t0;
+	let t1;
+	let div;
+	let t2;
+	let each_value_1 = /*groups*/ ctx[10];
+	validate_each_argument(each_value_1);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value_1.length; i += 1) {
+		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+	}
+
+	const block = {
+		c: function create() {
+			h4 = element("h4");
+			t0 = text(t0_value);
+			t1 = space();
+			div = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			t2 = space();
+			attr_dev(h4, "class", "country-name");
+			add_location(h4, file, 49, 20, 1740);
+			attr_dev(div, "class", "country-block");
+			add_location(div, file, 50, 20, 1810);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, h4, anchor);
+			append_dev(h4, t0);
+			insert_dev(target, t1, anchor);
+			insert_dev(target, div, anchor);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div, null);
+			}
+
+			append_dev(div, t2);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*Object, groupsByCountry, $content, getAddress*/ 129) {
+				each_value_1 = /*groups*/ ctx[10];
+				validate_each_argument(each_value_1);
+				let i;
+
+				for (i = 0; i < each_value_1.length; i += 1) {
+					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block_1(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div, t2);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value_1.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(h4);
+			if (detaching) detach_dev(t1);
+			if (detaching) detach_dev(div);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(49:16) {#each Object.entries(groupsByCountry) as [name,groups]}",
+		ctx
+	});
+
+	return block;
+}
+
+// (38:0) {#key $loaded}
+function create_key_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*$loaded*/ ctx[1] == 2 && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (/*$loaded*/ ctx[1] == 2) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block.name,
+		type: "key",
+		source: "(38:0) {#key $loaded}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let previous_key = /*$loaded*/ ctx[1];
+	let key_block_anchor;
+	let key_block = create_key_block(ctx);
+
+	const block = {
+		c: function create() {
+			key_block.c();
+			key_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			key_block.m(target, anchor);
+			insert_dev(target, key_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$loaded*/ 2 && safe_not_equal(previous_key, previous_key = /*$loaded*/ ctx[1])) {
+				key_block.d(1);
+				key_block = create_key_block(ctx);
+				key_block.c();
+				key_block.m(key_block_anchor.parentNode, key_block_anchor);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(key_block_anchor);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $content;
+	let $loaded;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('groups-component', slots, []);
+	let loaded = writable(0);
+	validate_store(loaded, 'loaded');
+	component_subscribe($$self, loaded, value => $$invalidate(1, $loaded = value));
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(0, $content = value));
+	let locale = loadLocaleContent(content, "groups-component", loaded);
+	loadLocaleContent(content, "countries", loaded);
+
+	function mapCallbackGroups(createMap, content, locale) {
+		let map = createMap([22, 0], 2);
+		addMarkersGroups(map, content, locale);
+	}
+
+	function getCountry(name) {
+		return locale == "en" ? name : $content[name];
+	}
+
+	function getAddress(group) {
+		return group.location[0].map(x => locale == "en" ? x : $content[x]).join(", ");
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object_1.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<groups-component> was created with unknown prop '${key}'`);
+	});
+
+	const func = createMap => mapCallbackGroups(createMap, $content, locale);
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		groupsByCountry,
+		addMarkersGroups,
+		loadLocaleContent,
+		getData,
+		sendData,
+		loaded,
+		content,
+		locale,
+		mapCallbackGroups,
+		getCountry,
+		getAddress,
+		$content,
+		$loaded
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('loaded' in $$props) $$invalidate(2, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(3, content = $$props.content);
+		if ('locale' in $$props) $$invalidate(4, locale = $$props.locale);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [
+		$content,
+		$loaded,
+		loaded,
+		content,
+		locale,
+		mapCallbackGroups,
+		getCountry,
+		getAddress,
+		func
+	];
+}
+
+class Groups_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';.description{margin-bottom:1rem}#add-prompt{margin-bottom:2rem}#groups-img{position:absolute;width:14rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}.country-name{margin-bottom:0.5rem}.country-block{margin-bottom:2rem}.location-info{margin-bottom:0.75rem}.location-info p{margin-bottom:0}a{color:#DD1C1A}#map{--height:30rem;--width:100%;--margin-bottom:0.5rem}#text-container{position:relative;max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}h3{margin-bottom:1rem}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container p{text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("groups-component", Groups_component);
+
+export { Groups_component as default };

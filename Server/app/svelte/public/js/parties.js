@@ -22,7 +22,7 @@ for (let g of parties) {
 
 export let partiesMarkersLayer = L.layerGroup()
 
-export function addMarkersParties(map,content) {
+export function addMarkersParties(map,content,locale) {
     for (let g of parties) {
         let coordinates
         let text = "<b>"+content["Party"]+"</b><br>"
@@ -42,7 +42,13 @@ export function addMarkersParties(map,content) {
             }
             else if (field=="location") {
                 let location = g[field][0]
-                let locationString = location
+                let locationString
+                if (locale=="en") {
+                    locationString = location
+                }
+                else {
+                    locationString = content[location]
+                }
                 text += fieldText + locationString + "<br>"
                 coordinates = g[field][1]
             }

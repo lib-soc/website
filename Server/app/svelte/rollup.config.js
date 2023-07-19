@@ -31,7 +31,6 @@ function serve() {
 		}
 	};
 }
-   
 
 const walkSync = require("walk-sync");
 const paths = walkSync("./src", {globs: ["**/*.svelte"]}).map(x => "src/"+x)

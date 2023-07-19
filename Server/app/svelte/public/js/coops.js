@@ -2,7 +2,7 @@ export let coops = [
     {
         logo: "chiron_logo",
         name: "Chiron Health",
-        location: [["Estonia","KohtlaJarve"],[59.41038769769602, 27.287802936242034]],
+        location: [["Estonia","Kohtla-Järve"],[59.41038769769602, 27.287802936242034]],
         market:   "wellnessAndHealth",
         workers: 2,
         status: "inDevelopment",
@@ -13,7 +13,7 @@ export let coops = [
     {
         logo: "kuusk_logo",
         name: "Kuusk",
-        location: [["Estonia","KohtlaJarve"],[59.399947051803004, 27.277159931677055]],
+        location: [["Estonia","Kohtla-Järve"],[59.399947051803004, 27.277159931677055]],
         market: "herbalTeas",
         workers: 1,
         status: "inDevelopment",
@@ -36,7 +36,7 @@ for (let g of coops) {
 
 export let coopsMarkersLayer = L.layerGroup()
 
-export function addMarkersCoops(map,content) {
+export function addMarkersCoops(map,content,locale) {
     for (let g of coops) {
         let coordinates
         let text = "<b>"+content["Cooperative"]+"</b><br>"
@@ -56,7 +56,13 @@ export function addMarkersCoops(map,content) {
             }
             else if (field=="location") {
                 let location = g[field][0]
-                let locationString = location.map(x => content[x]).join(", ")
+                let locationString
+                if (locale=="en") {
+                    locationString = location.map(x => x).join(", ")
+                }
+                else {
+                    locationString = location.map(x => content[x]).join(", ")
+                }
                 text += fieldText + locationString + "<br>"
                 coordinates = g[field][1]
             }
