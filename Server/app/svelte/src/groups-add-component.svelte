@@ -5,7 +5,7 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { groupsByCountry, addMarkersGroups } from '/js/groups.js'
-    import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData, sendText } from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -92,8 +92,7 @@
         if (addressVec!=undefined) {
             let data = [...addressVec,userPinLat,userPinLng,contactInput.value]
             let url = "/" + locale + "/groups-add-post/"
-            sendData(url,data)
-
+            sendText(url,JSON.stringify(data))
         }
         
     }
