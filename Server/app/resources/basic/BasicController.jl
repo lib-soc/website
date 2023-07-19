@@ -212,6 +212,7 @@ function political_compass()
 end
 
 function groups_add_post()
+    @info rawpayload()
     data = collect(JSON3.read(rawpayload()))
     push!(data,1)
     dict = Dict(zip(["country","state","town","latitude","longitude","contact","members"],data))

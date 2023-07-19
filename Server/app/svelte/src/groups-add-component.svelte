@@ -92,7 +92,6 @@
         if (addressVec!=undefined) {
             let data = [...addressVec,userPinLat,userPinLng,contactInput.value]
             let url = "/" + locale + "/groups-add-post/"
-            console.log(data)
             sendData(url,data)
 
         }
