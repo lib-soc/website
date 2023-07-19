@@ -72,9 +72,9 @@
         getData(url,callback)
     }
 
-    function mapCallbackGroups(createMap,content) {
+    function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content)
+        addMarkersGroups(map,content,locale)
 
         userPin.addTo(map)
         map.on('click', function(event) {
@@ -109,16 +109,17 @@
             <div id="text-container">
                 <h1>Add a Group</h1>
                 <img id="groups-img" src="/img/common/groups.svg" alt="groups">
-                <p class="description">If there are no groups in your town with whom you can organize then</p>
+                <p class="description">If there are no groups in your town with whom you can organize then do the following:</p>
                 <ol>
-                    <li>click on the map to show us where you are located,</li>
-                    <li>add a way to contact you or leave blank for a pin to point to our discord and</li>
-                    <li>press "Submit" to add yourself to our map</li>
+                    <li>Click on the map to show us where you are located;</li>
+                    <li>Add a way to contact you or leave blank for a pin to point to our discord;</li>
+                    <li>Press "Submit" to add yourself to our map;</li>
+                    <li>Verify yourself by having a chat with us at our Discord server to show on the map;</li>
                 </ol>
                 <label for="address-input">Location: </label><input bind:this={addressInput} id="address-input" type="text" readonly><br>
                 <label for="contact-input">Contact: </label><input bind:this={contactInput} id="contact-input" type="text">
                 <button id="submit-button" on:click={submitLocation}>Submit</button>
-                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
             </div>
         </div>
     {/if}
@@ -129,6 +130,7 @@
 
     ol li {
         margin-left: 3rem;
+        margin-bottom: 0.5rem;
     }
 
     label {

@@ -28,15 +28,17 @@ function create_if_block(ctx) {
 	let t8;
 	let li2;
 	let t10;
+	let li3;
+	let t12;
 	let label0;
 	let input0;
 	let br;
-	let t12;
+	let t14;
 	let label1;
 	let input1;
-	let t14;
-	let button;
 	let t16;
+	let button;
+	let t18;
 	let map_component;
 	let map_component_callback_value;
 	let mounted;
@@ -52,63 +54,67 @@ function create_if_block(ctx) {
 			img = element("img");
 			t2 = space();
 			p = element("p");
-			p.textContent = "If there are no groups in your town with whom you can organize then";
+			p.textContent = "If there are no groups in your town with whom you can organize then do the following:";
 			t4 = space();
 			ol = element("ol");
 			li0 = element("li");
-			li0.textContent = "click on the map to show us where you are located,";
+			li0.textContent = "Click on the map to show us where you are located;";
 			t6 = space();
 			li1 = element("li");
-			li1.textContent = "add a way to contact you or leave blank for a pin to point to our discord and";
+			li1.textContent = "Add a way to contact you or leave blank for a pin to point to our discord;";
 			t8 = space();
 			li2 = element("li");
-			li2.textContent = "press \"Submit\" to add yourself to our map";
+			li2.textContent = "Press \"Submit\" to add yourself to our map;";
 			t10 = space();
+			li3 = element("li");
+			li3.textContent = "Verify yourself by having a chat with us at our Discord server to show on the map;";
+			t12 = space();
 			label0 = element("label");
 			label0.textContent = "Location: ";
 			input0 = element("input");
 			br = element("br");
-			t12 = space();
+			t14 = space();
 			label1 = element("label");
 			label1.textContent = "Contact: ";
 			input1 = element("input");
-			t14 = space();
+			t16 = space();
 			button = element("button");
 			button.textContent = "Submit";
-			t16 = space();
+			t18 = space();
 			map_component = element("map-component");
-			add_location(h1, file, 109, 16, 3516);
+			add_location(h1, file, 109, 16, 3530);
 			attr_dev(img, "id", "groups-img");
 			if (!src_url_equal(img.src, img_src_value = "/img/common/groups.svg")) attr_dev(img, "src", img_src_value);
 			attr_dev(img, "alt", "groups");
-			add_location(img, file, 110, 16, 3554);
+			add_location(img, file, 110, 16, 3568);
 			attr_dev(p, "class", "description");
-			add_location(p, file, 111, 16, 3635);
-			add_location(li0, file, 113, 20, 3773);
-			add_location(li1, file, 114, 20, 3854);
-			add_location(li2, file, 115, 20, 3962);
-			add_location(ol, file, 112, 16, 3747);
+			add_location(p, file, 111, 16, 3649);
+			add_location(li0, file, 113, 20, 3805);
+			add_location(li1, file, 114, 20, 3886);
+			add_location(li2, file, 115, 20, 3991);
+			add_location(li3, file, 116, 20, 4064);
+			add_location(ol, file, 112, 16, 3779);
 			attr_dev(label0, "for", "address-input");
-			add_location(label0, file, 117, 16, 4053);
+			add_location(label0, file, 118, 16, 4196);
 			attr_dev(input0, "id", "address-input");
 			attr_dev(input0, "type", "text");
 			input0.readOnly = true;
-			add_location(input0, file, 117, 61, 4098);
-			add_location(br, file, 117, 133, 4170);
+			add_location(input0, file, 118, 61, 4241);
+			add_location(br, file, 118, 133, 4313);
 			attr_dev(label1, "for", "contact-input");
-			add_location(label1, file, 118, 16, 4192);
+			add_location(label1, file, 119, 16, 4335);
 			attr_dev(input1, "id", "contact-input");
 			attr_dev(input1, "type", "text");
-			add_location(input1, file, 118, 60, 4236);
+			add_location(input1, file, 119, 60, 4379);
 			attr_dev(button, "id", "submit-button");
-			add_location(button, file, 119, 16, 4317);
+			add_location(button, file, 120, 16, 4460);
 			set_custom_element_data(map_component, "id", "map");
-			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[10]);
-			add_location(map_component, file, 120, 16, 4403);
+			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[11]);
+			add_location(map_component, file, 121, 16, 4546);
 			attr_dev(div0, "id", "text-container");
-			add_location(div0, file, 108, 12, 3473);
+			add_location(div0, file, 108, 12, 3487);
 			attr_dev(div1, "id", "container");
-			add_location(div1, file, 106, 8, 3370);
+			add_location(div1, file, 106, 8, 3384);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, div1, anchor);
@@ -125,34 +131,36 @@ function create_if_block(ctx) {
 			append_dev(ol, li1);
 			append_dev(ol, t8);
 			append_dev(ol, li2);
-			append_dev(div0, t10);
+			append_dev(ol, t10);
+			append_dev(ol, li3);
+			append_dev(div0, t12);
 			append_dev(div0, label0);
 			append_dev(div0, input0);
-			/*input0_binding*/ ctx[8](input0);
+			/*input0_binding*/ ctx[9](input0);
 			append_dev(div0, br);
-			append_dev(div0, t12);
+			append_dev(div0, t14);
 			append_dev(div0, label1);
 			append_dev(div0, input1);
-			/*input1_binding*/ ctx[9](input1);
-			append_dev(div0, t14);
-			append_dev(div0, button);
+			/*input1_binding*/ ctx[10](input1);
 			append_dev(div0, t16);
+			append_dev(div0, button);
+			append_dev(div0, t18);
 			append_dev(div0, map_component);
 
 			if (!mounted) {
-				dispose = listen_dev(button, "click", /*submitLocation*/ ctx[7], false, false, false);
+				dispose = listen_dev(button, "click", /*submitLocation*/ ctx[8], false, false, false);
 				mounted = true;
 			}
 		},
 		p: function update(ctx, dirty) {
-			if (dirty & /*$content*/ 8 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[10])) {
+			if (dirty & /*$content*/ 8 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[11])) {
 				set_custom_element_data(map_component, "callback", map_component_callback_value);
 			}
 		},
 		d: function destroy(detaching) {
 			if (detaching) detach_dev(div1);
-			/*input0_binding*/ ctx[8](null);
-			/*input1_binding*/ ctx[9](null);
+			/*input0_binding*/ ctx[9](null);
+			/*input1_binding*/ ctx[10](null);
 			mounted = false;
 			dispose();
 		}
@@ -334,9 +342,9 @@ function instance($$self, $$props, $$invalidate) {
 		getData(url, callback);
 	}
 
-	function mapCallbackGroups(createMap, content) {
+	function mapCallbackGroups(createMap, content, locale) {
 		let map = createMap([22, 0], 2);
-		addMarkersGroups(map, content);
+		addMarkersGroups(map, content, locale);
 		userPin.addTo(map);
 
 		map.on('click', function (event) {
@@ -382,7 +390,7 @@ function instance($$self, $$props, $$invalidate) {
 		});
 	}
 
-	const func = createMap => mapCallbackGroups(createMap, $content);
+	const func = createMap => mapCallbackGroups(createMap, $content, locale);
 
 	$$self.$capture_state = () => ({
 		onMount,
@@ -419,7 +427,7 @@ function instance($$self, $$props, $$invalidate) {
 		if ('userPinLat' in $$props) userPinLat = $$props.userPinLat;
 		if ('userPinLng' in $$props) userPinLng = $$props.userPinLng;
 		if ('userPin' in $$props) userPin = $$props.userPin;
-		if ('locale' in $$props) locale = $$props.locale;
+		if ('locale' in $$props) $$invalidate(6, locale = $$props.locale);
 	};
 
 	if ($$props && "$$inject" in $$props) {
@@ -433,6 +441,7 @@ function instance($$self, $$props, $$invalidate) {
 		$content,
 		loaded,
 		content,
+		locale,
 		mapCallbackGroups,
 		submitLocation,
 		input0_binding,
@@ -444,7 +453,7 @@ function instance($$self, $$props, $$invalidate) {
 class Groups_add_component extends SvelteElement {
 	constructor(options) {
 		super();
-		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';ol li{margin-left:3rem}label{display:inline-block;font-family:var(--serif,serif);font-size:1.15rem;line-height:160%;color:#222222;width:5.5rem}input{font-size:1.15rem;font-family:var(--serif,serif);height:2.5rem}#address-input{margin-top:2rem;margin-bottom:1rem;width:min(30rem,calc(100% - 10rem))}#contact-input{width:min(20rem,calc(100% - 10rem))}.description{margin-bottom:1rem}#submit-button{display:block;margin-top:2rem;margin-bottom:2rem;padding:1rem 2rem;font-size:1.4rem;font-family:var(--sans-serif,sans-serif);border:0rem solid black;border-radius:0.5rem;background:#cb1816;color:white}#groups-img{position:absolute;width:14rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}#map{--height:30rem;--width:100%;--margin-bottom:0.5rem}#text-container{position:relative;max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container p{text-align:justify}</style>`;
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';ol li{margin-left:3rem;margin-bottom:0.5rem}label{display:inline-block;font-family:var(--serif,serif);font-size:1.15rem;line-height:160%;color:#222222;width:5.5rem}input{font-size:1.15rem;font-family:var(--serif,serif);height:2.5rem}#address-input{margin-top:2rem;margin-bottom:1rem;width:min(30rem,calc(100% - 10rem))}#contact-input{width:min(20rem,calc(100% - 10rem))}.description{margin-bottom:1rem}#submit-button{display:block;margin-top:2rem;margin-bottom:2rem;padding:1rem 2rem;font-size:1.4rem;font-family:var(--sans-serif,sans-serif);border:0rem solid black;border-radius:0.5rem;background:#cb1816;color:white}#groups-img{position:absolute;width:14rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}#map{--height:30rem;--width:100%;--margin-bottom:0.5rem}#text-container{position:relative;max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container p{text-align:justify}</style>`;
 
 		init(
 			this,
