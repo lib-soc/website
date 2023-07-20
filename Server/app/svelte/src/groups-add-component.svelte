@@ -68,6 +68,7 @@
                 city = ""
             }
             addressInput.value = fullAddress
+            resizeInput(addressInput)
             addressVec = [country,state,city]
         }
         getData(url,callback)
@@ -108,7 +109,10 @@
             let url = "/" + locale + "/groups-add-post/"
             sendText(url,JSON.stringify(data),updateConfirmationMsg)
         }
-        
+    }
+
+    function resizeInput(el) {
+        el.nextElementSibling.innerHTML = el.value
     }
     
     onMount(() => { 
@@ -130,8 +134,20 @@
                     <li>Press "Submit" to add yourself to our map;</li>
                     <li>Verify yourself by having a chat with us at our Discord server to show on the map;</li>
                 </ol>
-                <label for="address-input">Location: </label><input bind:this={addressInput} id="address-input" type="text" readonly><br>
-                <label for="contact-input">Contact: </label><input bind:this={contactInput} id="contact-input" type="text">
+                <div id="address-input-wrapper" class="input-label-wrapper">
+                    <label for="address-input">Location: </label>
+                    <div class="input-wrapper">
+                        <input bind:this={addressInput} on:input={() => resizeInput(addressInput)} id="address-input" type="text" readonly>
+                        <div class="ghost-input"></div>
+                    </div>
+                </div>
+                <div class="input-label-wrapper">
+                    <label for="contact-input">Contact: </label>
+                    <div class="input-wrapper">
+                        <input bind:this={contactInput} on:input={() => resizeInput(contactInput)} id="contact-input" type="text">
+                        <div class="ghost-input"></div>
+                    </div>
+                </div>
                 <button id="submit-button" on:click={submitLocation}>Submit</button>
                 <p id="confirmation-msg" bind:this={confirmationMsg}></p>
                 <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
@@ -162,20 +178,50 @@
         width: 5.5rem;
     }
 
-    input {
+    input, .ghost-input {
         font-size: 1.15rem;
         font-family: var(--serif,serif);
+    }
+
+    input {
+        height: 2.5rem;
+        display: inline-block;
+        position: relative;
+    }
+
+    #address-input, #contact-input {
+        width: 100%;
+    }
+
+    #address-input-wrapper {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .ghost-input {
+        display: block;
+        visibility: hidden;
+        height: 0;
+        
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .input-wrapper {
+        display: inline-block;
+        max-width: calc(100% - 5.5rem);
+        min-width: min(20rem, calc(100% - 5.5rem));
         height: 2.5rem;
     }
 
-    #address-input {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        width: min(30rem,calc(100% - 10rem));
+    .input-label-wrapper {
+        display: flex;
+        justify-content: start;
     }
 
-    #contact-input {
-        width: min(20rem,calc(100% - 10rem));
+    .input-label-wrapper label {
+        position: relative;
+        top: 0.3rem;
     }
 
     .description {
