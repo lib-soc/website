@@ -5,7 +5,7 @@
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
     import { groupsByCountry, addMarkersGroups } from '/js/groups.js'
-    import { loadLocaleContent, getData, sendText } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -105,9 +105,27 @@
 
     function submitLocation() {
         if (addressVec!=undefined) {
-            let data = [...addressVec,userPinLat,userPinLng,contactInput.value]
+            let data = {
+                country: addressVec[0],
+                state: addressVec[1],
+                town: addressVec[2],
+                latitude: userPinLat,
+                longitude: userPinLng,
+                contact: contactInput.value,
+                members: 1
+            }
+            
+            if (data.state=="") {
+                data.state = null
+            }
+            if (data.town=="") {
+                data.town = null
+            }
+            if (data.contact=="") {
+                data.contact = null
+            }
             let url = "/" + locale + "/groups-add-post/"
-            sendText(url,JSON.stringify(data),updateConfirmationMsg)
+            sendData(url,data,updateConfirmationMsg)
         }
     }
 

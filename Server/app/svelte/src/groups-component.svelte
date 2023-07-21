@@ -4,7 +4,7 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { groupsByCountry, addMarkersGroups } from '/js/groups.js'
+    import { groupsByCountry, addMarkersGroups, translate } from '/js/groups.js'
     import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
     
     // Import components
@@ -22,14 +22,14 @@
         addMarkersGroups(map,content,locale)
     }
 
-    function getCountry(name) {
-        return locale=="en" ? name : $content[name]
+    function getCountry(x) {
+        return locale=="en" ? x : translate($content,x)
     }
 
     function getAddress(group) {
-        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
+        return group.location[0].map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
-    
+
     onMount(() => { 
 
     })

@@ -35,6 +35,7 @@ export function sendData(route,data,callback) {
                     callback(xhr.responseText)
                 }
             } else {
+                callback(false)
                 console.log("Request gave an error")
                 // Oh no! There has been an error with the request!
             }
@@ -57,6 +58,7 @@ export function sendText(route,data,callback) {
                 }
             } else {
                 callback(false)
+                console.log("Request gave an error")
                 // Oh no! There has been an error with the request!
             }
             }

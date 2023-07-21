@@ -6,14 +6,24 @@ using DataFrames
 
 export exist_in_table, insert_into_table, update_table, select_from_table, add_foreign_key
 
-
 options = SearchLight.Configuration.read_db_connection_data("db/connection.yml")
 conn = SearchLight.connect(options)
+
+function format(x)
+    if (x isa String) || (x isa Symbol)
+        return string("'",x,"'")
+    elseif (isnothing(x))
+        return "NULL"
+    else
+        return x
+    end
+end
 
 function insert_into_table(table_name,dict_values)
     names_string = join(keys(dict_values),", ")
     vals_raw = values(dict_values)
-    vals = map(x -> (x isa String) || (x isa Symbol) ? string("'",x,"'") : x,vals_raw)
+
+    vals = map(x -> format(x),vals_raw)
     vals_string = join(values(vals),", ")
     query = "INSERT INTO $table_name ($names_string) VALUES ($vals_string)"
     SearchLight.query(query)

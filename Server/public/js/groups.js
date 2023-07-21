@@ -73,6 +73,16 @@ export let groups = [
         location: [["USA","Ohio"], [40.18243610076637, -83.07800532738788]],
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
+        location: [["Thailand","Chiang Mai"], [18.788343253574393, 98.99423221087719]],
+        members: 1,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
+        location: [["Switzerland","Cham"], [47.18298143153399, 8.460076421717238]],
+        members: 1,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     }
 ]
 
@@ -93,6 +103,18 @@ let groupsMarkersLayerIn = L.layerGroup()
 
 let contactGeneral =["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
 
+export function translate(content, x) {
+    let out = content[x]
+    if (out==undefined) {
+        return x
+    }
+    else {
+        return out
+    }
+}
+
+
+
 function addMarkersToLayer(g,layer,content,locale) {
     let coordinates
     let text = "<b>"+content["Group"]+"</b><br>"
@@ -108,7 +130,7 @@ function addMarkersToLayer(g,layer,content,locale) {
                 locationString = location.map(x => x).join(", ")
             }
             else {
-                locationString = location.map(x => content[x]).join(", ")
+                locationString = location.map(x => translate(content, x)).join(", ")
             }
             text += fieldText + locationString + "<br>"
             coordinates = g[field][1]
