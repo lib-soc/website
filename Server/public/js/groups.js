@@ -113,8 +113,6 @@ export function translate(content, x) {
     }
 }
 
-
-
 function addMarkersToLayer(g,layer,content,locale) {
     let coordinates
     let text = "<b>"+content["Group"]+"</b><br>"

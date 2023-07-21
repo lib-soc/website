@@ -23,6 +23,12 @@ export let communes = [
         status: "forming",
         members: 1,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
+    },
+    {
+        location: [["Switzerland"],[46.97045202584917, 8.05130091516525]],
+        status: "forming",
+        members: 1,
+        contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     }
 ]
 
@@ -38,6 +44,16 @@ for (let c of communes) {
 }
 
 export let communesMarkersLayer = L.layerGroup()
+
+export function translate(content, x) {
+    let out = content[x]
+    if (out==undefined) {
+        return x
+    }
+    else {
+        return out
+    }
+}
 
 export function addMarkersCommunes(map,content,locale) {
     for (let g of communes) {
@@ -55,7 +71,7 @@ export function addMarkersCommunes(map,content,locale) {
                     locationString = location.map(x => x).join(", ")
                 }
                 else {
-                    locationString = location.map(x => content[x]).join(", ")
+                    locationString = location.map(x => translate(content, x)).join(", ")
                 }
 
                 text += fieldText + locationString + "<br>"
