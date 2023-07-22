@@ -4,7 +4,7 @@ module DatabaseSupport
 using SearchLight, SearchLightPostgreSQL, LibPQ
 using DataFrames
 
-export exist_in_table, insert_into_table, update_table, select_from_table, add_foreign_key
+export exist_in_table, insert_into_table, update_table, select_from_table, add_foreign_key, set_default
 
 options = SearchLight.Configuration.read_db_connection_data("db/connection.yml")
 conn = SearchLight.connect(options)
@@ -12,7 +12,7 @@ conn = SearchLight.connect(options)
 function format(x)
     if (x isa String) || (x isa Symbol)
         return string("'",x,"'")
-    elseif (isnothing(x))
+    elseif (isnothing(x) || ismissing(x))
         return "NULL"
     else
         return x
@@ -33,7 +33,7 @@ end
 function update_table(table_name,dict_values; where_data=nothing)
     ns = collect(keys(dict_values))
     vals_raw = values(dict_values)
-    vals = map(x -> x isa String ? string("'",x,"'") : x,vals_raw)
+    vals = map(x -> format(x),vals_raw)
     ns_vals = join(map((x,y) -> string(x, " = ",y),ns,vals),", ")
 
     query = "UPDATE $table_name SET $ns_vals"
@@ -141,6 +141,13 @@ function add_foreign_key(table,name,table2,name2)
     query = """
     ALTER TABLE $table
     ADD CONSTRAINT fk_$(table)_$(table2)_$(name) FOREIGN KEY ($name) REFERENCES $table2 ($name2);"""
+    SearchLight.query(query)
+end
+
+function set_default(table,column,value)
+    query = """
+    ALTER TABLE $table
+    ALTER COLUMN $column SET DEFAULT $value ;"""
     SearchLight.query(query)
 end
 

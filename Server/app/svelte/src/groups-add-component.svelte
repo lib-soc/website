@@ -4,7 +4,7 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { groupsByCountry, addMarkersGroups } from '/js/groups.js'
+    import { addMarkersGroups, translate } from '/js/groups.js'
     import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
     
     // Import components
@@ -13,6 +13,30 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
+    let groups
+    let groupsByCountry
+
+    let callback = (response) => {
+        groups = JSON.parse(response)
+        groupsByCountry = {}
+        for (let g of groups) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in groupsByCountry) {
+                groupsByCountry[country].push(g)
+            }
+            else {
+                groupsByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/groups.json",callback)
+
 
     let confirmationMsg
     let addressInput
@@ -76,7 +100,7 @@
 
     function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content,locale)
+        addMarkersGroups(groups,groupsByCountry,map,content,locale)
 
         userPin.addTo(map)
         map.on('click', function(event) {
@@ -111,8 +135,7 @@
                 town: addressVec[2],
                 latitude: userPinLat,
                 longitude: userPinLng,
-                contact: contactInput.value,
-                members: 1
+                contact: contactInput.value
             }
             
             if (data.state=="") {
@@ -139,7 +162,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==3}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">

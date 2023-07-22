@@ -1,3 +1,4 @@
+/*
 export let groups = [
     {
         location: [["Bulgaria","Varna"],[43.21582161671174, 27.89896092161012]],
@@ -85,17 +86,7 @@ export let groups = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     }
 ]
-
-export let groupsByCountry = {}
-for (let g of groups) {
-    let country = g.location[0][0]
-    if (country in groupsByCountry) {
-        groupsByCountry[country].push(g)
-    }
-    else {
-        groupsByCountry[country] = [g]
-    }
-}
+*/
 
 export let groupsMarkersLayer = L.layerGroup()
 let groupsMarkersLayerOut = L.layerGroup()
@@ -116,13 +107,14 @@ export function translate(content, x) {
 function addMarkersToLayer(g,layer,content,locale) {
     let coordinates
     let text = "<b>"+content["Group"]+"</b><br>"
-    for (let field in g) {
+    for (let field of ["location","members","contact"]) {
+        
         let fieldText = content[field] + ": "
         if (field=="contact") {
-            text += fieldText + "<a href='" + g.contact[0] + "' target='_blank' rel=noreferrer>" + content[g.contact[1]] + "</a>"
+            text += fieldText + "<a href='" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>"
         }
         else if (field=="location") {
-            let location = g[field][0]
+            let location = [g.country,g.state,g.town].filter(x => x!=null && x!=undefined)
             let locationString
             if (locale=="en") {
                 locationString = location.map(x => x).join(", ")
@@ -131,7 +123,7 @@ function addMarkersToLayer(g,layer,content,locale) {
                 locationString = location.map(x => translate(content, x)).join(", ")
             }
             text += fieldText + locationString + "<br>"
-            coordinates = g[field][1]
+            coordinates = [g.latitude,g.longitude]
         }
         else {
             text += fieldText + g[field] + "<br>"
@@ -145,28 +137,29 @@ function addMarkersToLayer(g,layer,content,locale) {
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     })
+    //console.log(text)
     let marker = L.marker(coordinates, {icon: markerIcon})
     marker.addTo(layer).bindPopup(text)
 }
 
-export function addMarkersGroups(map,content,locale) {
+export function addMarkersGroups(groups,groupsByCountry,map,content,locale) {
     for (let g of groups) {
         addMarkersToLayer(g,groupsMarkersLayerIn,content,locale)
     }
     for (let gs of Object.values(groupsByCountry)) {
         if (gs.length==1) {
             let g = {...gs[0]}
-            g.location[0] = [g.location[0][0]]
+            g.country = [g.country]
             addMarkersToLayer(g,groupsMarkersLayerOut,content,locale)
         }
         else {
-            let locationName = [gs[0].location[0][0]]
+            let locationName = gs[0].country
             let locationCoordinates = [0,0]
             let members = 0
             let contact = gs[0].contact
             for (let g of gs) {
-                locationCoordinates[0] += g.location[1][0]
-                locationCoordinates[1] += g.location[1][1]
+                locationCoordinates[0] += g.latitude
+                locationCoordinates[1] += g.longitude
                 members += g.members
                 if (g.contact[0]!=gs[0].contact[0]) {
                     contact = contactGeneral
@@ -175,13 +168,16 @@ export function addMarkersGroups(map,content,locale) {
             locationCoordinates[0] = locationCoordinates[0]/gs.length
             locationCoordinates[1] = locationCoordinates[1]/gs.length
             let gNew = {
-                location: [locationName,locationCoordinates],
+                country: locationName,
+                latitude: locationCoordinates[0],
+                longitude: locationCoordinates[1],
                 members: members,
                 contact: contact
             }
             addMarkersToLayer(gNew,groupsMarkersLayerOut,content,locale)
         }
     }
+
     groupsMarkersLayerOut.addTo(groupsMarkersLayer)
     groupsMarkersLayer.addTo(map)
     map.on("zoomend", () => onZoomEnd(map))

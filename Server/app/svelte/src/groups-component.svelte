@@ -4,7 +4,7 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { groupsByCountry, addMarkersGroups, translate } from '/js/groups.js'
+    import { addMarkersGroups, translate } from '/js/groups.js'
     import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
     
     // Import components
@@ -13,21 +13,47 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
+    let groups
+    let groupsByCountry
 
     let locale = loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"countries",loaded)
 
+    let callback = (response) => {
+        groups = JSON.parse(response)
+        groupsByCountry = {}
+        for (let g of groups) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in groupsByCountry) {
+                groupsByCountry[country].push(g)
+            }
+            else {
+                groupsByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/groups.json",callback)
+
+
+
     function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content,locale)
+        addMarkersGroups(groups,groupsByCountry,map,content,locale)
     }
 
     function getCountry(x) {
         return locale=="en" ? x : translate($content,x)
     }
 
-    function getAddress(group) {
-        return group.location[0].map(x => locale=="en" ? x : translate($content,x)).join(", ")
+    function getAddress(g) {
+        let location = [g.country,g.state,g.town].filter(x => x!=null)
+        return location.map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
 
     onMount(() => { 
@@ -36,7 +62,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==3}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
@@ -53,7 +79,7 @@
                             <div class="location-info">
                                 <p><b>{$content.location}: </b>{getAddress(group)}</p>
                                 <p><b>{$content.members}: </b>{group.members}</p>
-                                <p><b>{$content.contact}: </b><a href={group.contact[0]} target=;_blank; rel=noreferrer>{$content[group.contact[1]]}</a></p>
+                                <p><b>{$content.contact}: </b><a href={group.contact} target=;_blank; rel=noreferrer>{group.contact}</a></p>
                             </div>
                         {/each}
                     </div>

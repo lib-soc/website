@@ -213,33 +213,7 @@ end
 
 function groups_add_post()
     data = jsonpayload()
-    insert_into_table("groups",data)
+    insert_into_table("groups_requests",data)
 end
-#=
-function compile_groups()
-    function table_to_json(name,t)
-        ar = []
-        for df_row in eachrow(t)
-            
-            df_row = first(eachrow(df))
-            id = :town
-            location = String[]
-            for id in [:country,:state,:town]
-                if !isempty(df_row[id])
-                    push!(location,df_row[id])
-                end
-            end
-            df = select_from_table(["groups" => ["*"]])
-            dict = Dict(
-                "location" => [location,[df_row[:latitude],df_row[:longitude]]],
-                "members" => df_row[:members],
-                "contact" => df_row[:contact]
-            )
-        end
-        return ar
-    end
-    df = select_from_table(["groups" => ["*"]])
 
-end
-=#
 end
