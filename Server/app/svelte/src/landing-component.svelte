@@ -4,11 +4,11 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { addMarkersGroups, groupsMarkersLayer } from '/js/groups.js'
+    import { addMarkersGroups, groupsMarkersLayer, translate } from '/js/groups.js'
     import { addMarkersCoops, coopsMarkersLayer } from '/js/coops.js'
     import { addMarkersCommunes, communesMarkersLayer } from '/js/communes.js'
     import { addMarkersParties, partiesMarkersLayer } from '/js/parties.js'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData } from "/js/libraries/serverTools.js"
 
     // Import components
     import "/js/components/map-component.js" 
@@ -18,6 +18,8 @@
     let gridWidth
     let loaded = writable(0)
     let content = writable({})
+    let groups
+    let groupsByCountry
 
     function changeWidth(locale) {
         if (locale=="ru") {
@@ -27,6 +29,27 @@
             gridWidth = "1fr 1fr"
         }
     }
+
+    let callback = (response) => {
+        groups = JSON.parse(response)
+        groupsByCountry = {}
+        for (let g of groups) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in groupsByCountry) {
+                groupsByCountry[country].push(g)
+            }
+            else {
+                groupsByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/groups.json",callback)
 
     loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"communes-component",loaded)
@@ -38,7 +61,7 @@
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(map,content,locale)
+        addMarkersGroups(groups,groupsByCountry,map,content,locale)
         addMarkersCommunes(map,content,locale)
         addMarkersCoops(map,content,locale)
         addMarkersParties(map,content,locale)
@@ -58,7 +81,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==6}
+    {#if $loaded==7}
         <div id="container">
             <picture>
                 <source srcset="/img/crowd.webp">
