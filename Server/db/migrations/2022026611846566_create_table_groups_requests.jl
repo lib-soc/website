@@ -26,7 +26,7 @@ function up()
 end
 
 function down()
-    drop_table(:groups)
+    drop_table(:groups_requests)
 end
 
 end
