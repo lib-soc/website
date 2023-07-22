@@ -40,8 +40,6 @@
     }
     getData("/assets/groups.json",callback)
 
-
-
     function mapCallbackGroups(createMap,content,locale) {
         let map = createMap([22, 0],2)
         addMarkersGroups(groups,groupsByCountry,map,content,locale)
