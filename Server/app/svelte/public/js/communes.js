@@ -13,7 +13,7 @@ export let communes = [
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
     },
     {
-        location: [["Estonia","KohtlaJarve"],[59.409521829709504, 27.288415912535914]],
+        location: [["Estonia","Kohtla-Jarve"],[59.409521829709504, 27.288415912535914]],
         status: "forming",
         members: 2,
         contact: ["https://discord.gg/Qk8KUk787z","DiscordInviteLink"]
