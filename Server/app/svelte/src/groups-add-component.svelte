@@ -67,7 +67,7 @@
         marker.setLatLng(newLatLng)
     }
 
-    function reverseGeocode(latitude, longitude) {
+    function reverseGeocodeLocal(latitude, longitude) {
         let url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=jsonv2`;
         
         let callback = (response) => {
@@ -93,6 +93,34 @@
             }
             addressInput.value = fullAddress
             resizeInput(addressInput)
+        }
+        getData(url,callback)
+    }
+
+    function reverseGeocode(latitude, longitude) {
+        let url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=jsonv2&accept-language=en`;
+        
+        let callback = (response) => {
+            // Parse the response JSON
+            response = JSON.parse(response)
+            // Extract the address information from the response
+            let address = response.address
+            let city = address.city || address.town || address.village || address.hamlet
+            let state = address.state
+            let country = address.country
+            let fullAddress = country
+            if (state!=undefined) {
+                fullAddress += ", " + state
+            }
+            else {
+                state = ""
+            }
+            if (city!=undefined) {
+                fullAddress += ", " + city
+            }
+            else {
+                city = ""
+            }
             addressVec = [country,state,city]
         }
         getData(url,callback)
@@ -110,6 +138,7 @@
             userPinLng = lng
             updatePin(userPin,lat,lng)
             userPin.setOpacity(1)
+            reverseGeocodeLocal(lat, lng)
             reverseGeocode(lat, lng)
         })
     }
