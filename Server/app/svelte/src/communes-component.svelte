@@ -3,31 +3,56 @@
 <script>
     // Import statements
     import { onMount } from 'svelte'
-    import { writable } from 'svelte/store';
-    import { communesByCountry, addMarkersCommunes } from '/js/communes.js'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
-
+    import { writable } from 'svelte/store'
+    import { loadLocaleContent, getData} from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addCommunePinContent } from "/js/mapFuncs.js"
+    
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
     let loaded = writable(0)
     let content = writable({})
+    let entries
+    let entriesByCountry
 
-    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"communes-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
+        
+    let callback = (response) => {
+        entries = JSON.parse(response)
+        entriesByCountry = {}
+        for (let g of entries) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in entriesByCountry) {
+                entriesByCountry[country].push(g)
+            }
+            else {
+                entriesByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/communes.json",callback)
 
-    function mapCallbackCommunes(createMap,content,locale) {
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersCommunes(map,content,locale)
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addCommunePinContent,"red")
     }
 
-    function getCountry(name) {
-        return locale=="en" ? name : $content[name]
+    function getCountry(x) {
+        return locale=="en" ? x : translate($content,x)
     }
 
-    function getAddress(group) {
-        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
+    function getAddress(g) {
+        let location = [g.country,g.state,g.town].filter(x => x!=null)
+        return location.map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
 
     onMount(() => { 
@@ -36,25 +61,27 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==3}
+
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
                 <h1>{$content.communes}</h1>
-                <img id="commune-img" src="/img/common/commune.svg" alt="commune">
+                <img id="communes-img" src="/img/common/communes.svg" alt="commune">
                 <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackCommunes(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
-                {#each Object.entries(communesByCountry) as [name,communes]}
+                {#each Object.entries(entriesByCountry) as [name,entries]}
                     <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
-                        {#each communes as commune}
+                        {#each entries as entry}
+                            
                             <div class="location-info">
-                                <p><b>{$content.location}: </b>{getAddress(commune)}</p>
-                                <p><b>{$content.status}: </b>{$content[commune.status]}</p>
-                                <p><b>{$content.members}: </b>{commune.members}</p>
-                                <p><b>{$content.contact}: </b><a href={commune.contact[0]} target=;_blank; rel=noreferrer>{$content[commune.contact[1]]}</a></p>
+                                <p><b>{$content.location}: </b>{getAddress(entry)}</p>
+                                <p><b>{$content.status}: </b>{$content[entry.status]}</p>
+                                <p><b>{$content.members}: </b>{entry.members}</p>
+                                <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                             </div>
                         {/each}
                     </div>
@@ -75,7 +102,7 @@
         margin-bottom: 2rem;
     }
 
-    #commune-img {
+    #communes-img {
         position: absolute;
         width: 11.5rem;
         left: 50%;

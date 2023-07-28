@@ -194,6 +194,7 @@
     .select span {
         position: relative;
         padding-top: 0.5rem;
+        padding-left: 0.3rem;
         white-space: nowrap;
     }
 

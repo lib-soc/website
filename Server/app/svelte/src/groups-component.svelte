@@ -4,8 +4,9 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { addMarkersGroups, translate } from '/js/groups.js'
-    import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData} from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addGroupPinContent } from "/js/mapFuncs.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -13,25 +14,25 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
-    let groups
-    let groupsByCountry
+    let entries
+    let entriesByCountry
 
     let locale = loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"countries",loaded)
 
     let callback = (response) => {
-        groups = JSON.parse(response)
-        groupsByCountry = {}
-        for (let g of groups) {
+        entries = JSON.parse(response)
+        entriesByCountry = {}
+        for (let g of entries) {
             let country = g.country
             if (g.contact==null) {
                 g.contact = "https://discord.gg/Qk8KUk787z"
             }
-            if (country in groupsByCountry) {
-                groupsByCountry[country].push(g)
+            if (country in entriesByCountry) {
+                entriesByCountry[country].push(g)
             }
             else {
-                groupsByCountry[country] = [g]
+                entriesByCountry[country] = [g]
             }
         }
         loaded.update((val) => {
@@ -40,9 +41,9 @@
     }
     getData("/assets/groups.json",callback)
 
-    function mapCallbackGroups(createMap,content,locale) {
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(groups,groupsByCountry,map,content,locale)
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addGroupPinContent,"green")
     }
 
     function getCountry(x) {
@@ -68,16 +69,16 @@
                 <img id="groups-img" src="/img/common/groups.svg" alt="groups">
                 <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
-                {#each Object.entries(groupsByCountry) as [name,groups]}
+                {#each Object.entries(entriesByCountry) as [name,entries]}
                     <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
-                        {#each groups as group}
+                        {#each entries as entry}
                             <div class="location-info">
-                                <p><b>{$content.location}: </b>{getAddress(group)}</p>
-                                <p><b>{$content.members}: </b>{group.members}</p>
-                                <p><b>{$content.contact}: </b><a href={group.contact} target=;_blank; rel=noreferrer>{group.contact}</a></p>
+                                <p><b>{$content.location}: </b>{getAddress(entry)}</p>
+                                <p><b>{$content.members}: </b>{entry.members}</p>
+                                <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                             </div>
                         {/each}
                     </div>

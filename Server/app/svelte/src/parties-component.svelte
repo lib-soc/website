@@ -4,8 +4,9 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { partiesByCountry, addMarkersParties } from '/js/parties.js'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData} from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addPartyPinContent } from "/js/mapFuncs.js"
 
     // Import components
     import "/js/components/map-component.js" 
@@ -13,21 +14,45 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
+    let entries
+    let entriesByCountry
 
-    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"parties-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
 
-    function mapCallbackParties(createMap,content,locale) {
+    let callback = (response) => {
+        entries = JSON.parse(response)
+        entriesByCountry = {}
+        for (let g of entries) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in entriesByCountry) {
+                entriesByCountry[country].push(g)
+            }
+            else {
+                entriesByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/parties.json",callback)
+
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersParties(map,content,locale)
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addPartyPinContent,"gold")
     }
 
-    function getCountry(name) {
-        return locale=="en" ? name : $content[name]
+    function getCountry(x) {
+        return locale=="en" ? x : translate($content,x)
     }
 
-    function getAddress(group) {
-        return locale=="en" ? group.location : $content[group.location]
+    function getAddress(g) {
+        let location = [g.country,g.state,g.town].filter(x => x!=null)
+        return location.map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
 
     onMount(() => { 
@@ -36,7 +61,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==3}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
@@ -44,26 +69,27 @@
                 <img id="party-img" src="/img/common/parties.svg" alt="party">
                 <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackParties(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
-                {#each Object.entries(partiesByCountry) as [name,parties]}
+                {#each Object.entries(entriesByCountry) as [name,entries]}
                     <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
-                        {#each parties as party}
+                        {#each entries as entry}
                         <div class="location-info">
                             <div class="img-general-info">
                                 <picture>
-                                    <source srcset={"/img/parties/"+party.logo+".webp"}>
-                                    <source srcset={"/img/parties/"+party.logo+".jpg"}>
+                                    <source srcset={"/img/parties/"+entry.logo+".webp"}>
+                                    <source srcset={"/img/parties/"+entry.logo+".jpg"}>
                                     <img class="party-logo" alt="logo">
                                 </picture>
                                 <div>
-                                    <p><b>{$content.name}: </b>{party.name}</p>
-                                    <p><b>{$content.location}: </b>{getAddress(party)}</p>
-                                    <p><b>{$content.link}: </b><a href={party.link} target=;_blank; rel=noreferrer>{party.link}</a></p>
+                                    <p><b>{$content.name}: </b>{entry.name}</p>
+                                    <p><b>{$content.location}: </b>{getAddress(entry)}</p>
+                                    <p><b>{$content.website}: </b><a href={entry.website} target=;_blank; rel=noreferrer>{entry.website}</a></p>
+                                    <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                                 </div>
                             </div>
-                            <p><b>{$content.description}: </b>{$content[party.description]}</p>
+                            <p><b>{$content.description}: </b>{$content[entry.description]}</p>
                         </div>
                     {/each}
                     </div>
@@ -134,7 +160,7 @@
     .party-logo {
         position: relative;
         right: 0;
-        max-height: 5.5rem;
+        max-height: 6.5rem;
         max-width: 100%;
         border-radius: 1rem;
     }

@@ -4,11 +4,9 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { addMarkersGroups, groupsMarkersLayer } from '/js/groups.js'
-    import { addMarkersCoops, coopsMarkersLayer } from '/js/coops.js'
-    import { addMarkersCommunes, communesMarkersLayer } from '/js/communes.js'
-    import { addMarkersParties, partiesMarkersLayer } from '/js/parties.js'
     import { loadLocaleContent, getData } from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addGroupPinContent, addCommunePinContent, addCoopPinContent, addPartyPinContent } from "/js/mapFuncs.js"
 
     // Import components
     import "/js/components/map-component.js" 
@@ -16,8 +14,8 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
-    let groups
-    let groupsByCountry
+    let entries = {}
+    let entriesByCountry ={}
 
     loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"communes-component",loaded)
@@ -27,40 +25,42 @@
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
     
-    let callback = (response) => {
-        groups = JSON.parse(response)
-        groupsByCountry = {}
-        for (let g of groups) {
+    let callback = (response,name) => {
+        entries[name] = JSON.parse(response)
+        entriesByCountry[name] = {}
+        for (let g of entries[name]) {
             let country = g.country
             if (g.contact==null) {
                 g.contact = "https://discord.gg/Qk8KUk787z"
             }
-            if (country in groupsByCountry) {
-                groupsByCountry[country].push(g)
+            if (country in entriesByCountry[name]) {
+                entriesByCountry[name][country].push(g)
             }
             else {
-                groupsByCountry[country] = [g]
+                entriesByCountry[name][country] = [g]
             }
         }
         loaded.update((val) => {
             return val + 1
         })
     }
-    getData("/assets/groups.json",callback)
+    getData("/assets/groups.json",(response) => callback(response,"groups"))
+    getData("/assets/communes.json",(response) => callback(response,"communes"))
+    getData("/assets/cooperatives.json",(response) => callback(response,"cooperatives"))
+    getData("/assets/parties.json",(response) => callback(response,"parties"))
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(groups,groupsByCountry,map,content,locale)
-        addMarkersCommunes(map,content,locale)
-        addMarkersCoops(map,content,locale)
-        addMarkersParties(map,content,locale)
+        let groupsMarkersLayer = addMarkersEntries(entries["groups"],entriesByCountry["groups"],map,content,locale,addGroupPinContent,"green")
+        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red")
+        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue")
+        let partiesMarkersLayer = addMarkersEntries(entries["parties"],entriesByCountry["parties"],map,content,locale,addPartyPinContent,"gold")
 
-        let overlayMaps = {
-            "Groups": groupsMarkersLayer,
-            "Communes": communesMarkersLayer,
-            "Coops": coopsMarkersLayer,
-            "Parties": partiesMarkersLayer,
-        }
+        let overlayMaps = {}
+        overlayMaps[content.groups] = groupsMarkersLayer
+        overlayMaps[content.communes] = communesMarkersLayer
+        overlayMaps[content.cooperatives] = coopsMarkersLayer
+        overlayMaps[content.parties] = partiesMarkersLayer
         L.control.layers(null, overlayMaps).addTo(map)
     }
 
@@ -70,7 +70,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==7}
+    {#if $loaded==10}
         <div id="container">
             <div id="text-container">
                 <h1>{$content.heading}</h1>
@@ -101,7 +101,7 @@
                     <p>{$content.nearYou}</p>
                 </div>
                 <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
-                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
             </div>
         </div>
     {/if}

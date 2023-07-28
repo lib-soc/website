@@ -4,11 +4,9 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { addMarkersGroups, groupsMarkersLayer, translate } from '/js/groups.js'
-    import { addMarkersCoops, coopsMarkersLayer } from '/js/coops.js'
-    import { addMarkersCommunes, communesMarkersLayer } from '/js/communes.js'
-    import { addMarkersParties, partiesMarkersLayer } from '/js/parties.js'
     import { loadLocaleContent, getData } from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addGroupPinContent, addCommunePinContent, addCoopPinContent, addPartyPinContent } from "/js/mapFuncs.js"
 
     // Import components
     import "/js/components/map-component.js" 
@@ -18,8 +16,8 @@
     let gridWidth
     let loaded = writable(0)
     let content = writable({})
-    let groups
-    let groupsByCountry
+    let entries = {}
+    let entriesByCountry ={}
 
     function changeWidth(locale) {
         if (locale=="ru") {
@@ -30,26 +28,29 @@
         }
     }
 
-    let callback = (response) => {
-        groups = JSON.parse(response)
-        groupsByCountry = {}
-        for (let g of groups) {
+    let callback = (response,name) => {
+        entries[name] = JSON.parse(response)
+        entriesByCountry[name] = {}
+        for (let g of entries[name]) {
             let country = g.country
             if (g.contact==null) {
                 g.contact = "https://discord.gg/Qk8KUk787z"
             }
-            if (country in groupsByCountry) {
-                groupsByCountry[country].push(g)
+            if (country in entriesByCountry[name]) {
+                entriesByCountry[name][country].push(g)
             }
             else {
-                groupsByCountry[country] = [g]
+                entriesByCountry[name][country] = [g]
             }
         }
         loaded.update((val) => {
             return val + 1
         })
     }
-    getData("/assets/groups.json",callback)
+    getData("/assets/groups.json",(response) => callback(response,"groups"))
+    getData("/assets/communes.json",(response) => callback(response,"communes"))
+    getData("/assets/cooperatives.json",(response) => callback(response,"cooperatives"))
+    getData("/assets/parties.json",(response) => callback(response,"parties"))
 
     loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"communes-component",loaded)
@@ -61,10 +62,10 @@
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(groups,groupsByCountry,map,content,locale)
-        addMarkersCommunes(map,content,locale)
-        addMarkersCoops(map,content,locale)
-        addMarkersParties(map,content,locale)
+        let groupsMarkersLayer = addMarkersEntries(entries["groups"],entriesByCountry["groups"],map,content,locale,addGroupPinContent,"green")
+        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red")
+        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue")
+        let partiesMarkersLayer = addMarkersEntries(entries["parties"],entriesByCountry["parties"],map,content,locale,addPartyPinContent,"gold")
 
         let overlayMaps = {}
         overlayMaps[content.groups] = groupsMarkersLayer
@@ -81,7 +82,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==7}
+    {#if $loaded==10}
         <div id="container">
             <picture>
                 <source srcset="/img/crowd.webp">
@@ -97,9 +98,9 @@
                         <p>{$content.groupsText}</p>
                     </div>
                     <div>
-                        <a href={"/" + locale + "/communes"}><h2>{$content.communesTitle}</h2></a>
-                        <img id="communes-img" src="/img/common/commune.svg" alt="communes">
-                        <p>{$content.communesText}</p>
+                        <a href={"/" + locale + "/parties"}><h2>{$content.partiesTitle}</h2></a>
+                        <img id="parties-img" src="/img/common/parties.svg" alt="coops">
+                        <p>{$content.partiesText}</p>
                     </div>
                     <div>
                         <a href={"/" + locale + "/coops"}><h2>{$content.cooperativesTitle}</h2></a>
@@ -107,9 +108,9 @@
                         <p>{$content.cooperativesText}</p>
                     </div>
                     <div>
-                        <a href={"/" + locale + "/parties"}><h2>{$content.partiesTitle}</h2></a>
-                        <img id="parties-img" src="/img/common/parties.svg" alt="coops">
-                        <p>{$content.partiesText}</p>
+                        <a href={"/" + locale + "/communes"}><h2>{$content.communesTitle}</h2></a>
+                        <img id="communes-img" src="/img/common/communes.svg" alt="communes">
+                        <p>{$content.communesText}</p>
                     </div>
                 </div>
                 <!--

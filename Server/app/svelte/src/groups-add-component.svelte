@@ -4,8 +4,8 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { addMarkersGroups, translate } from '/js/groups.js'
     import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -13,22 +13,22 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
-    let groups
-    let groupsByCountry
+    let entries
+    let entriesByCountry
 
     let callback = (response) => {
-        groups = JSON.parse(response)
-        groupsByCountry = {}
-        for (let g of groups) {
+        entries = JSON.parse(response)
+        entriesByCountry = {}
+        for (let g of entries) {
             let country = g.country
             if (g.contact==null) {
                 g.contact = "https://discord.gg/Qk8KUk787z"
             }
-            if (country in groupsByCountry) {
-                groupsByCountry[country].push(g)
+            if (country in entriesByCountry) {
+                entriesByCountry[country].push(g)
             }
             else {
-                groupsByCountry[country] = [g]
+                entriesByCountry[country] = [g]
             }
         }
         loaded.update((val) => {
@@ -126,9 +126,37 @@
         getData(url,callback)
     }
 
-    function mapCallbackGroups(createMap,content,locale) {
+    function addGroupPinContent(g,content,locale) {
+        let coordinates
+        let text = "<b>"+content["Group"]+"</b><br>"
+        for (let field of ["location","members","contact"]) {
+            let fieldText = content[field] + ": "
+            if (field=="contact") {
+                text += fieldText + "<a href='" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>"
+            }
+            else if (field=="location") {
+                let location = [g.country,g.state,g.town].filter(x => x!=null && x!=undefined)
+                let locationString
+                if (locale=="en") {
+                    locationString = location.map(x => x).join(", ")
+                }
+                else {
+                    locationString = location.map(x => translate(content, x)).join(", ")
+                }
+                text += fieldText + locationString + "<br>"
+                coordinates = [g.latitude,g.longitude]
+            }
+            else {
+                text += fieldText + g[field] + "<br>"
+            }
+        }
+        return {text,coordinates}
+    }
+
+
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersGroups(groups,groupsByCountry,map,content,locale)
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addGroupPinContent,"green")
 
         userPin.addTo(map)
         map.on('click', function(event) {
@@ -220,7 +248,7 @@
                 </div>
                 <button id="submit-button" on:click={submitLocation}>Submit</button>
                 <p id="confirmation-msg" bind:this={confirmationMsg}></p>
-                <map-component id="map" callback={(createMap) => mapCallbackGroups(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
             </div>
         </div>
     {/if}

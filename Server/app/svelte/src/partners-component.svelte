@@ -4,25 +4,55 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
-    import { partnersByCountry } from '/js/partners.js'
-
+    import { loadLocaleContent, getData} from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addPartnersPinContent } from "/js/mapFuncs.js"
+    
     // Import components
     import "/js/components/map-component.js" 
     
     // Main code
     let loaded = writable(0)
     let content = writable({})
+    let entries
+    let entriesByCountry
 
-    loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"partners-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
 
-    function getCountry(name) {
-        return locale=="en" ? name : $content[name]
+    let callback = (response) => {
+        entries = JSON.parse(response)
+        entriesByCountry = {}
+        for (let g of entries) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in entriesByCountry) {
+                entriesByCountry[country].push(g)
+            }
+            else {
+                entriesByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/partners.json",callback)
+
+    function mapCallback(createMap,content,locale) {
+        let map = createMap([22, 0],2)
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addPartnersPinContent,"blue")
     }
 
-    function getAddress(group) {
-        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
+    function getCountry(x) {
+        return locale=="en" ? x : translate($content,x)
+    }
+
+    function getAddress(g) {
+        let location = [g.country,g.state,g.town].filter(x => x!=null)
+        return location.map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
 
     onMount(() => { 
@@ -31,7 +61,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==3}
         <div id="container">
             <!--<img src="img/crowd.png" id="crowd" alt="crowd">-->
             <div id="text-container">
@@ -39,25 +69,27 @@
                 <img id="hands-img" src="/img/common/handshake.svg" alt="hands">
                 <p>{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                {#each Object.entries(partnersByCountry) as [name,partners]}
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
+                <p id="add-prompt">{$content["map-prompt"]}</p>
+                {#each Object.entries(entriesByCountry) as [name,entries]}
                     <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
-                        {#each partners as partner}
+                        {#each entries as entry}
                         <div class="location-info">
                             <div class="img-general-info">
                                 <picture>
-                                    <source srcset={"/img/partners/"+partner.logo+".webp"}>
-                                    <source srcset={"/img/partners/"+partner.logo+".jpg"}>
+                                    <source srcset={"/img/partners/"+entry.logo+".webp"}>
+                                    <source srcset={"/img/partners/"+entry.logo+".jpg"}>
                                     <img class="partner-logo" alt="logo">
                                 </picture>
                                 <div>
-                                    <p><b>{$content.name}: </b>{partner.name}</p>
-                                    <p><b>{$content.type}: </b>{$content[partner.type]}</p>
-                                    <p><b>{$content.location}: </b>{getAddress(partner)}</p>
-                                    <p><b>{$content.link}: </b><a href={partner.link} target=;_blank; rel=noreferrer>{partner.link}</a></p>
+                                    <p><b>{$content.name}: </b>{entry.name}</p>
+                                    <p><b>{$content.location}: </b>{getAddress(entry)}</p>
+                                    <p><b>{$content.website}: </b><a href={entry.website} target=;_blank; rel=noreferrer>{entry.website}</a></p>
+                                    <p><b>{$content.contact}: </b><a href={entry.website} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                                 </div>
                             </div>
-                            <p><b>{$content.description}: </b>{$content[partner.description]}</p>
+                            <p><b>{$content.description}: </b>{entry.description}</p>
                         </div>
                     {/each}
                     </div>
@@ -133,7 +165,7 @@
     #map {
         --height: 30rem;
         --width: 100%;
-        --margin-bottom: 3rem;
+        --margin-bottom: 0.5rem;
     }
 
     #text-container {
@@ -148,7 +180,7 @@
     }
 
     h3 {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     #container {

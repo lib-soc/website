@@ -4,8 +4,9 @@
     // Import statements
     import { onMount } from 'svelte'
     import { writable } from 'svelte/store';
-    import { coopsByCountry, addMarkersCoops } from '/js/coops.js'
-    import { loadLocaleContent } from "/js/libraries/serverTools.js"
+    import { loadLocaleContent, getData} from "/js/libraries/serverTools.js"
+    import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { addCoopPinContent } from "/js/mapFuncs.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -13,21 +14,45 @@
     // Main code
     let loaded = writable(0)
     let content = writable({})
+    let entries
+    let entriesByCountry
 
-    let locale = loadLocaleContent(content,"countries",loaded)
-    loadLocaleContent(content,"cooperatives-component",loaded)
+    let locale = loadLocaleContent(content,"cooperatives-component",loaded)
+    loadLocaleContent(content,"countries",loaded)
 
-    function mapCallbackCoops(createMap,content) {
+    let callback = (response) => {
+        entries = JSON.parse(response)
+        entriesByCountry = {}
+        for (let g of entries) {
+            let country = g.country
+            if (g.contact==null) {
+                g.contact = "https://discord.gg/Qk8KUk787z"
+            }
+            if (country in entriesByCountry) {
+                entriesByCountry[country].push(g)
+            }
+            else {
+                entriesByCountry[country] = [g]
+            }
+        }
+        loaded.update((val) => {
+            return val + 1
+        })
+    }
+    getData("/assets/cooperatives.json",callback)
+
+    function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersCoops(map,content,locale)
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addCoopPinContent,"blue")
     }
 
-    function getCountry(name) {
-        return locale=="en" ? name : $content[name]
+    function getCountry(x) {
+        return locale=="en" ? x : translate($content,x)
     }
 
-    function getAddress(group) {
-        return group.location[0].map(x => locale=="en" ? x : $content[x]).join(", ")
+    function getAddress(g) {
+        let location = [g.country,g.state,g.town].filter(x => x!=null)
+        return location.map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
 
     onMount(() => { 
@@ -36,37 +61,38 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==2}
+    {#if $loaded==3}
         <div id="container">
             <div id="text-container">
                 <h1>{$content.cooperatives}</h1>
                 <img id="coops-img" src="/img/common/coops.svg" alt="coops">
                 <p class="description">{$content.p1}</p>
                 <h3>{$content.subheading1}</h3>
-                <map-component id="map" callback={(createMap) => mapCallbackCoops(createMap,$content,locale)}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
-                {#each Object.entries(coopsByCountry) as [name,coops]}
+                {#each Object.entries(entriesByCountry) as [name,entries]}
                     <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
-                        {#each coops as coop}
+                        {#each entries as entry}
+                            {console.log(entry)}
                             <div class="location-info">
                                 <div class="img-general-info">
                                     <div>
-                                        <p><b>{$content.name}: </b>{coop.name}</p>
-                                        <p><b>{$content.location}: </b>{getAddress(coop)}</p>
-                                        <p><b>{$content.market}: </b>{$content[coop.market]}</p>
-                                        <p><b>{$content.workers}: </b>{coop.workers}</p>
-                                        <p><b>{$content.status}: </b>{$content[coop.status]}</p>
-                                        <p><b>{$content.website}: </b><a href={coop.website[0]} target="_blank" rel=noreferrer>{coop.website[1]}</a></p>
-                                        <p><b>{$content.contact}: </b><a href={coop.contact[0]} target=;_blank; rel=noreferrer>{$content[coop.contact[1]]}</a></p>
+                                        <p><b>{$content.name}: </b>{entry.name}</p>
+                                        <p><b>{$content.location}: </b>{getAddress(entry)}</p>
+                                        <p><b>{$content.market}: </b>{entry.market}</p>
+                                        <p><b>{$content.workers}: </b>{entry.workers}</p>
+                                        <p><b>{$content.status}: </b>{entry.status}</p>
+                                        <p><b>{$content.website}: </b><a href={entry.website} target="_blank" rel=noreferrer>{entry.website}</a></p>
+                                        <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                                     </div>
                                     <picture>
-                                        <source srcset={"/img/coops/"+coop.logo+".webp"}>
-                                        <source srcset={"/img/coops/"+coop.logo+".png"}>
+                                        <source srcset={"/img/coops/"+entry.logo+".webp"}>
+                                        <source srcset={"/img/coops/"+entry.logo+".png"}>
                                         <img class="coop-logo" alt="logo">
                                     </picture>
                                 </div>
-                                <p><b>{$content.description}: </b>{$content[coop.description]}</p>
+                                <p><b>{$content.description}: </b>{entry.description}</p>
                             </div>
                         {/each}
                     </div>
