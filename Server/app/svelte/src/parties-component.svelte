@@ -89,7 +89,7 @@
                                     <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                                 </div>
                             </div>
-                            <p><b>{$content.description}: </b>{$content[entry.description]}</p>
+                            <p><b>{$content.description}: </b>{entry.description}</p>
                         </div>
                     {/each}
                     </div>
