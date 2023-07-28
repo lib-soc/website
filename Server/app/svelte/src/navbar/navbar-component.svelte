@@ -10,7 +10,8 @@
     // Main code
     let hambInput
     let navbar
-    let localesDropdown;
+    let localesDropdown
+    let initiativesDropdown
     let loaded = writable(0)
     let content = writable({})
     let logoText
@@ -33,12 +34,15 @@
         }
     }
 
-    function showLocales() {
-        if (localesDropdown.style.display=="block") {
-            localesDropdown.style.display = "none"
+    function showDropdown(dropdown) {
+        let state = dropdown.style.display
+        initiativesDropdown.style.display = "none"
+        localesDropdown.style.display = "none"
+        if (state=="block") {
+            dropdown.style.display = "none"
         }
         else {
-            localesDropdown.style.display = "block"
+            dropdown.style.display = "block"
         }
     }
 
@@ -75,9 +79,15 @@
         }
     }
 
+    function hide(dropdown) {
+        let callback = () => {
+            dropdown.style.display = "none"
+        }
+        setTimeout(callback,100)
+    }
 
     onMount(() => {
-
+        fixHeading()
     })
 
 </script>
@@ -85,7 +95,6 @@
 <!-- Navigation bar -->
 {#key loaded}
     {#if Object.keys($content).length!=0}
-    {fixHeading()}{console.log($content)}
         <header bind:this={navbar} id="navbar">
             <!-- Hamburger icon -->
             <input bind:this={hambInput} type="checkbox" id="side-menu" on:click={changeNavbar}>
@@ -98,29 +107,22 @@
             <!-- Menu -->
             <nav id="nav">
                 <ul id="menu">
-                    <li><a href={"/"+locale+"/manifesto"}>{$content.manifesto}</a></li>
                     <li><a href={"/"+locale+"/join-us"}>{$content.joinUs}</a></li>
-                    
+                    <li><a href={"/"+locale+"/manifesto"}>{$content.manifesto}</a></li>
                     <!-- Options dropdown -->
                     <!-- A list of links pointing to different pages of the website. Implemented as a div opened on :hover-->
                     <li id="options-container">
-                        <button id="options-button">{$content.aboutUs}</button>
-                        <div id="options-dropdown">
-                            <ul id="options-list">
-                                <li><a href={"/"+locale+"/groups"}>{$content.groups}</a></li>
-                                <li><a href={"/"+locale+"/communes"}>{$content.communes}</a></li>
-                                
-                                <li><a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a></li>
-                                <li><a href={"/"+locale+"/parties"}>{$content.parties}</a></li>
-                                <li><a href={"/"+locale+"/partners"}>{$content.partners}</a></li>
-                            </ul>
+                        <button on:click={() => showDropdown(initiativesDropdown)} on:focusout={() => hide(initiativesDropdown)} class="options-button">{$content.initiatives}</button>
+                        <div bind:this={initiativesDropdown} class="options-dropdown">
+                            <a href={"/"+locale+"/groups"}>{$content.groups}</a>
+                            <a href={"/"+locale+"/communes"}>{$content.communes}</a>
+                            <a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a>
+                            <a href={"/"+locale+"/parties"}>{$content.parties}</a>
+                            <a href={"/"+locale+"/partners"}>{$content.partners}</a>
                         </div>
                     </li>
-                    
-
-                 
                     <li id="locales">
-                        <button on:click={showLocales}>
+                        <button on:click={() => showDropdown(localesDropdown)} on:focusout={() => hide(localesDropdown)}>
                             <picture>
                                 <source srcset="/img/common/globe.webp">
                                 <source srcset="/img/common/globe.png">
@@ -128,7 +130,7 @@
                             </picture>
                         </button>
                     </li>
-                    <div bind:this={localesDropdown} id="locales-dropdown">
+                    <div bind:this={localesDropdown} class="options-dropdown">
                         {#each Object.entries(locales) as [loc,name]}
                             <button on:click={() => changeLocale(loc)}>{name}</button>
                         {/each}
@@ -152,8 +154,8 @@
         width: min(100%,116rem);
         z-index: 1000000000;
         height: 5.26rem;
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
 
     #navbar * {
@@ -202,7 +204,7 @@
         overflow: hidden;
         z-index: 0;
     }
-    #menu a, #options-button {
+    #menu > li > a, .options-button {
         display: block;
         padding: 1.2rem;
         padding-top: 1rem;
@@ -210,11 +212,8 @@
         color: black;
         font-size: 1.4rem;
     }
-    #menu a:hover {
-        background-color: rgb(220, 220, 220);
-    }
 
-    #menu a:active{
+    #menu > li > a:active{
         background-color: #f7aec0;
     }
 
@@ -301,37 +300,36 @@
 
     /* Options */
 
-    #options-dropdown {
+    .options-dropdown {
         position: absolute;
         display: none;
+        top: 5.6rem;
+        right: 1.8rem;
         border: #404040 solid 0.1rem;
-        /*padding: 0.5rem;*/
         background-color: white;
-        overflow: auto;
-        width: 35%;
+        z-index: 10;
     }
 
-    #options-list > li a {
-        padding: 1rem;
-        font-size: 1.1rem;
-    }
-
-    #options-list > li:hover {
-        background-color: rgb(187 53 52 / 96%);
+    .options-dropdown button, .options-dropdown a {
+        display: block;
+        font-family: var(--sans-serif,sans-serif);
+        font-size: 1.2rem;
         width: 100%;
+        padding: 1rem;
+        text-align: left;
     }
 
-    #options-list > li:hover > a{
+    .options-dropdown button:hover, .options-dropdown a:hover {
+        background-color: rgb(187 53 52 / 96%);
         color: white;
     }
 
-    #options-container:hover #options-dropdown {
-        display: block;
+    .options-button {
+        width: 100%;
+        text-align: left;
     }
-    
 
-
-    /*Localization*/
+    /* Localization */
 
     #locales {
         position: relative;
@@ -354,35 +352,15 @@
         margin-left: 1.2rem;
     }
 
-    #locales-dropdown {
-        position: absolute;
-        display: none;
-        top: 5.6rem;
-        right: 1.8rem;
-        border: #404040 solid 0.1rem;
-        padding: 1.4rem;
-        background-color: white;
-    }
-
-    #locales-dropdown button {
-        display: block;
-        font-family: var(--sans-serif,sans-serif);
-        font-size: 1.3rem;
-        width: 100%;
-    }
-
-    #locales-dropdown button:hover {
-        color: rgb(127, 127, 127);
-    }
-
-    #locales-dropdown>:first-child {
+    /*
+    #options-dropdown>:first-child {
         padding-bottom: 0.5rem;
     }
 
-    #locales-dropdown>:nth-child(2) {
+    #options-dropdown>:nth-child(2) {
         padding-top: 0.5rem;
     }
-
+    */
 
     /* Responsiveness */
     @media only screen and (min-width: 1400px) {
@@ -414,12 +392,11 @@
             float: left;
         }
 
-        #menu a:hover, #options-button:hover {
-            background-color: transparent;
+        #menu > li > a:hover, .options-button:hover, #navbar-logo-text:hover {
             color: rgb(127, 127, 127);
         }
 
-        #menu a {
+        #menu > li > a, .options-button {
             padding: 0.9rem;
             padding-top: 1.9rem;
             padding-bottom: 1.9rem;
@@ -436,10 +413,6 @@
 
         #locales-img {
             top: 0.9rem;
-        }
-
-        #locales-dropdown {
-            top: 5,7rem;
         }
     }
 
