@@ -56,7 +56,7 @@ end
 move_requests("groups")
 compile("groups")
 
-move_requests("communes")
+## move_requests("communes")
 compile("communes")
 
 compile("cooperatives")
