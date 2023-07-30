@@ -55,6 +55,15 @@
         return location.map(x => locale=="en" ? x : translate($content,x)).join(", ")
     }
 
+    function createMailToLink(link) {
+        if (link.includes("@")) {
+            return "mailto:" + link
+        }
+        else {
+            return link
+        }
+    }
+
     onMount(() => { 
 
     })
@@ -86,7 +95,7 @@
                                     <p><b>{$content.name}: </b>{entry.name}</p>
                                     <p><b>{$content.location}: </b>{getAddress(entry)}</p>
                                     <p><b>{$content.website}: </b><a href={entry.website} target=;_blank; rel=noreferrer>{entry.website}</a></p>
-                                    <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
+                                    <p><b>{$content.contact}: </b><a href={createMailToLink(entry.contact)} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
                                 </div>
                             </div>
                             <p><b>{$content.description}: </b>{entry.description}</p>
