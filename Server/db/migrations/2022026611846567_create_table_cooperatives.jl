@@ -18,7 +18,6 @@ function up()
             column(:name, :string)
             column(:market, :string)
             column(:website, :string)
-            column(:description, :string)
         ]
     end
 end

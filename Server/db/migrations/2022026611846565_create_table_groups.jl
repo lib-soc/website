@@ -13,8 +13,12 @@ function up()
             column(:latitude, :float)
             column(:longitude, :float)
             column(:members, :int)
+            column(:user_id, :int)
         ]
     end
+
+    add_foreign_key(:groups,:user_id,:users,:id)
+    add_index(:groups, :user_id)
 end
 
 function down()

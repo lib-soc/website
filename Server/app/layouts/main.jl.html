@@ -25,7 +25,11 @@
     <!--<loadscreen-component></loadscreen-component>-->
 
     <div id="content">
-        <navbar-component></navbar-component>
+        <% if authenticated() %>
+            <navbar-logged></navbar-logged>
+        <% else %>
+            <navbar-not-logged></navbar-not-logged>
+        <% end %>
 
         <%@yield%>
 

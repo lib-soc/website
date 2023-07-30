@@ -1,1 +1,735 @@
-import{S as t,i as e,a as n,b as o,s as i,e as r,n as a,d as s,c as l,o as m,f as c,g as u,h as p,j as d,k as f,l as g,m as h,p as b,r as w}from"./index-8c09578c.js";import{w as y}from"./index-77787e10.js";import{getData as v,loadLocaleContent as x,sendData as k}from"../../../../../../../../../js/libraries/serverTools.js";import{addMarkersEntries as j,translate as S}from"../../../../../../../../../js/libraries/mapTools.js";import"../../../../../../../../../js/components/map-component.js";import"../../../../../../../../../js/components/select-component.js";function z(t){let e,n,i,r,a,l,m,c,y,v,x,k,j,L,S,z,C,T,N,O,H,M,A,$,E,J,U,q,D,I,R,G,K,P,Q,V,Y,_,B,F,W,X,Z;return{c(){e=u("div"),n=u("div"),i=u("h1"),i.textContent="Add a Commune",r=p(),a=u("img"),m=p(),c=u("p"),c.textContent="If there are no communes near you who you can join and you want to start your own then do the following:",y=p(),v=u("ol"),v.innerHTML="<li>Click on the map to show us where you are located;</li> \n                    <li>Add a way to contact you or leave blank for a pin to point to our discord;</li> \n                    <li>Press &quot;Submit&quot; to add yourself to our map;</li> \n                    <li>Verify yourself by having a chat with us at our Discord server to show on the map;</li>",x=p(),k=u("div"),j=u("label"),j.textContent="Location:",L=p(),S=u("div"),z=u("input"),C=p(),T=u("div"),N=p(),O=u("div"),H=u("label"),H.textContent="Contact:",M=p(),A=u("div"),$=u("input"),E=p(),J=u("div"),U=p(),q=u("div"),D=u("label"),D.textContent="Status:",I=p(),R=u("div"),G=u("select-component"),K=p(),P=u("div"),Q=p(),V=u("button"),V.textContent="Submit",Y=p(),_=u("p"),B=p(),F=u("map-component"),d(a,"id","communes-img"),f(a.src,l="/img/common/communes.svg")||d(a,"src","/img/common/communes.svg"),d(a,"alt","communes"),d(c,"class","description"),d(j,"for","address-input"),d(z,"id","address-input"),d(z,"type","text"),z.readOnly=!0,d(T,"class","ghost-input"),d(S,"class","input-wrapper"),d(k,"id","address-input-wrapper"),d(k,"class","input-label-wrapper"),d(H,"for","contact-input"),d($,"id","contact-input"),d($,"type","text"),d(J,"class","ghost-input"),d(A,"class","input-wrapper"),d(O,"class","input-label-wrapper"),d(D,"for","contact-input"),g(G,"id","status-input"),g(G,"options",["forming","growing","not growing"]),d(P,"class","ghost-input"),d(R,"class","input-wrapper"),d(q,"id","status-input-wrapper"),d(q,"class","input-label-wrapper"),d(V,"id","submit-button"),d(_,"id","confirmation-msg"),g(F,"id","map"),g(F,"callback",W=t[17]),d(n,"id","text-container"),d(e,"id","container")},m(s,l){o(s,e,l),h(e,n),h(n,i),h(n,r),h(n,a),h(n,m),h(n,c),h(n,y),h(n,v),h(n,x),h(n,k),h(k,j),h(k,L),h(k,S),h(S,z),t[11](z),h(S,C),h(S,T),h(n,N),h(n,O),h(O,H),h(O,M),h(O,A),h(A,$),t[13]($),h(A,E),h(A,J),h(n,U),h(n,q),h(q,D),h(q,I),h(q,R),h(R,G),t[15](G),h(R,K),h(R,P),h(n,Q),h(n,V),h(n,Y),h(n,_),t[16](_),h(n,B),h(n,F),X||(Z=[b(z,"input",t[12]),b($,"input",t[14]),b(V,"click",t[10])],X=!0)},p(t,e){32&e&&W!==(W=t[17])&&g(F,"callback",W)},d(n){n&&s(e),t[11](null),t[13](null),t[15](null),t[16](null),X=!1,w(Z)}}}function C(t){let e,n=3==t[4]&&z(t);return{c(){n&&n.c(),e=r()},m(t,i){n&&n.m(t,i),o(t,e,i)},p(t,o){3==t[4]?n?n.p(t,o):(n=z(t),n.c(),n.m(e.parentNode,e)):n&&(n.d(1),n=null)},d(t){n&&n.d(t),t&&s(e)}}}function T(t){let e,n=t[4],l=C(t);return{c(){l.c(),e=r(),this.c=a},m(t,n){l.m(t,n),o(t,e,n)},p(t,[o]){16&o&&i(n,n=t[4])?(l.d(1),l=C(t),l.c(),l.m(e.parentNode,e)):l.p(t,o)},i:a,o:a,d(t){t&&s(e),l.d(t)}}}function N(t){t.nextElementSibling.innerHTML=t.value}function O(t,e,n){let o,i,r=y(0);l(t,r,(t=>n(4,o=t)));let a,s,u=y({});l(t,u,(t=>n(5,i=t)));let p,d,f,g,h;v("/assets/communes.json",(t=>{a=JSON.parse(t),s={};for(let t of a){let e=t.country;null==t.contact&&(t.contact="https://discord.gg/Qk8KUk787z"),e in s?s[e].push(t):s[e]=[t]}r.update((t=>t+1))}));let b=0,w=0,z=function(t,e){let n=new L.Icon({iconUrl:"/img/common/markers/marker-black.png",shadowUrl:"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]});return L.marker([t,e],{icon:n})}(0,0);z.setOpacity(0);let C=x(u,"communes-component",r);function T(t,e,n){let o,i="<b>"+e.Group+"</b><br>";for(let r of["location","members","contact"]){let a=e[r]+": ";if("contact"==r)i+=a+"<a href='"+t.contact+"' target='_blank' rel=noreferrer>"+t.contact+"</a>";else if("location"==r){let r,s=[t.country,t.state,t.town].filter((t=>null!=t&&null!=t));r="en"==n?s.map((t=>t)).join(", "):s.map((t=>S(e,t))).join(", "),i+=a+r+"<br>",o=[t.latitude,t.longitude]}else i+=a+t[r]+"<br>"}return{text:i,coordinates:o}}function O(t,e,o){let i=t([22,0],2);j(a,s,i,e,o,T,"green"),z.addTo(i),i.on("click",(function(t){let e=t.latlng.lat,o=t.latlng.lng;b=e,w=o,function(t,e,n){let o=L.latLng(e,n);t.setLatLng(o)}(z,e,o),z.setOpacity(1),v(`https://nominatim.openstreetmap.org/reverse?lat=${e}&lon=${o}&format=jsonv2`,(t=>{let e=(t=JSON.parse(t)).address,o=e.city||e.town||e.village||e.hamlet,i=e.state,r=e.country;null!=i?r+=", "+i:i="",null!=o?r+=", "+o:o="",n(1,d.value=r,d),N(d)})),function(t,e){v(`https://nominatim.openstreetmap.org/reverse?lat=${t}&lon=${e}&format=jsonv2&accept-language=en`,(t=>{let e=(t=JSON.parse(t)).address,n=e.city||e.town||e.village||e.hamlet,o=e.state,i=e.country;null!=o||(o=""),null!=n||(n=""),h=[i,o,n]}))}(e,o)}))}function H(t){!1!==t?(n(0,p.innerHTML="You have been added to our database! Now go to our Discord to verify yourself.",p),n(0,p.style.color="green",p)):(n(0,p.innerHTML="Something went wrong.",p),n(0,p.style.color="red",p))}x(u,"countries",r),m((()=>{}));return[p,d,f,g,o,i,r,u,C,O,function(){if(null!=h){let t={country:h[0],state:h[1],town:h[2],latitude:b,longitude:w,contact:f.value,status:g.value};""==t.state&&(t.state=null),""==t.town&&(t.town=null),""==t.contact&&(t.contact=null),k("/"+C+"/communes-add-post/",t,H)}},function(t){c[t?"unshift":"push"]((()=>{d=t,n(1,d)}))},()=>N(d),function(t){c[t?"unshift":"push"]((()=>{f=t,n(2,f)}))},()=>N(f),function(t){c[t?"unshift":"push"]((()=>{g=t,n(3,g)}))},function(t){c[t?"unshift":"push"]((()=>{p=t,n(0,p)}))},t=>O(t,i,C)]}class H extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#confirmation-msg{margin-top:0.5rem;margin-bottom:2rem}ol li{margin-left:3rem;margin-bottom:0.5rem}label{display:inline-block;font-family:var(--serif,serif);font-size:1.15rem;line-height:160%;color:#222222;width:5.5rem}input,.ghost-input{font-size:1.15rem;font-family:var(--serif,serif)}input{height:2.5rem;display:inline-block;position:relative}#address-input,#contact-input{width:100%}#address-input-wrapper{margin-top:2rem;margin-bottom:1rem}#status-input{--width:100%;--height:2.5rem;--display:inline-block;--position:relative;--background-color:white;--border-radius:0.4rem;--border:black solid 0.063rem;--padding-left:0.5rem;--font-size:1.15rem;--font-family:var(--serif, serif)}#status-input-wrapper{margin-top:1rem;margin-bottom:0rem}.ghost-input{display:block;visibility:hidden;height:0;padding-left:0.5rem;padding-right:0.5rem}.input-wrapper{display:inline-block;max-width:calc(100% - 5.5rem);min-width:min(20rem, calc(100% - 5.5rem));height:2.5rem}.input-label-wrapper{display:flex;justify-content:start}.input-label-wrapper label{position:relative;top:0.3rem}.description{margin-bottom:1rem}#submit-button{display:block;margin:auto;margin-top:2rem;padding:1rem 2rem;font-size:1.4rem;font-family:var(--sans-serif,sans-serif);border:0rem solid black;border-radius:0.5rem;background:#cb1816;color:white}#communes-img{position:absolute;width:11.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}#map{--height:30rem;--width:100%;--margin-top:2rem;--margin-bottom:0.5rem}#text-container{position:relative;max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container p{text-align:justify}</style>",e(this,{target:this.shadowRoot,props:n(this.attributes),customElement:!0},O,T,i,{},null),t&&t.target&&o(t.target,this,t.anchor)}}customElements.define("communes-add-component",H);export{H as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, w as validate_store, x as component_subscribe, o as onMount, y as empty, n as noop, p as detach_dev, q as binding_callbacks, f as element, h as space, j as add_location, k as attr_dev, u as src_url_equal, z as set_custom_element_data, l as append_dev, m as listen_dev, r as run_all } from './index-998178c7.js';
+import { w as writable } from './index-f9998ce7.js';
+import { getData, loadLocaleContent, sendData } from '../../../../../../../../../js/libraries/serverTools.js';
+import { addMarkersEntries, translate } from '../../../../../../../../../js/libraries/mapTools.js';
+import '../../../../../../../../../js/components/map-component.js';
+import '../../../../../../../../../js/components/select-component.js';
+
+/* src\communes-add-component.svelte generated by Svelte v3.52.0 */
+const file = "src\\communes-add-component.svelte";
+
+// (226:4) {#if $loaded==3}
+function create_if_block(ctx) {
+	let div10;
+	let div9;
+	let h1;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let p0;
+	let t4;
+	let ol;
+	let li0;
+	let t6;
+	let li1;
+	let t8;
+	let li2;
+	let t10;
+	let li3;
+	let t12;
+	let div2;
+	let label0;
+	let t14;
+	let div1;
+	let input0;
+	let t15;
+	let div0;
+	let t16;
+	let div5;
+	let label1;
+	let t18;
+	let div4;
+	let input1;
+	let t19;
+	let div3;
+	let t20;
+	let div8;
+	let label2;
+	let t22;
+	let div7;
+	let select_component;
+	let t23;
+	let div6;
+	let t24;
+	let button;
+	let t26;
+	let p1;
+	let t27;
+	let map_component;
+	let map_component_callback_value;
+	let mounted;
+	let dispose;
+
+	const block = {
+		c: function create() {
+			div10 = element("div");
+			div9 = element("div");
+			h1 = element("h1");
+			h1.textContent = "Add a Commune";
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			p0 = element("p");
+			p0.textContent = "If there are no communes near you who you can join and you want to start your own then do the following:";
+			t4 = space();
+			ol = element("ol");
+			li0 = element("li");
+			li0.textContent = "Click on the map to show us where you are located;";
+			t6 = space();
+			li1 = element("li");
+			li1.textContent = "Add a way to contact you or leave blank for a pin to point to our discord;";
+			t8 = space();
+			li2 = element("li");
+			li2.textContent = "Press \"Submit\" to add yourself to our map;";
+			t10 = space();
+			li3 = element("li");
+			li3.textContent = "Verify yourself by having a chat with us at our Discord server to show on the map;";
+			t12 = space();
+			div2 = element("div");
+			label0 = element("label");
+			label0.textContent = "Location:";
+			t14 = space();
+			div1 = element("div");
+			input0 = element("input");
+			t15 = space();
+			div0 = element("div");
+			t16 = space();
+			div5 = element("div");
+			label1 = element("label");
+			label1.textContent = "Contact:";
+			t18 = space();
+			div4 = element("div");
+			input1 = element("input");
+			t19 = space();
+			div3 = element("div");
+			t20 = space();
+			div8 = element("div");
+			label2 = element("label");
+			label2.textContent = "Status:";
+			t22 = space();
+			div7 = element("div");
+			select_component = element("select-component");
+			t23 = space();
+			div6 = element("div");
+			t24 = space();
+			button = element("button");
+			button.textContent = "Submit";
+			t26 = space();
+			p1 = element("p");
+			t27 = space();
+			map_component = element("map-component");
+			add_location(h1, file, 229, 16, 7620);
+			attr_dev(img, "id", "communes-img");
+			if (!src_url_equal(img.src, img_src_value = "/img/common/communes.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "alt", "communes");
+			add_location(img, file, 230, 16, 7660);
+			attr_dev(p0, "class", "description");
+			add_location(p0, file, 231, 16, 7747);
+			add_location(li0, file, 233, 20, 7922);
+			add_location(li1, file, 234, 20, 8003);
+			add_location(li2, file, 235, 20, 8108);
+			add_location(li3, file, 236, 20, 8181);
+			add_location(ol, file, 232, 16, 7896);
+			attr_dev(label0, "for", "address-input");
+			add_location(label0, file, 239, 20, 8395);
+			attr_dev(input0, "id", "address-input");
+			attr_dev(input0, "type", "text");
+			input0.readOnly = true;
+			add_location(input0, file, 241, 24, 8515);
+			attr_dev(div0, "class", "ghost-input");
+			add_location(div0, file, 242, 24, 8656);
+			attr_dev(div1, "class", "input-wrapper");
+			add_location(div1, file, 240, 20, 8462);
+			attr_dev(div2, "id", "address-input-wrapper");
+			attr_dev(div2, "class", "input-label-wrapper");
+			add_location(div2, file, 238, 16, 8313);
+			attr_dev(label1, "for", "contact-input");
+			add_location(label1, file, 246, 20, 8812);
+			attr_dev(input1, "id", "contact-input");
+			attr_dev(input1, "type", "text");
+			add_location(input1, file, 248, 24, 8931);
+			attr_dev(div3, "class", "ghost-input");
+			add_location(div3, file, 249, 24, 9063);
+			attr_dev(div4, "class", "input-wrapper");
+			add_location(div4, file, 247, 20, 8878);
+			attr_dev(div5, "class", "input-label-wrapper");
+			add_location(div5, file, 245, 16, 8757);
+			attr_dev(label2, "for", "contact-input");
+			add_location(label2, file, 253, 20, 9245);
+			set_custom_element_data(select_component, "id", "status-input");
+			set_custom_element_data(select_component, "options", ["forming", "growing", "not growing"]);
+			add_location(select_component, file, 255, 24, 9363);
+			attr_dev(div6, "class", "ghost-input");
+			add_location(div6, file, 256, 24, 9515);
+			attr_dev(div7, "class", "input-wrapper");
+			add_location(div7, file, 254, 20, 9310);
+			attr_dev(div8, "id", "status-input-wrapper");
+			attr_dev(div8, "class", "input-label-wrapper");
+			add_location(div8, file, 252, 16, 9164);
+			attr_dev(button, "id", "submit-button");
+			add_location(button, file, 259, 16, 9616);
+			attr_dev(p1, "id", "confirmation-msg");
+			add_location(p1, file, 260, 16, 9702);
+			set_custom_element_data(map_component, "id", "map");
+			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[17]);
+			add_location(map_component, file, 261, 16, 9777);
+			attr_dev(div9, "id", "text-container");
+			add_location(div9, file, 228, 12, 7577);
+			attr_dev(div10, "id", "container");
+			add_location(div10, file, 226, 8, 7474);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div10, anchor);
+			append_dev(div10, div9);
+			append_dev(div9, h1);
+			append_dev(div9, t1);
+			append_dev(div9, img);
+			append_dev(div9, t2);
+			append_dev(div9, p0);
+			append_dev(div9, t4);
+			append_dev(div9, ol);
+			append_dev(ol, li0);
+			append_dev(ol, t6);
+			append_dev(ol, li1);
+			append_dev(ol, t8);
+			append_dev(ol, li2);
+			append_dev(ol, t10);
+			append_dev(ol, li3);
+			append_dev(div9, t12);
+			append_dev(div9, div2);
+			append_dev(div2, label0);
+			append_dev(div2, t14);
+			append_dev(div2, div1);
+			append_dev(div1, input0);
+			/*input0_binding*/ ctx[11](input0);
+			append_dev(div1, t15);
+			append_dev(div1, div0);
+			append_dev(div9, t16);
+			append_dev(div9, div5);
+			append_dev(div5, label1);
+			append_dev(div5, t18);
+			append_dev(div5, div4);
+			append_dev(div4, input1);
+			/*input1_binding*/ ctx[13](input1);
+			append_dev(div4, t19);
+			append_dev(div4, div3);
+			append_dev(div9, t20);
+			append_dev(div9, div8);
+			append_dev(div8, label2);
+			append_dev(div8, t22);
+			append_dev(div8, div7);
+			append_dev(div7, select_component);
+			/*select_component_binding*/ ctx[15](select_component);
+			append_dev(div7, t23);
+			append_dev(div7, div6);
+			append_dev(div9, t24);
+			append_dev(div9, button);
+			append_dev(div9, t26);
+			append_dev(div9, p1);
+			/*p1_binding*/ ctx[16](p1);
+			append_dev(div9, t27);
+			append_dev(div9, map_component);
+
+			if (!mounted) {
+				dispose = [
+					listen_dev(input0, "input", /*input_handler*/ ctx[12], false, false, false),
+					listen_dev(input1, "input", /*input_handler_1*/ ctx[14], false, false, false),
+					listen_dev(button, "click", /*submitLocation*/ ctx[10], false, false, false)
+				];
+
+				mounted = true;
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 32 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[17])) {
+				set_custom_element_data(map_component, "callback", map_component_callback_value);
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div10);
+			/*input0_binding*/ ctx[11](null);
+			/*input1_binding*/ ctx[13](null);
+			/*select_component_binding*/ ctx[15](null);
+			/*p1_binding*/ ctx[16](null);
+			mounted = false;
+			run_all(dispose);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(226:4) {#if $loaded==3}",
+		ctx
+	});
+
+	return block;
+}
+
+// (225:0) {#key $loaded}
+function create_key_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*$loaded*/ ctx[4] == 3 && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (/*$loaded*/ ctx[4] == 3) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block.name,
+		type: "key",
+		source: "(225:0) {#key $loaded}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let previous_key = /*$loaded*/ ctx[4];
+	let key_block_anchor;
+	let key_block = create_key_block(ctx);
+
+	const block = {
+		c: function create() {
+			key_block.c();
+			key_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			key_block.m(target, anchor);
+			insert_dev(target, key_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$loaded*/ 16 && safe_not_equal(previous_key, previous_key = /*$loaded*/ ctx[4])) {
+				key_block.d(1);
+				key_block = create_key_block(ctx);
+				key_block.c();
+				key_block.m(key_block_anchor.parentNode, key_block_anchor);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(key_block_anchor);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function createPin(lat, lng) {
+	let markerIcon = new L.Icon({
+			iconUrl: '/img/common/markers/marker-black.png',
+			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+			iconSize: [25, 41],
+			iconAnchor: [12, 41],
+			popupAnchor: [1, -34],
+			shadowSize: [41, 41]
+		});
+
+	return L.marker([lat, lng], { icon: markerIcon });
+}
+
+function updatePin(marker, lat, lng) {
+	let newLatLng = L.latLng(lat, lng); // Replace with the desired coordinates
+	marker.setLatLng(newLatLng);
+}
+
+function resizeInput(el) {
+	el.nextElementSibling.innerHTML = el.value;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $loaded;
+	let $content;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('communes-add-component', slots, []);
+	let loaded = writable(0);
+	validate_store(loaded, 'loaded');
+	component_subscribe($$self, loaded, value => $$invalidate(4, $loaded = value));
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(5, $content = value));
+	let entries;
+	let entriesByCountry;
+
+	let callback = response => {
+		entries = JSON.parse(response);
+		entriesByCountry = {};
+
+		for (let g of entries) {
+			let country = g.country;
+
+			if (g.contact == null) {
+				g.contact = "https://discord.gg/Qk8KUk787z";
+			}
+
+			if (country in entriesByCountry) {
+				entriesByCountry[country].push(g);
+			} else {
+				entriesByCountry[country] = [g];
+			}
+		}
+
+		loaded.update(val => {
+			return val + 1;
+		});
+	};
+
+	getData("/assets/communes.json", callback);
+	let confirmationMsg;
+	let addressInput;
+	let contactInput;
+	let statusInput;
+	let addressVec;
+	let userPinLat = 0;
+	let userPinLng = 0;
+	let userPin = createPin(0, 0);
+	userPin.setOpacity(0);
+	let locale = loadLocaleContent(content, "communes-component", loaded);
+	loadLocaleContent(content, "countries", loaded);
+
+	function reverseGeocodeLocal(latitude, longitude) {
+		let url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=jsonv2`;
+
+		let callback = response => {
+			// Parse the response JSON
+			response = JSON.parse(response);
+
+			// Extract the address information from the response
+			let address = response.address;
+
+			let city = address.city || address.town || address.village || address.hamlet;
+			let state = address.state;
+			let country = address.country;
+			let fullAddress = country;
+
+			if (state != undefined) {
+				fullAddress += ", " + state;
+			} else {
+				state = "";
+			}
+
+			if (city != undefined) {
+				fullAddress += ", " + city;
+			} else {
+				city = "";
+			}
+
+			$$invalidate(1, addressInput.value = fullAddress, addressInput);
+			resizeInput(addressInput);
+		};
+
+		getData(url, callback);
+	}
+
+	function reverseGeocode(latitude, longitude) {
+		let url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=jsonv2&accept-language=en`;
+
+		let callback = response => {
+			// Parse the response JSON
+			response = JSON.parse(response);
+
+			// Extract the address information from the response
+			let address = response.address;
+
+			let city = address.city || address.town || address.village || address.hamlet;
+			let state = address.state;
+			let country = address.country;
+
+			if (state != undefined) ; else {
+				state = "";
+			}
+
+			if (city != undefined) ; else {
+				city = "";
+			}
+
+			addressVec = [country, state, city];
+		};
+
+		getData(url, callback);
+	}
+
+	function addGroupPinContent(g, content, locale) {
+		let coordinates;
+		let text = "<b>" + content["Group"] + "</b><br>";
+
+		for (let field of ["location", "members", "contact"]) {
+			let fieldText = content[field] + ": ";
+
+			if (field == "contact") {
+				text += fieldText + "<a href='" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>";
+			} else if (field == "location") {
+				let location = [g.country, g.state, g.town].filter(x => x != null && x != undefined);
+				let locationString;
+
+				if (locale == "en") {
+					locationString = location.map(x => x).join(", ");
+				} else {
+					locationString = location.map(x => translate(content, x)).join(", ");
+				}
+
+				text += fieldText + locationString + "<br>";
+				coordinates = [g.latitude, g.longitude];
+			} else {
+				text += fieldText + g[field] + "<br>";
+			}
+		}
+
+		return { text, coordinates };
+	}
+
+	function mapCallback(createMap, content, locale) {
+		let map = createMap([22, 0], 2);
+		addMarkersEntries(entries, entriesByCountry, map, content, locale, addGroupPinContent, "green");
+		userPin.addTo(map);
+
+		map.on('click', function (event) {
+			let lat = event.latlng.lat;
+			let lng = event.latlng.lng;
+			userPinLat = lat;
+			userPinLng = lng;
+			updatePin(userPin, lat, lng);
+			userPin.setOpacity(1);
+			reverseGeocodeLocal(lat, lng);
+			reverseGeocode(lat, lng);
+		});
+	}
+
+	function updateConfirmationMsg(response) {
+		if (response !== false) {
+			$$invalidate(0, confirmationMsg.innerHTML = "You have been added to our database! Now go to our Discord to verify yourself.", confirmationMsg);
+			$$invalidate(0, confirmationMsg.style.color = "green", confirmationMsg);
+		} else {
+			$$invalidate(0, confirmationMsg.innerHTML = "Something went wrong.", confirmationMsg);
+			$$invalidate(0, confirmationMsg.style.color = "red", confirmationMsg);
+		}
+	}
+
+	function submitLocation() {
+		if (addressVec != undefined) {
+			let data = {
+				country: addressVec[0],
+				state: addressVec[1],
+				town: addressVec[2],
+				latitude: userPinLat,
+				longitude: userPinLng,
+				contact: contactInput.value,
+				status: statusInput.value
+			};
+
+			if (data.state == "") {
+				data.state = null;
+			}
+
+			if (data.town == "") {
+				data.town = null;
+			}
+
+			if (data.contact == "") {
+				data.contact = null;
+			}
+
+			let url = "/" + locale + "/communes-add-post/";
+			sendData(url, data, updateConfirmationMsg);
+		}
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<communes-add-component> was created with unknown prop '${key}'`);
+	});
+
+	function input0_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			addressInput = $$value;
+			$$invalidate(1, addressInput);
+		});
+	}
+
+	const input_handler = () => resizeInput(addressInput);
+
+	function input1_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			contactInput = $$value;
+			$$invalidate(2, contactInput);
+		});
+	}
+
+	const input_handler_1 = () => resizeInput(contactInput);
+
+	function select_component_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			statusInput = $$value;
+			$$invalidate(3, statusInput);
+		});
+	}
+
+	function p1_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			confirmationMsg = $$value;
+			$$invalidate(0, confirmationMsg);
+		});
+	}
+
+	const func = createMap => mapCallback(createMap, $content, locale);
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		loadLocaleContent,
+		getData,
+		sendData,
+		addMarkersEntries,
+		translate,
+		loaded,
+		content,
+		entries,
+		entriesByCountry,
+		callback,
+		confirmationMsg,
+		addressInput,
+		contactInput,
+		statusInput,
+		addressVec,
+		userPinLat,
+		userPinLng,
+		userPin,
+		locale,
+		createPin,
+		updatePin,
+		reverseGeocodeLocal,
+		reverseGeocode,
+		addGroupPinContent,
+		mapCallback,
+		updateConfirmationMsg,
+		submitLocation,
+		resizeInput,
+		$loaded,
+		$content
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('loaded' in $$props) $$invalidate(6, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(7, content = $$props.content);
+		if ('entries' in $$props) entries = $$props.entries;
+		if ('entriesByCountry' in $$props) entriesByCountry = $$props.entriesByCountry;
+		if ('callback' in $$props) callback = $$props.callback;
+		if ('confirmationMsg' in $$props) $$invalidate(0, confirmationMsg = $$props.confirmationMsg);
+		if ('addressInput' in $$props) $$invalidate(1, addressInput = $$props.addressInput);
+		if ('contactInput' in $$props) $$invalidate(2, contactInput = $$props.contactInput);
+		if ('statusInput' in $$props) $$invalidate(3, statusInput = $$props.statusInput);
+		if ('addressVec' in $$props) addressVec = $$props.addressVec;
+		if ('userPinLat' in $$props) userPinLat = $$props.userPinLat;
+		if ('userPinLng' in $$props) userPinLng = $$props.userPinLng;
+		if ('userPin' in $$props) userPin = $$props.userPin;
+		if ('locale' in $$props) $$invalidate(8, locale = $$props.locale);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [
+		confirmationMsg,
+		addressInput,
+		contactInput,
+		statusInput,
+		$loaded,
+		$content,
+		loaded,
+		content,
+		locale,
+		mapCallback,
+		submitLocation,
+		input0_binding,
+		input_handler,
+		input1_binding,
+		input_handler_1,
+		select_component_binding,
+		p1_binding,
+		func
+	];
+}
+
+class Communes_add_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#confirmation-msg{margin-top:0.5rem;margin-bottom:2rem}ol li{margin-left:3rem;margin-bottom:0.5rem}label{display:inline-block;font-family:var(--serif,serif);font-size:1.15rem;line-height:160%;color:#222222;width:5.5rem}input,.ghost-input{font-size:1.15rem;font-family:var(--serif,serif)}input{height:2.5rem;display:inline-block;position:relative}#address-input,#contact-input{width:100%}#address-input-wrapper{margin-top:2rem;margin-bottom:1rem}#status-input{--width:100%;--height:2.5rem;--display:inline-block;--position:relative;--background-color:white;--border-radius:0.4rem;--border:black solid 0.063rem;--padding-left:0.5rem;--font-size:1.15rem;--font-family:var(--serif, serif)}#status-input-wrapper{margin-top:1rem;margin-bottom:0rem}.ghost-input{display:block;visibility:hidden;height:0;padding-left:0.5rem;padding-right:0.5rem}.input-wrapper{display:inline-block;max-width:calc(100% - 5.5rem);min-width:min(20rem, calc(100% - 5.5rem));height:2.5rem}.input-label-wrapper{display:flex;justify-content:start}.input-label-wrapper label{position:relative;top:0.3rem}.description{margin-bottom:1rem}#submit-button{display:block;margin:auto;margin-top:2rem;padding:1rem 2rem;font-size:1.4rem;font-family:var(--sans-serif,sans-serif);border:0rem solid black;border-radius:0.5rem;background:#cb1816;color:white}#communes-img{position:absolute;width:11.5rem;left:50%;transform:translate(-50%);z-index:0;opacity:0.2}#text-container>:nth-child(3){margin-top:8rem}#map{--height:30rem;--width:100%;--margin-top:2rem;--margin-bottom:0.5rem}#text-container{position:relative;max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container p{text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("communes-add-component", Communes_add_component);
+
+export { Communes_add_component as default };

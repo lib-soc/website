@@ -1,4 +1,4 @@
-<svelte:options tag="navbar-component" />
+<svelte:options tag="navbar-logged" />
 
 <script>
 
@@ -121,6 +121,7 @@
                             <a href={"/"+locale+"/partners"}>{$content.partners}</a>
                         </div>
                     </li>
+                    <li><a href={"/"+locale+"/profile"}>{$content.profile}</a></li>
                     <li id="locales">
                         <button on:click={() => showDropdown(localesDropdown)} on:focusout={() => hide(localesDropdown)}>
                             <picture>
@@ -135,7 +136,6 @@
                             <button on:click={() => changeLocale(loc)}>{name}</button>
                         {/each}
                     </div>
-                    
                 </ul>
             </nav>
         </header>
@@ -320,7 +320,7 @@
     }
 
     .options-dropdown button:hover, .options-dropdown a:hover {
-        background-color: rgb(187 53 52 / 96%);
+        background-color: var(--red);
         color: white;
     }
 

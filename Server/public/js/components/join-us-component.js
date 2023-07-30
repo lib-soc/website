@@ -1,1 +1,627 @@
-import{S as o,i as t,a as i,b as e,s as r,e as n,n as s,d as a,c as m,o as l,g as c,t as p,h as u,k as g,j as d,l as h,m as f,q as b}from"./index-8c09578c.js";import{w as v}from"./index-77787e10.js";import{loadLocaleContent as k,getData as j}from"../../../../../../../../../js/libraries/serverTools.js";import{addMarkersEntries as w}from"../../../../../../../../../js/libraries/mapTools.js";import{addGroupPinContent as y,addCommunePinContent as x,addCoopPinContent as P,addPartyPinContent as T}from"../../../../../../../../../js/mapFuncs.js";import"../../../../../../../../../js/components/map-component.js";function A(o){let t,i,r,n,s,m,l,v,k,j,w,y,x,P,T,A,N,S,z,D,O,U,C,H,L,F,K,M,B,E,G,J,Q,R,W,Y,_,q,I,V,X,Z,$,oo,to,io,eo,ro,no,so,ao,mo,lo,co,po,uo,go,ho,fo,bo,vo,ko,jo,wo,yo,xo,Po,To,Ao,No,So,zo,Do,Oo,Uo,Co,Ho,Lo,Fo,Ko,Mo,Bo,Eo,Go=o[1].heading+"",Jo=o[1].condition1+"",Qo=o[1].condition2+"",Ro=o[1].condition3+"",Wo=o[1].conditionsOutcome+"",Yo=o[1].subheading1+"",_o=o[1].valueProposition1+"",qo=o[1].valueProposition2+"",Io=o[1].valueProposition3+"",Vo=o[1].valueProposition4+"",Xo=o[1].valueProposition5+"",Zo=o[1].subheading2+"",$o=o[1].findOur+"",ot=o[1].group+"",tt=o[1].commune+"",it=o[1].cooperative+"",et=o[1].or+"",rt=o[1].party+"",nt=o[1].nearYou+"",st=o[1].noneNear+"",at=o[1].WhatsAppGroup+"",mt=o[1].or+"",lt=o[1].DiscordServer+"",ct=o[1].helpStart+"";return{c(){t=c("div"),i=c("div"),r=c("h1"),n=p(Go),s=u(),m=c("img"),v=u(),k=c("ol"),j=c("li"),w=p(Jo),y=u(),x=c("li"),P=p(Qo),T=u(),A=c("li"),N=p(Ro),S=u(),z=c("p"),D=u(),O=c("h2"),U=p(Yo),C=u(),H=c("ol"),L=c("li"),F=p(_o),K=u(),M=c("li"),B=p(qo),E=u(),G=c("li"),J=p(Io),Q=u(),R=c("li"),W=p(Vo),Y=u(),_=c("p"),q=p(Xo),I=u(),V=c("h2"),X=p(Zo),Z=u(),$=c("div"),oo=c("p"),to=p($o),io=u(),eo=c("ol"),ro=c("li"),no=c("a"),so=p(ot),ao=p(","),mo=u(),lo=c("li"),co=c("a"),po=p(tt),uo=u(),go=c("li"),ho=c("a"),fo=p(it),bo=u(),vo=p(et),ko=u(),jo=c("li"),wo=c("a"),yo=p(rt),xo=u(),Po=c("p"),To=p(nt),Ao=u(),No=c("p"),So=p(st),zo=u(),Do=c("a"),Oo=p(at),Uo=u(),Co=p(mt),Ho=u(),Lo=c("a"),Fo=p(lt),Ko=p(ct),Mo=u(),Bo=c("map-component"),g(m.src,l="/img/common/join-group.svg")||d(m,"src","/img/common/join-group.svg"),d(m,"id","join-group"),d(m,"alt","join group"),d(k,"id","condition-list"),d(H,"id","value-proposition-list"),d(no,"href","/"+o[4]+"/groups"),d(co,"href","/"+o[4]+"/communes"),d(ho,"href","/"+o[4]+"/cooperatives"),d(wo,"href","/"+o[4]+"/parties"),d(eo,"id","entities-list"),d($,"id","call-to-action-list"),d(Do,"href","https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh"),d(Do,"target","_blank"),d(Do,"rel","noreferrer"),d(Lo,"href","https://discord.gg/Qk8KUk787z"),d(Lo,"target","_blank"),d(Lo,"rel","noreferrer"),h(Bo,"id","map"),h(Bo,"callback",Eo=o[6]),h(Bo,"colors",["#23AC20","#CA2437","#217BC9","#FFD326"]),d(i,"id","text-container"),d(t,"id","container")},m(o,a){e(o,t,a),f(t,i),f(i,r),f(r,n),f(i,s),f(i,m),f(i,v),f(i,k),f(k,j),f(j,w),f(k,y),f(k,x),f(x,P),f(k,T),f(k,A),f(A,N),f(k,S),f(k,z),z.innerHTML=Wo,f(i,D),f(i,O),f(O,U),f(i,C),f(i,H),f(H,L),f(L,F),f(H,K),f(H,M),f(M,B),f(H,E),f(H,G),f(G,J),f(H,Q),f(H,R),f(R,W),f(H,Y),f(H,_),f(_,q),f(i,I),f(i,V),f(V,X),f(i,Z),f(i,$),f($,oo),f(oo,to),f($,io),f($,eo),f(eo,ro),f(ro,no),f(no,so),f(ro,ao),f(eo,mo),f(eo,lo),f(lo,co),f(co,po),f(eo,uo),f(eo,go),f(go,ho),f(ho,fo),f(go,bo),f(go,vo),f(eo,ko),f(eo,jo),f(jo,wo),f(wo,yo),f($,xo),f($,Po),f(Po,To),f(i,Ao),f(i,No),f(No,So),f(No,zo),f(No,Do),f(Do,Oo),f(No,Uo),f(No,Co),f(No,Ho),f(No,Lo),f(Lo,Fo),f(No,Ko),f(i,Mo),f(i,Bo)},p(o,t){2&t&&Go!==(Go=o[1].heading+"")&&b(n,Go),2&t&&Jo!==(Jo=o[1].condition1+"")&&b(w,Jo),2&t&&Qo!==(Qo=o[1].condition2+"")&&b(P,Qo),2&t&&Ro!==(Ro=o[1].condition3+"")&&b(N,Ro),2&t&&Wo!==(Wo=o[1].conditionsOutcome+"")&&(z.innerHTML=Wo),2&t&&Yo!==(Yo=o[1].subheading1+"")&&b(U,Yo),2&t&&_o!==(_o=o[1].valueProposition1+"")&&b(F,_o),2&t&&qo!==(qo=o[1].valueProposition2+"")&&b(B,qo),2&t&&Io!==(Io=o[1].valueProposition3+"")&&b(J,Io),2&t&&Vo!==(Vo=o[1].valueProposition4+"")&&b(W,Vo),2&t&&Xo!==(Xo=o[1].valueProposition5+"")&&b(q,Xo),2&t&&Zo!==(Zo=o[1].subheading2+"")&&b(X,Zo),2&t&&$o!==($o=o[1].findOur+"")&&b(to,$o),2&t&&ot!==(ot=o[1].group+"")&&b(so,ot),2&t&&tt!==(tt=o[1].commune+"")&&b(po,tt),2&t&&it!==(it=o[1].cooperative+"")&&b(fo,it),2&t&&et!==(et=o[1].or+"")&&b(vo,et),2&t&&rt!==(rt=o[1].party+"")&&b(yo,rt),2&t&&nt!==(nt=o[1].nearYou+"")&&b(To,nt),2&t&&st!==(st=o[1].noneNear+"")&&b(So,st),2&t&&at!==(at=o[1].WhatsAppGroup+"")&&b(Oo,at),2&t&&mt!==(mt=o[1].or+"")&&b(Co,mt),2&t&&lt!==(lt=o[1].DiscordServer+"")&&b(Fo,lt),2&t&&ct!==(ct=o[1].helpStart+"")&&b(Ko,ct),2&t&&Eo!==(Eo=o[6])&&h(Bo,"callback",Eo)},d(o){o&&a(t)}}}function N(o){let t,i=10==o[0]&&A(o);return{c(){i&&i.c(),t=n()},m(o,r){i&&i.m(o,r),e(o,t,r)},p(o,e){10==o[0]?i?i.p(o,e):(i=A(o),i.c(),i.m(t.parentNode,t)):i&&(i.d(1),i=null)},d(o){i&&i.d(o),o&&a(t)}}}function S(o){let t,i=o[0],m=N(o);return{c(){m.c(),t=n(),this.c=s},m(o,i){m.m(o,i),e(o,t,i)},p(o,[e]){1&e&&r(i,i=o[0])?(m.d(1),m=N(o),m.c(),m.m(t.parentNode,t)):m.p(o,e)},i:s,o:s,d(o){o&&a(t),m.d(o)}}}function z(o,t,i){let e,r,n=v(0);m(o,n,(o=>i(0,e=o)));let s=v({});m(o,s,(o=>i(1,r=o)));let a={},c={};k(s,"groups-component",n),k(s,"communes-component",n),k(s,"cooperatives-component",n),k(s,"parties-component",n),k(s,"countries",n);let p=k(s,"join-us-component",n),u=(o,t)=>{a[t]=JSON.parse(o),c[t]={};for(let o of a[t]){let i=o.country;null==o.contact&&(o.contact="https://discord.gg/Qk8KUk787z"),i in c[t]?c[t][i].push(o):c[t][i]=[o]}n.update((o=>o+1))};function g(o,t,i){let e=o([22,0],2),r=w(a.groups,c.groups,e,t,i,y,"green"),n=w(a.communes,c.communes,e,t,i,x,"red"),s=w(a.cooperatives,c.cooperatives,e,t,i,P,"blue"),m=w(a.parties,c.parties,e,t,i,T,"gold"),l={};l[t.groups]=r,l[t.communes]=n,l[t.cooperatives]=s,l[t.parties]=m,L.control.layers(null,l).addTo(e)}j("/assets/groups.json",(o=>u(o,"groups"))),j("/assets/communes.json",(o=>u(o,"communes"))),j("/assets/cooperatives.json",(o=>u(o,"cooperatives"))),j("/assets/parties.json",(o=>u(o,"parties"))),l((()=>{}));return[e,r,n,s,p,g,o=>g(o,r,p)]}class D extends o{constructor(o){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#entities-list li{list-style:none}#entities-list li:before{content:'';display:inline-block;height:1.1rem;width:1rem;background-size:contain;background-repeat:no-repeat;margin-left:-1.5rem;margin-right:0.5rem}#entities-list li:nth-of-type(1):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-green.png)}#entities-list li:nth-of-type(2):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-red.png)}#entities-list li:nth-of-type(3):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-blue.png)}#entities-list li:nth-of-type(4):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-gold.png)}#entities-list li::marker{display:inline-block;height:1rem}h2{margin-bottom:1rem}#value-proposition-list{margin-bottom:2rem}#value-proposition-list>li{margin-bottom:1rem}ol li{position:relative;font-family:var(--serif,serif);margin-left:1.5rem;list-style-position:outside}#join-group{position:absolute;width:10.5rem;height:auto;left:calc(50% + 1.2rem);transform:translate(-50%);z-index:0;opacity:0.2}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#call-to-action-list>ol>li{position:relative;font-family:var(--serif,serif);margin-left:3rem}#condition-list{margin-bottom:2rem;margin-top:7rem}#condition-list>li{margin-bottom:1rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#call-to-action-list>p{margin-bottom:1rem}#call-to-action-list>:nth-child(1){margin-bottom:0.5rem}#call-to-action-list>:nth-child(2){margin-bottom:0rem}#call-to-action-list>ol>li{margin-bottom:0.5rem}#text-container a{color:#DD1C1A\n    }#container p{text-align:justify}</style>",t(this,{target:this.shadowRoot,props:i(this.attributes),customElement:!0},z,S,r,{},null),o&&o.target&&e(o.target,this,o.anchor)}}customElements.define("join-us-component",D);export{D as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, w as validate_store, x as component_subscribe, o as onMount, y as empty, n as noop, p as detach_dev, f as element, B as text, h as space, j as add_location, u as src_url_equal, k as attr_dev, z as set_custom_element_data, l as append_dev, C as set_data_dev } from './index-998178c7.js';
+import { w as writable } from './index-f9998ce7.js';
+import { loadLocaleContent, getData } from '../../../../../../../../../js/libraries/serverTools.js';
+import { addMarkersEntries, translate } from '../../../../../../../../../js/libraries/mapTools.js';
+import { addGroupPinContent, addCommunePinContent, addCoopPinContent, addPartyPinContent } from '../../../../../../../../../js/mapFuncs.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\join-us-component.svelte generated by Svelte v3.52.0 */
+
+const file = "src\\join-us-component.svelte";
+
+// (73:4) {#if $loaded==10}
+function create_if_block(ctx) {
+	let div2;
+	let div1;
+	let h1;
+	let t0_value = /*$content*/ ctx[1].heading + "";
+	let t0;
+	let t1;
+	let img;
+	let img_src_value;
+	let t2;
+	let ol0;
+	let li0;
+	let t3_value = /*$content*/ ctx[1].condition1 + "";
+	let t3;
+	let t4;
+	let li1;
+	let t5_value = /*$content*/ ctx[1].condition2 + "";
+	let t5;
+	let t6;
+	let li2;
+	let t7_value = /*$content*/ ctx[1].condition3 + "";
+	let t7;
+	let t8;
+	let p0;
+	let raw_value = /*$content*/ ctx[1].conditionsOutcome + "";
+	let t9;
+	let h20;
+	let t10_value = /*$content*/ ctx[1].subheading1 + "";
+	let t10;
+	let t11;
+	let ol1;
+	let li3;
+	let t12_value = /*$content*/ ctx[1].valueProposition1 + "";
+	let t12;
+	let t13;
+	let li4;
+	let t14_value = /*$content*/ ctx[1].valueProposition2 + "";
+	let t14;
+	let t15;
+	let li5;
+	let t16_value = /*$content*/ ctx[1].valueProposition3 + "";
+	let t16;
+	let t17;
+	let li6;
+	let t18_value = /*$content*/ ctx[1].valueProposition4 + "";
+	let t18;
+	let t19;
+	let p1;
+	let t20_value = /*$content*/ ctx[1].valueProposition5 + "";
+	let t20;
+	let t21;
+	let h21;
+	let t22_value = /*$content*/ ctx[1].subheading2 + "";
+	let t22;
+	let t23;
+	let div0;
+	let p2;
+	let t24_value = /*$content*/ ctx[1].findOur + "";
+	let t24;
+	let t25;
+	let ol2;
+	let li7;
+	let a0;
+	let t26_value = /*$content*/ ctx[1].group + "";
+	let t26;
+	let t27;
+	let t28;
+	let li8;
+	let a1;
+	let t29_value = /*$content*/ ctx[1].commune + "";
+	let t29;
+	let t30;
+	let li9;
+	let a2;
+	let t31_value = /*$content*/ ctx[1].cooperative + "";
+	let t31;
+	let t32;
+	let t33_value = /*$content*/ ctx[1].or + "";
+	let t33;
+	let t34;
+	let li10;
+	let a3;
+	let t35_value = /*$content*/ ctx[1].party + "";
+	let t35;
+	let t36;
+	let p3;
+	let t37_value = /*$content*/ ctx[1].nearYou + "";
+	let t37;
+	let t38;
+	let p4;
+	let t39_value = /*$content*/ ctx[1].noneNear + "";
+	let t39;
+	let t40;
+	let a4;
+	let t41_value = /*$content*/ ctx[1].WhatsAppGroup + "";
+	let t41;
+	let t42;
+	let t43_value = /*$content*/ ctx[1].or + "";
+	let t43;
+	let t44;
+	let a5;
+	let t45_value = /*$content*/ ctx[1].DiscordServer + "";
+	let t45;
+	let t46_value = /*$content*/ ctx[1].helpStart + "";
+	let t46;
+	let t47;
+	let map_component;
+	let map_component_callback_value;
+
+	const block = {
+		c: function create() {
+			div2 = element("div");
+			div1 = element("div");
+			h1 = element("h1");
+			t0 = text(t0_value);
+			t1 = space();
+			img = element("img");
+			t2 = space();
+			ol0 = element("ol");
+			li0 = element("li");
+			t3 = text(t3_value);
+			t4 = space();
+			li1 = element("li");
+			t5 = text(t5_value);
+			t6 = space();
+			li2 = element("li");
+			t7 = text(t7_value);
+			t8 = space();
+			p0 = element("p");
+			t9 = space();
+			h20 = element("h2");
+			t10 = text(t10_value);
+			t11 = space();
+			ol1 = element("ol");
+			li3 = element("li");
+			t12 = text(t12_value);
+			t13 = space();
+			li4 = element("li");
+			t14 = text(t14_value);
+			t15 = space();
+			li5 = element("li");
+			t16 = text(t16_value);
+			t17 = space();
+			li6 = element("li");
+			t18 = text(t18_value);
+			t19 = space();
+			p1 = element("p");
+			t20 = text(t20_value);
+			t21 = space();
+			h21 = element("h2");
+			t22 = text(t22_value);
+			t23 = space();
+			div0 = element("div");
+			p2 = element("p");
+			t24 = text(t24_value);
+			t25 = space();
+			ol2 = element("ol");
+			li7 = element("li");
+			a0 = element("a");
+			t26 = text(t26_value);
+			t27 = text(",");
+			t28 = space();
+			li8 = element("li");
+			a1 = element("a");
+			t29 = text(t29_value);
+			t30 = space();
+			li9 = element("li");
+			a2 = element("a");
+			t31 = text(t31_value);
+			t32 = space();
+			t33 = text(t33_value);
+			t34 = space();
+			li10 = element("li");
+			a3 = element("a");
+			t35 = text(t35_value);
+			t36 = space();
+			p3 = element("p");
+			t37 = text(t37_value);
+			t38 = space();
+			p4 = element("p");
+			t39 = text(t39_value);
+			t40 = space();
+			a4 = element("a");
+			t41 = text(t41_value);
+			t42 = space();
+			t43 = text(t43_value);
+			t44 = space();
+			a5 = element("a");
+			t45 = text(t45_value);
+			t46 = text(t46_value);
+			t47 = space();
+			map_component = element("map-component");
+			add_location(h1, file, 75, 16, 3174);
+			if (!src_url_equal(img.src, img_src_value = "/img/common/join-group.svg")) attr_dev(img, "src", img_src_value);
+			attr_dev(img, "id", "join-group");
+			attr_dev(img, "alt", "join group");
+			add_location(img, file, 76, 16, 3219);
+			add_location(li0, file, 78, 20, 3354);
+			add_location(li1, file, 79, 20, 3406);
+			add_location(li2, file, 80, 20, 3458);
+			add_location(p0, file, 81, 20, 3510);
+			attr_dev(ol0, "id", "condition-list");
+			add_location(ol0, file, 77, 16, 3308);
+			add_location(h20, file, 83, 16, 3592);
+			add_location(li3, file, 85, 20, 3695);
+			add_location(li4, file, 86, 20, 3754);
+			add_location(li5, file, 87, 20, 3813);
+			add_location(li6, file, 88, 20, 3872);
+			add_location(p1, file, 89, 20, 3931);
+			attr_dev(ol1, "id", "value-proposition-list");
+			add_location(ol1, file, 84, 16, 3641);
+			add_location(h21, file, 91, 16, 4007);
+			add_location(p2, file, 93, 20, 4108);
+			attr_dev(a0, "href", "/" + /*locale*/ ctx[4] + "/groups");
+			add_location(a0, file, 95, 28, 4208);
+			add_location(li7, file, 95, 24, 4204);
+			attr_dev(a1, "href", "/" + /*locale*/ ctx[4] + "/communes");
+			add_location(a1, file, 96, 28, 4300);
+			add_location(li8, file, 96, 24, 4296);
+			attr_dev(a2, "href", "/" + /*locale*/ ctx[4] + "/cooperatives");
+			add_location(a2, file, 97, 28, 4395);
+			add_location(li9, file, 97, 24, 4391);
+			attr_dev(a3, "href", "/" + /*locale*/ ctx[4] + "/parties");
+			add_location(a3, file, 98, 28, 4511);
+			add_location(li10, file, 98, 24, 4507);
+			attr_dev(ol2, "id", "entities-list");
+			add_location(ol2, file, 94, 20, 4155);
+			add_location(p3, file, 100, 20, 4622);
+			attr_dev(div0, "id", "call-to-action-list");
+			add_location(div0, file, 92, 16, 4056);
+			attr_dev(a4, "href", "https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh");
+			attr_dev(a4, "target", "_blank");
+			attr_dev(a4, "rel", "noreferrer");
+			add_location(a4, file, 102, 39, 4712);
+			attr_dev(a5, "href", "https://discord.gg/Qk8KUk787z");
+			attr_dev(a5, "target", "_blank");
+			attr_dev(a5, "rel", "noreferrer");
+			add_location(a5, file, 102, 172, 4845);
+			add_location(p4, file, 102, 16, 4689);
+			set_custom_element_data(map_component, "id", "map");
+			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[6]);
+			set_custom_element_data(map_component, "colors", ["#23AC20", "#CA2437", "#217BC9", "#FFD326"]);
+			add_location(map_component, file, 103, 16, 4986);
+			attr_dev(div1, "id", "text-container");
+			add_location(div1, file, 74, 12, 3131);
+			attr_dev(div2, "id", "container");
+			add_location(div2, file, 73, 8, 3097);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div2, anchor);
+			append_dev(div2, div1);
+			append_dev(div1, h1);
+			append_dev(h1, t0);
+			append_dev(div1, t1);
+			append_dev(div1, img);
+			append_dev(div1, t2);
+			append_dev(div1, ol0);
+			append_dev(ol0, li0);
+			append_dev(li0, t3);
+			append_dev(ol0, t4);
+			append_dev(ol0, li1);
+			append_dev(li1, t5);
+			append_dev(ol0, t6);
+			append_dev(ol0, li2);
+			append_dev(li2, t7);
+			append_dev(ol0, t8);
+			append_dev(ol0, p0);
+			p0.innerHTML = raw_value;
+			append_dev(div1, t9);
+			append_dev(div1, h20);
+			append_dev(h20, t10);
+			append_dev(div1, t11);
+			append_dev(div1, ol1);
+			append_dev(ol1, li3);
+			append_dev(li3, t12);
+			append_dev(ol1, t13);
+			append_dev(ol1, li4);
+			append_dev(li4, t14);
+			append_dev(ol1, t15);
+			append_dev(ol1, li5);
+			append_dev(li5, t16);
+			append_dev(ol1, t17);
+			append_dev(ol1, li6);
+			append_dev(li6, t18);
+			append_dev(ol1, t19);
+			append_dev(ol1, p1);
+			append_dev(p1, t20);
+			append_dev(div1, t21);
+			append_dev(div1, h21);
+			append_dev(h21, t22);
+			append_dev(div1, t23);
+			append_dev(div1, div0);
+			append_dev(div0, p2);
+			append_dev(p2, t24);
+			append_dev(div0, t25);
+			append_dev(div0, ol2);
+			append_dev(ol2, li7);
+			append_dev(li7, a0);
+			append_dev(a0, t26);
+			append_dev(li7, t27);
+			append_dev(ol2, t28);
+			append_dev(ol2, li8);
+			append_dev(li8, a1);
+			append_dev(a1, t29);
+			append_dev(ol2, t30);
+			append_dev(ol2, li9);
+			append_dev(li9, a2);
+			append_dev(a2, t31);
+			append_dev(li9, t32);
+			append_dev(li9, t33);
+			append_dev(ol2, t34);
+			append_dev(ol2, li10);
+			append_dev(li10, a3);
+			append_dev(a3, t35);
+			append_dev(div0, t36);
+			append_dev(div0, p3);
+			append_dev(p3, t37);
+			append_dev(div1, t38);
+			append_dev(div1, p4);
+			append_dev(p4, t39);
+			append_dev(p4, t40);
+			append_dev(p4, a4);
+			append_dev(a4, t41);
+			append_dev(p4, t42);
+			append_dev(p4, t43);
+			append_dev(p4, t44);
+			append_dev(p4, a5);
+			append_dev(a5, t45);
+			append_dev(p4, t46);
+			append_dev(div1, t47);
+			append_dev(div1, map_component);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 2 && t0_value !== (t0_value = /*$content*/ ctx[1].heading + "")) set_data_dev(t0, t0_value);
+			if (dirty & /*$content*/ 2 && t3_value !== (t3_value = /*$content*/ ctx[1].condition1 + "")) set_data_dev(t3, t3_value);
+			if (dirty & /*$content*/ 2 && t5_value !== (t5_value = /*$content*/ ctx[1].condition2 + "")) set_data_dev(t5, t5_value);
+			if (dirty & /*$content*/ 2 && t7_value !== (t7_value = /*$content*/ ctx[1].condition3 + "")) set_data_dev(t7, t7_value);
+			if (dirty & /*$content*/ 2 && raw_value !== (raw_value = /*$content*/ ctx[1].conditionsOutcome + "")) p0.innerHTML = raw_value;			if (dirty & /*$content*/ 2 && t10_value !== (t10_value = /*$content*/ ctx[1].subheading1 + "")) set_data_dev(t10, t10_value);
+			if (dirty & /*$content*/ 2 && t12_value !== (t12_value = /*$content*/ ctx[1].valueProposition1 + "")) set_data_dev(t12, t12_value);
+			if (dirty & /*$content*/ 2 && t14_value !== (t14_value = /*$content*/ ctx[1].valueProposition2 + "")) set_data_dev(t14, t14_value);
+			if (dirty & /*$content*/ 2 && t16_value !== (t16_value = /*$content*/ ctx[1].valueProposition3 + "")) set_data_dev(t16, t16_value);
+			if (dirty & /*$content*/ 2 && t18_value !== (t18_value = /*$content*/ ctx[1].valueProposition4 + "")) set_data_dev(t18, t18_value);
+			if (dirty & /*$content*/ 2 && t20_value !== (t20_value = /*$content*/ ctx[1].valueProposition5 + "")) set_data_dev(t20, t20_value);
+			if (dirty & /*$content*/ 2 && t22_value !== (t22_value = /*$content*/ ctx[1].subheading2 + "")) set_data_dev(t22, t22_value);
+			if (dirty & /*$content*/ 2 && t24_value !== (t24_value = /*$content*/ ctx[1].findOur + "")) set_data_dev(t24, t24_value);
+			if (dirty & /*$content*/ 2 && t26_value !== (t26_value = /*$content*/ ctx[1].group + "")) set_data_dev(t26, t26_value);
+			if (dirty & /*$content*/ 2 && t29_value !== (t29_value = /*$content*/ ctx[1].commune + "")) set_data_dev(t29, t29_value);
+			if (dirty & /*$content*/ 2 && t31_value !== (t31_value = /*$content*/ ctx[1].cooperative + "")) set_data_dev(t31, t31_value);
+			if (dirty & /*$content*/ 2 && t33_value !== (t33_value = /*$content*/ ctx[1].or + "")) set_data_dev(t33, t33_value);
+			if (dirty & /*$content*/ 2 && t35_value !== (t35_value = /*$content*/ ctx[1].party + "")) set_data_dev(t35, t35_value);
+			if (dirty & /*$content*/ 2 && t37_value !== (t37_value = /*$content*/ ctx[1].nearYou + "")) set_data_dev(t37, t37_value);
+			if (dirty & /*$content*/ 2 && t39_value !== (t39_value = /*$content*/ ctx[1].noneNear + "")) set_data_dev(t39, t39_value);
+			if (dirty & /*$content*/ 2 && t41_value !== (t41_value = /*$content*/ ctx[1].WhatsAppGroup + "")) set_data_dev(t41, t41_value);
+			if (dirty & /*$content*/ 2 && t43_value !== (t43_value = /*$content*/ ctx[1].or + "")) set_data_dev(t43, t43_value);
+			if (dirty & /*$content*/ 2 && t45_value !== (t45_value = /*$content*/ ctx[1].DiscordServer + "")) set_data_dev(t45, t45_value);
+			if (dirty & /*$content*/ 2 && t46_value !== (t46_value = /*$content*/ ctx[1].helpStart + "")) set_data_dev(t46, t46_value);
+
+			if (dirty & /*$content*/ 2 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[6])) {
+				set_custom_element_data(map_component, "callback", map_component_callback_value);
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div2);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(73:4) {#if $loaded==10}",
+		ctx
+	});
+
+	return block;
+}
+
+// (72:0) {#key $loaded}
+function create_key_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*$loaded*/ ctx[0] == 10 && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (/*$loaded*/ ctx[0] == 10) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block.name,
+		type: "key",
+		source: "(72:0) {#key $loaded}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let previous_key = /*$loaded*/ ctx[0];
+	let key_block_anchor;
+	let key_block = create_key_block(ctx);
+
+	const block = {
+		c: function create() {
+			key_block.c();
+			key_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			key_block.m(target, anchor);
+			insert_dev(target, key_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$loaded*/ 1 && safe_not_equal(previous_key, previous_key = /*$loaded*/ ctx[0])) {
+				key_block.d(1);
+				key_block = create_key_block(ctx);
+				key_block.c();
+				key_block.m(key_block_anchor.parentNode, key_block_anchor);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(key_block_anchor);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $loaded;
+	let $content;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('join-us-component', slots, []);
+	let loaded = writable(0);
+	validate_store(loaded, 'loaded');
+	component_subscribe($$self, loaded, value => $$invalidate(0, $loaded = value));
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(1, $content = value));
+	let entries = {};
+	let entriesByCountry = {};
+	loadLocaleContent(content, "groups-component", loaded);
+	loadLocaleContent(content, "communes-component", loaded);
+	loadLocaleContent(content, "cooperatives-component", loaded);
+	loadLocaleContent(content, "parties-component", loaded);
+	loadLocaleContent(content, "countries", loaded);
+	let locale = loadLocaleContent(content, "join-us-component", loaded);
+
+	let callback = (response, name) => {
+		entries[name] = JSON.parse(response);
+		entriesByCountry[name] = {};
+
+		for (let g of entries[name]) {
+			let country = g.country;
+
+			if (g.contact == null) {
+				g.contact = "https://discord.gg/Qk8KUk787z";
+			}
+
+			if (country in entriesByCountry[name]) {
+				entriesByCountry[name][country].push(g);
+			} else {
+				entriesByCountry[name][country] = [g];
+			}
+		}
+
+		loaded.update(val => {
+			return val + 1;
+		});
+	};
+
+	getData("/assets/groups.json", response => callback(response, "groups"));
+	getData("/assets/communes.json", response => callback(response, "communes"));
+	getData("/assets/cooperatives.json", response => callback(response, "cooperatives"));
+	getData("/assets/parties.json", response => callback(response, "parties"));
+
+	function mapCallback(createMap, content, locale) {
+		let map = createMap([22, 0], 2);
+		let groupsMarkersLayer = addMarkersEntries(entries["groups"], entriesByCountry["groups"], map, content, locale, addGroupPinContent, "green");
+		let communesMarkersLayer = addMarkersEntries(entries["communes"], entriesByCountry["communes"], map, content, locale, addCommunePinContent, "red");
+		let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"], entriesByCountry["cooperatives"], map, content, locale, addCoopPinContent, "blue");
+		let partiesMarkersLayer = addMarkersEntries(entries["parties"], entriesByCountry["parties"], map, content, locale, addPartyPinContent, "gold");
+		let overlayMaps = {};
+		overlayMaps[content.groups] = groupsMarkersLayer;
+		overlayMaps[content.communes] = communesMarkersLayer;
+		overlayMaps[content.cooperatives] = coopsMarkersLayer;
+		overlayMaps[content.parties] = partiesMarkersLayer;
+		L.control.layers(null, overlayMaps).addTo(map);
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<join-us-component> was created with unknown prop '${key}'`);
+	});
+
+	const func = createMap => mapCallback(createMap, $content, locale);
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		loadLocaleContent,
+		getData,
+		addMarkersEntries,
+		translate,
+		addGroupPinContent,
+		addCommunePinContent,
+		addCoopPinContent,
+		addPartyPinContent,
+		loaded,
+		content,
+		entries,
+		entriesByCountry,
+		locale,
+		callback,
+		mapCallback,
+		$loaded,
+		$content
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('loaded' in $$props) $$invalidate(2, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(3, content = $$props.content);
+		if ('entries' in $$props) entries = $$props.entries;
+		if ('entriesByCountry' in $$props) entriesByCountry = $$props.entriesByCountry;
+		if ('locale' in $$props) $$invalidate(4, locale = $$props.locale);
+		if ('callback' in $$props) callback = $$props.callback;
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [$loaded, $content, loaded, content, locale, mapCallback, func];
+}
+
+class Join_us_component extends SvelteElement {
+	constructor(options) {
+		super();
+
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#entities-list li{list-style:none}#entities-list li:before{content:'';display:inline-block;height:1.1rem;width:1rem;background-size:contain;background-repeat:no-repeat;margin-left:-1.5rem;margin-right:0.5rem}#entities-list li:nth-of-type(1):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-green.png)}#entities-list li:nth-of-type(2):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-red.png)}#entities-list li:nth-of-type(3):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-blue.png)}#entities-list li:nth-of-type(4):before{background-image:url(https://www.libsoc.org/img/common/markers/marker-gold.png)}#entities-list li::marker{display:inline-block;height:1rem}h2{margin-bottom:1rem}#value-proposition-list{margin-bottom:2rem}#value-proposition-list>li{margin-bottom:1rem}ol li{position:relative;font-family:var(--serif,serif);margin-left:1.5rem;list-style-position:outside}#join-group{position:absolute;width:10.5rem;height:auto;left:calc(50% + 1.2rem);transform:translate(-50%);z-index:0;opacity:0.2}#map{--height:30rem;--width:100%;--margin-bottom:3rem}#call-to-action-list>ol>li{position:relative;font-family:var(--serif,serif);margin-left:3rem}#condition-list{margin-bottom:2rem;margin-top:7rem}#condition-list>li{margin-bottom:1rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}h1{margin-bottom:1rem;font-size:2.2rem;text-align:center}#container{margin:auto;max-width:800px;margin-top:1rem;margin-bottom:4rem}#container>div>p{margin-bottom:1rem}#call-to-action-list>p{margin-bottom:1rem}#call-to-action-list>:nth-child(1){margin-bottom:0.5rem}#call-to-action-list>:nth-child(2){margin-bottom:0rem}#call-to-action-list>ol>li{margin-bottom:0.5rem}#text-container a{color:#DD1C1A
+    }#container p{text-align:justify}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("join-us-component", Join_us_component);
+
+export { Join_us_component as default };

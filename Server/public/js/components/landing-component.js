@@ -1,1 +1,620 @@
-import{S as t,i as e,a as o,b as i,s as r,e as s,n,d as a,c as m,o as c,f as p,g,h as d,t as l,j as u,k as h,w as f,l as v,m as w,q as x}from"./index-8c09578c.js";import{w as b}from"./index-77787e10.js";import{getData as T,loadLocaleContent as j}from"../../../../../../../../../js/libraries/serverTools.js";import{addMarkersEntries as k}from"../../../../../../../../../js/libraries/mapTools.js";import{addGroupPinContent as y,addCommunePinContent as U,addCoopPinContent as z,addPartyPinContent as N}from"../../../../../../../../../js/mapFuncs.js";import"../../../../../../../../../js/components/map-component.js";function C(t){let e,o,r,s,n,m,c,p,b,T,j,k,y,U,z,N,C,F,L,A,E,H,K,M,Q,R,S,W,q,B,D,J,O,_,G,I,P,V,X,Y,Z,$,tt,et,ot,it,rt,st,nt,at,mt,ct,pt,gt,dt,lt,ut,ht,ft,vt,wt,xt,bt,Tt,jt,kt,yt,Ut=t[3].top+"",zt=t[3].groupsTitle+"",Nt=t[3].groupsText+"",Ct=t[3].partiesTitle+"",Ft=t[3].partiesText+"",Lt=t[3].cooperativesTitle+"",At=t[3].cooperativesText+"",Et=t[3].communesTitle+"",Ht=t[3].communesText+"",Kt=t[3].findUs+"",Mt=t[3].whatNow+"",Qt=t[3].joinUs+"",Rt=t[3].talkWithUs+"";return{c(){e=g("div"),o=g("picture"),o.innerHTML='<source srcset="/img/crowd.webp"/> \n                <source srcset="/img/crowd.png"/> \n                <img id="crowd" alt="crowd"/>',r=d(),s=g("div"),n=g("p"),m=l(Ut),c=d(),p=g("div"),b=g("div"),T=g("a"),j=g("h2"),k=l(zt),y=d(),U=g("img"),N=d(),C=g("p"),F=l(Nt),L=d(),A=g("div"),E=g("a"),H=g("h2"),K=l(Ct),M=d(),Q=g("img"),S=d(),W=g("p"),q=l(Ft),B=d(),D=g("div"),J=g("a"),O=g("h2"),_=l(Lt),G=d(),I=g("img"),V=d(),X=g("p"),Y=l(At),Z=d(),$=g("div"),tt=g("a"),et=g("h2"),ot=l(Et),it=d(),rt=g("img"),nt=d(),at=g("p"),mt=l(Ht),ct=d(),pt=g("h1"),gt=l(Kt),dt=d(),lt=g("map-component"),ht=d(),ft=g("h1"),vt=l(Mt),wt=d(),xt=g("div"),bt=g("a"),Tt=l(Qt),jt=d(),kt=g("a"),yt=l(Rt),u(T,"href","/"+t[6]+"/groups"),u(U,"id","groups-img"),h(U.src,z="/img/common/groups.svg")||u(U,"src","/img/common/groups.svg"),u(U,"alt","groups"),u(E,"href","/"+t[6]+"/parties"),u(Q,"id","parties-img"),h(Q.src,R="/img/common/parties.svg")||u(Q,"src","/img/common/parties.svg"),u(Q,"alt","coops"),u(J,"href","/"+t[6]+"/coops"),u(I,"id","coops-img"),h(I.src,P="/img/common/coops.svg")||u(I,"src","/img/common/coops.svg"),u(I,"alt","coops"),u(tt,"href","/"+t[6]+"/communes"),u(rt,"id","communes-img"),h(rt.src,st="/img/common/communes.svg")||u(rt,"src","/img/common/communes.svg"),u(rt,"alt","communes"),u(p,"id","container-grid"),f(p,"--grid-width",t[1]),u(pt,"id","find-us"),v(lt,"id","map"),v(lt,"callback",ut=t[9]),v(lt,"colors",["#23AC20","#CA2437","#217BC9","#FFD326"]),u(bt,"class","link-button"),u(bt,"href","/"+t[6]+"/join-us"),u(kt,"class","link-button"),u(kt,"href","https://discord.gg/Qk8KUk787z"),u(kt,"target","_blank"),u(kt,"rel","noreferrer"),u(xt,"id","action-container"),u(s,"id","text-container"),u(e,"id","container")},m(a,g){i(a,e,g),w(e,o),w(e,r),w(e,s),w(s,n),w(n,m),w(s,c),w(s,p),w(p,b),w(b,T),w(T,j),w(j,k),w(b,y),w(b,U),w(b,N),w(b,C),w(C,F),w(p,L),w(p,A),w(A,E),w(E,H),w(H,K),w(A,M),w(A,Q),w(A,S),w(A,W),w(W,q),w(p,B),w(p,D),w(D,J),w(J,O),w(O,_),w(D,G),w(D,I),w(D,V),w(D,X),w(X,Y),w(p,Z),w(p,$),w($,tt),w(tt,et),w(et,ot),w($,it),w($,rt),w($,nt),w($,at),w(at,mt),t[8](p),w(s,ct),w(s,pt),w(pt,gt),w(s,dt),w(s,lt),w(s,ht),w(s,ft),w(ft,vt),w(s,wt),w(s,xt),w(xt,bt),w(bt,Tt),w(xt,jt),w(xt,kt),w(kt,yt)},p(t,e){8&e&&Ut!==(Ut=t[3].top+"")&&x(m,Ut),8&e&&zt!==(zt=t[3].groupsTitle+"")&&x(k,zt),8&e&&Nt!==(Nt=t[3].groupsText+"")&&x(F,Nt),8&e&&Ct!==(Ct=t[3].partiesTitle+"")&&x(K,Ct),8&e&&Ft!==(Ft=t[3].partiesText+"")&&x(q,Ft),8&e&&Lt!==(Lt=t[3].cooperativesTitle+"")&&x(_,Lt),8&e&&At!==(At=t[3].cooperativesText+"")&&x(Y,At),8&e&&Et!==(Et=t[3].communesTitle+"")&&x(ot,Et),8&e&&Ht!==(Ht=t[3].communesText+"")&&x(mt,Ht),2&e&&f(p,"--grid-width",t[1]),8&e&&Kt!==(Kt=t[3].findUs+"")&&x(gt,Kt),8&e&&ut!==(ut=t[9])&&v(lt,"callback",ut),8&e&&Mt!==(Mt=t[3].whatNow+"")&&x(vt,Mt),8&e&&Qt!==(Qt=t[3].joinUs+"")&&x(Tt,Qt),8&e&&Rt!==(Rt=t[3].talkWithUs+"")&&x(yt,Rt)},d(o){o&&a(e),t[8](null)}}}function F(t){let e,o=10==t[2]&&C(t);return{c(){o&&o.c(),e=s()},m(t,r){o&&o.m(t,r),i(t,e,r)},p(t,i){10==t[2]?o?o.p(t,i):(o=C(t),o.c(),o.m(e.parentNode,e)):o&&(o.d(1),o=null)},d(t){o&&o.d(t),t&&a(e)}}}function A(t){let e,o=t[2],m=F(t);return{c(){m.c(),e=s(),this.c=n},m(t,o){m.m(t,o),i(t,e,o)},p(t,[i]){4&i&&r(o,o=t[2])?(m.d(1),m=F(t),m.c(),m.m(e.parentNode,e)):m.p(t,i)},i:n,o:n,d(t){t&&a(e),m.d(t)}}}function E(t,e,o){let i,r,s,n,a=b(0);m(t,a,(t=>o(2,i=t)));let g=b({});m(t,g,(t=>o(3,r=t)));let d={},l={};function u(t){o(1,n="1fr 1fr")}let h=(t,e)=>{d[e]=JSON.parse(t),l[e]={};for(let t of d[e]){let o=t.country;null==t.contact&&(t.contact="https://discord.gg/Qk8KUk787z"),o in l[e]?l[e][o].push(t):l[e][o]=[t]}a.update((t=>t+1))};T("/assets/groups.json",(t=>h(t,"groups"))),T("/assets/communes.json",(t=>h(t,"communes"))),T("/assets/cooperatives.json",(t=>h(t,"cooperatives"))),T("/assets/parties.json",(t=>h(t,"parties"))),j(g,"groups-component",a),j(g,"communes-component",a),j(g,"cooperatives-component",a),j(g,"parties-component",a),j(g,"countries",a);let f=j(g,"landing-component",a,u);function v(t,e,o){let i=t([22,0],2),r=k(d.groups,l.groups,i,e,o,y,"green"),s=k(d.communes,l.communes,i,e,o,U,"red"),n=k(d.cooperatives,l.cooperatives,i,e,o,z,"blue"),a=k(d.parties,l.parties,i,e,o,N,"gold"),m={};m[e.groups]=r,m[e.communes]=s,m[e.cooperatives]=n,m[e.parties]=a,L.control.layers(null,m).addTo(i)}u(),c((()=>{}));return[s,n,i,r,a,g,f,v,function(t){p[t?"unshift":"push"]((()=>{s=t,o(0,s)}))},t=>v(t,r,f)]}class H extends t{constructor(t){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#action-container{display:flex;justify-content:space-between;margin:auto;margin-top:2rem;max-width:34rem}.link-button{display:inline-block;font-size:1.6rem;font-family:var(--sans-serif,sans-serif);width:14rem;line-height:4rem;background:#cb1816;color:white;text-align:center}#map{--margin-top:1rem;--height:30rem;--width:100%;--margin-bottom:3rem}h1{font-size:2rem;text-align:center;margin-bottom:1rem}#container-grid>div>a>h2{text-align:center}#groups-img,#communes-img,#coops-img,#parties-img{position:absolute;left:50%;transform:translate(-50%);z-index:0;opacity:0.2;height:8rem}#coops-img{margin-top:0.5rem;height:7.5rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}#crowd{width:100%;margin-bottom:2rem}#container{margin:auto;max-width:800px;margin-top:2rem;margin-bottom:5rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}#container-grid{display:grid;grid-template-columns:var(--grid-width);grid-template-rows:var(--grid-width);grid-gap:4rem;row-gap:2.5rem;margin-top:2rem;margin-bottom:1rem}#container-grid>div{position:relative}#container-grid>div>p{position:relative;margin-top:5rem;z-index:2}@media only screen and (max-width: 1060px){#container-grid{display:flex;flex-direction:column;gap:2rem}#action-container{flex-direction:column;align-items:center;gap:2.5rem}#container-grid>:nth-child(2){height:calc(100% - 2rem)}}</style>",e(this,{target:this.shadowRoot,props:o(this.attributes),customElement:!0},E,A,r,{},null),t&&t.target&&i(t.target,this,t.anchor)}}customElements.define("landing-component",H);export{H as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, w as validate_store, x as component_subscribe, o as onMount, y as empty, n as noop, p as detach_dev, q as binding_callbacks, f as element, h as space, B as text, k as attr_dev, j as add_location, u as src_url_equal, F as set_style, z as set_custom_element_data, l as append_dev, C as set_data_dev } from './index-998178c7.js';
+import { w as writable } from './index-f9998ce7.js';
+import { getData, loadLocaleContent } from '../../../../../../../../../js/libraries/serverTools.js';
+import { addMarkersEntries, translate } from '../../../../../../../../../js/libraries/mapTools.js';
+import { addGroupPinContent, addCommunePinContent, addCoopPinContent, addPartyPinContent } from '../../../../../../../../../js/mapFuncs.js';
+import '../../../../../../../../../js/components/map-component.js';
+
+/* src\landing-component.svelte generated by Svelte v3.52.0 */
+
+const file = "src\\landing-component.svelte";
+
+// (85:4) {#if $loaded==10}
+function create_if_block(ctx) {
+	let div7;
+	let picture;
+	let source0;
+	let t0;
+	let source1;
+	let t1;
+	let img0;
+	let t2;
+	let div6;
+	let p0;
+	let t3_value = /*$content*/ ctx[3].top + "";
+	let t3;
+	let t4;
+	let div4;
+	let div0;
+	let a0;
+	let h20;
+	let t5_value = /*$content*/ ctx[3].groupsTitle + "";
+	let t5;
+	let t6;
+	let img1;
+	let img1_src_value;
+	let t7;
+	let p1;
+	let t8_value = /*$content*/ ctx[3].groupsText + "";
+	let t8;
+	let t9;
+	let div1;
+	let a1;
+	let h21;
+	let t10_value = /*$content*/ ctx[3].partiesTitle + "";
+	let t10;
+	let t11;
+	let img2;
+	let img2_src_value;
+	let t12;
+	let p2;
+	let t13_value = /*$content*/ ctx[3].partiesText + "";
+	let t13;
+	let t14;
+	let div2;
+	let a2;
+	let h22;
+	let t15_value = /*$content*/ ctx[3].cooperativesTitle + "";
+	let t15;
+	let t16;
+	let img3;
+	let img3_src_value;
+	let t17;
+	let p3;
+	let t18_value = /*$content*/ ctx[3].cooperativesText + "";
+	let t18;
+	let t19;
+	let div3;
+	let a3;
+	let h23;
+	let t20_value = /*$content*/ ctx[3].communesTitle + "";
+	let t20;
+	let t21;
+	let img4;
+	let img4_src_value;
+	let t22;
+	let p4;
+	let t23_value = /*$content*/ ctx[3].communesText + "";
+	let t23;
+	let t24;
+	let h10;
+	let t25_value = /*$content*/ ctx[3].findUs + "";
+	let t25;
+	let t26;
+	let map_component;
+	let map_component_callback_value;
+	let t27;
+	let h11;
+	let t28_value = /*$content*/ ctx[3].whatNow + "";
+	let t28;
+	let t29;
+	let div5;
+	let a4;
+	let t30_value = /*$content*/ ctx[3].joinUs + "";
+	let t30;
+	let t31;
+	let a5;
+	let t32_value = /*$content*/ ctx[3].talkWithUs + "";
+	let t32;
+
+	const block = {
+		c: function create() {
+			div7 = element("div");
+			picture = element("picture");
+			source0 = element("source");
+			t0 = space();
+			source1 = element("source");
+			t1 = space();
+			img0 = element("img");
+			t2 = space();
+			div6 = element("div");
+			p0 = element("p");
+			t3 = text(t3_value);
+			t4 = space();
+			div4 = element("div");
+			div0 = element("div");
+			a0 = element("a");
+			h20 = element("h2");
+			t5 = text(t5_value);
+			t6 = space();
+			img1 = element("img");
+			t7 = space();
+			p1 = element("p");
+			t8 = text(t8_value);
+			t9 = space();
+			div1 = element("div");
+			a1 = element("a");
+			h21 = element("h2");
+			t10 = text(t10_value);
+			t11 = space();
+			img2 = element("img");
+			t12 = space();
+			p2 = element("p");
+			t13 = text(t13_value);
+			t14 = space();
+			div2 = element("div");
+			a2 = element("a");
+			h22 = element("h2");
+			t15 = text(t15_value);
+			t16 = space();
+			img3 = element("img");
+			t17 = space();
+			p3 = element("p");
+			t18 = text(t18_value);
+			t19 = space();
+			div3 = element("div");
+			a3 = element("a");
+			h23 = element("h2");
+			t20 = text(t20_value);
+			t21 = space();
+			img4 = element("img");
+			t22 = space();
+			p4 = element("p");
+			t23 = text(t23_value);
+			t24 = space();
+			h10 = element("h1");
+			t25 = text(t25_value);
+			t26 = space();
+			map_component = element("map-component");
+			t27 = space();
+			h11 = element("h1");
+			t28 = text(t28_value);
+			t29 = space();
+			div5 = element("div");
+			a4 = element("a");
+			t30 = text(t30_value);
+			t31 = space();
+			a5 = element("a");
+			t32 = text(t32_value);
+			attr_dev(source0, "srcset", "/img/crowd.webp");
+			add_location(source0, file, 87, 16, 3414);
+			attr_dev(source1, "srcset", "/img/crowd.png");
+			add_location(source1, file, 88, 16, 3465);
+			attr_dev(img0, "id", "crowd");
+			attr_dev(img0, "alt", "crowd");
+			add_location(img0, file, 89, 16, 3515);
+			add_location(picture, file, 86, 12, 3387);
+			add_location(p0, file, 92, 16, 3624);
+			add_location(h20, file, 95, 59, 3827);
+			attr_dev(a0, "href", "/" + /*locale*/ ctx[6] + "/groups");
+			add_location(a0, file, 95, 24, 3792);
+			attr_dev(img1, "id", "groups-img");
+			if (!src_url_equal(img1.src, img1_src_value = "/img/common/groups.svg")) attr_dev(img1, "src", img1_src_value);
+			attr_dev(img1, "alt", "groups");
+			add_location(img1, file, 96, 24, 3888);
+			add_location(p1, file, 97, 24, 3977);
+			add_location(div0, file, 94, 20, 3761);
+			add_location(h21, file, 100, 60, 4122);
+			attr_dev(a1, "href", "/" + /*locale*/ ctx[6] + "/parties");
+			add_location(a1, file, 100, 24, 4086);
+			attr_dev(img2, "id", "parties-img");
+			if (!src_url_equal(img2.src, img2_src_value = "/img/common/parties.svg")) attr_dev(img2, "src", img2_src_value);
+			attr_dev(img2, "alt", "coops");
+			add_location(img2, file, 101, 24, 4184);
+			add_location(p2, file, 102, 24, 4274);
+			add_location(div1, file, 99, 20, 4055);
+			add_location(h22, file, 105, 58, 4418);
+			attr_dev(a2, "href", "/" + /*locale*/ ctx[6] + "/coops");
+			add_location(a2, file, 105, 24, 4384);
+			attr_dev(img3, "id", "coops-img");
+			if (!src_url_equal(img3.src, img3_src_value = "/img/common/coops.svg")) attr_dev(img3, "src", img3_src_value);
+			attr_dev(img3, "alt", "coops");
+			add_location(img3, file, 106, 24, 4485);
+			add_location(p3, file, 107, 24, 4571);
+			add_location(div2, file, 104, 20, 4353);
+			add_location(h23, file, 110, 61, 4723);
+			attr_dev(a3, "href", "/" + /*locale*/ ctx[6] + "/communes");
+			add_location(a3, file, 110, 24, 4686);
+			attr_dev(img4, "id", "communes-img");
+			if (!src_url_equal(img4.src, img4_src_value = "/img/common/communes.svg")) attr_dev(img4, "src", img4_src_value);
+			attr_dev(img4, "alt", "communes");
+			add_location(img4, file, 111, 24, 4786);
+			add_location(p4, file, 112, 24, 4881);
+			add_location(div3, file, 109, 20, 4655);
+			attr_dev(div4, "id", "container-grid");
+			set_style(div4, "--grid-width", /*gridWidth*/ ctx[1]);
+			add_location(div4, file, 93, 16, 3663);
+			attr_dev(h10, "id", "find-us");
+			add_location(h10, file, 132, 16, 7683);
+			set_custom_element_data(map_component, "id", "map");
+			set_custom_element_data(map_component, "callback", map_component_callback_value = /*func*/ ctx[9]);
+			set_custom_element_data(map_component, "colors", ["#23AC20", "#CA2437", "#217BC9", "#FFD326"]);
+			add_location(map_component, file, 133, 16, 7740);
+			add_location(h11, file, 134, 16, 7914);
+			attr_dev(a4, "class", "link-button");
+			attr_dev(a4, "href", "/" + /*locale*/ ctx[6] + "/join-us");
+			add_location(a4, file, 136, 20, 8008);
+			attr_dev(a5, "class", "link-button");
+			attr_dev(a5, "href", "https://discord.gg/Qk8KUk787z");
+			attr_dev(a5, "target", "_blank");
+			attr_dev(a5, "rel", "noreferrer");
+			add_location(a5, file, 137, 20, 8107);
+			attr_dev(div5, "id", "action-container");
+			add_location(div5, file, 135, 16, 7959);
+			attr_dev(div6, "id", "text-container");
+			add_location(div6, file, 91, 12, 3581);
+			attr_dev(div7, "id", "container");
+			add_location(div7, file, 85, 8, 3353);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, div7, anchor);
+			append_dev(div7, picture);
+			append_dev(picture, source0);
+			append_dev(picture, t0);
+			append_dev(picture, source1);
+			append_dev(picture, t1);
+			append_dev(picture, img0);
+			append_dev(div7, t2);
+			append_dev(div7, div6);
+			append_dev(div6, p0);
+			append_dev(p0, t3);
+			append_dev(div6, t4);
+			append_dev(div6, div4);
+			append_dev(div4, div0);
+			append_dev(div0, a0);
+			append_dev(a0, h20);
+			append_dev(h20, t5);
+			append_dev(div0, t6);
+			append_dev(div0, img1);
+			append_dev(div0, t7);
+			append_dev(div0, p1);
+			append_dev(p1, t8);
+			append_dev(div4, t9);
+			append_dev(div4, div1);
+			append_dev(div1, a1);
+			append_dev(a1, h21);
+			append_dev(h21, t10);
+			append_dev(div1, t11);
+			append_dev(div1, img2);
+			append_dev(div1, t12);
+			append_dev(div1, p2);
+			append_dev(p2, t13);
+			append_dev(div4, t14);
+			append_dev(div4, div2);
+			append_dev(div2, a2);
+			append_dev(a2, h22);
+			append_dev(h22, t15);
+			append_dev(div2, t16);
+			append_dev(div2, img3);
+			append_dev(div2, t17);
+			append_dev(div2, p3);
+			append_dev(p3, t18);
+			append_dev(div4, t19);
+			append_dev(div4, div3);
+			append_dev(div3, a3);
+			append_dev(a3, h23);
+			append_dev(h23, t20);
+			append_dev(div3, t21);
+			append_dev(div3, img4);
+			append_dev(div3, t22);
+			append_dev(div3, p4);
+			append_dev(p4, t23);
+			/*div4_binding*/ ctx[8](div4);
+			append_dev(div6, t24);
+			append_dev(div6, h10);
+			append_dev(h10, t25);
+			append_dev(div6, t26);
+			append_dev(div6, map_component);
+			append_dev(div6, t27);
+			append_dev(div6, h11);
+			append_dev(h11, t28);
+			append_dev(div6, t29);
+			append_dev(div6, div5);
+			append_dev(div5, a4);
+			append_dev(a4, t30);
+			append_dev(div5, t31);
+			append_dev(div5, a5);
+			append_dev(a5, t32);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 8 && t3_value !== (t3_value = /*$content*/ ctx[3].top + "")) set_data_dev(t3, t3_value);
+			if (dirty & /*$content*/ 8 && t5_value !== (t5_value = /*$content*/ ctx[3].groupsTitle + "")) set_data_dev(t5, t5_value);
+			if (dirty & /*$content*/ 8 && t8_value !== (t8_value = /*$content*/ ctx[3].groupsText + "")) set_data_dev(t8, t8_value);
+			if (dirty & /*$content*/ 8 && t10_value !== (t10_value = /*$content*/ ctx[3].partiesTitle + "")) set_data_dev(t10, t10_value);
+			if (dirty & /*$content*/ 8 && t13_value !== (t13_value = /*$content*/ ctx[3].partiesText + "")) set_data_dev(t13, t13_value);
+			if (dirty & /*$content*/ 8 && t15_value !== (t15_value = /*$content*/ ctx[3].cooperativesTitle + "")) set_data_dev(t15, t15_value);
+			if (dirty & /*$content*/ 8 && t18_value !== (t18_value = /*$content*/ ctx[3].cooperativesText + "")) set_data_dev(t18, t18_value);
+			if (dirty & /*$content*/ 8 && t20_value !== (t20_value = /*$content*/ ctx[3].communesTitle + "")) set_data_dev(t20, t20_value);
+			if (dirty & /*$content*/ 8 && t23_value !== (t23_value = /*$content*/ ctx[3].communesText + "")) set_data_dev(t23, t23_value);
+
+			if (dirty & /*gridWidth*/ 2) {
+				set_style(div4, "--grid-width", /*gridWidth*/ ctx[1]);
+			}
+
+			if (dirty & /*$content*/ 8 && t25_value !== (t25_value = /*$content*/ ctx[3].findUs + "")) set_data_dev(t25, t25_value);
+
+			if (dirty & /*$content*/ 8 && map_component_callback_value !== (map_component_callback_value = /*func*/ ctx[9])) {
+				set_custom_element_data(map_component, "callback", map_component_callback_value);
+			}
+
+			if (dirty & /*$content*/ 8 && t28_value !== (t28_value = /*$content*/ ctx[3].whatNow + "")) set_data_dev(t28, t28_value);
+			if (dirty & /*$content*/ 8 && t30_value !== (t30_value = /*$content*/ ctx[3].joinUs + "")) set_data_dev(t30, t30_value);
+			if (dirty & /*$content*/ 8 && t32_value !== (t32_value = /*$content*/ ctx[3].talkWithUs + "")) set_data_dev(t32, t32_value);
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(div7);
+			/*div4_binding*/ ctx[8](null);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(85:4) {#if $loaded==10}",
+		ctx
+	});
+
+	return block;
+}
+
+// (84:0) {#key $loaded}
+function create_key_block(ctx) {
+	let if_block_anchor;
+	let if_block = /*$loaded*/ ctx[2] == 10 && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, dirty) {
+			if (/*$loaded*/ ctx[2] == 10) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_key_block.name,
+		type: "key",
+		source: "(84:0) {#key $loaded}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let previous_key = /*$loaded*/ ctx[2];
+	let key_block_anchor;
+	let key_block = create_key_block(ctx);
+
+	const block = {
+		c: function create() {
+			key_block.c();
+			key_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			key_block.m(target, anchor);
+			insert_dev(target, key_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$loaded*/ 4 && safe_not_equal(previous_key, previous_key = /*$loaded*/ ctx[2])) {
+				key_block.d(1);
+				key_block = create_key_block(ctx);
+				key_block.c();
+				key_block.m(key_block_anchor.parentNode, key_block_anchor);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(key_block_anchor);
+			key_block.d(detaching);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $loaded;
+	let $content;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('landing-component', slots, []);
+	let grid;
+	let gridWidth;
+	let loaded = writable(0);
+	validate_store(loaded, 'loaded');
+	component_subscribe($$self, loaded, value => $$invalidate(2, $loaded = value));
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(3, $content = value));
+	let entries = {};
+	let entriesByCountry = {};
+
+	function changeWidth(locale) {
+		if (locale == "ru") {
+			$$invalidate(1, gridWidth = "1fr 1fr");
+		} else {
+			$$invalidate(1, gridWidth = "1fr 1fr");
+		}
+	}
+
+	let callback = (response, name) => {
+		entries[name] = JSON.parse(response);
+		entriesByCountry[name] = {};
+
+		for (let g of entries[name]) {
+			let country = g.country;
+
+			if (g.contact == null) {
+				g.contact = "https://discord.gg/Qk8KUk787z";
+			}
+
+			if (country in entriesByCountry[name]) {
+				entriesByCountry[name][country].push(g);
+			} else {
+				entriesByCountry[name][country] = [g];
+			}
+		}
+
+		loaded.update(val => {
+			return val + 1;
+		});
+	};
+
+	getData("/assets/groups.json", response => callback(response, "groups"));
+	getData("/assets/communes.json", response => callback(response, "communes"));
+	getData("/assets/cooperatives.json", response => callback(response, "cooperatives"));
+	getData("/assets/parties.json", response => callback(response, "parties"));
+	loadLocaleContent(content, "groups-component", loaded);
+	loadLocaleContent(content, "communes-component", loaded);
+	loadLocaleContent(content, "cooperatives-component", loaded);
+	loadLocaleContent(content, "parties-component", loaded);
+	loadLocaleContent(content, "countries", loaded);
+	let locale = loadLocaleContent(content, "landing-component", loaded, changeWidth);
+	changeWidth(locale);
+
+	function mapCallback(createMap, content, locale) {
+		let map = createMap([22, 0], 2);
+		let groupsMarkersLayer = addMarkersEntries(entries["groups"], entriesByCountry["groups"], map, content, locale, addGroupPinContent, "green");
+		let communesMarkersLayer = addMarkersEntries(entries["communes"], entriesByCountry["communes"], map, content, locale, addCommunePinContent, "red");
+		let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"], entriesByCountry["cooperatives"], map, content, locale, addCoopPinContent, "blue");
+		let partiesMarkersLayer = addMarkersEntries(entries["parties"], entriesByCountry["parties"], map, content, locale, addPartyPinContent, "gold");
+		let overlayMaps = {};
+		overlayMaps[content.groups] = groupsMarkersLayer;
+		overlayMaps[content.communes] = communesMarkersLayer;
+		overlayMaps[content.cooperatives] = coopsMarkersLayer;
+		overlayMaps[content.parties] = partiesMarkersLayer;
+		L.control.layers(null, overlayMaps).addTo(map);
+	}
+
+	onMount(() => {
+		
+	});
+
+	const writable_props = [];
+
+	Object.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<landing-component> was created with unknown prop '${key}'`);
+	});
+
+	function div4_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			grid = $$value;
+			$$invalidate(0, grid);
+		});
+	}
+
+	const func = createMap => mapCallback(createMap, $content, locale);
+
+	$$self.$capture_state = () => ({
+		onMount,
+		writable,
+		loadLocaleContent,
+		getData,
+		addMarkersEntries,
+		translate,
+		addGroupPinContent,
+		addCommunePinContent,
+		addCoopPinContent,
+		addPartyPinContent,
+		grid,
+		gridWidth,
+		loaded,
+		content,
+		entries,
+		entriesByCountry,
+		changeWidth,
+		callback,
+		locale,
+		mapCallback,
+		$loaded,
+		$content
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('grid' in $$props) $$invalidate(0, grid = $$props.grid);
+		if ('gridWidth' in $$props) $$invalidate(1, gridWidth = $$props.gridWidth);
+		if ('loaded' in $$props) $$invalidate(4, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(5, content = $$props.content);
+		if ('entries' in $$props) entries = $$props.entries;
+		if ('entriesByCountry' in $$props) entriesByCountry = $$props.entriesByCountry;
+		if ('callback' in $$props) callback = $$props.callback;
+		if ('locale' in $$props) $$invalidate(6, locale = $$props.locale);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [
+		grid,
+		gridWidth,
+		$loaded,
+		$content,
+		loaded,
+		content,
+		locale,
+		mapCallback,
+		div4_binding,
+		func
+	];
+}
+
+class Landing_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#action-container{display:flex;justify-content:space-between;margin:auto;margin-top:2rem;max-width:34rem}.link-button{display:inline-block;font-size:1.6rem;font-family:var(--sans-serif,sans-serif);width:14rem;line-height:4rem;background:var(--red);color:white;text-align:center}#map{--margin-top:1rem;--height:30rem;--width:100%;--margin-bottom:3rem}h1{font-size:2rem;text-align:center;margin-bottom:1rem}#container-grid>div>a>h2{text-align:center}#groups-img,#communes-img,#coops-img,#parties-img{position:absolute;left:50%;transform:translate(-50%);z-index:0;opacity:0.2;height:8rem}#coops-img{margin-top:0.5rem;height:7.5rem}#text-container{max-width:calc(100vw - 4rem);margin:auto}#crowd{width:100%;margin-bottom:2rem}#container{margin:auto;max-width:800px;margin-top:2rem;margin-bottom:5rem}#container>div>p{margin-bottom:1rem}#container p{text-align:justify}#container-grid{display:grid;grid-template-columns:var(--grid-width);grid-template-rows:var(--grid-width);grid-gap:4rem;row-gap:2.5rem;margin-top:2rem;margin-bottom:1rem}#container-grid>div{position:relative}#container-grid>div>p{position:relative;margin-top:5rem;z-index:2}@media only screen and (max-width: 1060px){#container-grid{display:flex;flex-direction:column;gap:2rem}#action-container{flex-direction:column;align-items:center;gap:2.5rem}#container-grid>:nth-child(2){height:calc(100% - 2rem)}}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("landing-component", Landing_component);
+
+export { Landing_component as default };

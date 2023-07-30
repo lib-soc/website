@@ -71,17 +71,17 @@
 <div bind:this={root} id="root" class="pane-centering">
     <div class="pane-container">
         <div id="sidebars-left" class="sidebar">
-            <div bind:this={sidebarLeft} id="sidebar-left" class="pane">
+            <div bind:this={sidebarLeft} id="sidebar-left">
                 <slot name="sidebar-left"></slot>
             </div>
-            <div bind:this={sidebarLeft2} id="sidebar-left2" class="pane">
+            <div bind:this={sidebarLeft2} id="sidebar-left2">
                 <slot name="sidebar-left2"></slot>
             </div>
         </div>
         <div bind:this={sidebarRight}  id="sidebar-right" class="pane sidebar">
             <slot name="sidebar-right"></slot>
         </div>
-        <div bind:this={mainPane} id="main-pane" class="pane">
+        <div bind:this={mainPane} id="main-pane">
             <slot name="main" id="main-slot"></slot>
         </div>
     </div>
@@ -95,7 +95,10 @@
     }
 
     #root {
+        position: relative;
+        margin-top: auto;
         min-height: var(--min-height,auto);
+        height: 100%;
     }
 
     #main-pane {
@@ -105,10 +108,8 @@
         padding-top: var(--padding-top,0rem);
         padding-bottom: var(--padding-bottom,0rem);
         text-align: justify;
-        background: var(--background,white);
-        box-shadow: var(--box-shadow,0 0 0.314rem rgb(187, 187, 187));
         margin: auto;
-        height: min-content; 
+        height: 100%; 
         max-width: var(--width-main,66rem);
         width: var(--width-main,66rem);
         z-index: 1;
@@ -124,13 +125,14 @@
         flex-direction: column;
         gap: 1rem;
         margin-left: calc(-1*var(--width-left,22.5rem) - 1rem - 4rem);
-        width: calc(var(--width-left,22.5rem) + 4rem);
+        width: max-content;
+        max-width: 30rem;
     }
 
     #sidebar-left,#sidebar-left2 {
         position: relative;
         background-color: white;
-        padding: 2rem 2rem;
+        padding: 0rem 0rem;
     }
 
     #sidebar-left {
@@ -149,16 +151,16 @@
         padding: 2rem 2rem;
     }
 
-    @media only screen and (max-width: 1880px) {
+    @media only screen and (max-width: 1340px) {
 
         #main-pane {
             max-width: initial;
             width: 100%;
             max-width: var(--width-main,66rem);
-            padding-left: var(--padding-left-mobile,1.8rem);
-            padding-right: var(--padding-right-mobile,1.8rem);
-            padding-top: var(--padding-top-mobile,1.8rem);
-            padding-bottom: var(--padding-bottom-mobile,1.8rem);
+            padding-left: var(--padding-left-mobile,0rem);
+            padding-right: var(--padding-right-mobile,0rem);
+            padding-top: var(--padding-top-mobile,0rem);
+            padding-bottom: var(--padding-bottom-mobile,0rem);
         }
 
         #sidebars-left, #sidebar-right {

@@ -228,7 +228,7 @@
                 <p class="description">If there are no groups in your town with whom you can organize then do the following:</p>
                 <ol>
                     <li>Click on the map to show us where you are located;</li>
-                    <li>Add a way to contact you or leave blank for a pin to point to our discord;</li>
+                    <li>Add a way to contact you (an invite link or an email, not a phone number) or leave blank for a pin to point to our discord;</li>
                     <li>Press "Submit" to add yourself to our map;</li>
                     <li>Verify yourself by having a chat with us at our Discord server to show on the map;</li>
                 </ol>

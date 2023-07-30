@@ -163,7 +163,7 @@
         font-family: var(--sans-serif,sans-serif);
         width: 14rem;
         line-height: 4rem;
-        background: #cb1816;
+        background: var(--red);
         color: white;
         text-align: center;
     }

@@ -1,0 +1,171 @@
+
+label {
+    font-size: 1.3rem;
+    font-family: var(--sans-serif);
+}
+
+.auth-pane {
+    position: relative;
+    padding: 3.4rem;
+    padding-top: 3.4rem;
+    padding-bottom: 3.4rem;
+    width: 30rem;
+    height: auto;
+}
+
+.auth-title {
+    position: relative;
+    top: 0.2rem;
+    margin-bottom: 2.7rem;
+}
+
+.auth-label {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+}
+
+.authEmailInput, .authPasswordInput {
+    position: relative;
+    width: 100%;
+    border-radius: 0.34rem;
+    color: #353535;
+    height: 2.73rem;
+    padding-left: 0.34rem;
+}
+
+.authEmailInput {
+    margin-bottom: 0.682rem;
+}
+
+.auth-button {
+    margin-top: 1.365rem;
+    height: 3.412rem;
+    width: 100%;
+    font-family: var(--sans-serif,sans-serif);
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--red);
+    border-color: var(--red);
+    border-radius: 0.512rem;
+    filter: drop-shadow(0.068rem 0.136rem 0.068rem rgb(0 0 0 / 0.4));
+}
+
+.auth-button:active {
+    background-color: var(--darker-pink);
+}
+
+#email-msg,#password-msg {
+    display: inline;
+    color:red;
+    font-family: var(--sans-serif,sans-serif);
+}
+
+.auth-line {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 0.07rem;
+    border: 0;
+    border-radius: 0.1rem;
+    background: black;
+}
+
+.auth-methods-group {
+    display: grid;
+    grid-template-columns: auto ; /*auto auto*/
+    justify-content: center;
+    gap: 2.7rem;
+    margin-top: 2rem;
+}
+
+.auth-methods-group img {
+    height: auto;
+    width: 3.4rem;
+}
+
+.auth-methods-group> div {
+    position: relative;
+    border-radius: 6.8rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    overflow: hidden;
+}
+
+#google-btn {
+    position: absolute;
+    top: -0.8rem;
+    left: -0.8rem;
+}
+
+#google-logo {
+    position: relative;
+    background: white;
+    pointer-events: none;
+}
+
+#google-btn-wrapper {
+    cursor: pointer;
+}
+
+#google-btn div {
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+}
+
+#google-btn iframe {
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+}
+
+.password-field {
+    position: relative;
+}
+
+.eye-icon {
+    display: block; 
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.25;
+    top: 2.6rem;
+    right: 0.8rem;
+    width: 1.7rem;
+}
+
+.eye-icon * {
+    pointer-events: none;
+}
+
+#forgot-password {
+    display: block;
+    position: relative;
+    margin-top: 0.5rem;
+    height: 2rem;
+    color:#5f5f5f;
+    margin-left: auto;
+    width: max-content;
+    font-family: var(--sans-serif);
+    font-size: 1.3rem;
+}
+
+
+#remember-me {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+#remember-me-checkbox {
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    flex: 0;
+    accent-color: var(--gray);
+}
+
+#remember-me label {
+    position: relative;
+    margin-top: -0.2rem;
+    color: #5f5f5f;
+}
