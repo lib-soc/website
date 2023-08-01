@@ -9,6 +9,7 @@
     // Export statements
     export let callback = null
     export let colors = null
+    export let map = null
     
     // Main code
     let mapContainer

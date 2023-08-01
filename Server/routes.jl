@@ -1,5 +1,6 @@
 
 using Genie.Router, Genie.Requests, Genie.Renderer.Json, JSON3, GenieAuthentication
+using Server.GroupsController
 
 #---Basic-----------------------------------------------------------
 
@@ -43,7 +44,15 @@ route("/:locale/groups-add/*", GroupsController.groups_add, named = :groups_add)
 
 route("/:locale/groups-add-post/*", GroupsController.groups_add_post, method = POST, named = :groups_add_post)
 
-route("/:locale/get_user_groups/*", GroupsController.get_user_groups, named = :get_user_groups)
+route("/:locale/get-user-groups/*", GroupsController.get_user_groups, named = :get_user_groups)
+
+route("/:locale/get-group-requests/*", GroupsController.get_group_requests, named = :get_group_requests)
+
+route("/:locale/group-approve-request/*", GroupsController.approve_request, method = POST, named = :group_approve_request)
+
+route("/:locale/group-reject-request/*", GroupsController.reject_request, method = POST, named = :group_reject_request)
+
+route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
 
 #---Coops----------------------------------------------------------
 

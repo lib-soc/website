@@ -67,6 +67,7 @@
 
 <style>
     @import '/css/common.css';
+    @import '/css/auth.css';
 
     span {
         font-size: 1.4rem;
@@ -91,7 +92,7 @@
         display: flex;
         position: absolute;
         margin: auto;
-        top: 40%;
+        top: 40%;/*40%;*/
         left: 50%;
         transform: translate(-50%, -50%);
         width: 5.4rem;
@@ -115,7 +116,7 @@
         }
 
         #auth-or {
-            top: 46.4rem;
+            top: 40rem;/*46.4rem;*/
         }
 
         #auth-group {

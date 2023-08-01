@@ -1,12 +1,15 @@
 
 import {getData, sendData} from "/js/libraries/serverTools.js"
 
-export function getUser(user,callbackOuter) {
+export function getUser(user,loaded,callbackOuter) {
     let callback = function(response) {
         Object.assign(user,JSON.parse(response))
         if(callbackOuter!=undefined) {
             callbackOuter()
         }
+        loaded.update((val) => {
+            return val + 1
+        })
     }
     getData("/xx/get-user",callback)
 }

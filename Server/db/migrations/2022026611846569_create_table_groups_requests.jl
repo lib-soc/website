@@ -4,6 +4,7 @@ import SearchLight.Migrations: create_table, column, primary_key, add_index, dro
 
 include("../../lib/DatabaseSupport.jl")
 using .DatabaseSupport
+import .DatabaseSupport: add_foreign_key, add_index, set_default
 
 function up()
     create_table(:groups_requests) do
@@ -17,8 +18,10 @@ function up()
             column(:contact, :string)
             column(:latitude, :float)
             column(:longitude, :float)
-            column(:verified, :bool)
+            column(:longitude, :float)
+            column(:members,:integer)
             column(:added, :bool)
+            column(:status,:Integer)
         ]
     end
 
@@ -27,7 +30,6 @@ function up()
 
     add_index(:groups_requests, :user_id)
 
-    set_default("groups_requests","verified",false)
     set_default("groups_requests","added",false)
 
 end

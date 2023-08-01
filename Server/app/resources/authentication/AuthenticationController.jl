@@ -91,7 +91,7 @@ const auth_info = Dict(
 controller = "authentication"
 const dict_layouts = Dict(
     :auth => generate_layout_html("main",controller,"auth",libraries=["GoogleAuth"]),
-    :profile => generate_layout_html("main",controller,"profile"),
+    :profile => generate_layout_html("main",controller,"profile",libraries=["Leaflet"]),
     :email_confirmation => generate_layout_html("main",controller,"email_confirmation"),
 )
 

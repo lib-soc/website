@@ -169,3 +169,12 @@ label {
     margin-top: -0.2rem;
     color: #5f5f5f;
 }
+
+#content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+}

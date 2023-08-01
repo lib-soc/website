@@ -4,7 +4,7 @@ module DatabaseSupport
 using SearchLight, SearchLightPostgreSQL, LibPQ
 using DataFrames
 
-export exist_in_table, insert_into_table, update_table, select_from_table, add_foreign_key, set_default
+export exist_in_table, insert_into_table, update_table, select_from_table, delete_from_table, add_foreign_key, set_default
 
 options = SearchLight.Configuration.read_db_connection_data("db/connection.yml")
 conn = SearchLight.connect(options)
@@ -19,15 +19,22 @@ function format(x)
     end
 end
 
-function insert_into_table(table_name,dict_values)
+function insert_into_table(table_name,dict_values,other="")
     names_string = join(keys(dict_values),", ")
     vals_raw = values(dict_values)
 
     vals = map(x -> format(x),vals_raw)
     vals_string = join(values(vals),", ")
-    query = "INSERT INTO $table_name ($names_string) VALUES ($vals_string)"
+    query = "INSERT INTO $table_name ($names_string) VALUES ($vals_string) " * other
+    return SearchLight.query(query)
+end
+
+function delete_from_table(table_name,where_data)
+    query = "DELETE FROM $table_name"
+    if !isnothing(where_data)
+        query *= where_query(where_data)
+    end
     SearchLight.query(query)
-    return nothing
 end
 
 function update_table(table_name,dict_values; where_data=nothing)
@@ -46,13 +53,21 @@ function update_table(table_name,dict_values; where_data=nothing)
 end
 
 function where_query(pair::Pair)
-    return " WHERE $(pair[1]) = $(pair[2])"
+    if isnothing(pair[2])
+        return " WHERE $(pair[1]) is null"
+    else
+        return " WHERE $(pair[1]) = $(pair[2])"
+    end
 end
 
 function where_query(data::Vector{<:Pair})
     conds = String[]
     for pair in data
-        push!(conds,"$(pair[1]) = $(pair[2])")
+        if isnothing(pair[2])
+            push!(conds, "$(pair[1]) is null")
+        else
+            push!(conds,"$(pair[1]) = $(pair[2])")
+        end
     end
     query = " WHERE "*join(conds," AND ")
     return query

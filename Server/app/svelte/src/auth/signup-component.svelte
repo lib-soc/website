@@ -111,18 +111,20 @@
     </div>
     <button class="auth-button" on:click="{showDialog}">Sign up</button> <!--() => AuthTools.signup(msgs,inputs,AuthTools.toLandingPage)-->
     <p id="forgot-password"></p>
+    <!--
     <hr class="auth-line">
     <div class="auth-methods-group">
         <button on:click="{showDialog}">
             <img src="/img/auth/google_icon.svg" id="navbar-logo" alt="google icon">
         </button>
-        <!--<button onclick="">
+        <button onclick="">
             <img src="img/auth/facebook_icon.svg" id="navbar-logo" alt="facebook icon">
         </button>
         <button onclick="">
             <img src="img/auth/linkedin_icon.svg" id="navbar-logo" alt="linkedin icon">
-        </button>-->
+        </button>
     </div>
+    -->
 </div>
 
 <div bind:this={dialog} id="dialog">

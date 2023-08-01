@@ -3,7 +3,7 @@
 <script>
 
     // Import statements
-    import { onMount, setContext } from 'svelte'
+    import { onMount, getContext } from 'svelte'
     import * as AuthTools from "/js/libraries/authTools.js"
     
     //Import components
@@ -11,7 +11,6 @@
     import "/js/components/switch-component.js" 
 
     //Export statements
-    export let user = null
 
     // Main code
     let emailInput
@@ -29,6 +28,9 @@
     let emailDiv
     let emailInputDiv
     let prevEmail
+
+    let context = getContext("profile-component")
+    let user = context.user
 
     function showSaveButton(button) {
         prevEmail = emailInput.value
@@ -166,11 +168,27 @@
             </button>
         </div>
     </div>
+    <div>
+        <div id="verifiedDiv">
+            <span>Verified:</span>
+            <span style="color: {user.verified ? "green" : "red"}">{user.verified}</span>
+        </div>
+    </div>
 </section>
 
 <style>
     @import '/css/common.css';
         
+    #verifiedDiv {
+        display: inline;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 2rem;
+        width: 100%;
+    }
+
     /*---General section-----------------------------------------------------------*/
 
     .ghost-input {

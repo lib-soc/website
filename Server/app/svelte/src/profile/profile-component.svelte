@@ -4,6 +4,7 @@
 
     // Import libraries
     import { onMount, afterUpdate, setContext } from 'svelte'
+    import { writable } from 'svelte/store'
     import * as AuthTools from "/js/libraries/authTools.js"
     import {svgFromObject} from "/js/libraries/miscTools.js"
 
@@ -11,6 +12,10 @@
     import "/js/components/pane-aligner.js"
     import "/js/components/profile-general.js"
     import "/js/components/profile-groups.js"
+    import "/js/components/profile-communes.js"
+    import "/js/components/profile-coops.js"
+    import "/js/components/profile-parties.js"
+    import "/js/components/groups-add-component.js"
 
     // Main code
     AuthTools.redirectNotLogged()
@@ -22,6 +27,7 @@
     let coops
     let parties
     let panes
+    let groupsAdd
 
     let generalButton
     let groupsButton
@@ -29,11 +35,17 @@
     let coopsButton
     let partiesButton
     let buttons
+
+    let currentPaneIndex = 0
     
     let locationPopup
 
+    let maps = {}
+
     let user = {}
-    AuthTools.getUser(user)
+    let loaded = writable(0)
+    let reloadTriggerVal = writable(0)
+    AuthTools.getUser(user,loaded)
     
     function changePane(pane,button) {
         for (let p of panes) {
@@ -48,10 +60,24 @@
     }
 
     function styleField(div,weight,color) {
-        div.style.fontWeight = weight
         let svgObject = div.querySelector("object")
-        let svgItem = svgFromObject(svgObject)
-        svgItem.setAttribute("fill", color)
+        if (svgObject==null) {
+            let f = () => styleField(div,weight,color)
+            setTimeout(f,100)
+        }
+        else {
+            let svgItem = svgFromObject(svgObject)
+            if (svgItem==null) {
+                let f = () => styleField(div,weight,color)
+                setTimeout(f,100)
+            }
+            else {
+                div.style.fontWeight = weight
+                svgItem.setAttribute("fill", color)
+            }
+        }
+       
+        
     }
 
     function fillFields() {
@@ -59,37 +85,54 @@
             for (let b of buttons) {
                 styleField(b,400,"#636363")
             }
-            styleField(generalButton,500,"#c52a28") 
+            styleField(buttons[currentPaneIndex],500,"#c52a28") 
         }
         else {
             setTimeout(fillFields, 100)
         }
     }
 
-    function showLocationOverlay() {
-        locationPopup.style.display = "block"
+    function valid(el) {
+        return (el!=undefined) && (el!=null)
     }
 
-    setContext("profile-component",showLocationOverlay)
-
-    onMount(() => {
-        general.user = user
-
+    function init() {
         panes = [general,groups,communes,coops,parties]
         buttons = [generalButton,groupsButton,communesButton,coopsButton,partiesButton] 
+        if ($loaded==1 && panes.every(x => valid(x)) && buttons.every(x => valid(x))) {
+            panes = [general,groups,communes,coops,parties]
+            buttons = [generalButton,groupsButton,communesButton,coopsButton,partiesButton] 
 
-        fillFields()
-        general.style.display = "initial"
+            fillFields()
+            general.style.display = "initial"
+        }
+        else {
+            let f = () => init()
+            setTimeout(f,100)
+        }
+    }
+
+    function reloadTrigger() {
+        reloadTriggerVal.update((val) => {
+            return val + 1
+        })
+    }
+
+    setContext("profile-component",{user,maps,reloadTrigger})
+
+    onMount(() => {
+        init()
     })  
 </script>
 
+<!--
 <div bind:this={locationPopup} class="overlay" style="display: none">
     <div id="location-overlay-content">
-        <p>wegwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</p>
+        
     </div>
     <button class="overlay-button" on:click={() => locationPopup.style.display = "none"}></button>
 </div>
-
+-->
 <pane-aligner>
     <div id="left-column" class="pane" slot="sidebar-left" bind:this={root}>
         <button bind:this={generalButton} on:click={() => changePane(general,generalButton)}>
@@ -118,11 +161,15 @@
         </button>
     </div>
     <div id="main-column" slot="main">
-        <profile-general bind:this={general} style="display: none;"></profile-general>
-        <profile-groups bind:this={groups} style="display: none;"></profile-groups> 
-        <profile-communes bind:this={communes} style="display: none;"></profile-communes> 
-        <profile-coops bind:this={coops} style="display: none;"></profile-coops> 
-        <profile-parties bind:this={parties} style="display: none;"></profile-parties> 
+        {#key $loaded}
+            {#if $loaded==1}
+                <profile-general bind:this={general} style="display: none;"></profile-general>
+                <profile-groups bind:this={groups} style="display: none;"></profile-groups> 
+                <profile-communes bind:this={communes} style="display: none;"></profile-communes> 
+                <profile-coops bind:this={coops} style="display: none;"></profile-coops> 
+                <profile-parties bind:this={parties} style="display: none;"></profile-parties> 
+            {/if}
+        {/key}
     </div>
 </pane-aligner>
 
@@ -130,34 +177,6 @@
 <style> 
 
     @import '/css/common.css';
-
-    #location-overlay-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 40rem;
-        width: 40rem;
-        background: white;
-        z-index: 10000;
-    }
-
-    .overlay {
-        top: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 10000;
-    }
-    
-    .overlay-button {
-        position: absolute;
-        background: gray;
-        opacity: 0.5;
-        width: 100vw;
-        height: 100vh;
-        z-index: 1000;
-    }
 
     #general-img {
         top: 0rem;

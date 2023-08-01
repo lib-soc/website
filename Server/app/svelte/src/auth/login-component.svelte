@@ -81,13 +81,14 @@
     </div>
     <button class="auth-button" on:click="{() => AuthTools.login(msgs,inputs)}">Log in</button>
     <a id="forgot-password" href="forgot-password">Forgot password?</a>
+    <!--
     <hr class="auth-line">
     <div class="auth-methods-group">
         <div id="google-btn-wrapper">
             <div bind:this={googleButton} id="google-btn"></div>
             <img src="/img/auth/google_icon.svg" id="google-logo" alt="google icon">
         </div>
-        <!--
+       
         <button on:click={openGoogleWindow}>
             <img src="img/auth/google_icon.svg" id="navbar-logo" alt="google icon">
         </button>
@@ -96,8 +97,9 @@
         </button>
         <button onclick="">
             <img src="img/auth/linkedin_icon.svg" id="navbar-logo" alt="linkedin icon">
-        </button>-->
+        </button>
     </div>
+    -->
 </div>
 
 <style>
