@@ -4,7 +4,7 @@ import SearchLight.Migrations: create_table, column, primary_key, add_index, dro
 
 include("../../lib/DatabaseSupport.jl")
 using .DatabaseSupport
-import .DatabaseSupport: add_foreign_key, add_index, set_default
+import .DatabaseSupport: add_foreign_key, set_default
 
 function up()
     create_table(:groups_requests) do
