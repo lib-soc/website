@@ -85,8 +85,8 @@ export function validateAge(event,input,callback) {
     }
 }
 
-export function validatePosNumber(event,input,callback,max) {
-    event.returnValue = false
+export function validatePosNumber(event,input,max) {
+    event.preventDefault()
     var key
     if (event.type === 'paste') {
         key = event.clipboardData.getData('text/plain');
@@ -101,12 +101,9 @@ export function validatePosNumber(event,input,callback,max) {
         if (val>max) {
             input.value = max
         }
-        if (callback!=undefined) {
-            callback(input.value)
-        }
     }
     else {
-        callback(input.value)
+        input.value = ""
     }
 }
 

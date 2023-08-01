@@ -6,6 +6,7 @@
     import { writable } from 'svelte/store';
     import { loadLocaleContent, getData, sendData } from "/js/libraries/serverTools.js"
     import { addMarkersEntries, translate } from "/js/libraries/mapTools.js"
+    import { validatePosNumber } from "/js/libraries/miscTools.js"
     
     // Import components
     import "/js/components/map-component.js" 
@@ -369,7 +370,7 @@
                         <div id="members-input-wrapper" class="input-label-wrapper">
                             <label for="members-input">Members: </label>
                             <div class="input-wrapper">
-                                <input bind:this={membersInput} id="members-input" type="text" value={1}>
+                                <input bind:this={membersInput} id="members-input" type="number" value={1} on:input={(event) => validatePosNumber(event,membersInput,10000)}>
                             </div>
                         </div>
                     {/if}

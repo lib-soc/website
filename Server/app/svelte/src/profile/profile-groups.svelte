@@ -6,6 +6,7 @@
     import { onMount, getContext } from 'svelte'
     import { writable } from 'svelte/store'
     import { getData, sendData } from "/js/libraries/serverTools.js"
+    import { validatePosNumber } from "/js/libraries/miscTools.js"
     
     //Import components
     import "/js/components/select-component.js"
@@ -259,7 +260,7 @@
                             <div class="save-button-wrapper">
                                 <button bind:this={saveMembersButton} on:click={saveMembers} class="save-button" style="display: none">save</button>
                             </div>
-                            <input bind:this={membersInput} id="membersInput" class="text-input" type="text" bind:value={inputMembers} on:click={() => showSaveButton(saveMembersButton,membersInput)}>
+                            <input bind:this={membersInput} id="membersInput" class="text-input" type="number" bind:value={inputMembers} on:click={() => showSaveButton(saveMembersButton,membersInput)} on:input={(event) => validatePosNumber(event,membersInput,10000)}>
                             <button bind:this={pencilButtonMembers} class="text-input-pencil-button" on:click={() => {focus(membersInput)}}>
                                 <object bind:this={pencilMembers} type="image/svg+xml" data="/img/profile/icons/pencil.svg" title="pencil-icon" class="pencil"></object>
                             </button>
