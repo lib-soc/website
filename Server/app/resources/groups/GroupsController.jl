@@ -258,4 +258,33 @@ function add_verified_groups()
     delete_from_table("groups_requests",["user_id" => user_id])
 end
 
+function changeMemberCount()
+    user_id = get_authentication()
+    groups_ids = select_from_table("users_groups" => ["group_id"], where_data = ["user_id" => user_id])[:,1]
+    group_id = isempty(groups_ids) ? nothing : groups_ids[1]
+    data = copy(jsonpayload())
+    update_table("groups",data, where_data=["id" => group_id])
+end
+
+function change_group()
+    user_id = get_authentication()
+    groups_ids = select_from_table("users_groups" => ["group_id"], where_data = ["user_id" => user_id])[:,1]
+    group_id = isempty(groups_ids) ? nothing : groups_ids[1]
+    if !isnothing(group_id)
+        data = copy(jsonpayload())
+        data_new = Dict()
+        ks = keys(data)
+        for x in ["members","contact"]
+            if x in ks
+                data_new[x] = data[x]
+            end
+        end
+        if !isempty(data_new)
+            update_table("groups",data_new, where_data=["id" => group_id])
+        end
+    end
+    return nothing
+end
+
+
 end

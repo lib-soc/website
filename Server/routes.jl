@@ -50,6 +50,10 @@ route("/:locale/group-approve-request/*", GroupsController.approve_request, meth
 
 route("/:locale/group-reject-request/*", GroupsController.reject_request, method = POST, named = :group_reject_request)
 
+route("/:locale/group-change/*", GroupsController.change_group, method = POST, named = :group_change)
+
+route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
+
 route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
 
 #---Coops----------------------------------------------------------

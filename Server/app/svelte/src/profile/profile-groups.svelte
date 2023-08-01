@@ -34,6 +34,11 @@
 
     let locale = "en"
 
+    let oldValues = {
+        "contact": null,
+        "members": null,
+    }
+
     let inputLocation
     let inputContact
     let inputMembers
@@ -85,14 +90,6 @@
         }
     }
 
-    function launchChangeLocation() {
-        showLocationOverlay()
-    }
-
-    function launchChangeMembers() {
-
-    }
-
     function showSaveButton(button,input) {
         if (!input.readOnly) {
             button.style.display = "initial"
@@ -101,23 +98,33 @@
 
     function resetMembersField() {
         saveMembersButton.style.display = "none"
+        inputMembers = oldValues["members"]
     }
 
     function resetContactField() {
         saveContactButton.style.display = "none"
+        inputContact = oldValues["contact"]
     }
 
     function saveMembers() {
-        let email = emailInput.value
-        if (AuthTools.checkEmail(email,emailMsg)) {
-            if (email!=user.email) {
-                AuthTools.changeUser("email",email,user)
-            }
-            resetMembersField()
+        let val = parseInt(membersInput.value)
+        let data = {
+            "members": val
         }
+        sendData("/xx/group-change",data)
+        oldValues["members"] = val
+        saveMembersButton.style.display = "none"
     }
 
-    function saveContact() {}
+    function saveContact() {
+        let val = contactInput.value
+        let data = {
+            "contact": val
+        }
+        sendData("/xx/group-change",data)
+        oldValues["contact"] = val
+        saveContactButton.style.display = "none"
+    }
 
     function updateUserGroup(newInfo) {
         if (newInfo!=undefined) {
@@ -159,7 +166,9 @@
                 let group = userGroups[0]
                 
                 inputContact = getContact(group.contact)
+                oldValues["contact"] = inputContact
                 inputMembers = group.members
+                oldValues["members"] = inputMembers
                 let status = group.status
                 if (status!=undefined) {
                     if (status==0) {
