@@ -1,21 +1,7 @@
 
 :root {
-    --light-blue:hsl(195, 67%, 95%);
-    --darker-pink:hsl(344, 60%, 47%);
-    --pink:hsl(344, 73%, 57%);
-    --dark-green:hsl(176, 63%, 25%);
-    --green:hsl(147, 33%, 60%);
-    --orange:hsl(30, 97%, 72%);
-    --light-orange: hsl(19, 76%, 72%);
-    --dark-brown:hsl(23, 47%, 20%);
-    --brown:hsl(23, 47%, 30%);
-    --light-brown: hsl(23, 47%, 50%);
-    --dark-pink:hsl(343, 39%, 16%);
-    --red:hsl(359, 72%, 61%);
-    --dark-blue:hsl(217, 25%, 16%);
-    --grey-blue:hsl(223, 13%, 22%);
-    --cream:hsl(34, 43%, 90%);
-    --dark-cream:hsl(33, 26%, 84%);
+    --red:#c52a28;
+    --gray: #5B6970;
     --sans-serif: "OpenSans";
     --serif: "Lora";
 }
@@ -48,12 +34,10 @@ body {
 
 #content {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: max-content auto max-content;
     height: 100%;
     min-height: 100vh;
-    flex-grow: 1;
 }
 
 /*---Fonts---------------------------------------------------------*/
@@ -475,9 +459,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .pane {
     background: white;
-    border: 0;
+    border:  0.1rem solid rgb(187, 187, 187);
     border-radius: 0.635rem;
-    box-shadow: 0 0 0.314rem rgb(187, 187, 187);
 }
 
 .pane-container {

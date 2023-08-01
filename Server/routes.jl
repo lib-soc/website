@@ -1,7 +1,6 @@
 
-using Genie.Router, Genie.Requests, Genie.Renderer.Json, JSON3
-using Server.BasicController
-
+using Genie.Router, Genie.Requests, Genie.Renderer.Json, JSON3, GenieAuthentication
+using Server.GroupsController
 
 #---Basic-----------------------------------------------------------
 
@@ -13,6 +12,30 @@ route("/:locale/join-us/*", BasicController.join_us, named = :join_us)
 
 route("/:locale/political-compass/*", BasicController.political_compass, named = :political_compass)
 
+#---Authentication and such------------------------------------------
+
+route("/:locale/auth/*", AuthenticationController.auth, named = :auth)
+
+route("/:locale/check-login", authenticated, named=:checklogin)
+
+route("/:locale/login-post", AuthenticationController.login, method = POST)
+
+route("/:locale/logout", AuthenticationController.logout)
+
+route("/:locale/signup-post", AuthenticationController.register, method = POST)
+
+route("/:locale/signup-google", AuthenticationController.register_google, method = POST)
+
+route("/:locale/change-user", AuthenticationController.change_user, method = POST)
+
+route("/:locale/get-user", AuthenticationController.get_user)
+
+route("/:locale/confirm-email", AuthenticationController.confirm_email, method = POST)
+
+route("/:locale/email-confirmation", AuthenticationController.email_confirmation, named = :email_confirmation)
+
+route("/:locale/profile", AuthenticationController.profile, named = :profile)
+
 #---Groups----------------------------------------------------------
 
 route("/:locale/groups/*", GroupsController.groups, named = :groups)
@@ -20,6 +43,16 @@ route("/:locale/groups/*", GroupsController.groups, named = :groups)
 route("/:locale/groups-add/*", GroupsController.groups_add, named = :groups_add)
 
 route("/:locale/groups-add-post/*", GroupsController.groups_add_post, method = POST, named = :groups_add_post)
+
+route("/:locale/get-user-groups/*", GroupsController.get_user_groups, named = :get_user_groups)
+
+route("/:locale/get-group-requests/*", GroupsController.get_group_requests, named = :get_group_requests)
+
+route("/:locale/group-approve-request/*", GroupsController.approve_request, method = POST, named = :group_approve_request)
+
+route("/:locale/group-reject-request/*", GroupsController.reject_request, method = POST, named = :group_reject_request)
+
+route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
 
 #---Coops----------------------------------------------------------
 

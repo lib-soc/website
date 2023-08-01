@@ -1,6 +1,6 @@
 module PartiesController
 
-using Genie, Genie.Renderer, Genie.Renderer.Html, Genie.Requests
+using Genie, Genie.Renderer, Genie.Renderer.Html, Genie.Requests, GenieAuthentication
 using JSON3
 using SearchLight
 using Server.DatabaseSupport, Server.TemplateEditor

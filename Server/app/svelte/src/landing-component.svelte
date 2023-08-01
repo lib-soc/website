@@ -62,10 +62,13 @@
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        let groupsMarkersLayer = addMarkersEntries(entries["groups"],entriesByCountry["groups"],map,content,locale,addGroupPinContent,"green")
-        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red")
-        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue")
-        let partiesMarkersLayer = addMarkersEntries(entries["parties"],entriesByCountry["parties"],map,content,locale,addPartyPinContent,"gold")
+        let options = {
+            enableCountryGrouping: true,
+        }
+        let groupsMarkersLayer = addMarkersEntries(entries["groups"],entriesByCountry["groups"],map,content,locale,addGroupPinContent,"green",options)
+        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red",options)
+        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue",options)
+        let partiesMarkersLayer = addMarkersEntries(entries["parties"],entriesByCountry["parties"],map,content,locale,addPartyPinContent,"gold",options)
 
         let overlayMaps = {}
         overlayMaps[content.groups] = groupsMarkersLayer
@@ -163,7 +166,7 @@
         font-family: var(--sans-serif,sans-serif);
         width: 14rem;
         line-height: 4rem;
-        background: #cb1816;
+        background: var(--red);
         color: white;
         text-align: center;
     }

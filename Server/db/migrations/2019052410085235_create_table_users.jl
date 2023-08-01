@@ -8,12 +8,9 @@ function up()
             primary_key()
             column(:email, :string)
             column(:password, :string, limit = 100)
-            column(:name, :string)
-            column(:profile_picture, :int)
-            column(:country, :int)
-            column(:newsletter, :bool)
-            column(:notifications, :int)
             column(:confirmation_code, :string)
+            column(:google_id, :string)
+            column(:verified, :bool)
         ]
     end
 

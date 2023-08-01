@@ -1,1 +1,670 @@
-import{S as e,i as t,a as n,b as o,s as i,e as a,n as r,d as s,c as l,o as d,g as c,h as m,t as p,j as h,k as u,m as g,p as f,q as b,u as v,r as w,f as y}from"./index-8c09578c.js";import{w as k}from"./index-77787e10.js";import{loadLocaleContent as x,locales as j}from"../../../../../../../../../js/libraries/serverTools.js";function z(e,t,n){const o=e.slice();return o[23]=t[n][0],o[24]=t[n][1],o}function H(e){let t,n,i,a,r,l,d,y,k,x,H,L,W,M,O,E,N,S,R,U,q,I,X,A,B,C,D,F,G,J,K,P,Q,V,Y,Z,$,_,ee,te,ne,oe,ie,ae,re,se,le,de=e[5].orgName+"",ce=e[5].joinUs+"",me=e[5].manifesto+"",pe=e[5].initiatives+"",he=e[5].groups+"",ue=e[5].communes+"",ge=e[5].cooperatives+"",fe=e[5].parties+"",be=e[5].partners+"",ve=Object.entries(j),we=[];for(let t=0;t<ve.length;t+=1)we[t]=T(z(e,ve,t));return{c(){t=c("header"),n=c("input"),i=m(),a=c("label"),a.innerHTML='<span id="hamb-line"></span>',r=m(),l=c("a"),d=c("img"),k=m(),x=c("span"),H=m(),L=c("nav"),W=c("ul"),M=c("li"),O=c("a"),E=p(ce),N=m(),S=c("li"),R=c("a"),U=p(me),q=m(),I=c("li"),X=c("button"),A=p(pe),B=m(),C=c("div"),D=c("a"),F=p(he),G=m(),J=c("a"),K=p(ue),P=m(),Q=c("a"),V=p(ge),Y=m(),Z=c("a"),$=p(fe),_=m(),ee=c("a"),te=p(be),ne=m(),oe=c("li"),ie=c("button"),ie.innerHTML='<picture><source srcset="/img/common/globe.webp"/> \n                                <source srcset="/img/common/globe.png"/> \n                                <img id="locales-img" alt="globe"/></picture>',ae=m(),re=c("div");for(let e=0;e<we.length;e+=1)we[e].c();h(n,"type","checkbox"),h(n,"id","side-menu"),h(a,"id","hamb"),h(a,"for","side-menu"),u(d.src,y="/img/common/flag.png")||h(d,"src","/img/common/flag.png"),h(d,"id","navbar-logo"),h(d,"alt","logo"),h(x,"id","navbar-logo-text"),h(l,"id","logo-container"),h(l,"href","/"+e[8]+"/"),h(O,"href","/"+e[8]+"/join-us"),h(R,"href","/"+e[8]+"/manifesto"),h(X,"class","options-button"),h(D,"href","/"+e[8]+"/groups"),h(J,"href","/"+e[8]+"/communes"),h(Q,"href","/"+e[8]+"/cooperatives"),h(Z,"href","/"+e[8]+"/parties"),h(ee,"href","/"+e[8]+"/partners"),h(C,"class","options-dropdown"),h(I,"id","options-container"),h(oe,"id","locales"),h(re,"class","options-dropdown"),h(W,"id","menu"),h(L,"id","nav"),h(t,"id","navbar")},m(s,c){o(s,t,c),g(t,n),e[12](n),g(t,i),g(t,a),g(t,r),g(t,l),g(l,d),g(l,k),g(l,x),x.innerHTML=de,e[13](x),g(t,H),g(t,L),g(L,W),g(W,M),g(M,O),g(O,E),g(W,N),g(W,S),g(S,R),g(R,U),g(W,q),g(W,I),g(I,X),g(X,A),g(I,B),g(I,C),g(C,D),g(D,F),g(C,G),g(C,J),g(J,K),g(C,P),g(C,Q),g(Q,V),g(C,Y),g(C,Z),g(Z,$),g(C,_),g(C,ee),g(ee,te),e[16](C),g(W,ne),g(W,oe),g(oe,ie),g(W,ae),g(W,re);for(let e=0;e<we.length;e+=1)we[e].m(re,null);e[20](re),e[21](t),se||(le=[f(n,"click",e[9]),f(X,"click",e[14]),f(X,"focusout",e[15]),f(ie,"click",e[17]),f(ie,"focusout",e[18])],se=!0)},p(e,t){if(32&t&&de!==(de=e[5].orgName+"")&&(x.innerHTML=de),32&t&&ce!==(ce=e[5].joinUs+"")&&b(E,ce),32&t&&me!==(me=e[5].manifesto+"")&&b(U,me),32&t&&pe!==(pe=e[5].initiatives+"")&&b(A,pe),32&t&&he!==(he=e[5].groups+"")&&b(F,he),32&t&&ue!==(ue=e[5].communes+"")&&b(K,ue),32&t&&ge!==(ge=e[5].cooperatives+"")&&b(V,ge),32&t&&fe!==(fe=e[5].parties+"")&&b($,fe),32&t&&be!==(be=e[5].partners+"")&&b(te,be),2048&t){let n;for(ve=Object.entries(j),n=0;n<ve.length;n+=1){const o=z(e,ve,n);we[n]?we[n].p(o,t):(we[n]=T(o),we[n].c(),we[n].m(re,null))}for(;n<we.length;n+=1)we[n].d(1);we.length=ve.length}},d(n){n&&s(t),e[12](null),e[13](null),e[16](null),v(we,n),e[20](null),e[21](null),se=!1,w(le)}}}function T(e){let t,n,i,a,r=e[24]+"";function l(){return e[19](e[23])}return{c(){t=c("button"),n=p(r)},m(e,r){o(e,t,r),g(t,n),i||(a=f(t,"click",l),i=!0)},p(t,n){e=t},d(e){e&&s(t),i=!1,a()}}}function L(e){let t,n=0!=Object.keys(e[5]).length,i=n&&H(e);return{c(){i&&i.c(),t=a(),this.c=r},m(e,n){i&&i.m(e,n),o(e,t,n)},p(e,[o]){32&o&&(n=0!=Object.keys(e[5]).length),n?i?i.p(e,o):(i=H(e),i.c(),i.m(t.parentNode,t)):i&&(i.d(1),i=null)},i:r,o:r,d(e){i&&i.d(e),e&&s(t)}}}function W(e){setTimeout((()=>{e.style.display="none"}),100)}function M(e,t,n){let o,i,a,r,s,c,m=k(0),p=k({});l(e,p,(e=>n(5,o=e)));let h=x(p,"navbar-component",m);function u(e){let t=e.style.display;n(3,s.style.display="none",s),n(2,r.style.display="none",r),e.style.display="block"==t?"none":"block"}function g(e){localStorage.setItem("locale",e);let t=location.href.split("/"),n=Object.keys(j);t=t.filter((e=>!n.includes(e)));let o=t.slice(0,t.length-1).join("/")+"/"+e+"/"+t[t.length-1];location.href=o}d((()=>{!function(){if("ru"==h){let e=()=>{null==c?setTimeout(e,100):(window.innerWidth<1700&&window.innerWidth>1400||window.innerWidth<400)&&"100%"!=c.style.lineHeight?(n(4,c.style.lineHeight="120%",c),n(4,c.style.top="1rem",c),n(4,c.style.width="16rem",c)):(window.innerWidth>1700||window.innerWidth>400&&window.innerWidth<1400)&&"400%"!=c.style.lineHeight&&(n(4,c.style.lineHeight="400%",c),n(4,c.style.top="0rem",c),n(4,c.style.width="auto",c))};e(),addEventListener("resize",e)}}()}));return[i,a,r,s,c,o,m,p,h,function(){i.checked?n(1,a.style.background="white",a):setTimeout((()=>{n(1,a.style.position="relative",a),n(1,a.style.background="",a),n(1,a.style.boxShadow="",a)}),510)},u,g,function(e){y[e?"unshift":"push"]((()=>{i=e,n(0,i)}))},function(e){y[e?"unshift":"push"]((()=>{c=e,n(4,c)}))},()=>u(s),()=>W(s),function(e){y[e?"unshift":"push"]((()=>{s=e,n(3,s)}))},()=>u(r),()=>W(r),e=>g(e),function(e){y[e?"unshift":"push"]((()=>{r=e,n(2,r)}))},function(e){y[e?"unshift":"push"]((()=>{a=e,n(1,a)}))}]}class O extends e{constructor(e){super(),this.shadowRoot.innerHTML="<style>@import '/css/common.css';#navbar{position:relative;top:0;width:min(100%,116rem);z-index:1000000000;height:5.26rem;padding-left:0rem;padding-right:0rem}#navbar *{font-family:var(--sans-serif, sans-serif)}#logo-container{display:flex;position:absolute;margin-left:1rem;height:100%;max-height:5.26rem;color:black;z-index:1;flex-direction:row;flex-wrap:nowrap;align-items:center}#navbar-logo{height:3.5rem;width:3.5rem;object-fit:contain;border-radius:10rem}#navbar-logo-text{position:relative;word-wrap:normal;height:100%;line-height:400%;font-size:1.4rem;color:#292222;font-family:var(--sans-serif, sans-serif);font-weight:400;padding-left:1.2rem}#nav{position:fixed;width:100%;height:100%;background-color:white;overflow:hidden;z-index:0}#menu>li>a,.options-button{display:block;padding:1.2rem;padding-top:1rem;padding-bottom:1rem;color:black;font-size:1.4rem}#menu>li>a:active{background-color:#f7aec0}#menu li{list-style-type:none}#nav{max-height:0}#hamb{position:absolute;cursor:pointer;right:0rem;padding:2.8rem 2rem;z-index:9999}#hamb-line{background:black;display:block;height:2px;position:relative;width:24px}#hamb-line::before,#hamb-line::after{background:black;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}#hamb-line::before{top:5px}#hamb-line::after{top:-5px}#side-menu{display:none}#side-menu:checked~nav{display:block;max-height:100%;padding-top:5.625rem}#side-menu:checked~#logo-container{position:fixed}#side-menu:checked~#hamb{position:fixed}#side-menu:checked~#logo-container{position:fixed}#side-menu:checked~#hamb #hamb-line{background:transparent}#side-menu:checked~#hamb #hamb-line::before{transform:rotate(-45deg);top:0}#side-menu:checked~#hamb #hamb-line::after{transform:rotate(45deg);top:0}.options-dropdown{position:absolute;display:none;top:5.6rem;right:1.8rem;border:#404040 solid 0.1rem;background-color:white;z-index:10}.options-dropdown button,.options-dropdown a{display:block;font-family:var(--sans-serif,sans-serif);font-size:1.2rem;width:100%;padding:1rem;text-align:left}.options-dropdown button:hover,.options-dropdown a:hover{background-color:rgb(187 53 52 / 96%);color:white}.options-button{width:100%;text-align:left}#locales{position:relative}#locales button{width:100%;text-align:left;height:4rem}#locales button:hover{opacity:0.5}#locales-img{position:relative;top:0rem;height:2rem;margin-left:1.2rem}@media only screen and (min-width: 1200px){#navbar{position:relative;width:min(100%,116rem);left:50%;transform:translateX(-50%);padding-right:4rem;padding-left:4rem}#nav{max-height:none;top:0;position:relative;float:right;width:fit-content;background-color:transparent;overflow:visible}#side-menu:checked~nav{padding-top:0}#menu li{float:left}#menu>li>a:hover,.options-button:hover,#navbar-logo-text:hover{color:rgb(127, 127, 127)}#menu>li>a,.options-button{padding:0.9rem;padding-top:1.9rem;padding-bottom:1.9rem}#hamb{display:none}#locales{position:relative;margin-right:1.8rem}#locales-img{top:0.9rem}}</style>",t(this,{target:this.shadowRoot,props:n(this.attributes),customElement:!0},M,L,i,{},null),e&&e.target&&o(e.target,this,e.anchor)}}customElements.define("navbar-component",O);export{O as default};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import { S as SvelteElement, i as init, a as attribute_to_object, b as insert_dev, s as safe_not_equal, d as dispatch_dev, v as validate_slots, w as validate_store, x as component_subscribe, o as onMount, g as getContext, e as globals, A as validate_each_argument, y as empty, n as noop, p as detach_dev, q as binding_callbacks, f as element, h as space, B as text, k as attr_dev, j as add_location, u as src_url_equal, l as append_dev, m as listen_dev, C as set_data_dev, D as destroy_each, r as run_all } from './index-122ecbb4.js';
+import { w as writable } from './index-fb9750f3.js';
+import { loadLocaleContent, locales } from '../../../../../../../../../js/libraries/serverTools.js';
+
+/* src\navbar\navbar-component.svelte generated by Svelte v3.52.0 */
+
+const { Object: Object_1 } = globals;
+const file = "src\\navbar\\navbar-component.svelte";
+
+function get_each_context(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[23] = list[i][0];
+	child_ctx[24] = list[i][1];
+	return child_ctx;
+}
+
+// (97:4) {#if Object.keys($content).length!=0}
+function create_if_block(ctx) {
+	let header;
+	let input;
+	let t0;
+	let label;
+	let span0;
+	let t1;
+	let a0;
+	let img0;
+	let img0_src_value;
+	let t2;
+	let span1;
+	let raw_value = /*$content*/ ctx[5].orgName + "";
+	let t3;
+	let nav;
+	let ul;
+	let li0;
+	let a1;
+	let t4_value = /*$content*/ ctx[5].joinUs + "";
+	let t4;
+	let t5;
+	let li1;
+	let a2;
+	let t6_value = /*$content*/ ctx[5].manifesto + "";
+	let t6;
+	let t7;
+	let li2;
+	let button0;
+	let t8_value = /*$content*/ ctx[5].initiatives + "";
+	let t8;
+	let t9;
+	let div0;
+	let a3;
+	let t10_value = /*$content*/ ctx[5].groups + "";
+	let t10;
+	let t11;
+	let a4;
+	let t12_value = /*$content*/ ctx[5].communes + "";
+	let t12;
+	let t13;
+	let a5;
+	let t14_value = /*$content*/ ctx[5].cooperatives + "";
+	let t14;
+	let t15;
+	let a6;
+	let t16_value = /*$content*/ ctx[5].parties + "";
+	let t16;
+	let t17;
+	let a7;
+	let t18_value = /*$content*/ ctx[5].partners + "";
+	let t18;
+	let t19;
+	let li3;
+	let button1;
+	let picture;
+	let source0;
+	let t20;
+	let source1;
+	let t21;
+	let img1;
+	let t22;
+	let div1;
+	let mounted;
+	let dispose;
+	let each_value = Object.entries(locales);
+	validate_each_argument(each_value);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+	}
+
+	const block = {
+		c: function create() {
+			header = element("header");
+			input = element("input");
+			t0 = space();
+			label = element("label");
+			span0 = element("span");
+			t1 = space();
+			a0 = element("a");
+			img0 = element("img");
+			t2 = space();
+			span1 = element("span");
+			t3 = space();
+			nav = element("nav");
+			ul = element("ul");
+			li0 = element("li");
+			a1 = element("a");
+			t4 = text(t4_value);
+			t5 = space();
+			li1 = element("li");
+			a2 = element("a");
+			t6 = text(t6_value);
+			t7 = space();
+			li2 = element("li");
+			button0 = element("button");
+			t8 = text(t8_value);
+			t9 = space();
+			div0 = element("div");
+			a3 = element("a");
+			t10 = text(t10_value);
+			t11 = space();
+			a4 = element("a");
+			t12 = text(t12_value);
+			t13 = space();
+			a5 = element("a");
+			t14 = text(t14_value);
+			t15 = space();
+			a6 = element("a");
+			t16 = text(t16_value);
+			t17 = space();
+			a7 = element("a");
+			t18 = text(t18_value);
+			t19 = space();
+			li3 = element("li");
+			button1 = element("button");
+			picture = element("picture");
+			source0 = element("source");
+			t20 = space();
+			source1 = element("source");
+			t21 = space();
+			img1 = element("img");
+			t22 = space();
+			div1 = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			attr_dev(input, "type", "checkbox");
+			attr_dev(input, "id", "side-menu");
+			add_location(input, file, 99, 12, 3170);
+			attr_dev(span0, "id", "hamb-line");
+			add_location(span0, file, 100, 45, 3301);
+			attr_dev(label, "id", "hamb");
+			attr_dev(label, "for", "side-menu");
+			add_location(label, file, 100, 12, 3268);
+			if (!src_url_equal(img0.src, img0_src_value = "/img/common/flag.png")) attr_dev(img0, "src", img0_src_value);
+			attr_dev(img0, "id", "navbar-logo");
+			attr_dev(img0, "alt", "logo");
+			add_location(img0, file, 103, 16, 3443);
+			attr_dev(span1, "id", "navbar-logo-text");
+			add_location(span1, file, 104, 16, 3521);
+			attr_dev(a0, "id", "logo-container");
+			attr_dev(a0, "href", "/" + /*locale*/ ctx[8] + "/");
+			add_location(a0, file, 102, 12, 3378);
+			attr_dev(a1, "href", "/" + /*locale*/ ctx[8] + "/join-us");
+			add_location(a1, file, 109, 24, 3733);
+			add_location(li0, file, 109, 20, 3729);
+			attr_dev(a2, "href", "/" + /*locale*/ ctx[8] + "/manifesto");
+			add_location(a2, file, 110, 24, 3817);
+			add_location(li1, file, 110, 20, 3813);
+			attr_dev(button0, "class", "options-button");
+			add_location(button0, file, 114, 24, 4129);
+			attr_dev(a3, "href", "/" + /*locale*/ ctx[8] + "/groups");
+			add_location(a3, file, 116, 28, 4406);
+			attr_dev(a4, "href", "/" + /*locale*/ ctx[8] + "/communes");
+			add_location(a4, file, 117, 28, 4488);
+			attr_dev(a5, "href", "/" + /*locale*/ ctx[8] + "/cooperatives");
+			add_location(a5, file, 118, 28, 4574);
+			attr_dev(a6, "href", "/" + /*locale*/ ctx[8] + "/parties");
+			add_location(a6, file, 119, 28, 4668);
+			attr_dev(a7, "href", "/" + /*locale*/ ctx[8] + "/partners");
+			add_location(a7, file, 120, 28, 4752);
+			attr_dev(div0, "class", "options-dropdown");
+			add_location(div0, file, 115, 24, 4314);
+			attr_dev(li2, "id", "options-container");
+			add_location(li2, file, 113, 20, 4076);
+			attr_dev(source0, "srcset", "/img/common/globe.webp");
+			add_location(source0, file, 126, 32, 5102);
+			attr_dev(source1, "srcset", "/img/common/globe.png");
+			add_location(source1, file, 127, 32, 5176);
+			attr_dev(img1, "id", "locales-img");
+			attr_dev(img1, "alt", "globe");
+			add_location(img1, file, 128, 32, 5249);
+			add_location(picture, file, 125, 28, 5059);
+			add_location(button1, file, 124, 24, 4932);
+			attr_dev(li3, "id", "locales");
+			add_location(li3, file, 123, 20, 4889);
+			attr_dev(div1, "class", "options-dropdown");
+			add_location(div1, file, 132, 20, 5407);
+			attr_dev(ul, "id", "menu");
+			add_location(ul, file, 108, 16, 3693);
+			attr_dev(nav, "id", "nav");
+			add_location(nav, file, 107, 12, 3661);
+			attr_dev(header, "id", "navbar");
+			add_location(header, file, 97, 8, 3080);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, header, anchor);
+			append_dev(header, input);
+			/*input_binding*/ ctx[12](input);
+			append_dev(header, t0);
+			append_dev(header, label);
+			append_dev(label, span0);
+			append_dev(header, t1);
+			append_dev(header, a0);
+			append_dev(a0, img0);
+			append_dev(a0, t2);
+			append_dev(a0, span1);
+			span1.innerHTML = raw_value;
+			/*span1_binding*/ ctx[13](span1);
+			append_dev(header, t3);
+			append_dev(header, nav);
+			append_dev(nav, ul);
+			append_dev(ul, li0);
+			append_dev(li0, a1);
+			append_dev(a1, t4);
+			append_dev(ul, t5);
+			append_dev(ul, li1);
+			append_dev(li1, a2);
+			append_dev(a2, t6);
+			append_dev(ul, t7);
+			append_dev(ul, li2);
+			append_dev(li2, button0);
+			append_dev(button0, t8);
+			append_dev(li2, t9);
+			append_dev(li2, div0);
+			append_dev(div0, a3);
+			append_dev(a3, t10);
+			append_dev(div0, t11);
+			append_dev(div0, a4);
+			append_dev(a4, t12);
+			append_dev(div0, t13);
+			append_dev(div0, a5);
+			append_dev(a5, t14);
+			append_dev(div0, t15);
+			append_dev(div0, a6);
+			append_dev(a6, t16);
+			append_dev(div0, t17);
+			append_dev(div0, a7);
+			append_dev(a7, t18);
+			/*div0_binding*/ ctx[16](div0);
+			append_dev(ul, t19);
+			append_dev(ul, li3);
+			append_dev(li3, button1);
+			append_dev(button1, picture);
+			append_dev(picture, source0);
+			append_dev(picture, t20);
+			append_dev(picture, source1);
+			append_dev(picture, t21);
+			append_dev(picture, img1);
+			append_dev(ul, t22);
+			append_dev(ul, div1);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].m(div1, null);
+			}
+
+			/*div1_binding*/ ctx[20](div1);
+			/*header_binding*/ ctx[21](header);
+
+			if (!mounted) {
+				dispose = [
+					listen_dev(input, "click", /*changeNavbar*/ ctx[9], false, false, false),
+					listen_dev(button0, "click", /*click_handler*/ ctx[14], false, false, false),
+					listen_dev(button0, "focusout", /*focusout_handler*/ ctx[15], false, false, false),
+					listen_dev(button1, "click", /*click_handler_1*/ ctx[17], false, false, false),
+					listen_dev(button1, "focusout", /*focusout_handler_1*/ ctx[18], false, false, false)
+				];
+
+				mounted = true;
+			}
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*$content*/ 32 && raw_value !== (raw_value = /*$content*/ ctx[5].orgName + "")) span1.innerHTML = raw_value;			if (dirty & /*$content*/ 32 && t4_value !== (t4_value = /*$content*/ ctx[5].joinUs + "")) set_data_dev(t4, t4_value);
+			if (dirty & /*$content*/ 32 && t6_value !== (t6_value = /*$content*/ ctx[5].manifesto + "")) set_data_dev(t6, t6_value);
+			if (dirty & /*$content*/ 32 && t8_value !== (t8_value = /*$content*/ ctx[5].initiatives + "")) set_data_dev(t8, t8_value);
+			if (dirty & /*$content*/ 32 && t10_value !== (t10_value = /*$content*/ ctx[5].groups + "")) set_data_dev(t10, t10_value);
+			if (dirty & /*$content*/ 32 && t12_value !== (t12_value = /*$content*/ ctx[5].communes + "")) set_data_dev(t12, t12_value);
+			if (dirty & /*$content*/ 32 && t14_value !== (t14_value = /*$content*/ ctx[5].cooperatives + "")) set_data_dev(t14, t14_value);
+			if (dirty & /*$content*/ 32 && t16_value !== (t16_value = /*$content*/ ctx[5].parties + "")) set_data_dev(t16, t16_value);
+			if (dirty & /*$content*/ 32 && t18_value !== (t18_value = /*$content*/ ctx[5].partners + "")) set_data_dev(t18, t18_value);
+
+			if (dirty & /*changeLocale, Object, locales*/ 2048) {
+				each_value = Object.entries(locales);
+				validate_each_argument(each_value);
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div1, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(header);
+			/*input_binding*/ ctx[12](null);
+			/*span1_binding*/ ctx[13](null);
+			/*div0_binding*/ ctx[16](null);
+			destroy_each(each_blocks, detaching);
+			/*div1_binding*/ ctx[20](null);
+			/*header_binding*/ ctx[21](null);
+			mounted = false;
+			run_all(dispose);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(97:4) {#if Object.keys($content).length!=0}",
+		ctx
+	});
+
+	return block;
+}
+
+// (134:24) {#each Object.entries(locales) as [loc,name]}
+function create_each_block(ctx) {
+	let button;
+	let t_value = /*name*/ ctx[24] + "";
+	let t;
+	let mounted;
+	let dispose;
+
+	function click_handler_2() {
+		return /*click_handler_2*/ ctx[19](/*loc*/ ctx[23]);
+	}
+
+	const block = {
+		c: function create() {
+			button = element("button");
+			t = text(t_value);
+			add_location(button, file, 134, 28, 5566);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, button, anchor);
+			append_dev(button, t);
+
+			if (!mounted) {
+				dispose = listen_dev(button, "click", click_handler_2, false, false, false);
+				mounted = true;
+			}
+		},
+		p: function update(new_ctx, dirty) {
+			ctx = new_ctx;
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(button);
+			mounted = false;
+			dispose();
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_each_block.name,
+		type: "each",
+		source: "(134:24) {#each Object.entries(locales) as [loc,name]}",
+		ctx
+	});
+
+	return block;
+}
+
+function create_fragment(ctx) {
+	let show_if = Object.keys(/*$content*/ ctx[5]).length != 0;
+	let if_block_anchor;
+	let if_block = show_if && create_if_block(ctx);
+
+	const block = {
+		c: function create() {
+			if (if_block) if_block.c();
+			if_block_anchor = empty();
+			this.c = noop;
+		},
+		l: function claim(nodes) {
+			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+		},
+		m: function mount(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, if_block_anchor, anchor);
+		},
+		p: function update(ctx, [dirty]) {
+			if (dirty & /*$content*/ 32) show_if = Object.keys(/*$content*/ ctx[5]).length != 0;
+
+			if (show_if) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+		},
+		i: noop,
+		o: noop,
+		d: function destroy(detaching) {
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(if_block_anchor);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_fragment.name,
+		type: "component",
+		source: "",
+		ctx
+	});
+
+	return block;
+}
+
+function hide(dropdown) {
+	let callback = () => {
+		dropdown.style.display = "none";
+	};
+
+	setTimeout(callback, 100);
+}
+
+function instance($$self, $$props, $$invalidate) {
+	let $content;
+	let { $$slots: slots = {}, $$scope } = $$props;
+	validate_slots('navbar-component', slots, []);
+	let hambInput;
+	let navbar;
+	let localesDropdown;
+	let initiativesDropdown;
+	let loaded = writable(0);
+	let content = writable({});
+	validate_store(content, 'content');
+	component_subscribe($$self, content, value => $$invalidate(5, $content = value));
+	let logoText;
+	let locale = loadLocaleContent(content, "navbar-component", loaded);
+
+	function changeNavbar() {
+		if (hambInput.checked) {
+			$$invalidate(1, navbar.style.background = "white", navbar);
+		} else {
+			setTimeout(
+				() => {
+					$$invalidate(1, navbar.style.position = "relative", navbar);
+					$$invalidate(1, navbar.style.background = "", navbar);
+					$$invalidate(1, navbar.style.boxShadow = "", navbar);
+				},
+				510
+			);
+		}
+	}
+
+	function showDropdown(dropdown) {
+		let state = dropdown.style.display;
+		$$invalidate(3, initiativesDropdown.style.display = "none", initiativesDropdown);
+		$$invalidate(2, localesDropdown.style.display = "none", localesDropdown);
+
+		if (state == "block") {
+			dropdown.style.display = "none";
+		} else {
+			dropdown.style.display = "block";
+		}
+	}
+
+	function changeLocale(lang) {
+		localStorage.setItem("locale", lang);
+		let locSplit = location.href.split("/");
+		let localesSymbols = Object.keys(locales);
+		locSplit = locSplit.filter(x => !localesSymbols.includes(x));
+		let loc = locSplit.slice(0, locSplit.length - 1).join("/") + "/" + lang + "/" + locSplit[locSplit.length - 1];
+		location.href = loc;
+	}
+
+	function fixHeading() {
+		if (locale == "ru") {
+			let func = () => {
+				if (logoText == undefined) {
+					setTimeout(func, 100);
+				} else {
+					if ((window.innerWidth < 1700 && window.innerWidth > 1400 || window.innerWidth < 400) && logoText.style.lineHeight != "100%") {
+						$$invalidate(4, logoText.style.lineHeight = "120%", logoText);
+						$$invalidate(4, logoText.style.top = "1rem", logoText);
+						$$invalidate(4, logoText.style.width = "16rem", logoText);
+					} else if ((window.innerWidth > 1700 || window.innerWidth > 400 && window.innerWidth < 1400) && logoText.style.lineHeight != "400%") {
+						$$invalidate(4, logoText.style.lineHeight = "400%", logoText);
+						$$invalidate(4, logoText.style.top = "0rem", logoText);
+						$$invalidate(4, logoText.style.width = "auto", logoText);
+					}
+				}
+			};
+
+			func();
+			addEventListener("resize", func);
+		}
+	}
+
+	onMount(() => {
+		fixHeading();
+	});
+
+	const writable_props = [];
+
+	Object_1.keys($$props).forEach(key => {
+		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<navbar-component> was created with unknown prop '${key}'`);
+	});
+
+	function input_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			hambInput = $$value;
+			$$invalidate(0, hambInput);
+		});
+	}
+
+	function span1_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			logoText = $$value;
+			$$invalidate(4, logoText);
+		});
+	}
+
+	const click_handler = () => showDropdown(initiativesDropdown);
+	const focusout_handler = () => hide(initiativesDropdown);
+
+	function div0_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			initiativesDropdown = $$value;
+			$$invalidate(3, initiativesDropdown);
+		});
+	}
+
+	const click_handler_1 = () => showDropdown(localesDropdown);
+	const focusout_handler_1 = () => hide(localesDropdown);
+	const click_handler_2 = loc => changeLocale(loc);
+
+	function div1_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			localesDropdown = $$value;
+			$$invalidate(2, localesDropdown);
+		});
+	}
+
+	function header_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			navbar = $$value;
+			$$invalidate(1, navbar);
+		});
+	}
+
+	$$self.$capture_state = () => ({
+		onMount,
+		getContext,
+		writable,
+		loadLocaleContent,
+		locales,
+		hambInput,
+		navbar,
+		localesDropdown,
+		initiativesDropdown,
+		loaded,
+		content,
+		logoText,
+		locale,
+		changeNavbar,
+		showDropdown,
+		changeLocale,
+		fixHeading,
+		hide,
+		$content
+	});
+
+	$$self.$inject_state = $$props => {
+		if ('hambInput' in $$props) $$invalidate(0, hambInput = $$props.hambInput);
+		if ('navbar' in $$props) $$invalidate(1, navbar = $$props.navbar);
+		if ('localesDropdown' in $$props) $$invalidate(2, localesDropdown = $$props.localesDropdown);
+		if ('initiativesDropdown' in $$props) $$invalidate(3, initiativesDropdown = $$props.initiativesDropdown);
+		if ('loaded' in $$props) $$invalidate(6, loaded = $$props.loaded);
+		if ('content' in $$props) $$invalidate(7, content = $$props.content);
+		if ('logoText' in $$props) $$invalidate(4, logoText = $$props.logoText);
+		if ('locale' in $$props) $$invalidate(8, locale = $$props.locale);
+	};
+
+	if ($$props && "$$inject" in $$props) {
+		$$self.$inject_state($$props.$$inject);
+	}
+
+	return [
+		hambInput,
+		navbar,
+		localesDropdown,
+		initiativesDropdown,
+		logoText,
+		$content,
+		loaded,
+		content,
+		locale,
+		changeNavbar,
+		showDropdown,
+		changeLocale,
+		input_binding,
+		span1_binding,
+		click_handler,
+		focusout_handler,
+		div0_binding,
+		click_handler_1,
+		focusout_handler_1,
+		click_handler_2,
+		div1_binding,
+		header_binding
+	];
+}
+
+class Navbar_component extends SvelteElement {
+	constructor(options) {
+		super();
+		this.shadowRoot.innerHTML = `<style>@import '/css/common.css';#navbar{position:relative;top:0;width:min(100%,116rem);z-index:1000000000;height:5.26rem;padding-left:0rem;padding-right:0rem}#navbar *{font-family:var(--sans-serif, sans-serif)}#logo-container{display:flex;position:absolute;margin-left:1rem;height:100%;max-height:5.26rem;color:black;z-index:1;flex-direction:row;flex-wrap:nowrap;align-items:center}#navbar-logo{height:3.5rem;width:3.5rem;object-fit:contain;border-radius:10rem}#navbar-logo-text{position:relative;word-wrap:normal;height:100%;line-height:400%;font-size:1.4rem;color:#292222;font-family:var(--sans-serif, sans-serif);font-weight:400;padding-left:1.2rem}#nav{position:fixed;width:100%;height:100%;background-color:white;overflow:hidden;z-index:0}#menu>li>a,.options-button{display:block;padding:1.2rem;padding-top:1rem;padding-bottom:1rem;color:black;font-size:1.4rem}#menu>li>a:active{background-color:#f7aec0}#menu li{list-style-type:none}#nav{max-height:0}#hamb{position:absolute;cursor:pointer;right:0rem;padding:2.8rem 2rem;z-index:9999}#hamb-line{background:black;display:block;height:2px;position:relative;width:24px}#hamb-line::before,#hamb-line::after{background:black;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}#hamb-line::before{top:5px}#hamb-line::after{top:-5px}#side-menu{display:none}#side-menu:checked~nav{display:block;max-height:100%;padding-top:5.625rem}#side-menu:checked~#logo-container{position:fixed}#side-menu:checked~#hamb{position:fixed}#side-menu:checked~#logo-container{position:fixed}#side-menu:checked~#hamb #hamb-line{background:transparent}#side-menu:checked~#hamb #hamb-line::before{transform:rotate(-45deg);top:0}#side-menu:checked~#hamb #hamb-line::after{transform:rotate(45deg);top:0}.options-dropdown{position:absolute;display:none;top:5.6rem;right:1.8rem;border:#404040 solid 0.1rem;background-color:white;z-index:10}.options-dropdown button,.options-dropdown a{display:block;font-family:var(--sans-serif,sans-serif);font-size:1.2rem;width:100%;padding:1rem;text-align:left}.options-dropdown button:hover,.options-dropdown a:hover{background-color:var(--red);color:white}.options-button{width:100%;text-align:left}#locales{position:relative}#locales button{width:100%;text-align:left;height:4rem}#locales button:hover{opacity:0.5}#locales-img{position:relative;top:0rem;height:2rem;margin-left:1.2rem}@media only screen and (min-width: 1200px){#navbar{position:relative;width:min(100%,116rem);left:50%;transform:translateX(-50%);padding-right:4rem;padding-left:4rem}#nav{max-height:none;top:0;position:relative;float:right;width:fit-content;background-color:transparent;overflow:visible}#side-menu:checked~nav{padding-top:0}#menu li{float:left}#menu>li>a:hover,.options-button:hover,#navbar-logo-text:hover{color:rgb(127, 127, 127)}#menu>li>a,.options-button{padding:0.9rem;padding-top:1.9rem;padding-bottom:1.9rem}#hamb{display:none}#locales{position:relative;margin-right:1.8rem}#locales-img{top:0.9rem}}</style>`;
+
+		init(
+			this,
+			{
+				target: this.shadowRoot,
+				props: attribute_to_object(this.attributes),
+				customElement: true
+			},
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{},
+			null
+		);
+
+		if (options) {
+			if (options.target) {
+				insert_dev(options.target, this, options.anchor);
+			}
+		}
+	}
+}
+
+customElements.define("navbar-component", Navbar_component);
+
+export { Navbar_component as default };

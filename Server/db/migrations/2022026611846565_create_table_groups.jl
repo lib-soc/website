@@ -2,6 +2,9 @@ module CreateTableGroups
 
 import SearchLight.Migrations: create_table, column, primary_key, add_index, drop_table
 
+include("../../lib/DatabaseSupport.jl")
+import .DatabaseSupport: add_foreign_key, add_index
+
 function up()
     create_table(:groups) do
         [
@@ -13,8 +16,12 @@ function up()
             column(:latitude, :float)
             column(:longitude, :float)
             column(:members, :int)
+            column(:user_id, :int)
         ]
     end
+
+    add_foreign_key(:groups,:user_id,:users,:id)
+    add_index(:groups, :user_id)
 end
 
 function down()
