@@ -7,3 +7,6 @@ Server/sessions/
 Server/app/resources/emails/credentials.json
 Server/db/connection.yml
 Server/public/assets/groups.json
+Server/public/assets/communes.json
+Server/public/assets/coops.json
+Server/public/assets/parties.json
