@@ -40,8 +40,6 @@ route("/:locale/profile", AuthenticationController.profile, named = :profile)
 
 route("/:locale/groups/*", GroupsController.groups, named = :groups)
 
-route("/:locale/groups-add/*", GroupsController.groups_add, named = :groups_add)
-
 route("/:locale/groups-add-post/*", GroupsController.groups_add_post, method = POST, named = :groups_add_post)
 
 route("/:locale/get-user-groups/*", GroupsController.get_user_groups, named = :get_user_groups)
