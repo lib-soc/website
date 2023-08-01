@@ -1,4 +1,4 @@
-module CreateTableGroupsRequests
+module CreateTableCoopsRequests
 
 import SearchLight.Migrations: create_table, column, primary_key, add_index, drop_table
 
