@@ -36,6 +36,8 @@ route("/:locale/email-confirmation", AuthenticationController.email_confirmation
 
 route("/:locale/profile", AuthenticationController.profile, named = :profile)
 
+route("/:locale/reset-password", AuthenticationController.reset_password, named = :reset_password)
+
 #---Groups----------------------------------------------------------
 
 route("/:locale/groups/*", GroupsController.groups, named = :groups)

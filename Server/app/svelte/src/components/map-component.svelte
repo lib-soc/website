@@ -15,7 +15,7 @@
     let mapContainer
     
     function createMap(center,zoom) {
-        let map = L.map(mapContainer, {
+        map = L.map(mapContainer, {
             center: center,
             zoom: zoom,
         });

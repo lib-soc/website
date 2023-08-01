@@ -85,6 +85,17 @@ const auth_info = Dict(
     )
 )
 
+const reset_password_info = Dict(
+    "en" => Dict(
+        :title => "LibSoc - Reset password",
+        :description => ""
+    ),
+    "ru" => Dict(
+        :title => "LibSoc - Восстановление пароля",
+        :description => ""
+    )
+)
+
 
 #---Routing functions---------------------------------------------------
 
@@ -93,6 +104,7 @@ const dict_layouts = Dict(
     :auth => generate_layout_html("main",controller,"auth",libraries=["GoogleAuth"]),
     :profile => generate_layout_html("main",controller,"profile",libraries=["Leaflet"]),
     :email_confirmation => generate_layout_html("main",controller,"email_confirmation"),
+    :reset_password => generate_layout_html("main",controller,"reset_password")
 )
 
 function auth()
@@ -117,6 +129,15 @@ function email_confirmation()
     html(:authentication,:email_confirmation, layout = dict_layouts[:email_confirmation], context = @__MODULE__,
         title = "Chiron | Email Confirmation",
         description = ""
+    )
+end
+
+function reset_password()
+    locale = get_locale()
+    set_cookies(params())
+    html(:authentication,:reset_password, layout = dict_layouts[:reset_password], context = @__MODULE__,
+        title = reset_password_info[locale][:title],
+        description = reset_password_info[locale][:description]
     )
 end
 

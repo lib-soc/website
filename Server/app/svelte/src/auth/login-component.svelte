@@ -25,6 +25,7 @@
     let googleButton
 
     let parentProps = getContext("auth")
+    let locale = "en"
 
     function renderGoogle() {
         if (parentProps.googleInit) {
@@ -80,7 +81,7 @@
         <input bind:this={rememberMe} type="checkbox" id="remember-me-checkbox"><label id="remember-me-label" for="passwordInput">remember me</label>
     </div>
     <button class="auth-button" on:click="{() => AuthTools.login(msgs,inputs)}">Log in</button>
-    <a id="forgot-password" href="forgot-password"></a>
+    <a id="forgot-password" href={"/"+locale+"/reset-password"}>Forgot password?</a>
     <!--
     <hr class="auth-line">
     <div class="auth-methods-group">
