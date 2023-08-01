@@ -43,7 +43,10 @@
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
-        addMarkersEntries(entries,entriesByCountry,map,content,locale,addGroupPinContent,"green")
+        let options = {
+            enableCountryGrouping: true,
+        }
+        addMarkersEntries(entries,entriesByCountry,map,content,locale,addGroupPinContent,"green",options)
     }
 
     function getCountry(x) {
