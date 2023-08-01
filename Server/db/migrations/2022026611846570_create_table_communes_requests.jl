@@ -1,4 +1,4 @@
-module CreateTablePartiesRequests
+module CreateTableCommunesRequests
 
 import SearchLight.Migrations: create_table, column, primary_key, add_index, drop_table
 
@@ -7,7 +7,7 @@ using .DatabaseSupport
 import .DatabaseSupport: set_default
 
 function up()
-    create_table(:parties_requests) do
+    create_table(:communes_requests) do
         [
             primary_key()
             column(:id_given, :integer)
@@ -23,12 +23,12 @@ function up()
         ]
     end
 
-    set_default("parties_requests","verified",false)
-    set_default("parties_requests","added",false)
+    set_default("communes_requests","verified",false)
+    set_default("communes_requests","added",false)
 end
 
 function down()
-    drop_table(:parties_requests)
+    drop_table(:communes_requests)
 end
 
 end
