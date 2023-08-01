@@ -6,7 +6,7 @@ include("../../lib/DatabaseSupport.jl")
 using .DatabaseSupport
 
 function up()
-    create_table(:groups_requests) do
+    create_table(:cooperatives_requests) do
         [
             primary_key()
             column(:id_given, :integer)
@@ -21,12 +21,12 @@ function up()
         ]
     end
 
-    set_default("groups_requests","verified",false)
-    set_default("groups_requests","added",false)
+    set_default("cooperatives_requests","verified",false)
+    set_default("cooperatives_requests","added",false)
 end
 
 function down()
-    drop_table(:groups_requests)
+    drop_table(:cooperatives_requests)
 end
 
 end
