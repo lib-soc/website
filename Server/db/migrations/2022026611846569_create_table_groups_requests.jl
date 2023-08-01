@@ -18,9 +18,7 @@ function up()
             column(:contact, :string)
             column(:latitude, :float)
             column(:longitude, :float)
-            column(:longitude, :float)
             column(:members,:integer)
-            column(:added, :bool)
             column(:status,:integer)
         ]
     end
