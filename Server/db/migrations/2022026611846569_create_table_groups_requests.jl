@@ -21,7 +21,7 @@ function up()
             column(:longitude, :float)
             column(:members,:integer)
             column(:added, :bool)
-            column(:status,:Integer)
+            column(:status,:integer)
         ]
     end
 
