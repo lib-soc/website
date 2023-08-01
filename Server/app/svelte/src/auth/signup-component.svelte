@@ -109,7 +109,7 @@
     <div id="remember-me">
         <input bind:this={rememberMe} type="checkbox" id="remember-me-checkbox"><label id="remember-me-label" for="passwordInput">remember me</label>
     </div>
-    <button class="auth-button" on:click="{showDialog}">Sign up</button> <!--() => AuthTools.signup(msgs,inputs,AuthTools.toLandingPage)-->
+    <button class="auth-button" on:click="{AuthTools.signup(msgs,inputs,AuthTools.toLandingPage)}">Sign up</button> <!--() => AuthTools.signup(msgs,inputs,AuthTools.toLandingPage)-->
     <p id="forgot-password"></p>
     <!--
     <hr class="auth-line">

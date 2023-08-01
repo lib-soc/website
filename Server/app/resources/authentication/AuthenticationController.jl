@@ -140,7 +140,6 @@ function register()
             password = data["password"] |> Users.hash_password,
             ) |> save!
         authenticate(user.id, GenieSession.session(params()))
-        assign_role(user, findone(Role, name = "free"))
         confirmation_code = randstring('0':'9', 5)
         user.confirmation_code = confirmation_code
         save(user)
