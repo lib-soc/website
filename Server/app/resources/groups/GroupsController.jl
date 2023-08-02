@@ -232,6 +232,7 @@ function approve_request()
     update_table("groups_requests",Dict("status" => 1), where_data=["group_id" => group_id, "user_id" => data["user_id"]])
     dict_users_groups = Dict("user_id" => data["user_id"], "group_id" => group_id)
     insert_into_table("users_groups",dict_users_groups)
+    compile("groups")
     return nothing
 end
 
@@ -256,6 +257,7 @@ function add_verified_groups()
     dict_users_groups = Dict("user_id" => user_id, "group_id" => group_id)
     insert_into_table("users_groups",dict_users_groups)
     delete_from_table("groups_requests",["user_id" => user_id])
+    compile("groups")
 end
 
 function changeMemberCount()
@@ -264,6 +266,7 @@ function changeMemberCount()
     group_id = isempty(groups_ids) ? nothing : groups_ids[1]
     data = copy(jsonpayload())
     update_table("groups",data, where_data=["id" => group_id])
+    compile("groups")
 end
 
 function change_group()
@@ -281,6 +284,7 @@ function change_group()
         end
         if !isempty(data_new)
             update_table("groups",data_new, where_data=["id" => group_id])
+            compile("groups")
         end
     end
     return nothing

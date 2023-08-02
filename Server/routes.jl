@@ -56,8 +56,6 @@ route("/:locale/group-change/*", GroupsController.change_group, method = POST, n
 
 route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
 
-route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
-
 #---Coops----------------------------------------------------------
 
 route("/:locale/cooperatives/*", CooperativesController.cooperatives, named = :cooperatives)
