@@ -248,15 +248,17 @@ end
 function add_verified_groups()
     groups_create_requests_verified = select_from_table("groups_requests" => ["*"], where_data = ["group_id" => nothing, "status" => 1])
     data = Dict(zip(names(groups_create_requests_verified),groups_create_requests_verified[end,:]))
-    user_id = data["user_id"]
-    delete!(data,"group_id")
-    delete!(data,"user_id")
-    delete!(data,"id")
-    delete!(data,"status")
-    group_id = insert_into_table("groups",data, "RETURNING id")[1,1]
-    dict_users_groups = Dict("user_id" => user_id, "group_id" => group_id)
-    insert_into_table("users_groups",dict_users_groups)
-    delete_from_table("groups_requests",["user_id" => user_id])
+    if size(data,1)!=0
+        user_id = data["user_id"]
+        delete!(data,"group_id")
+        delete!(data,"user_id")
+        delete!(data,"id")
+        delete!(data,"status")
+        group_id = insert_into_table("groups",data, "RETURNING id")[1,1]
+        dict_users_groups = Dict("user_id" => user_id, "group_id" => group_id)
+        insert_into_table("users_groups",dict_users_groups)
+        delete_from_table("groups_requests",["user_id" => user_id])
+    end
     compile("groups")
 end
 
