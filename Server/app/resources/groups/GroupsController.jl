@@ -247,8 +247,8 @@ end
 
 function add_verified_groups()
     groups_create_requests_verified = select_from_table("groups_requests" => ["*"], where_data = ["group_id" => nothing, "status" => 1])
-    data = Dict(zip(names(groups_create_requests_verified),groups_create_requests_verified[end,:]))
-    if size(data,1)!=0
+    if size(groups_create_requests_verified,1)!=0
+        data = Dict(zip(names(groups_create_requests_verified),groups_create_requests_verified[end,:]))
         user_id = data["user_id"]
         delete!(data,"group_id")
         delete!(data,"user_id")
