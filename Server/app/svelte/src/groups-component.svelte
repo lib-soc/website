@@ -81,7 +81,13 @@
                             <div class="location-info">
                                 <p><b>{$content.location}: </b>{getAddress(entry)}</p>
                                 <p><b>{$content.members}: </b>{entry.members}</p>
-                                <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
+                                {#if entry.contact.includes("@")}
+                                    <p><b>{$content.contact}: </b><a href={"mailto:" + entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
+                                {:else if entry.contact.includes("http")}
+                                    <p><b>{$content.contact}: </b><a href={entry.contact} target=;_blank; rel=noreferrer>{entry.contact}</a></p>
+                                {:else}
+                                    <p><b>{$content.contact}: </b>{entry.contact}</p>
+                                {/if}
                             </div>
                         {/each}
                     </div>
