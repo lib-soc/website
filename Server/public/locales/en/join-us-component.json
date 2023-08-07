@@ -30,5 +30,6 @@
     "market": "Market",
     "workers": "Workers",
     "description": "Description",
-    "website": "Website"
+    "website": "Website",
+    "map-prompt": "Want to appear on our map? Sign up and go to your profile!"
 }

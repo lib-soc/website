@@ -105,6 +105,7 @@
                 </div>
                 <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
                 <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
+                <p id="add-prompt">{$content["map-prompt"]}</p>
             </div>
         </div>
     {/if}
@@ -113,6 +114,10 @@
 
 <style>
     @import '/css/common.css';
+
+    #add-prompt {
+        margin-bottom: 2rem;
+    }
 
     #entities-list li {
         list-style: none;
@@ -179,7 +184,7 @@
     #map {
         --height: 30rem;
         --width: 100%;
-        --margin-bottom: 3rem;
+        --margin-bottom: 0.5rem;
     }
 
     #call-to-action-list > ol>li {
