@@ -171,13 +171,26 @@
     <div>
         <div id="verifiedDiv">
             <span>Verified:</span>
-            <span style="color: {user.verified ? "green" : "red"}">{user.verified}</span>
+            <span style="color: {user.verified ? "green" : "red"}">{user.verified}
+                {#if !user.verified}
+                    <span id="verify-span">(go <a href="https://discord.gg/Qk8KUk787z">here</a>)</span>
+                {/if}
+            </span>
         </div>
     </div>
 </section>
 
 <style>
     @import '/css/common.css';
+
+    #verify-span {
+        color: inherit;
+    }
+
+    #verify-span a {
+        color: inherit;
+        text-decoration: underline;
+    }
         
     #verifiedDiv {
         display: inline;
