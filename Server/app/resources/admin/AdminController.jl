@@ -8,7 +8,7 @@ import Server.DatabaseSupport: select_from_table, insert_into_table, delete_from
 
 controller = "admin"
 dict_layouts = Dict(
-    :admin_panel => generate_layout_html("main",controller,"admin-panel"),
+    :admin_panel => generate_layout_html("main",controller,"admin_panel"),
 )
 
 #---Page info-----------------------------------------------------
