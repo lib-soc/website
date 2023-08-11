@@ -1,6 +1,6 @@
 
-using Genie.Router, Genie.Requests, Genie.Renderer.Json, JSON3, GenieAuthentication
-using Server.GroupsController
+using Genie.Router, Genie.Requests, Genie.Renderer.Json, JSON3, GenieAuthentication, GenieAuthorisation
+using Server.GroupsController, Server.AdminController
 
 #---Basic-----------------------------------------------------------
 
@@ -11,6 +11,16 @@ route("/:locale/manifesto/*", BasicController.manifesto, named = :manifest)
 route("/:locale/join-us/*", BasicController.join_us, named = :join_us)
 
 route("/:locale/political-compass/*", BasicController.political_compass, named = :political_compass)
+
+#---Admin panel------------------------------------------------------
+
+route("/:locale/bread/*", AdminController.admin_panel, named = :admin_panel)
+
+route("/:locale/get-unverified-users/*", AdminController.get_unverified_users, named = :get_unverified_users)
+
+route("/:locale/verify/*", AdminController.verify, method = POST, named=:verify)
+
+route("/:locale/add-verified-groups/*", AdminController.add_verified_groups, named = :add_verified_groups)
 
 #---Authentication and such------------------------------------------
 
@@ -53,8 +63,6 @@ route("/:locale/group-approve-request/*", GroupsController.approve_request, meth
 route("/:locale/group-reject-request/*", GroupsController.reject_request, method = POST, named = :group_reject_request)
 
 route("/:locale/group-change/*", GroupsController.change_group, method = POST, named = :group_change)
-
-route("/:locale/add-verified-groups/*", GroupsController.add_verified_groups, named = :add_verified_groups)
 
 #---Coops----------------------------------------------------------
 

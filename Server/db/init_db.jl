@@ -25,6 +25,9 @@ SearchLight.Configuration.load() |> SearchLight.connect
 #SearchLight.Migration.all_up!!(context=Server)
 #SearchLight.Migration.status()
 
+
+#---Create tables----------------------------------------------------
+
 p = "db/migrations/"
 files = readdir(p)
 files = files[map(x -> x[end-1:end].=="jl", files)]
@@ -39,3 +42,23 @@ for f in files
     catch
     end
 end
+
+
+#---Initialize Genie Authorization----------------------------------------------------
+
+using GenieAuthorisation
+using GenieAuthorisation: findone_or_create, save!, findone
+
+# Create roles
+for r in ["admin"]
+    findone_or_create(Role, name = r) |> save!
+end
+
+# Create permissions
+for p in ["verification"]
+    findone_or_create(Permission, name = p) |> save!
+end
+
+assign_permission(findone(Role, name = "admin"), findone(Permission, name = "verification"))
+
+# assign_role(findone(User, email = "user@user"), findone(Role, name = "admin"))
