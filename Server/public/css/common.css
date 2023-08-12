@@ -272,6 +272,11 @@ a:focus { text-decoration: none; }
     line-height: 140%;
 }
 
+font {
+    font-size: inherit;
+    font-family: inherit;
+}
+
 /*---Button/input related--------------------------------------------------------------*/
 
 button {
