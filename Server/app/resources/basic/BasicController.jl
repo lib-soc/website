@@ -7,7 +7,7 @@ using Server.DatabaseSupport, Server.TemplateEditor
 
 controller = "basic"
 dict_layouts = Dict(
-    :landing => generate_layout_html("main",controller,"landing",css=["landing"],libraries=["Leaflet"]),
+    :landing => generate_layout_html("main",controller,"landing",css=["landing"],libraries=["Leaflet"],preload=[Dict("path"=>"/img/crowd.webp","type"=>"image")]),
     :manifesto => generate_layout_html("main",controller,"manifesto"),
     :join_us => generate_layout_html("main",controller,"join_us",libraries=["Leaflet"]),
     :compass => generate_layout_html("main",controller,"compass"),

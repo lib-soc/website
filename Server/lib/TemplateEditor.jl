@@ -6,10 +6,10 @@ import Unicode.normalize
 export generate_layout_html
 
 dict_libraries = Dict(
-    "ECharts" => "<script src='https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.js'></script>",
-    "GSAP" => "<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js'></script>",
+    "ECharts" => "<script src='https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.js' defer></script>",
+    "GSAP" => "<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js' defer></script>",
     "Leaflet" => "<link rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' integrity='sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=' crossorigin='' />
-    <script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js' integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=' crossorigin=''></script>"
+    <script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js' integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=' crossorigin='' defer></script>"
 )
 
 function register_components()
@@ -33,7 +33,12 @@ view_filename - a view file name
 css - should be a vector of names of css files
 libraries - should be a vector of names of library names from `dict_libraries`
 """
-function generate_layout_html(template_filename,controller,view_filename; css=nothing, libraries=nothing)
+template_filename,controller,view_filename = "main","basic","landing"
+css=["landing"]
+libraries=["Leaflet"]
+preload=[Dict("path"=>"/img/crowd.webp","type"=>"image")]
+
+function generate_layout_html(template_filename,controller,view_filename; css=nothing, libraries=nothing, preload=nothing)
 
     template_filename = template_filename*".jl.html"
 
@@ -216,10 +221,27 @@ function generate_layout_html(template_filename,controller,view_filename; css=no
         end
     =#
     ind_opening = findfirst("<!--Load components-->",html)[1] - 1
-    ind_closing = findfirst("</head>",html)[1] - 1
+    ind_closing = findfirst("<!--Preload-->",html)[1] - 1
     components_to_add = "\n    <!--Load components-->"
-    for component_name in tags
-        components_to_add = string(components_to_add,"\n    <script type = 'module' src='/js/components/$component_name.js'></script>")
+
+    bools_navbar = contains.(tags,"navbar")
+    bools_footer = contains.(tags,"footer")
+    bools_main = contains.(tags,view_filename)
+    keep_bools = (!).(bools_navbar .| bools_footer .| bools_main)
+
+    navbar_tags = tags[bools_navbar]
+    footer_tags = tags[bools_footer]
+    main_tag = tags[bools_main]
+
+
+    tags = reduce(vcat,[tags[keep_bools],navbar_tags,main_tag,footer_tags])
+    for ind = 1:lastindex(keep_bools)
+        component_name = tags[ind]
+        if (component_name in navbar_tags) || (component_name in footer_tags) || (component_name in main_tag)
+            components_to_add = string(components_to_add,"\n    <script type = 'module' src='/js/components/$component_name.js'></script>")
+        else
+            components_to_add = string(components_to_add,"\n    <script type = 'module' src='/js/components/$component_name.js' defer></script>")
+        end
     end
     html = string(html[1:ind_opening],components_to_add,"\n",html[ind_closing+1:end])
 
@@ -227,7 +249,7 @@ function generate_layout_html(template_filename,controller,view_filename; css=no
     ind_closing = findfirst("<!--Load components-->",html)[1] - 1
     css_to_add = "\n    <!--Load CSS-->"
     for css_name in css_tags
-        css_to_add = string(css_to_add,"\n    <link rel='stylesheet' href='$css_name'>")
+        css_to_add = string(css_to_add,"\n    <link rel='preload' as='style' type='text/css' href='$css_name' onload=\"this.rel='stylesheet'\">")
     end
     html = string(html[1:ind_opening],css_to_add,"\n",html[ind_closing+1:end])
 
@@ -253,6 +275,16 @@ function generate_layout_html(template_filename,controller,view_filename; css=no
         libraries_to_add = string(libraries_to_add,"\n    "*dict_libraries[lib])
     end
     html = string(html[1:ind_opening],libraries_to_add,"\n",html[ind_closing+1:end])
+
+    if !isnothing(preload)
+        ind_opening = findfirst("<!--Preload-->",html)[1] - 1
+        ind_closing = findfirst("</head>",html)[1] - 1
+        preload_to_add = "\n    <!--Preload-->"
+        for preload_data in preload
+            preload_to_add = string(preload_to_add,"\n    <link rel='preload' as='$(preload_data["type"])' href='$(preload_data["path"])'>")
+        end
+        html = string(html[1:ind_opening],preload_to_add,"\n",html[ind_closing+1:end])
+    end
 
     #=
     path = joinpath(savepath,template_filename)

@@ -53,7 +53,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    height: auto;
+    height: 13.2875rem;
     background: var(--gray);
     border-top: var(--red) solid 0.5rem;
 }
