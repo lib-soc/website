@@ -101,7 +101,11 @@
             <label id="hamb" for="side-menu"><span id="hamb-line"></span></label>
             <!-- Logo -->
             <a id=logo-container href={"/" + locale + "/"}>
-                <img src="/img/common/flag.png" id="navbar-logo" alt="logo">
+                <picture>
+                    <source srcset="/img/common/flag.webp">
+                    <source srcset="/img/common/flag.png">
+                    <img id="navbar-logo" alt="logo">
+                </picture>
                 <span bind:this={logoText} id="navbar-logo-text" >{@html $content.orgName}</span>
             </a>
             <!-- Menu -->
