@@ -13,9 +13,9 @@ export function debounce(func, timeout){
 }
 
 export function svgFromObject(object) {
-    var objectDoc = object.contentDocument;
-    var svgItem = objectDoc.querySelector("path");
-    return svgItem
+    var objectDoc = object.contentDocument
+    var svgItems = objectDoc.querySelectorAll("path")
+    return svgItems
 }
 
 export function rem2px(rem) {

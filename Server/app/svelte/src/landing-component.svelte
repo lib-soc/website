@@ -51,11 +51,14 @@
     getData("/assets/communes.json",(response) => callback(response,"communes"))
     getData("/assets/cooperatives.json",(response) => callback(response,"cooperatives"))
     getData("/assets/parties.json",(response) => callback(response,"parties"))
+    getData("/assets/trade-unions.json",(response) => callback(response,"tradeUnions"))
 
     loadLocaleContent(content,"groups-component",loaded)
     loadLocaleContent(content,"communes-component",loaded)
     loadLocaleContent(content,"cooperatives-component",loaded)
     loadLocaleContent(content,"parties-component",loaded)
+    loadLocaleContent(content,"trade-unions-component",loaded)
+
     loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"landing-component",loaded,changeWidth)
     changeWidth(locale)
@@ -66,15 +69,18 @@
             enableCountryGrouping: true,
         }
         let groupsMarkersLayer = addMarkersEntries(entries["groups"],entriesByCountry["groups"],map,content,locale,addGroupPinContent,"green",options)
-        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red",options)
-        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue",options)
         let partiesMarkersLayer = addMarkersEntries(entries["parties"],entriesByCountry["parties"],map,content,locale,addPartyPinContent,"gold",options)
+        let tradeUnionsMarkersLayer = addMarkersEntries(entries["tradeUnions"],entriesByCountry["tradeUnions"],map,content,locale,addPartyPinContent,"violet",options)
+        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue",options)
+        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red",options)
+        
 
         let overlayMaps = {}
         overlayMaps[content.groups] = groupsMarkersLayer
-        overlayMaps[content.communes] = communesMarkersLayer
-        overlayMaps[content.cooperatives] = coopsMarkersLayer
         overlayMaps[content.parties] = partiesMarkersLayer
+        overlayMaps[content.tradeUnions] = tradeUnionsMarkersLayer
+        overlayMaps[content.cooperatives] = coopsMarkersLayer
+        overlayMaps[content.communes] = communesMarkersLayer
         
         L.control.layers(null, overlayMaps).addTo(map)
     }
@@ -85,7 +91,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==10}
+    {#if $loaded==12}
         <div id="container">
             <picture>
                 <source srcset="/img/crowd.webp">
@@ -104,6 +110,11 @@
                         <a href={"/" + locale + "/parties"}><h2>{$content.partiesTitle}</h2></a>
                         <img id="parties-img" src="/img/common/parties.svg" alt="coops">
                         <p>{$content.partiesText}</p>
+                    </div>
+                    <div>
+                        <a href={"/" + locale + "/trade-unions"}><h2>{$content.tradeUnionsTitle}</h2></a>
+                        <img id="trade-unions-img" src="/img/common/trade-unions.svg" alt="trade unions">
+                        <p>{$content.tradeUnionsText}</p>
                     </div>
                     <div>
                         <a href={"/" + locale + "/coops"}><h2>{$content.cooperativesTitle}</h2></a>
@@ -134,7 +145,7 @@
                 </div>
                 -->
                 <h1 id="find-us">{$content.findUs}</h1>
-                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
+                <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)} colors={["#23AC20","#FFD326","#9D35CD","#217BC9","#CA2437"]}></map-component>
                 <h1>{$content.whatNow}</h1>
                 <div id="action-container">
                     <a class="link-button" href={"/" + locale + "/join-us"}>{$content.joinUs}</a>
@@ -188,7 +199,7 @@
         text-align: center;
     }
     
-    #groups-img, #communes-img, #coops-img, #parties-img {
+    #groups-img, #communes-img, #coops-img, #parties-img, #trade-unions-img {
         position: absolute;
         left: 50%;
         transform: translate(-50%);
@@ -198,6 +209,11 @@
     }
 
     #coops-img {
+        margin-top: 0.5rem;
+        height: 7.5rem;
+    }
+
+    #trade-unions-img {
         margin-top: 0.5rem;
         height: 7.5rem;
     }
@@ -230,11 +246,16 @@
     #container-grid {
         display: grid;
         grid-template-columns: var(--grid-width);
-        grid-template-rows: var(--grid-width);
+        grid-template-rows: 100% 100%;
         grid-gap: 4rem;
         row-gap: 2.5rem;
         margin-top: 2rem;
         margin-bottom: 1rem;
+    }
+
+    #container-grid>:last-child {
+        grid-column: 1/span 2;
+
     }
 
     #container-grid > div {

@@ -28,8 +28,6 @@ function up()
 
     add_index(:groups_requests, :user_id)
 
-    set_default("groups_requests","added",false)
-
 end
 
 function down()

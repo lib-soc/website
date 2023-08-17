@@ -6,7 +6,15 @@ export function addGroupPinContent(g,content,locale) {
     for (let field of ["location","members","contact"]) {
         let fieldText = content[field] + ": "
         if (field=="contact") {
-            text += fieldText + "<a href='" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>"
+            if (g.contact.includes("@") && g.contact.trim().split(" ").length==1) {
+                text += fieldText + "<a href='mailto:" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>"
+            }
+            else if (g.contact.includes("http")) {
+                text += fieldText + "<a href='" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>"
+            }
+            else {
+                text += fieldText + g.contact + "<br>"
+            } 
         }
         else if (field=="location") {
             let location = [g.country,g.state,g.town].filter(x => x!=null && x!=undefined)
@@ -169,6 +177,33 @@ export function addPartnersPinContent(g,content,locale) {
         }
         else if (field=="description") {
             text += fieldText + g[field] + "<br>"
+        }
+        else {
+            text += fieldText + g[field] + "<br>"
+        }
+    }
+    return {text,coordinates}
+}
+
+export function addTradeUnionPinContent(g,content,locale) {
+    let coordinates
+    let text = "<b>"+content["TradeUnion"]+"</b><br>"
+    for (let field of ["name","location","members","contact"]) {
+        let fieldText = content[field] + ": "
+        if (field=="contact") {
+            text += fieldText + "<a href='" + g.contact + "' target='_blank' rel=noreferrer>" + g.contact + "</a>"
+        }
+        else if (field=="location") {
+            let location = [g.country,g.state,g.town].filter(x => x!=null && x!=undefined)
+            let locationString
+            if (locale=="en") {
+                locationString = location.map(x => x).join(", ")
+            }
+            else {
+                locationString = location.map(x => translate(content, x)).join(", ")
+            }
+            text += fieldText + locationString + "<br>"
+            coordinates = [g.latitude,g.longitude]
         }
         else {
             text += fieldText + g[field] + "<br>"

@@ -21,6 +21,7 @@
     loadLocaleContent(content,"communes-component",loaded)
     loadLocaleContent(content,"cooperatives-component",loaded)
     loadLocaleContent(content,"parties-component",loaded)
+    loadLocaleContent(content,"trade-unions-component",loaded)
     loadLocaleContent(content,"countries",loaded)
     let locale = loadLocaleContent(content,"join-us-component",loaded)
 
@@ -48,6 +49,7 @@
     getData("/assets/communes.json",(response) => callback(response,"communes"))
     getData("/assets/cooperatives.json",(response) => callback(response,"cooperatives"))
     getData("/assets/parties.json",(response) => callback(response,"parties"))
+    getData("/assets/trade-unions.json",(response) => callback(response,"tradeUnions"))
 
     function mapCallback(createMap,content,locale) {
         let map = createMap([22, 0],2)
@@ -55,15 +57,19 @@
             enableCountryGrouping: true,
         }
         let groupsMarkersLayer = addMarkersEntries(entries["groups"],entriesByCountry["groups"],map,content,locale,addGroupPinContent,"green",options)
-        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red",options)
-        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue",options)
         let partiesMarkersLayer = addMarkersEntries(entries["parties"],entriesByCountry["parties"],map,content,locale,addPartyPinContent,"gold",options)
+        let tradeUnionsMarkersLayer = addMarkersEntries(entries["tradeUnions"],entriesByCountry["tradeUnions"],map,content,locale,addPartyPinContent,"violet",options)
+        let coopsMarkersLayer = addMarkersEntries(entries["cooperatives"],entriesByCountry["cooperatives"],map,content,locale,addCoopPinContent,"blue",options)
+        let communesMarkersLayer = addMarkersEntries(entries["communes"],entriesByCountry["communes"],map,content,locale,addCommunePinContent,"red",options)
+        
 
         let overlayMaps = {}
         overlayMaps[content.groups] = groupsMarkersLayer
-        overlayMaps[content.communes] = communesMarkersLayer
-        overlayMaps[content.cooperatives] = coopsMarkersLayer
         overlayMaps[content.parties] = partiesMarkersLayer
+        overlayMaps[content.tradeUnions] = tradeUnionsMarkersLayer
+        overlayMaps[content.cooperatives] = coopsMarkersLayer
+        overlayMaps[content.communes] = communesMarkersLayer
+        
         L.control.layers(null, overlayMaps).addTo(map)
     }
 
@@ -73,7 +79,7 @@
 </script>
 
 {#key $loaded}
-    {#if $loaded==10}
+    {#if $loaded==12}
         <div id="container">
             <div id="text-container">
                 <h1>{$content.heading}</h1>
@@ -97,13 +103,14 @@
                     <p>{$content.findOur}</p>
                     <ol id="entities-list">
                         <li><a href={"/" + locale + "/groups"}>{$content.group}</a>,</li> 
-                        <li><a href={"/" + locale + "/communes"}>{$content.commune}</a></li> 
-                        <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a> {$content.or}</li>
                         <li><a href={"/" + locale + "/parties"}>{$content.party}</a></li> 
+                        <li><a href={"/" + locale + "/trade-unions"}>{$content.tradeUnion}</a></li> 
+                        <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a> {$content.or}</li>
+                        <li><a href={"/" + locale + "/communes"}>{$content.commune}</a></li> 
                     </ol>
                     <p>{$content.nearYou}</p>
                 </div>
-                <p>{$content.noneNear} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a> {$content.or} <a href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer>{$content.DiscordServer}</a>{$content.helpStart}</p>
+                <p>{$content.noneNear} <a href="https://discord.gg/Qk8KUk787z" target="_blank" rel=noreferrer>{$content.DiscordServer}</a> {$content.or} <a href="https://chat.whatsapp.com/BhnmUNljUxJ2AjeHUwyTKh" target="_blank" rel=noreferrer>{$content.WhatsAppGroup}</a>{$content.helpStart}</p>
                 <map-component id="map" callback={(createMap) => mapCallback(createMap,$content,locale)} colors={["#23AC20","#CA2437","#217BC9","#FFD326"]}></map-component>
                 <p id="add-prompt">{$content["map-prompt"]}</p>
             </div>
@@ -138,13 +145,16 @@
         background-image: url(https://www.libsoc.org/img/common/markers/marker-green.png);
     }
     #entities-list li:nth-of-type(2):before {
-        background-image: url(https://www.libsoc.org/img/common/markers/marker-red.png);
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-gold.png);
     }
     #entities-list li:nth-of-type(3):before {
-        background-image: url(https://www.libsoc.org/img/common/markers/marker-blue.png);
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-violet.png);
     }
     #entities-list li:nth-of-type(4):before {
-        background-image: url(https://www.libsoc.org/img/common/markers/marker-gold.png);
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-blue.png);
+    }
+    #entities-list li:nth-of-type(5):before {
+        background-image: url(https://www.libsoc.org/img/common/markers/marker-red.png);
     }
 
     #entities-list li::marker {

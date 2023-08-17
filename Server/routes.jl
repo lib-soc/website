@@ -88,6 +88,14 @@ route("/:locale/parties-add/*", PartiesController.parties_add, named = :parties_
 
 route("/:locale/parties-add-post/*", PartiesController.parties_add_post, method = POST, named = :parties_add_post)
 
+#---Trade unions---------------------------------------------------------
+
+route("/:locale/trade-unions/*", TradeUnionsController.trade_unions, named = :trade_unions)
+
+route("/:locale/trade-unions-add/*", TradeUnionsController.trade_unions_add, named = :trade_unions_add)
+
+route("/:locale/trade-unions-add-post/*", TradeUnionsController.trade_unions_add_post, method = POST, named = :trade_unions_add_post)
+
 #---Partners---------------------------------------------------------
 
 route("/:locale/partners/*", PartnersController.partners, named = :partners)

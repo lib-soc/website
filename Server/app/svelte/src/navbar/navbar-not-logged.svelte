@@ -115,9 +115,10 @@
                         <button on:click={() => showDropdown(initiativesDropdown)} on:focusout={() => hide(initiativesDropdown)} class="options-button">{$content.initiatives}</button>
                         <div bind:this={initiativesDropdown} class="options-dropdown">
                             <a href={"/"+locale+"/groups"}>{$content.groups}</a>
-                            <a href={"/"+locale+"/communes"}>{$content.communes}</a>
-                            <a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a>
                             <a href={"/"+locale+"/parties"}>{$content.parties}</a>
+                            <a href={"/"+locale+"/trade-unions"}>{$content.tradeUnions}</a>
+                            <a href={"/"+locale+"/cooperatives"}>{$content.cooperatives}</a>
+                            <a href={"/"+locale+"/communes"}>{$content.communes}</a>
                             <a href={"/"+locale+"/partners"}>{$content.partners}</a>
                         </div>
                     </li>

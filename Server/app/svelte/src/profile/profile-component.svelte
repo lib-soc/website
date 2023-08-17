@@ -15,6 +15,7 @@
     import "/js/components/profile-communes.js"
     import "/js/components/profile-coops.js"
     import "/js/components/profile-parties.js"
+    import "/js/components/profile-trade-unions.js"
     import "/js/components/groups-add-component.js"
 
     // Main code
@@ -26,6 +27,7 @@
     let communes
     let coops
     let parties
+    let tradeUnions
     let panes
     let groupsAdd
 
@@ -34,6 +36,7 @@
     let communesButton
     let coopsButton
     let partiesButton
+    let tradeUnionsButton
     let buttons
 
     let currentPaneIndex = 0
@@ -66,18 +69,21 @@
             setTimeout(f,100)
         }
         else {
-            let svgItem = svgFromObject(svgObject)
-            if (svgItem==null) {
+            let svgItems = svgFromObject(svgObject)
+            if (svgItems.length==0) {
                 let f = () => styleField(div,weight,color)
                 setTimeout(f,100)
             }
             else {
                 div.style.fontWeight = weight
-                svgItem.setAttribute("fill", color)
+                for (let item of svgItems) {
+                    let fill = item.getAttribute("fill")
+                    if (fill!="#fff" && fill!=null) {
+                        item.setAttribute("fill", color)
+                    }
+                }
             }
         }
-       
-        
     }
 
     function fillFields() {
@@ -98,10 +104,10 @@
 
     function init() {
         panes = [general,groups,communes,coops,parties]
-        buttons = [generalButton,groupsButton,communesButton,coopsButton,partiesButton] 
+        buttons = [generalButton,groupsButton,communesButton,coopsButton,partiesButton,tradeUnionsButton] 
         if ($loaded==1 && panes.every(x => valid(x)) && buttons.every(x => valid(x))) {
-            panes = [general,groups,communes,coops,parties]
-            buttons = [generalButton,groupsButton,communesButton,coopsButton,partiesButton] 
+            panes = [general,groups,communes,coops,parties,tradeUnions]
+            buttons = [generalButton,groupsButton,communesButton,coopsButton,partiesButton,tradeUnionsButton] 
 
             fillFields()
             general.style.display = "initial"
@@ -155,6 +161,10 @@
             <object id="parties-img" class="icons" type="image/svg+xml" data="/img/common/parties.svg" title="parties"></object>            
             <span>parties</span>
         </button>
+        <button bind:this={tradeUnionsButton} on:click={() => changePane(tradeUnions,tradeUnionsButton)}>
+            <object id="trade-unions-img" class="icons" type="image/svg+xml" data="/img/common/trade-unions.svg" title="trade unions"></object>            
+            <span>trade unions</span>
+        </button>
         <button on:click={AuthTools.logout} id="logout-button">
             <object id="logout-img" class="icons" type="image/svg+xml" data="/img/profile/icons/logout.svg" title=""></object>            
             <span>logout</span>
@@ -165,9 +175,10 @@
             {#if $loaded==1}
                 <profile-general bind:this={general} style="display: none;"></profile-general>
                 <profile-groups bind:this={groups} style="display: none;"></profile-groups> 
-                <profile-communes bind:this={communes} style="display: none;"></profile-communes> 
-                <profile-coops bind:this={coops} style="display: none;"></profile-coops> 
                 <profile-parties bind:this={parties} style="display: none;"></profile-parties> 
+                <profile-trade-unions bind:this={tradeUnions} style="display: none;"></profile-trade-unions> 
+                <profile-coops bind:this={coops} style="display: none;"></profile-coops> 
+                <profile-communes bind:this={communes} style="display: none;"></profile-communes> 
             {/if}
         {/key}
     </div>
