@@ -225,6 +225,7 @@
 
     #crowd {
         width: 100%;
+        height: min(248.25px,calc(100vw / 3.2225));
         margin-bottom: 2rem;
     }
 
@@ -246,7 +247,7 @@
     #container-grid {
         display: grid;
         grid-template-columns: var(--grid-width);
-        grid-template-rows: 100% 100%;
+        grid-template-rows: auto auto;
         grid-gap: 4rem;
         row-gap: 2.5rem;
         margin-top: 2rem;
