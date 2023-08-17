@@ -64,3 +64,5 @@ compile("cooperatives")
 compile("parties")
 
 compile("partners")
+
+compile("trade_unions")
