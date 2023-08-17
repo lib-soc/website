@@ -53,7 +53,7 @@ function move_requests(name)
 end
 
 
-move_requests("groups")
+#move_requests("groups")
 compile("groups")
 
 ## move_requests("communes")
