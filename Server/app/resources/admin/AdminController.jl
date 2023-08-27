@@ -89,8 +89,6 @@ end
 current_user() = findone(Users.User, id = get_authentication())
 
 function admin_panel()
-    @info has_permission(current_user(), "verification")
-    @info current_user()
     if has_permission(current_user(), "verification")
         locale = get_locale()
         html(:admin,:admin_panel, layout = dict_layouts[:admin_panel], context = @__MODULE__,
@@ -124,7 +122,7 @@ function get_unverified_users()
 end
 
 function add_verified_groups()
-    if has_permission(current_user(), "admin")
+    if has_permission(current_user(), "verification")
         groups_create_requests_verified = select_from_table("groups_requests" => ["*"], where_data = ["group_id" => nothing, "status" => 1])
         if size(groups_create_requests_verified,1)!=0
             data = Dict(zip(names(groups_create_requests_verified),groups_create_requests_verified[end,:]))
