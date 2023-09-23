@@ -1,4 +1,4 @@
-let contactGeneral =["https://discord.gg/4BUau4AZre","DiscordInviteLink"]
+let contactGeneral = "https://discord.gg/Qk8KUk787z"
 
 export function translate(content, x) {
     let out = content[x]
