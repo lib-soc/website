@@ -24,6 +24,10 @@ const landing_info = Dict(
         :title => "LibSoc - Глобальная сеть либертарных социалистов",
         :description => ""
     ),
+    "fr" => Dict(
+        :title => "LibSoc - Un réseau mondial de socialistes libertaires",
+        :description => ""
+    )
 )
 
 const manifesto_info = Dict(
@@ -34,18 +38,26 @@ const manifesto_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Манифест",
         :description => ""
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Manifeste",
+        :description => ""
     )
 )
 
 const join_us_info = Dict(
     "en" => Dict(
-        :title => "LibSoc - Manifesto",
+        :title => "LibSoc - Join Us",
         :description => ""
     ),
     "ru" => Dict(
         :title => "LibSoc - Присоединяйся",
         :description => ""
     ),
+    "fr" => Dict(
+        :title => "LibSoc - Rejoignez-nous",
+        :description => ""
+    )
 )
 
 const compass_info = Dict(
@@ -56,7 +68,11 @@ const compass_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Политический компас",
         :description => ""
-    )
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Political Compass",
+        :description => ""
+    ),
 )
 
 function get_locale()

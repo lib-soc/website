@@ -103,8 +103,8 @@
                     <p>{$content.findOur}</p>
                     <ol id="entities-list">
                         <li><a href={"/" + locale + "/groups"}>{$content.group}</a>,</li> 
-                        <li><a href={"/" + locale + "/parties"}>{$content.party}</a></li> 
-                        <li><a href={"/" + locale + "/trade-unions"}>{$content.tradeUnion}</a></li> 
+                        <li><a href={"/" + locale + "/parties"}>{$content.party}</a>,</li> 
+                        <li><a href={"/" + locale + "/trade-unions"}>{$content.tradeUnion}</a>,</li> 
                         <li><a href={"/" + locale + "/cooperatives"}>{$content.cooperative}</a> {$content.or}</li>
                         <li><a href={"/" + locale + "/communes"}>{$content.commune}</a></li> 
                     </ol>

@@ -22,6 +22,10 @@ const trade_unions_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Профсоюзы",
         :description => ""
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Syndicats",
+        :description => ""
     )
 )
 

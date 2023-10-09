@@ -21,6 +21,10 @@ const communes_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Коммуны",
         :description => ""
+    ),
+    "en" => Dict(
+        :title => "LibSoc - Communes",
+        :description => ""
     )
 )
 

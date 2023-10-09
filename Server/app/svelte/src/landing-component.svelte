@@ -168,14 +168,14 @@
         justify-content: space-between;
         margin: auto;
         margin-top: 2rem;
-        max-width: 34rem;
+        max-width: 38rem;
     }
 
     .link-button {
         display: inline-block;
         font-size: 1.6rem;
         font-family: var(--sans-serif,sans-serif);
-        width: 14rem;
+        width: 17rem;
         line-height: 4rem;
         background: var(--red);
         color: white;

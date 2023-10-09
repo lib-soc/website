@@ -22,6 +22,10 @@ const groups_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Группы",
         :description => ""
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Groupes",
+        :description => ""
     )
 )
 

@@ -1,0 +1,120 @@
+{
+    "heading": "Boussole politique",
+    "qs": [ 
+        {
+            "q": "La production devrait être régie par... ",
+            "as": [
+                ["l'intiative entrepreneuriale et la richesse individuelles",["C"]],
+                ["les directives et les planifications décidées par les responsables",["V"]],
+                ["la prise de décision et l'adhésion collectives",["LS"]]
+            ]  
+        },
+        {
+            "q": "Le pouvoir décisionnel devrait appartenir à...",
+            "as": [
+                ["ceux et celles qui possèdent le lieu en raison de leur richesse ou de leur pouvoir politique",["C"]],
+                ["ceux et celles qui y travaillent",["LS"]]
+            ]  
+        },
+        {
+            "q": "La répartition du travail devrait se faire selon...",
+            "as": [
+                ["les opportunités sur le marché de l'emploi et la richesse",["C"]],
+                ["les directives et tâches fixées par les responsables",["V"]],
+                ["la planification collective et l'allocation équitable en fonction des besoins sociétaux",["LS"]]
+            ]  
+        },
+        {
+            "q": "Les moyens de production devraient être détenus et contrôlés par...",
+            "as": [
+                ["les personnes aisées",["C"]],
+                ["les responsables de l'appareil d'état",["V"]],
+                ["la communauté toute entière",["LS"]]
+            ]  
+        },
+        {
+            "q": "Les processus de production devraient prioriser...",
+            "as": [
+                ["la réduction des coûts",["C"]],
+                ["ce que disent les responsables",["V"]],
+                ["les besoins et la durabilité",["LS"]]
+            ]  
+        },
+        {
+            "q": "La croissance infinie de la production mène à...",
+            "as": [
+                ["tout un tas de bonnes choses",["C","V"]],
+                ["la destruction de notre planète",["LS"]]
+            ]  
+        },
+        {
+            "q": "La distribution devrait être organisée selon...",
+            "as": [
+                ["la richesse",["C"]],
+                ["ce que disent les responsables",["V"]],
+                ["ce sur quoi s'accorde le collectif",["LS"]]
+            ]  
+        },
+        {
+            "q": "Les réseaux de sécurité sociale devraient être...",
+            "as": [
+                ["minimisés pour encourager la responsabilisation des individus",["C"]],
+                ["contrôlées et alloués par les responsables",["V"]],
+                ["adaptés et pourvus sur la base de la responsabilité collective",["LS"]]
+            ]  
+        },
+        {
+            "q": "L'accès à l'éducation devrait être...",
+            "as": [
+                ["conditionné aux moyens financiers",["C"]],
+                ["régulé et contrôlé par les responsables de sorte à susciter certaines valeur sociétales",["V"]],
+                ["garanti en tant que droit universel",["LS"]]
+            ]  
+        },
+        {
+            "q": "La majorité des personnes sont...",
+            "as": [
+                ["incapables de prendre de bonnes décisions et doivent être menées tels des moutons",["C","V"]],
+                ["capables de prendre de bonnes déicisions pour peu qu'on leur en accorde l'opprtunité et une certaine indépendance",["LS"]]
+            ]  
+        },
+        {
+            "q": "Le pouvoir corrompt...",
+            "as": [
+                ["parfois, c'est pourquoi il nous faut plusieurs groupes de personnes en charge qui s'échangent le pouvoir entre eux de temps en temps selon qui a réalisé la meilleure campagne électorale",["C"]],
+                ["tout le monde sauf nos dictateurs suprêmes bienfaisants",["V"]],
+                ["tout le monde",["LS"]]
+            ]  
+        },
+        {
+            "q": "Les décisions devraient être prise d'après...",
+            "as": [
+                ["ce que disent les responsables",["C","V"]],
+                ["l'approbation collective",["LS"]]
+            ]  
+        },
+        {
+            "q": "L'usage de la violence est...",
+            "as": [
+                ["justifié pour permettre aux responsables de rester au pouvoir",["C","V"]],
+                ["inacceptable",["LS"]]
+            ]  
+        },
+        {
+            "q": "L'innovation et le développement technologique devraient être motivés par...",
+            "as": [
+                ["la compétition du marché et les incitations individuelles",["C"]],
+                ["les objectifs instaurés par les responsables",["V"]],
+                ["la recherche collective et le partage des connaissances",["LS"]]
+            ]  
+        },
+        {
+            "q": "Les droits de propriété intellectuelle devraient appartenir...",
+            "as": [
+                ["aux inventeurs individuels ou à leurs employeurs",["C"]],
+                ["aux responsables qui réglementent et contrôlent la propriété intellectuelle",["V"]],
+                ["à la communauté et au partage des savoirs",["LS"]]
+            ]  
+        }
+    ]
+}

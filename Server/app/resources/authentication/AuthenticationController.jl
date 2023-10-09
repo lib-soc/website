@@ -82,6 +82,10 @@ const auth_info = Dict(
     "ru" => Dict(
         :title => "LibSoc - Логин/Регистрация",
         :description => ""
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Connexion/Inscription",
+        :description => ""
     )
 )
 
@@ -92,6 +96,10 @@ const reset_password_info = Dict(
     ),
     "ru" => Dict(
         :title => "LibSoc - Восстановление пароля",
+        :description => ""
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Réinitialiser le mot de passe",
         :description => ""
     )
 )

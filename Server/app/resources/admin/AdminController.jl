@@ -21,7 +21,11 @@ const admin_panel_info = Dict(
     "ru" => Dict(
         :title => "",
         :description => ""
-    )
+    ),
+    "fr" => Dict(
+        :title => "LibSoc - Admin panel",
+        :description => ""
+    ),
 )
 
 function get_locale()
