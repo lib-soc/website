@@ -117,7 +117,7 @@
                         <p>{$content.tradeUnionsText}</p>
                     </div>
                     <div>
-                        <a href={"/" + locale + "/coops"}><h2>{$content.cooperativesTitle}</h2></a>
+                        <a href={"/" + locale + "/cooperatives"}><h2>{$content.cooperativesTitle}</h2></a>
                         <img id="coops-img" src="/img/common/coops.svg" alt="coops">
                         <p>{$content.cooperativesText}</p>
                     </div>
