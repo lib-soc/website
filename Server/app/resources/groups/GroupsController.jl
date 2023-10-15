@@ -26,6 +26,10 @@ const groups_info = Dict(
     "fr" => Dict(
         :title => "LibSoc - Groupes",
         :description => ""
+    ),
+    "ee" => Dict(
+        :title => "LibSoc - Grupid",
+        :description => ""
     )
 )
 

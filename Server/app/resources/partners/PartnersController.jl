@@ -25,6 +25,10 @@ const partners_info = Dict(
     "fr" => Dict(
         :title => "LibSoc - Partenaires",
         :description => ""
+    ),
+    "ee" => Dict(
+        :title => "LibSoc - Partners",
+        :description => ""
     )
 )
 

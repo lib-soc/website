@@ -77,7 +77,6 @@
                     <h4 class="country-name">{getCountry(name)}</h4>
                     <div class="country-block">
                         {#each entries as entry}
-                            {console.log(entry)}
                             <div class="location-info">
                                 <div class="img-general-info">
                                     <div>

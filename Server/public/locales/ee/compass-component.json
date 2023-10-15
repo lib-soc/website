@@ -1,0 +1,120 @@
+{
+    "heading": "Poliitiline kompass",
+    "qs": [ 
+        {
+            "q": "Tootmist peaks juhtima ...",
+            "as": [
+                ["üksikisikute ettevõtlikkus ja vara",["C"]],
+                ["juhtide määratud juhised ja plaanid",["V"]],
+                ["ühiselt langetatud otsused ja kokkulepped",["LS"]]
+            ]  
+        },
+        {
+            "q": "Õigus langetada töökohas otsuseid peaks olema ...",
+            "as": [
+                ["töökoha omanikel, kelle käes on vara ja poliitiline võim",["C"]],
+                ["neil, kes seal töötavad",["LS"]]
+            ]  
+        },
+        {
+            "q": "Tööjaotus peaks põhinema ...",
+            "as": [
+                ["tööturu pakutavatel võimalustel ja varalisel rikkusel",["C"]],
+                ["juhtide määratud juhstel ja ülesannetel",["V"]],
+                ["ühisel planeerimisel ja õiglasel sotsiaalsetest vajadustest tuleneval jaotusel",["LS"]]
+            ]  
+        },
+        {
+            "q": "Tootmisvahendeid peaksid omama ja juhtima ...",
+            "as": [
+                ["jõukad isikud",["C"]],
+                ["need, kes juhivad riiki",["V"]],
+                ["kogukond tervikuna",["LS"]]
+            ]  
+        },
+        {
+            "q": "Tootmisel tuleks lähtuda eelkõige ...",
+            "as": [
+                ["kulutõhususest",["C"]],
+                ["sellest, mida juhid ütlevad",["V"]],
+                ["vajadustest ja jätkusuutlikkusest",["LS"]]
+            ]  
+        },
+        {
+            "q": "Lõputu tootmise suurendamine viib ...",
+            "as": [
+                ["kõigi heade asjadeni",["C","V"]],
+                ["meie planeedi hävinguni",["LS"]]
+            ]  
+        },
+        {
+            "q": "Toodete jaotamisel tuleks lähtuda ...",
+            "as": [
+                ["jõukusest",["C"]],
+                ["juhtide otsustest",["V"]],
+                ["ühistest kokkulepetest",["LS"]]
+            ]  
+        },
+        {
+            "q": "Sotsiaalsed turvavõrgud peaksid olema ...",
+            "as": [
+                ["minimeeritud, et õhutada isiklikku vastutust ja toimetulekut",["C"]],
+                ["juhtide kontrollitud ja nende poolt määratud",["V"]],
+                ["laiaulatuslikud ja kollektiivsel kohustusel põhinevad",["LS"]]
+            ]  
+        },
+        {
+            "q": "Ligipääs haridusele peaks ...",
+            "as": [
+                ["olenema rahalisest seisust",["C"]],
+                ["olema ühiskondlike väärtuste kujundamiseks kontrollitud ja korraldatud juhtide poolt",["V"]],
+                ["olema universaalne õigus",["LS"]]
+            ]  
+        },
+        {
+            "q": "Suurem osa inimkonnast on ...",
+            "as": [
+                ["võimetud langetama häid otsuseid ja neid peab juhtima kui lambaid",["C","V"]],
+                ["võimelised vaba ja iseseisvana häid otsuseid langetama",["LS"]]
+            ]  
+        },
+        {
+            "q": "Võim rikub ...",
+            "as": [
+                ["mõnikord, mistõttu on meil vaja mitut gruppi, kes vahetevahel olenevalt oma oskusest reklaamikampaaniat korraldada omavahel võimu vahetavad",["C"]],
+                ["kõiki peale meie armastatud juhtide",["V"]],
+                ["kõiki",["LS"]]
+            ]  
+        },
+        {
+            "q": "Otsused peaksid põhinema ...",
+            "as": [
+                ["sellel, mida võimu olijad ütlevad",["C","V"]],
+                ["ühistel kokkulepetel",["LS"]]
+            ]  
+        },
+        {
+            "q": "Vägivald on ...",
+            "as": [
+                ["õigustatud vahend võimu säilitamiseks",["C","V"]],
+                ["lubamatu",["LS"]]
+            ]  
+        },
+        {
+            "q": "Teaduslikku ja tehnoloogilist arengut peaksid suunama ...",
+            "as": [
+                ["konkurents turul ja isiklikud ajendid",["C"]],
+                ["võimul olijate seatud eesmärgid",["V"]],
+                ["ühised teadmised ja uuringud",["LS"]]
+            ]  
+        },
+        {
+            "q": "Intellektuaalse omandi õigused peaksid kuuluma ...",
+            "as": [
+                ["üksikutele leiutajatele või nende töötajatele",["C"]],
+                ["Juhtidele, kes intellektuaalset omandit kontrollivad ja jaotavad",["V"]],
+                ["kogukonnale ühiseks kasutamiseks",["LS"]]
+            ]  
+        }
+    ]
+}

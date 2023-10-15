@@ -25,6 +25,10 @@ const parties_info = Dict(
     "fr" => Dict(
         :title => "LibSoc - Partis",
         :description => ""
+    ),
+    "ee" => Dict(
+        :title => "LibSoc - Parteid",
+        :description => ""
     )
 )
 

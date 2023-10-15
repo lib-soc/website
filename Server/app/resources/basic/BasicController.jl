@@ -27,6 +27,10 @@ const landing_info = Dict(
     "fr" => Dict(
         :title => "LibSoc - Un réseau mondial de socialistes libertaires",
         :description => ""
+    ),
+    "ee" => Dict(
+        :title => "LibSoc - Libertaarsotsialistide ülemaailmne võrgustik",
+        :description => ""
     )
 )
 
@@ -42,6 +46,10 @@ const manifesto_info = Dict(
     "fr" => Dict(
         :title => "LibSoc - Manifeste",
         :description => ""
+    ),
+    "ee" => Dict(
+        :title => "LibSoc - Manifest",
+        :description => ""
     )
 )
 
@@ -56,6 +64,10 @@ const join_us_info = Dict(
     ),
     "fr" => Dict(
         :title => "LibSoc - Rejoignez-nous",
+        :description => ""
+    ),
+    "ee" => Dict(
+        :title => "LibSoc - Liitu meiega",
         :description => ""
     )
 )
@@ -73,6 +85,10 @@ const compass_info = Dict(
         :title => "LibSoc - Political Compass",
         :description => ""
     ),
+    "ee" => Dict(
+        :title => "LibSoc - Political Compass",
+        :description => ""
+    )
 )
 
 function get_locale()
